@@ -1,0 +1,94 @@
+-= Premier test réussi =-
+- arborescence:
+    (C:\Users\aymerick\Documents\Projets\MC\test)
+.\
+    spigot-1.8.8.jar -> sorti du jar dans dossier
+    plugin.yml -> "name: Test\nauthor: aymnms\nversion: 0.0.1\nmain: Test"
+    Test.java
+    Test.class
+    Test.jar
+- cmd line
+cd C:\Users\aymerick\Documents\Projets\MC\test
+javac Test.java
+jar -cf Test.jar Test.class plugin.yml
+
+
+
+-= Deuxième test réussi =-
+- arborescence
+    (C:\Users\aymerick\Documents\Projets\MC\test)
+wesh\
+    spigot-1.8.8.jar -> sorti du jar dans dossier
+.\
+    plugin.yml -> "name: Test\nauthor: aymnms\nversion: 0.0.1\nmain: Test"
+    Test.java
+    Test.class
+    Test.jar
+- cmd line
+cd C:\Users\aymerick\Documents\Projets\MC\test
+set classpath=.;wesh\
+javac Test.java
+jar -cf Test.jar Test.class plugin.yml
+
+
+
+-= Troisieme test réussi =-
+- arborescence
+    (C:\Users\aymerick\Documents\Projets\MC\test)
+wesh\
+    spigot-1.8.8.jar -> sorti du jar dans dossier
+src\
+    Test.java
+.\
+    plugin.yml -> "name: Test\nauthor: aymnms\nversion: 0.0.1\nmain: Test"
+    Test.class
+    Test.jar
+- cmd line
+cd C:\Users\aymerick\Documents\Projets\MC\test
+set classpath=.;wesh\
+javac -d .\ src\Test.java
+jar -cf Test.jar Test.class plugin.yml
+
+
+
+-= Quatrième test réussi =-
+-arborescence
+    (C:\Users\aymerick\Documents\Projets\MC\test)
+(wesh->spigot)
+spigot\
+   spigot-1.8.8.jar -> sorti du jar dans dossier
+src\fr\aymnms\test\
+        Test.java
+fr\aymnms\test\
+    Test.class
+.\
+    plugin.yml -> "name: Test\nauthor: aymnms\nversion: 0.0.1\nmain: fr.aymnms.test.Test"
+    Test.jar
+- cmd line
+cd C:\Users\aymerick\Documents\Projets\MC\test
+set classpath=.;spigot\
+javac -d . src\fr\aymnms\test\Test.java
+jar -cf Test.jar fr\aymnms\test\Test.class plugin.yml
+
+
+
+
+-= Cinquieme test réussi =-
+-arborescence
+    (C:\Users\aymerick\Documents\Projets\MC\test)
+spigot\
+   spigot-1.8.8.jar -> sorti du jar dans dossier
+src\fr\aymnms\test\
+        Test.java
+bin\fr\aymnms\test\
+    Test.class
+    plugin.yml -> "name: Test\nauthor: aymnms\nversion: 0.0.1\nmain: fr.aymnms.test.Test"
+.\
+    Test.jar
+- cmd line
+cd C:\Users\aymerick\Documents\Projets\MC\test
+set classpath=.;spigot\
+javac -d bin src\fr\aymnms\test\Test.java
+cd bin
+jar -cf Test.jar fr\aymnms\test\Test.class plugin.yml
+cd ..

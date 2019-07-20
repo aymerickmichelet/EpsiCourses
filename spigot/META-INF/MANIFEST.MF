@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Implementation-Title: CraftBukkit
+Implementation-Version: git-Spigot-db6de12-18fbb24
+Archiver-Version: Plexus Archiver
+Built-By: root
+Specification-Vendor: Bukkit Team
+Specification-Title: Bukkit
+Created-By: Apache Maven 3.2.5
+Build-Jdk: 1.8.0_66
+Specification-Version: unknown
+Implementation-Vendor: Bukkit Team
+Main-Class: org.bukkit.craftbukkit.Main
+
+Name: com/bukkit/
+Sealed: true
+
+Name: net/bukkit/
+Sealed: true
+
+Name: org/bukkit/
+Sealed: true
+
