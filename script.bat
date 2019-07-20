@@ -11,7 +11,7 @@ set main_file_name=Test
 REM Destination File (WITHOUT FILE NAME)
 set name_jar=C:\Users\aymerick\Documents\Projets\MC\serv\plugins\
 REM JavaBuildPath (path1;path2;...;)
-set classpath=.;spigot;
+set classpath=.;res\spigot-1.8.8.jar;
 
 
 
