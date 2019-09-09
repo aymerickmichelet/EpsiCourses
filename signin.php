@@ -66,6 +66,10 @@
                             I5
                         </label>
                 </p>
+                <p class="label">
+                	<label class="required">Classe</label>
+                </p>
+                
                     
                 <p id="submit">
                     <input type="submit" value="S'inscrire">
