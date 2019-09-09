@@ -1,0 +1,97 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3 déc. 2018, 09:51:37
+    Author     : fabrice
+*/
+html {
+    font-family:  sans-serif;
+}
+
+#registrationform {
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em 1em;
+}
+
+#registrationform h1, #registrationform h4 {
+    color: #888;
+}
+
+h4 {
+    font-weight: normal;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.8em;
+    display: inline-block;
+    color: #555;
+    margin-bottom: 0.2em;
+}
+label.required:after {
+    color: #f00;
+    
+}
+
+p {
+    margin:0 2% 1em;
+}
+
+p.label {
+    margin:0 2%;
+}
+
+.medium {
+    width: 45%;
+    display: inline-grid;
+}
+
+.comment {
+    color: #ccc;
+}
+
+p input, p select {
+    padding: 0.5em;
+    line-height: 1em;
+    box-sizing: border-box;
+    width: 98.5%
+}
+
+p.medium input, .medium > select, .medium > select option {
+    width: 100%
+}
+
+p select {
+    padding: 0.3em;
+    color: #888;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    width: auto;
+    margin-right: 2%;
+}
+
+.checkradiobox label{
+    width: 100%;
+    font-weight: normal;
+}
+
+#submit {
+    text-align: center;
+}
+
+input[type="submit"] {
+    width: 10em;
+    font-size-adjust: 0.5;
+    margin: 0 auto;
+    background-color: #555;
+    color: #ddd;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 1em 0 1em;
+}
