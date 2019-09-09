@@ -2,3 +2,9 @@
 echo $_POST['pseudo'];
 
  ?>
+
+
+
+
+
+ 

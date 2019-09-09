@@ -26,7 +26,7 @@
                     <label for="confirmpassword" class="required">confirmpassword</label>
                 </p>
                 <p class="medium">
-                    <input id="confirmpassword" type="text"  name="confirmpassword" placeholder="confirm password" required="required">
+                    <input id="confirmpassword" type="text"  name="confirm password" placeholder="confirm password" required="required">
                 </p>
 
                   
