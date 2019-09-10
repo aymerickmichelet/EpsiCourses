@@ -29,10 +29,16 @@ if ($id!=0) erreur(ERR_IS_CO);
             <h4>Bienvenue</h4>
             <form method="POST" action="registration.php">
                 <p class="label">
-                    <label for="pseudo" class="required">pseudo</label>
+                    <label for="prenom" class="required">prenom</label>
                 </p>
                 <p class="medium">
-                    <input id="pseudo" type="text"  name="pseudo" placeholder="pseudo" required="required">
+                    <input id="prenom" type="text"  name="prenom" placeholder="prenom" required="required">
+                </p>
+                <p class="label">
+                    <label for="nom" class="required">nom</label>
+                </p>
+                <p class="medium">
+                    <input id="nom" type="text"  name="nom" placeholder="nom" required="required">
                 </p>
                 <p class="label">
                     <label for="password" class="required">password</label>
