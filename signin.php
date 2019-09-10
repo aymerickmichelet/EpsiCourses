@@ -1,8 +1,26 @@
+<?php
+session_start();
+$titre="Sign in";
+include("idbdd.php");
+include("debut.php");
+include("menu.php");
+
+
+if ($id!=0) erreur(ERR_IS_CO);
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Sign in</title>
+        <title>PBJAN</title>
         <link href="formstyle.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -26,7 +44,7 @@
                     <label for="confirmpassword" class="required">confirmpassword</label>
                 </p>
                 <p class="medium">
-                    <input id="confirmpassword" type="text"  name="confirm password" placeholder="confirm password" required="required">
+                    <input id="confirm" type="text"  name="confirm" placeholder="confirm password" required="required">
                 </p>
 
                   
@@ -39,33 +57,17 @@
                 <p class="label">
                     <label class="required">Classe</label>
                 </p>
-                <p class="checkradiobox">
-                        <label for="B1">
-                            <input id="B1B2" type="checkbox" name="attending[]" value="B1">
-                            B1
-                        </label>
-                        
-                        <label for="B2">
-                            <input id="B2" type="checkbox" name="attending[]" value="B2">
-                            B2
-                        </label>
-                        
-                        <label for="B3">
-                            <input id="B3I4" type="checkbox" name="attending[]" value="B3">
-                            B3
-                        </label>
-                    
-
-                        <label for="I4">
-                            <input id="I4" type="checkbox" name="attending[]" value="I4">
-                            I4
-                        </label>
-
-                        <label for="I5">
-                            <input id="I5" type="checkbox" name="attending[]" value="I5">
-                            I5
-                        </label>
+                <p>
+                	<select name="choix">
+    				<option value="choix1">B1</option>
+    				<option value="choix2">B2</option>
+   	 				<option value="choix3">B3</option>
+    				<option value="choix4">I4</option>
+    				<option value="choix4">I5</option>
+					</select>
+                	
                 </p>
+
                 <p class="label">
                 	<label class="required">Classe</label>
                 </p>

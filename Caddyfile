@@ -1,0 +1,22 @@
+aymnms.fr {
+	root /var/www/aymnms.fr/
+	log /var/log/caddy/aymnms.fr.log
+	fastcgi 127.0.0.1:9000 php
+	ext .html
+
+	index index.html
+}
+
+www.aymnms.fr {
+	root /var/www/aymnms.fr/
+	log /var/log/caddy/aymnms.fr.log
+	fastcgi 127.0.0.1:9000 php
+	ext .html
+
+	index index.html
+}
+
+db.aymnms.fr {
+	root /var/www/db.aymnms.fr/phpmyadmin
+	fastcgi / 127.0.0.1:9000
+}
