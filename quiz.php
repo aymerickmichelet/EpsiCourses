@@ -1,7 +1,27 @@
 <?php
-session_start();
-$titre="Sign in";
-include("idbdd.php");
+	session_start();
+	include("idbdd.php");
+	
+	$answerid=$_SESSION['previous_question_id']*4-3;
+	for($count=0;$count<4;$count++)
+	{
+		$dataq = $db->query('SELECT answer_valid FROM answer WHERE ans_id=' . $answerid. ';');
+		$correctanswers[$count]=$dataq->fetchColumn();
+		$answerid++;
+	}
+	for($count=1;$count<=4;$count++)
+	{
+		if(in_array($count,$_POST['useranswer']))
+			$newuseranswer[$count-1]=1;
+		else
+			$newuseranswer[$count-1]=0;
+	}
+	$userscore=0;
+	for($count=0;$count<4;$count++)
+	{
+		if($newuseranswer[$count]==$correctanswers[$count])
+			$userscore++;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -42,8 +62,11 @@ include("idbdd.php");
 </head>
 
 <body>
-  
-  <header id="header">
+
+    <!--==========================
+      Subscribe Section
+    ============================-->
+    <header id="header">
     <div class="container">
       <nav id="nav-menu-container">
         <ul class="nav-menu">
@@ -64,89 +87,37 @@ include("idbdd.php");
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
-
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="subscribe">
+    <section id="subscribe">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h2>Profil</h2>
+          <h2>Quiz</h2>
+          <p>Your score is <?php echo $userscore?>/4</p>s
         </div>
-        <form method="POST" action="#">
-          <div class="form-row justify-content-center">
-            <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php 
-                                                                                    echo $_SESSION['loggedin_name'];
-                                                                                  ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="lastname" type="text" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_lastname'];
-                                                                                      ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="password" type="password" class="form-control" readonly value="aaaaaaaaaaaaaaaaaaaaa"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="email" type="email" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_email'];
-                                                                                    ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="class" type="text" class="form-control" readonly value="<?php
-              switch($_SESSION['loggedin_class']){
-                case 1:
-                  echo "Bachelor 1";
-                  break;
-                case 2:
-                  echo "Bachelor 2";
-                  break;
-                case 3:
-                  echo "Bachelor 3";
-                  break;
-                case 4:
-                  echo "Engineer 1";
-                  break;
-                case 5:
-                  echo "Engineer 2";
-                  break;
-              }
-            ?>"/>
-            </div>
-            <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php
-
-
-              $request = $db->query('SELECT COUNT(fk_userid_file) FROM file WHERE fk_userid_file = "'.$_SESSION['loggedin_id'].'"');
-              $request = $request->fetchColumn();
-              echo 'You upload: '.$request.' file(s)';
-            ?>"/>
-            </div>
-            </div>
-          </div>
-        </form>
       </div>
-    </section><!-- #contact -->
+    </section>
+  </main>
 
-  <main id="main">
 
   <!--==========================
     Footer
   ============================-->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong>TheEvent</strong>. All Rights Reserved
       </div>
       <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=TheEvent
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
