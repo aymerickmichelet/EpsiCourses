@@ -1,5 +1,12 @@
 <?php
+<<<<<<< HEAD
 session_start();
+=======
+
+session_start();
+
+
+>>>>>>> 1c6376cef9d67ae7dfa836e19e21fbb2b3ba6497
 $titre = "PBJAN";
 include("idbdd.php");
 ?>
@@ -41,6 +48,29 @@ include("idbdd.php");
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+	<form name="button_signin" action="signin.php" method="post">
+
+		<?php
+			if($_SESSION["loggedin"]!=1)
+			{
+				echo '<input type="submit" value="sign in">';
+				$lien_connexion = "'login.php'";
+				echo '<input type ="button" value ="login" onclick="location.href='.$lien_connexion.'">';
+			}
+
+
+			else
+			{
+				echo $_SESSION["user"];
+				$lien_deconnexion = "'logout.php'";
+			    echo '<input type ="button" value ="deconnexion" onclick="location.href='.$lien_deconnexion.'">';
+			}
+		?>
+	</form>
+       
+>>>>>>> 1c6376cef9d67ae7dfa836e19e21fbb2b3ba6497
 
   <!--==========================
     Header
