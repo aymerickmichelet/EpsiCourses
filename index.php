@@ -1,5 +1,16 @@
 <?php
+<<<<<<< HEAD
 session_start();
+=======
+<<<<<<< HEAD
+session_start();
+=======
+
+session_start();
+
+
+>>>>>>> 1c6376cef9d67ae7dfa836e19e21fbb2b3ba6497
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
 $titre = "PBJAN";
 include("idbdd.php");
 ?>
@@ -41,6 +52,7 @@ include("idbdd.php");
 </head>
 
 <body>
+<<<<<<< HEAD
 
   <!--==========================
     Header
@@ -123,6 +135,113 @@ include("idbdd.php");
 
         <div class="tab-content row justify-content-center">
 
+=======
+<<<<<<< HEAD
+=======
+	<form name="button_signin" action="signin.php" method="post">
+
+		<?php
+			if($_SESSION["loggedin"]!=1)
+			{
+				echo '<input type="submit" value="sign in">';
+				$lien_connexion = "'login.php'";
+				echo '<input type ="button" value ="login" onclick="location.href='.$lien_connexion.'">';
+			}
+
+
+			else
+			{
+				echo $_SESSION["user"];
+				$lien_deconnexion = "'logout.php'";
+			    echo '<input type ="button" value ="deconnexion" onclick="location.href='.$lien_deconnexion.'">';
+			}
+		?>
+	</form>
+       
+>>>>>>> 1c6376cef9d67ae7dfa836e19e21fbb2b3ba6497
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+        <?php
+            if($_SESSION["loggedin"]!=1)
+            {
+                echo '<li class="buy-tickets"><a href="register_form.php" method="post">Register</a></li>';
+                echo '<li class="buy-tickets"><a href="login_form.php" method="post">Log in</a></li>';
+            }
+            else
+            {
+                echo '<li class="buy-tickets"><a href="logout.php" method="post">Log out</a></li>';
+                echo '<li class="buy-tickets"><a href="dashboard.php" method="post">Dashboard</a></li>';
+                echo '<li class="buy-tickets"><a href="profil.php" method="post">'.$_SESSION['loggedin_name'].'.'.$_SESSION['loggedin_lastname'].'</a></li>'; /*profil.php*/
+            }
+        ?>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">Epsi<span>Learn</span></h1>
+      <p class="mb-4 pb-0">09-13 September, EPSI Paris</p>
+      <!-- <a href="https://www.youtube.com/watch?v=wZZ7oFKsKzY&t=3303s" class="venobox play-btn mb-4" data-vbtype="video"
+        data-autoplay="true"></a> -->
+      <a href="#about" class="about-btn scrollto">About The Website</a>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>About The Website</h2>
+            <p>Revision platform powered by, and for students. Each student can put a course online, classify it in a category, and add a number of questions based on a multiple choice system. Everyone has access to the course, and can try to answer the MCQ provided that it contributes to the enrichment. We must therefore create a new question answer each time we want to take the quiz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+      LOG Section
+    ============================-->
+    <section id="schedule" class="section-with-bg">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Research project</h2>
+          <p>Log of the week</p>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#day-4" role="tab" data-toggle="tab">Day 4</a>
+          </li>
+        </ul>
+
+        <div class="tab-content row justify-content-center">
+
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
           <!-- Schdule Day 1 -->
           <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
 

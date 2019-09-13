@@ -4,21 +4,47 @@ $titre="Sign in";
 include("idbdd.php");
 
 
+<<<<<<< HEAD
 $result = $db->query('SELECT quest_id FROM question WHERE fk_groupid_question =' . $_SESSION['groupid'] . ';');
 $res = $result->fetchAll(PDO::FETCH_COLUMN,0);
 $questionid= array_rand($res,1);
 
 $questioncontent=$db->query('SELECT quest FROM question WHERE quest_id =' . $res[$questionid] . ';');
 $questioncontent=$questioncontent->fetchColumn();
+=======
+$groupid = $_GET['quiz_form'];
+var_dump($groupid);
+die();
+$result = $db->query('SELECT COUNT(quest_id) FROM question WHERE fk_groupid_question =' . . ';');
+$res = $result->fetchColumn();
+
+
+$questionid=$db->query('SELECT quest_id FROM question WHERE fk_groupid_question =' . . ';');
+
+$rand=random_int(1,$res);
+for($x=0;$x<$rand;$x++)
+{
+	$questionid = $questionid->fetch();
+}
+$questionid=$questionid->fetchColumn();
+$questioncontent=$db->query('SELECT quest FROM question WHERE quest_id =' . $questionid . ';');
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
 
 
 $_SESSION['previous_question_id']=$questionid;
 
 $answerid=$rand *4 -3;
+<<<<<<< HEAD
 $answers=$db->query('SELECT ans_id,ans FROM answer WHERE fk_questionid_answer =' . $res[$questionid] . ';');
 $answers = $answers->fetchAll(PDO::FETCH_ASSOC);
 
 /*$answerid++;
+=======
+$answer1=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
+$answer1 = $answer1->fetchColumn();
+
+$answerid++;
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
 $answer2=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
 $answer2 = $answer2->fetchColumn();
 
@@ -28,7 +54,11 @@ $answer3 = $answer3->fetchColumn();
 
 $answerid++;
 $answer4=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
+<<<<<<< HEAD
 $answer4 = $answer4->fetchColumn();*/
+=======
+$answer4 = $answer4->fetchColumn();
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
 
 
 
@@ -87,6 +117,7 @@ $answer4 = $answer4->fetchColumn();*/
         <center><h3 style="color:#fff">Select the correct answers</h3></center>
           <div class="form-row justify-content-center">
             <h4 style="color:#fff">Note that the number of valid answers varies between 0 and 4</h4>
+<<<<<<< HEAD
             <?php foreach($answers as $answer)
             {
 			?>
@@ -96,6 +127,13 @@ $answer4 = $answer4->fetchColumn();*/
             </div>
             <?php } ?>
             <!-- <div class="form-group col-md-6">
+=======
+            <div class="form-group col-md-6">
+              <input name="answer1" type="text" class="form-control" value="<?php echo $answer1; ?>" readonly>
+              <center><input name="useranswer[]" type="checkbox" value="1"></center>
+            </div>
+            <div class="form-group col-md-6">
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
               <input name="answer2" type="text" class="form-control" value="<?php echo $answer2; ?>" readonly>
               <center><input name="useranswer[]" type="checkbox" value="2"></center>
             </div>
@@ -106,7 +144,11 @@ $answer4 = $answer4->fetchColumn();*/
             <div class="form-group col-md-6">
               <input name="answer4" type="text" class="form-control" value="<?php echo $answer4; ?>" readonly>
               <center><input name="useranswer[]" type="checkbox" value="4"></center>
+<<<<<<< HEAD
             </div> -->
+=======
+            </div>
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
             <div class="col-md-6">
               <input name="question" type="text" class="form-control" value="<?php echo $questioncontent; ?>" readonly>
             </div>

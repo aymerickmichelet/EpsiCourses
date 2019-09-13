@@ -2,9 +2,13 @@
 session_start();
 $titre="Sign in";
 include("idbdd.php");
+<<<<<<< HEAD
 $groupid = $_GET['groupid'];
 $_SESSION['groupid']=$groupid;
 
+=======
+if ($id!=0) erreur(ERR_IS_CO);
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
 ?>
 
 <!DOCTYPE html>

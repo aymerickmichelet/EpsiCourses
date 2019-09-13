@@ -161,7 +161,11 @@ switch($course_class){
 }
 
     echo ' | '.$user_name.''.$user_lastname.'</p>
+<<<<<<< HEAD
     <p><li class="buy-tickets"><a href="question_form.php?groupid='.$groupid_file.'" method="post">Quizz</a></li></p>
+=======
+    <p><li class="buy-tickets"><a href="question_form.php?'.$groupid_file.'" method="post">Quizz</a></li></p>
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
   </div>
 </div>';
 
@@ -215,4 +219,8 @@ switch($course_class){
   <script src="js/main.js"></script>
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> f72e3182b27e64c5476e6310f7c937ea02e1bffe
