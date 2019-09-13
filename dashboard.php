@@ -1,7 +1,10 @@
 <?php
 session_start();
-$titre="Sign in";
+$titre = "PBJAN";
 include("idbdd.php");
+$dir    = 'upload/'; // le dossier ou il ya les fichiers uploads
+$files1 = scandir($dir); // scandir perment de montrer le contenu du fichier et le retourne sous forme d'un tableau
+$nbr = count($files1); // pour compter le nombre d'element dans le tableau
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +45,10 @@ include("idbdd.php");
 </head>
 
 <body>
-  
+
+  <!--==========================
+    Header
+  ============================-->
   <header id="header">
     <div class="container">
       <nav id="nav-menu-container">
@@ -65,71 +71,113 @@ include("idbdd.php");
     </div>
   </header><!-- #header -->
 
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="subscribe">
+  <main id="main">
+    <!--==========================
+      Subscribe Section
+    ============================-->
+    <section id="subscribe">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h2>Profil</h2>
+          <h2>Upload a course</h2>
+          <p>Be carful, just pdf's file are accepted to upload</p>
         </div>
-        <form method="POST" action="#">
+        <form method="POST" action="upload.php">
           <div class="form-row justify-content-center">
-            <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php 
-                                                                                    echo $_SESSION['loggedin_name'];
-                                                                                  ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="lastname" type="text" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_lastname'];
-                                                                                      ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="password" type="password" class="form-control" readonly value="aaaaaaaaaaaaaaaaaaaaa"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="email" type="email" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_email'];
-                                                                                    ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="class" type="text" class="form-control" readonly value="<?php
-              switch($_SESSION['loggedin_class']){
-                case 1:
-                  echo "Bachelor 1";
-                  break;
-                case 2:
-                  echo "Bachelor 2";
-                  break;
-                case 3:
-                  echo "Bachelor 3";
-                  break;
-                case 4:
-                  echo "Engineer 1";
-                  break;
-                case 5:
-                  echo "Engineer 2";
-                  break;
-              }
-            ?>"/>
-            </div>
-            <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php
-
-
-              $request = $db->query('SELECT COUNT(fk_userid_file) FROM file WHERE fk_userid_file = "'.$_SESSION['loggedin_id'].'"');
-              $request = $request->fetchColumn();
-              echo 'You upload: '.$request.' file(s)';
-            ?>"/>
-            </div>
+            <div class="col-auto">
+              <button type="submit">upload</button>                 <!-- upload -->
             </div>
           </div>
         </form>
       </div>
-    </section><!-- #contact -->
+    </section>
 
-  <main id="main">
+    <!--==========================
+      LOG Section
+    ============================-->
+    <section id="schedule" class="section-with-bg">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Check courses</h2>
+          <p>You can read, download and answer quiz questions</p>
+        </div>
+        <div class="tab-content row justify-content-center">
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+
+
+<?php  
+
+
+for ($i=2; $i < $nbr; $i++) {
+
+	  $course_name = $db->query('SELECT course_name FROM course WHERE course_name = "'.$files1[$i].'"');
+    $course_name = $course_name->fetchColumn();
+
+
+    $groupid_file = $db->query('SELECT group_id FROM course WHERE course_name = "'.$files1[$i].'"');
+    $groupid_file = $groupid_file->fetchColumn();
+    $course_date = $db->query('SELECT file_date FROM file WHERE fk_groupid_file = "'.$groupid_file.'"'); //possible de faire en une fois
+    $course_date = $course_date->fetchColumn();
+
+
+    $course_class = $db->query('SELECT school_year FROM course WHERE course_name = "'.$files1[$i].'"');
+    $course_class = $course_class->fetchColumn();
+
+
+    $userid = $db->query('SELECT fk_userid_file FROM file WHERE fk_groupid_file = "'.$groupid_file.'"');
+    $userid = $userid->fetchColumn();
+    $user_name = $db->query('SELECT name FROM user WHERE user_id = "'.$userid.'"');
+    $user_name = $user_name->fetchColumn();
+    $user_lastname = $db->query('SELECT last_name FROM user WHERE user_id = "'.$userid.'"');
+    $user_lastname = $user_lastname->fetchColumn();
+
+
+
+	//echo '<a href="upload/'.$files1[$i].'" target="_blank">PDF</a>'; // lien du pdf
+
+
+echo '<div class="row schedule-item">
+              <div class="col-md-2">'.$course_date.'</div>
+              <div class="col-md-10">
+                <h4><a href="upload/'.$files1[$i].'"   <time>'.$course_name.'</time></a></h4>
+                <p>';
+
+switch($course_class){
+  case 1:
+    echo "Bachelor 1";
+    break;
+  case 2:
+    echo "Bachelor 2";
+    break;
+  case 3:
+    echo "Bachelor 3";
+    break;
+  case 4:
+    echo "Engineer 1";
+    break;
+  case 5:
+    echo "Engineer 2";
+    break;
+}
+
+    echo ' | '.$user_name.''.$user_lastname.'</p>
+    <p><li class="buy-tickets"><a href="question_form.php?'.$groupid_file.'" method="post">Quizz</a></li></p>
+  </div>
+</div>';
+
+
+        }
+
+?>
+     
+        </div>
+      </div>
+    </section>
+      </div>
+    </section>
+
+  </main>
+
 
   <!--==========================
     Footer

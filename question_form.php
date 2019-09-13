@@ -2,6 +2,7 @@
 session_start();
 $titre="Sign in";
 include("idbdd.php");
+if ($id!=0) erreur(ERR_IS_CO);
 ?>
 
 <!DOCTYPE html>
@@ -42,28 +43,6 @@ include("idbdd.php");
 </head>
 
 <body>
-  
-  <header id="header">
-    <div class="container">
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-        <?php
-            if($_SESSION["loggedin"]!=1)
-            {
-                echo '<li class="buy-tickets"><a href="register_form.php" method="post">Register</a></li>';
-                echo '<li class="buy-tickets"><a href="login_form.php" method="post">Log in</a></li>';
-            }
-            else
-            {
-                echo '<li class="buy-tickets"><a href="logout.php" method="post">Log out</a></li>';
-                echo '<li class="buy-tickets"><a href="dashboard.php" method="post">Dashboard</a></li>';
-                echo '<li class="buy-tickets"><a href="profil.php" method="post">'.$_SESSION['loggedin_name'].'.'.$_SESSION['loggedin_lastname'].'</a></li>'; /*profil.php*/
-            }
-        ?>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
 
   <!--==========================
     Intro Section
@@ -71,60 +50,33 @@ include("idbdd.php");
   <section id="subscribe">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h2>Profil</h2>
+          <h2>Submit a question</h2>
         </div>
-        <form method="POST" action="#">
+        <form method="POST" action="question.php">
           <div class="form-row justify-content-center">
-            <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php 
-                                                                                    echo $_SESSION['loggedin_name'];
-                                                                                  ?>"/>
+            <h3 style="color:#fff">Submit a new question before taking the quiz</h3>
+            <h4 style="color:#fff">Tick the checkboxes which correspond to a valid answer</h4>
+            <div class="form-group col-md-6">
+              <input name="answer1" type="text" class="form-control" placeholder="1st possible answer" />
+              <center><input name="correctanswer[]" type="checkbox" value="1"></center>
             </div>
             <div class="form-group col-md-6">
-              <input name="lastname" type="text" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_lastname'];
-                                                                                      ?>"/>
+              <input name="answer2" type="text" class="form-control" placeholder="2nd possible answer" />
+              <center><input name="correctanswer[]" type="checkbox" value="2"></center>
             </div>
             <div class="form-group col-md-6">
-              <input name="password" type="password" class="form-control" readonly value="aaaaaaaaaaaaaaaaaaaaa"/>
+              <input name="answer3" type="text" class="form-control" placeholder="3rd possible answer" />
+              <center><input name="correctanswer[]" type="checkbox" value="3"></center>
             </div>
             <div class="form-group col-md-6">
-              <input name="email" type="email" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_email'];
-                                                                                    ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="class" type="text" class="form-control" readonly value="<?php
-              switch($_SESSION['loggedin_class']){
-                case 1:
-                  echo "Bachelor 1";
-                  break;
-                case 2:
-                  echo "Bachelor 2";
-                  break;
-                case 3:
-                  echo "Bachelor 3";
-                  break;
-                case 4:
-                  echo "Engineer 1";
-                  break;
-                case 5:
-                  echo "Engineer 2";
-                  break;
-              }
-            ?>"/>
+              <input name="answer4" type="text" class="form-control" placeholder="4th possible answer" />
+              <center><input name="correctanswer[]" type="checkbox" value="4"></center>
             </div>
             <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php
-
-
-              $request = $db->query('SELECT COUNT(fk_userid_file) FROM file WHERE fk_userid_file = "'.$_SESSION['loggedin_id'].'"');
-              $request = $request->fetchColumn();
-              echo 'You upload: '.$request.' file(s)';
-            ?>"/>
-            </div>
+              <input name="question" type="text" class="form-control" placeholder="Question" />
             </div>
           </div>
+          <div class="col-auto"><button type="submit">Submit question</button></div>
         </form>
       </div>
     </section><!-- #contact -->

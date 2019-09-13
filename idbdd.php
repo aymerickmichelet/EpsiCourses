@@ -1,10 +1,12 @@
 <?php
 try
 {
-$db = new PDO('mysql:host=localhost;dbname=workshop', 'aymnms', 'weshalors');
+$db = new PDO('mysql:host=localhost;dbname=workshop', 'root', '');
 }
 catch (Exception $e)
 {
         die('Erreur : ' . $e->getMessage());
 }
 ?>
+
+

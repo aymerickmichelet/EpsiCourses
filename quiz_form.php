@@ -2,7 +2,49 @@
 session_start();
 $titre="Sign in";
 include("idbdd.php");
+
+
+$groupid = $_GET['quiz_form'];
+var_dump($groupid);
+die();
+$result = $db->query('SELECT COUNT(quest_id) FROM question WHERE fk_groupid_question =' . . ';');
+$res = $result->fetchColumn();
+
+
+$questionid=$db->query('SELECT quest_id FROM question WHERE fk_groupid_question =' . . ';');
+
+$rand=random_int(1,$res);
+for($x=0;$x<$rand;$x++)
+{
+	$questionid = $questionid->fetch();
+}
+$questionid=$questionid->fetchColumn();
+$questioncontent=$db->query('SELECT quest FROM question WHERE quest_id =' . $questionid . ';');
+
+
+$_SESSION['previous_question_id']=$questionid;
+
+$answerid=$rand *4 -3;
+$answer1=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
+$answer1 = $answer1->fetchColumn();
+
+$answerid++;
+$answer2=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
+$answer2 = $answer2->fetchColumn();
+
+$answerid++;
+$answer3=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
+$answer3 = $answer3->fetchColumn();
+
+$answerid++;
+$answer4=$db->query('SELECT ans FROM answer WHERE ans_id =' . $answerid . ';');
+$answer4 = $answer4->fetchColumn();
+
+
+
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,28 +84,6 @@ include("idbdd.php");
 </head>
 
 <body>
-  
-  <header id="header">
-    <div class="container">
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-        <?php
-            if($_SESSION["loggedin"]!=1)
-            {
-                echo '<li class="buy-tickets"><a href="register_form.php" method="post">Register</a></li>';
-                echo '<li class="buy-tickets"><a href="login_form.php" method="post">Log in</a></li>';
-            }
-            else
-            {
-                echo '<li class="buy-tickets"><a href="logout.php" method="post">Log out</a></li>';
-                echo '<li class="buy-tickets"><a href="dashboard.php" method="post">Dashboard</a></li>';
-                echo '<li class="buy-tickets"><a href="profil.php" method="post">'.$_SESSION['loggedin_name'].'.'.$_SESSION['loggedin_lastname'].'</a></li>'; /*profil.php*/
-            }
-        ?>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
 
   <!--==========================
     Intro Section
@@ -71,60 +91,33 @@ include("idbdd.php");
   <section id="subscribe">
       <div class="container wow fadeInUp">
         <div class="section-header">
-          <h2>Profil</h2>
+          <h2>Quizz</h2>
         </div>
-        <form method="POST" action="#">
+        <form method="POST" action="quiz.php">
+        <center><h3 style="color:#fff">Select the correct answers</h3></center>
           <div class="form-row justify-content-center">
-            <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php 
-                                                                                    echo $_SESSION['loggedin_name'];
-                                                                                  ?>"/>
+            <h4 style="color:#fff">Note that the number of valid answers varies between 0 and 4</h4>
+            <div class="form-group col-md-6">
+              <input name="answer1" type="text" class="form-control" value="<?php echo $answer1; ?>" readonly>
+              <center><input name="useranswer[]" type="checkbox" value="1"></center>
             </div>
             <div class="form-group col-md-6">
-              <input name="lastname" type="text" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_lastname'];
-                                                                                      ?>"/>
+              <input name="answer2" type="text" class="form-control" value="<?php echo $answer2; ?>" readonly>
+              <center><input name="useranswer[]" type="checkbox" value="2"></center>
             </div>
             <div class="form-group col-md-6">
-              <input name="password" type="password" class="form-control" readonly value="aaaaaaaaaaaaaaaaaaaaa"/>
+              <input name="answer3" type="text" class="form-control" value="<?php echo $answer3; ?>" readonly>
+              <center><input name="useranswer[]" type="checkbox" value="3"></center>
             </div>
             <div class="form-group col-md-6">
-              <input name="email" type="email" class="form-control" readonly value="<?php 
-                                                                                        echo $_SESSION['loggedin_email'];
-                                                                                    ?>"/>
-            </div>
-            <div class="form-group col-md-6">
-              <input name="class" type="text" class="form-control" readonly value="<?php
-              switch($_SESSION['loggedin_class']){
-                case 1:
-                  echo "Bachelor 1";
-                  break;
-                case 2:
-                  echo "Bachelor 2";
-                  break;
-                case 3:
-                  echo "Bachelor 3";
-                  break;
-                case 4:
-                  echo "Engineer 1";
-                  break;
-                case 5:
-                  echo "Engineer 2";
-                  break;
-              }
-            ?>"/>
+              <input name="answer4" type="text" class="form-control" value="<?php echo $answer4; ?>" readonly>
+              <center><input name="useranswer[]" type="checkbox" value="4"></center>
             </div>
             <div class="col-md-6">
-              <input name="name" type="text" class="form-control" readonly value="<?php
-
-
-              $request = $db->query('SELECT COUNT(fk_userid_file) FROM file WHERE fk_userid_file = "'.$_SESSION['loggedin_id'].'"');
-              $request = $request->fetchColumn();
-              echo 'You upload: '.$request.' file(s)';
-            ?>"/>
-            </div>
+              <input name="question" type="text" class="form-control" value="<?php echo $questioncontent; ?>" readonly>
             </div>
           </div>
+          <div class="col-auto"><button type="submit">Submit answers</button></div>
         </form>
       </div>
     </section><!-- #contact -->
