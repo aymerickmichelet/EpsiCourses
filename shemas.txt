@@ -1,0 +1,17 @@
+Bot Le-Flip
+alias: !botleflip / !bot / !leflip / !flip / !blp
+
+
+si message dans channel bot
+-> supprimé + lancement discussion en privé
+
+si message dans channel perso bot
+    si message == alias:
+        
+
+
+
+
+
+faire une spitch au bot pour qu'il demande à tout le monde si ok pour tester blague
+-> modifier bdd
