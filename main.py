@@ -38,7 +38,7 @@ async def on_message(message):
 
     if step == 0: # etape des commandes
         if vocabulary.getAnswerWakeup(message.content) == 1: # si message.content est accepté
-            await message.author.send("Salut, moi c'est le Bot LeFlip ^^\n1 - Tu veux que je te raconte une blague ?\n2 - Tu veux me raconter une blague ?\n3 - Où tu veux rentrer/sortir du registre des cobailles de mes blagues ?")
+            await message.author.send("Salut, moi c'est le Bot LeFlip ^^\n1 - Tu veux que je te raconte une blague ?\n2 - Tu veux me raconter une blague ?\n3 - Où tu veux tester mes blagues en préparation ?")
             step = 1
         elif message.content.find("!info") == 0:
             await message.channel.send("Si toi aussi tu veux me parler, tape ```!blf```") # on peut developper (/help)
@@ -56,10 +56,11 @@ async def on_message(message):
             await message.channel.send("Je vois... Fais moi rêver !")
             step = 1.2
         elif vocabulary.getAnswerExperience(message.content) == 1:
-            await message.channel.send("Pour le moment, je n'engage personne... mais je reviendrais vers toi dans quelques temps.")
-            # await message.channel.send("Super c'est noté ! tu vas voir elles sont géniales.")
-            # await message.channel.send("Dommage... Tu vas me manquer")
-            step = 0
+            await message.channel.send("Okay mais soit indulgeant... hein !")
+            joker.joke = blf.getJokeTest(client)
+            await message.channel.send(embed=joker.joke)
+            await message.channel.send("En veux-tu une autre ?")
+            step = 1.3
         else:
             await message.channel.send("Si tu le prends comme ça...")
     elif step == 1.1:
@@ -103,6 +104,17 @@ async def on_message(message):
         else:
             step = 0
             await message.channel.send("Moi qui croyait en toi...")
+    elif step == 1.3:
+        if message.content.find("oui") == 0:
+            await message.channel.send("ca marche, dit moi ce que tu penses de celle là !")
+            joker.joke = blf.getJokeTest(client)
+            await message.channel.send(embed=joker.joke)
+            await message.channel.send("En veux-tu une autre ?")
+        else:
+            step = 0
+            joker.joke = ""
+            await message.channel.send("Merci de m'avoir écouté !")
+
 
 client.run(token)
 

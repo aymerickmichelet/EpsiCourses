@@ -41,6 +41,21 @@ def addJoke(joker): # insert != select pour methode ???
     return 0
 
 
+def getJokeTest(client): # a factoriser
+    joker = joke.Joke()
+    rows = bdd.request("SELECT * FROM joke WHERE joke_vote = 0", 1)
+    rand = randint(1, len(rows)) - 1
+    joker.id = int(rows[rand][4])
+    joker.joke = rows[rand][1]
+    joker.joke_date = rows[rand][3]
+    date = str(joker.joke_date.day) + "/" + str(joker.joke_date.month) +"/"+ str(joker.joke_date.year)
+    time = str(joker.joke_date.hour) + ":" + str(joker.joke_date.minute) +":"+ str(joker.joke_date.second)
+    info = "le " + date + " à " + time
+    query = "SELECT user_pseudo FROM user WHERE user_id = " + str(joker.id)
+    joker.pseudo = bdd.request(query, 3)[0]
+    joker.nickname, joker.avatar = getNicknameAndAvatar(client.guilds, joker.pseudo)
+    return embed.sendEmbed(joker.avatar, joker.nickname, joker.joke, info)
+
 def getNicknameAndAvatar(guilds, pseudo):
     for guild in guilds:
         for member in guild.members:
