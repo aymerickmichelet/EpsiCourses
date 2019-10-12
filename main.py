@@ -4,6 +4,7 @@ import joke
 import embed
 import vocabulary
 import blf
+import datetime
 
 token = "NTY1NDE5ODIzODU3OTI2MTU3.XYj4hA.eVuudHCjwY5ZkIyx3SeShJWt2rc"
 client = discord.Client()
@@ -77,7 +78,11 @@ async def on_message(message):
         else: # si joke est vide
             joker.joke = message.content
             await message.channel.send("C'est bien ça ?")
-            await message.channel.send(embed=embed.sendEmbed(joker.joke))
+            joker.joke_date = datetime.datetime.now()
+            date = str(joker.joke_date.day) + "/" + str(joker.joke_date.month) +"/"+ str(joker.joke_date.year)
+            time = str(joker.joke_date.hour) + ":" + str(joker.joke_date.minute) +":"+ str(joker.joke_date.second)
+            info = "le " + date + " à " + time
+            await message.channel.send(embed=embed.sendEmbed(joker.pseudo, joker.joke, info))
             # récupérer l'heure et l'user
             # faire un objet
 

@@ -1,9 +1,8 @@
 import discord
 
-def sendEmbed(question="No joke", info="no info"):
-    embed=discord.Embed(description="-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-")
-    embed.add_field(name=question, value="-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-", inline=False)
-    embed.add_field(name=info, value=".", inline=False)
-    embed.set_footer(text="BotFouras v1.0.0 by aymerick michelet")
+def sendEmbed(author="author.error", joke="joke.error", info="info.error"):
+    info+=" | BotLeFlip v1.0.0 by aymerick michelet"
+    embed=discord.Embed(title=joke, color=0x80ffff)
+    embed.set_author(name=author)
+    embed.set_footer(text=info)
     return embed
-

@@ -8,6 +8,3 @@ class Joke:
     def __init__(self):
         print("create object")
 
-    def createUser(self):
-        print("create user")
-
