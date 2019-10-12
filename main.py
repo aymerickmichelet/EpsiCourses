@@ -12,6 +12,7 @@ channel_id = 625737003383914516
 joker = joke.Joke()
 step = 0
 
+
 @client.event
 async def on_ready():
     print(f'{client.user} has connected to Discord!')
@@ -23,11 +24,11 @@ async def on_ready():
 async def on_message(message):
     global step, channel_id, joker
 
-    joker.pseudo = message.author
-
     # transformer message.content par variable (toLower)
 
     if message.author != client.user: # si le message vient d'un user
+        joker.pseudo = str(message.author)
+        joker.nickname, joker.avatar = blf.getNicknameAndAvatar(client.guilds, joker.pseudo)
         if message.channel.id == channel_id: # et si il est dans le channel BotLeflip.espace-bot
             await message.delete() # le message de l'user est supprimé
         elif message.channel != message.author.dm_channel: # si le message n'est pas en mp
@@ -46,10 +47,11 @@ async def on_message(message):
     elif step == 1:
         step = False
         if vocabulary.getAnswerGetJoke(message.content) == 1:
-            await message.channel.send("C'est partie !")
-            joker.joke = blf.getJoke()
+            await message.channel.send("Une blague ? j'en ai une excellente !")
+            joker.joke = blf.getJoke(client)
             await message.channel.send(embed=joker.joke)
-            joker.joke = ""
+            await message.channel.send("En veux-tu une autre ?")
+            step = 1.1
         elif vocabulary.getAnswerAddJoke(message.content) == 1:
             await message.channel.send("Je vois... Fais moi rêver !")
             step = 1.2
@@ -60,17 +62,28 @@ async def on_message(message):
             step = 0
         else:
             await message.channel.send("Si tu le prends comme ça...")
-    elif step == 1.2: # si joke ne contient rien (a dev)
+    elif step == 1.1:
+        if message.content.find("oui") == 0:
+            await message.channel.send("une autre blague ? j'en ai une excellente !")
+            joker.joke = blf.getJoke(client)
+            await message.channel.send(embed=joker.joke)
+            await message.channel.send("En veux-tu une autre ?")
+        else:
+            await message.channel.send("Très bien ca marche ^^")
+            joker.joke = ""
+            step = 0
+    elif step == 1.2:
         if joker.joke != "": # si joke contient la blague
             if message.content.find("oui") == 0:
                 if blf.addJoke(joker) == 0:
                     await message.channel.send("Très bien, c'est noté !")
                 else:
                     await message.channel.send("Humm, je n'arrive pas à mémoriser ta blague...")
-                joker.step = 0
+                step = 0
                 #envoyer message nouveau joke au cobaye
             elif message.content.find("non") == 0:
-                await message.channel.send("Bon d'accord, repète moi tout ça.")
+                await message.channel.send("Tu abandonnes déjà ?")
+                step = 1.23
             else:
                 await message.channel.send("Bon, tu reviendras quand tu ne seras plus indécis...")
                 step = 0
@@ -82,10 +95,14 @@ async def on_message(message):
             date = str(joker.joke_date.day) + "/" + str(joker.joke_date.month) +"/"+ str(joker.joke_date.year)
             time = str(joker.joke_date.hour) + ":" + str(joker.joke_date.minute) +":"+ str(joker.joke_date.second)
             info = "le " + date + " à " + time
-            await message.channel.send(embed=embed.sendEmbed(joker.pseudo, joker.joke, info))
-            # récupérer l'heure et l'user
-            # faire un objet
-
+            await message.channel.send(embed=embed.sendEmbed(joker.avatar, joker.pseudo, joker.joke, info))
+    elif step == 1.23:
+        if message.content.find("non") == 0:
+            step = 1.2
+            await message.channel.send("Ah tu m'as fait peur ! répète moi ça alors:")
+        else:
+            step = 0
+            await message.channel.send("Moi qui croyait en toi...")
 
 client.run(token)
 
