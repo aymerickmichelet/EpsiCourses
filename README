@@ -1,0 +1,28 @@
+"Dst_mario_js_aymerick" is a simple and fast project for a 4 hours javascript test.
+
+The subject in french:
+
+	MARIO peut sauter
+	il peut sauter sur la plateforme et en tomber
+	il se deplace sans sortir de l'écran
+	l'ennemie va de gauche a droite sans sortir de l'écran
+	en cas de collision, mario meurt
+	on ne peut pas traverser la plateforme
+	animation de sprite
+	
+	BONUS:
+		disign
+		boulette de feu de mario
+
+translate:
+    MARIO can jump
+    he can jump on the platform and fall down
+    it moves without leaving the screen
+    the enemy goes from left to right without leaving the screen
+    in the event of a collision, mario dies
+    we can not cross the platform
+    sprite animation
+
+    BONUS:
+    disign
+    fireball of mario
