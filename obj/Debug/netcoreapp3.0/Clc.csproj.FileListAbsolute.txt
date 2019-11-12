@@ -1,0 +1,11 @@
+C:\Users\aymnms\source\repos\Voiture\obj\Debug\netcoreapp3.0\Clc.csprojAssemblyReference.cache
+C:\Users\aymnms\source\repos\Voiture\obj\Debug\netcoreapp3.0\Clc.AssemblyInfoInputs.cache
+C:\Users\aymnms\source\repos\Voiture\obj\Debug\netcoreapp3.0\Clc.AssemblyInfo.cs
+C:\Users\aymnms\source\repos\Voiture\bin\Debug\netcoreapp3.0\Clc.exe
+C:\Users\aymnms\source\repos\Voiture\bin\Debug\netcoreapp3.0\Clc.deps.json
+C:\Users\aymnms\source\repos\Voiture\bin\Debug\netcoreapp3.0\Clc.runtimeconfig.json
+C:\Users\aymnms\source\repos\Voiture\bin\Debug\netcoreapp3.0\Clc.runtimeconfig.dev.json
+C:\Users\aymnms\source\repos\Voiture\bin\Debug\netcoreapp3.0\Clc.dll
+C:\Users\aymnms\source\repos\Voiture\bin\Debug\netcoreapp3.0\Clc.pdb
+C:\Users\aymnms\source\repos\Voiture\obj\Debug\netcoreapp3.0\Clc.dll
+C:\Users\aymnms\source\repos\Voiture\obj\Debug\netcoreapp3.0\Clc.pdb

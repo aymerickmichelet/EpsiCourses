@@ -1,0 +1,148 @@
+1 cycle = 1 minute
+
+
+----- améliorations -----
+tableau autour de texte
+pendant que texte déroule, interdire controle clavier
+public, private, protected
+mot aléatoire composant
+lancement de la partie (321 en gros)
+-------------------------
+
+|---------------------------------------------|
+| absctract         Voiture                   |
+|---------------------------------------------|
+| protected int vitesse = 0;                  |
+| protected String couleur;                   |
+| protected int distance = 0;                 |
+|                                             |
+| protected int    GetVitesse();              |
+| protected void   SetVitesse(int vitesse);   |
+| protected String GetCouleur();              |
+| protected void   SetCouleur(String couleur);|
+| protected void   SetCouleur();              |
+| protected int    GetDistance();             |
+| protected void   SetDistance(int distance); |
+|                                             |
+| protected abstract float Deplacement();     |
+| protected abstract void  CapaciteSpecial(); |
+| --------------------------------------------|
+
+
+|---------------------------------------------------|
+|                      Twingo                       |
+|---------------------------------------------------|
+| private const float probabilite_boost = 0.3F;     |
+| private int vitesse_boost = 120;                  |
+| private int cycle_boost = 0;                      |
+|                                                   |
+| protected int  GetVitesseBoost();                 |
+| protected void SetVitesseBoost(int vitesse_boost);|
+| protected int  GetCycleBoost();                   |
+| protected void SetCycleBoost(int cycle_boost);    |
+| protected int  GetProbabiliteBoost();             |
+|                                                   |
+| protected abstract float Deplacement();           |
+| protected abstract void  CapaciteSpecial();       |
+| --------------------------------------------------|
+
+
+|-------------------------------------------------------|
+|                         Ferrari                       |
+|-------------------------------------------------------|
+| private const float probabilite_panne = 0.6F          |
+| private float temps_reparation = 0;                   |
+| private List<String> composants = new List<String>(){};|
+|                                                       | 
+| private float GetProbabilitePanne();                  |
+| private float GetTempsReparation();                   |
+| private void  SetTempsReparation(float temps_reparation);
+| private List<Strin> GetComposants();                  |
+| private void SetComposants(List<String> composants);  
+| ------------------------------------------------------|
+
+
+
+
+
+
+
+Voiture: vitesse, couleur
+	Ferrari: probabilitee_panne;
+		moteur
+		roues x4
+		volant
+		freins x4
+	Twingo: probabilitee_boost, vitesse_boost, cycle_boost;
+
+
+
+Evennements:
+	Réparation:
+		A chaque cycle, 60% pour ferrari de tomber en panne
+		Si oui, il faut que écrire le nom de la pièce défectueuse pour que la voiture repartent
+	Boost:
+		A chaque cycle, 30% pour que twingo puisse activé le boost
+		Si oui, affiche "vitesse" dans le desordre et si utilisateur écrit le mot en moins de 3s -> boost activé !
+
+
+
+Déroulement partie:
+
+	nb_cycle = 0;
+	distance = 0;
+	temps = 0.00;
+	temps_reparation = 0;
+
+	Joueur choisit sa voiture:
+		- ferrari/twingo
+		- couleur
+	Lancement course contre la montre: (tour par tour)
+		initialisation des variables
+		Lancement course à l'activation touche
+
+		Affiche nombre de cycle, temps, distance/distance total
+		si distance >= 50
+			FIN DU JEU
+			afficher variables
+		si ferrari
+			random event réparation
+				si oui, lancement event
+					temps_reparation=contabilisé le temps que l'utilisateur met pour entrer le mot
+				si nn, debug + attente de 2sec + temps_reparation = 0
+		si twingo
+			random event boost
+				si oui, cooldown 3sec pour écrire le mot
+					si oui réussit, boost activé
+					sinn, message d'echec
+				sinn, 
+					debug
+		nb_cycle+=1, distance+=(0.1+temps_reparation)*vitesse, temps+=0.1+temps_reparation
+		return ligne 39
+
+
+
+
+
+
+
+
+
+Créer une application console de « jeu de voiture en mode course contre la montre »
+De manière générale une voiture est un objet qui se déplace à une certaine vitesse et a une couleur
+L’application représente un circuit de course sur lequel 2 types de voitures spécifiques peuvent rouler :
+•    Une voiture rapide (100km/h) mais dont les pièces tombent souvent en panne
+•    Une voiture lente (50km/h) mais qui sous certaines conditions peut avoir des boosts de vitesse (120km/h pendant 2 cycle)
+Faites-en sorte qu’une option de démarrage par ligne de commande permette au joueur de choisir son type de voiture et sa couleur. 
+Le cycle de jeu est le suivant :
+La voiture choisie par le joueur avance d’une certaine distance en fonction de sa vitesse et du temps du cycle (un cycle simule 1 minute de course), ensuite sa capacité spéciale se met (potentiellement) en route puis l’application attend 2 secondes (afin de ne pas inonder de message l’utilisateur, mais la course continue) et le cycle recommence.
+La voiture rapide est une voiture qui contient les pièces suivantes :
+•    Un moteur
+•    4 roues (avant droit, avant gauche, arrière droit, arrière gauche)
+•    Un volant 
+•    Des freins
+Lorsqu’une voiture rapide roule il y a 60% de chance qu’une de ces pièces tombe en panne. Pour la réparer le joueur doit taper dans la console le nom de la pièce
+La voiture lente a 30% de chance de permettre au joueur d’avoir un boost de vitesse. Lorsque le boost est activable le mot VITESSE est affiché dans la console avec les lettres mélangées. Si le joueur entre les lettres dans le même ordre en moins de 3 secondes le boost d’active.
+
+La course s’arrête lorsque la voiture a parcouru 50 km, le joueur est alors notifié du temps qu’il a mis à parcourir cette distance.
+La note se fera sur la propreté du code, les commentaires, l'architecture et les fonctionnalités qui auront été codées
