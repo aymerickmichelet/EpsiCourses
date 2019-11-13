@@ -7,7 +7,7 @@ namespace Cclm.src
 {
     class Program
     {
-        static int Menu(Voiture voiture)
+        static int Menu(Voiture voiture) // menu (redirection de code)
         {
             do
             {
@@ -39,11 +39,11 @@ namespace Cclm.src
                         break;
                 }
             } while (true);
-        }
+        } 
 
         static void Main(string[] args)
         {
-            Console.Title = "Course contre la montre";
+            Console.Title = "Course contre la montre"; // modification du nom de la fenetre
             Console.WindowWidth = 55; // modifier taille fenetre
             Voiture voiture = null;
             do
@@ -51,7 +51,7 @@ namespace Cclm.src
                 switch (Menu(voiture))
                 {
                     case 1: // Course
-                        if (voiture != null)
+                        if (voiture != null) // seulement si voiture est configuré
                         {
                             Course.CourseContreLaMontre(voiture);
                         }

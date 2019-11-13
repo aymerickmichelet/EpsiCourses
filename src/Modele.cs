@@ -7,7 +7,7 @@ namespace Cclm.src
 {
     class Modele
     {
-        static Voiture TypeVoiture()
+        static Voiture TypeVoiture() // definition de modele de voiture
         {
             do
             {
@@ -34,7 +34,7 @@ namespace Cclm.src
             } while (true);
         }
 
-        static String CouleurVoiture()
+        static String CouleurVoiture() // definition de couleur de voiture
         {
             do
             {
@@ -76,7 +76,7 @@ namespace Cclm.src
             } while (true);
         }
 
-        static int ValiderVoiture(ref Voiture voiture)
+        static int ValiderVoiture(ref Voiture voiture) // confirmer choix
         {
             do
             {
@@ -101,12 +101,12 @@ namespace Cclm.src
             } while (true);
         }
 
-        public static Voiture ChoisirSonModele()
+        public static Voiture ChoisirSonModele() // main de choisirsonmodele
         {
             Voiture voiture = null;
             do
             {
-                voiture = TypeVoiture();
+                voiture = TypeVoiture(); // definition du modele de voiture
                 if(voiture != null)
                 {
                     Utilitaire.attendre(750);

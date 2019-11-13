@@ -7,7 +7,7 @@ namespace Cclm.src.Outils
 {
     class Rendu
     {
-        public static void Regles() // a modifier
+        public static void Regles() // 4 - Règles (menu)
         {
             Console.Clear();
             Utilitaire.AffichageTableau("cclm");
@@ -86,8 +86,7 @@ namespace Cclm.src.Outils
                 Utilitaire.AffichageTableau("---");
                 Utilitaire.attendre(1000);
             }
-        }
-
+        } // Compte à rebourt (lancement du contre la montre)
 
         public static void VoitureInfo(Voiture voiture)
         {
@@ -108,6 +107,6 @@ namespace Cclm.src.Outils
             Utilitaire.AffichageTableau("Voiture: " + modele);
             Utilitaire.AffichageTableau("Couleur: " + couleur);
             Utilitaire.AffichageTableau("Vitesse: " + vitesse);
-        }
+        } // affiche info voiture
     }
 }

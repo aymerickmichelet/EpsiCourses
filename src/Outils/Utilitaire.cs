@@ -8,7 +8,7 @@ namespace Cclm.src.Outils
     {
         // int max_char_tableau = 55;
 
-        public static void attendre(int tempo)
+        public static void attendre(int tempo) // sleep en ms
         {
             System.Threading.Thread.Sleep(tempo);
         }
@@ -17,9 +17,9 @@ namespace Cclm.src.Outils
         {
             Console.WriteLine("Appuyez sur une entrée pour continuer...");
             Console.ReadLine();
-        }
+        } // pause (attente touche espace pressé)
 
-        public static void pause(string commentaire)
+        public static void pause(string commentaire) // idem pause() + commentaire
         {
             Console.WriteLine(commentaire);
             Console.ReadLine();
@@ -32,7 +32,7 @@ namespace Cclm.src.Outils
         }*/
         
         public static int Questionnaire(String question, List<String> reponse_choix, List<String> reponse_reponse, Boolean sortie_sans_echec)
-        {
+        { // affichage question + reponse attendu + reponse (+forcer la reponse ou non)
             do
             {
                 AffichageTableau("-"+question+"-");
@@ -55,7 +55,7 @@ namespace Cclm.src.Outils
                 AffichageTableau("|?");
                 String reponse_utilisateur = Console.ReadLine().ToLower();
                 AffichageTableau(reponse_utilisateur + "?|");
-                for (int i = 0, imax = reponse_choix.Count; i < imax; i++)
+                for (int i = 0, imax = reponse_choix.Count; i < imax; i++) // affiche la reponse correspondante
                 {
                     if(reponse_utilisateur == reponse_choix[i].ToLower() || reponse_utilisateur == (i+1).ToString())
                     {
@@ -71,21 +71,21 @@ namespace Cclm.src.Outils
                     Utilitaire.attendre(2000);
                     return 0;
                 }
-                else if (sortie_sans_echec)
+                else if (sortie_sans_echec) // si force a repondre correctement
                 {
                     AffichageTableau("Je n'ai pas très bien compris...");
                     AffichageTableau("---");
                     Utilitaire.attendre(2000);
                     Console.Clear();
                 }
-                else
+                else // sinon quitter
                 {
                     return -1;
                 }
             } while (true);
         }
 
-        public static void AffichageTableau(String message)
+        public static void AffichageTableau(String message) // affichage console indenté
         {
             if(message == "cclm")
             {
@@ -148,7 +148,5 @@ namespace Cclm.src.Outils
             }
             Console.WriteLine(message);
         }
-
-
     }
 }
