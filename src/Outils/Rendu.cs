@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Cclm.src.Vehicule;
 using System.Text;
 
 namespace Cclm.src.Outils
@@ -8,72 +9,105 @@ namespace Cclm.src.Outils
     {
         public static void Regles() // a modifier
         {
-            Console.WriteLine("|-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= Course Contre la Monte =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-|");
-            Utilitaire.attendre(1000);
-            Console.WriteLine("| 'Course Contre La Montre' (CCLM) est un jeu de voiture en mode contre la montre            |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("| Le but est de finir le parcourt de 50 km le plus rapidement possible !                     |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("| Pour cela, vous aurez la possibilité de:                                                   |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("|         choisir le modèle de voiture,                                                      |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("|         la couleur,                                                                        |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("|         ainsi que d'éventuelle bonus !                                                     |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("| Mais prenez garde ! Si vous pouvez avoir des bonus, vous pouvez également avoir des malus !|");
-            Utilitaire.attendre(750);
-            Console.WriteLine("| A vos marques !                                                                            |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("| Prêt ?                                                                                     |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("| Partez !                                                                                   |");
-            Utilitaire.attendre(750);
-            Console.WriteLine("|-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-|");
-            Utilitaire.pause();
             Console.Clear();
-        }
-
-        public static void Credits()
-        {
-            // a faire
+            Utilitaire.AffichageTableau("cclm");
+            Utilitaire.attendre(300);
+            Utilitaire.AffichageTableau(" ");
+            Utilitaire.AffichageTableau("'Course Contre La Montre' (CCLM) est un jeu de");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("voiture en mode contre la montre.");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau(" ");
+            Utilitaire.AffichageTableau("Le but est de finir le parcourt de 50 km");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("le plus rapidement possible !");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau(" ");
+            Utilitaire.AffichageTableau("Pour cela, vous aurez la possibilité de:");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("          choisir le modèle de voiture,");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("          ainsi que sa couleur !");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau(" ");
+            Utilitaire.AffichageTableau("Mais prenez garde !");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("En fonction du choix du modèle, vous vous verez");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("attribuer pendant la partie, des bonus ou des malus !");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau(" ");
+            Utilitaire.AffichageTableau("Bonne chance !");
+            Utilitaire.attendre(100);
+            Utilitaire.AffichageTableau("---");
+            Utilitaire.pause("Tapes sur 'entrée' pour revenir au menu principal");
         }
 
         public static void StartCclm()
         {
-            Console.Clear();
-            Console.WriteLine("Lancement de la partie dans...");
-            Utilitaire.attendre(1000);
-            Console.WriteLine("3");
-            Utilitaire.attendre(1000);
-            Console.WriteLine("2");
-            Utilitaire.attendre(1000);
-            Console.WriteLine("1");
-            Utilitaire.attendre(1000);
-            Console.WriteLine("Gooo !");
-            Utilitaire.attendre(1000);
+            List<String> trois = new List<string>{"[  ____   ]",
+                                                  "[ |___ \\ ]",
+                                                  "[   __) | ]",
+                                                  "[  |__<   ]",
+                                                  "[  ___) | ]",
+                                                  "[ |____/  ]"};
+
+            List<String> deux = new List<string>{"[   ___    ]",
+                                                 "[  |__ \\  ]",
+                                                 "[     ) |  ]",
+                                                 "[    / /   ]",
+                                                 "[   / /_   ]",
+                                                 "[  |____|  ]"};
+
+            List<String> un = new List<string> {"[    __   ]",
+                                                "[   /_ |  ]",
+                                                "[    | |  ]",
+                                                "[    | |  ]",
+                                                "[    | |  ]",
+                                                "[    |_|  ]"};
+
+            List<String> go = new List<string>{"[   _____ ____    ]",
+                                               "[  / ____|/ __ \\  ]",
+                                               "[ | |  __| |  | | ]",
+                                               "[ | | |_ | |  | | ]",
+                                               "[ | |__| | |__| | ]",
+                                               "[  \\_____|\\____/   ]"};
+            List<List<String>> list = new List<List<string>> { trois, deux, un, go};
+
+            foreach (List<String> rebour_char in list)
+            {
+                Console.Clear();
+                Utilitaire.AffichageTableau("cclm");
+                Utilitaire.AffichageTableau("Lancement de la partie dans...");
+                foreach (String ligne in rebour_char)
+                {
+                    Utilitaire.AffichageTableau(ligne);
+                }
+                Utilitaire.AffichageTableau("---");
+                Utilitaire.attendre(1000);
+            }
         }
 
 
-
-        public static void Menu()
+        public static void VoitureInfo(Voiture voiture)
         {
-            Console.Clear();
-            Console.WriteLine("|-=-=-=-=-=-=-= Course Contre La Montre =-=-=-=-=-=-=-|");
-            Console.WriteLine("|----------------------- Menu ------------------------|");
-            Console.WriteLine("| 1 - Commencer                                       |");
-            Console.WriteLine("| 2 - Choisir son modèle                              |");
-            Console.WriteLine("| 3 - Chrono enregistrés                              |");
-            Console.WriteLine("| 4 - Règles                                          |");
-            Console.WriteLine("| 5 - Crédits                                         |");
-            Console.WriteLine("| 6 - Quitter                                         |");
-            Console.WriteLine("|-----------------------------------------------------|");
+            String modele;
+            String couleur;
+            String vitesse;
+            if (voiture.GetType() == typeof(Twingo))
+            {
+                modele = "Twingo";
+            }
+            else if (voiture.GetType() == typeof(Ferrari))
+                modele = "Ferrari";
+            else
+                modele = "---";
+            couleur = voiture.getCouleur();
+            vitesse = voiture.getVitesse().ToString();
 
+            Utilitaire.AffichageTableau("Voiture: " + modele);
+            Utilitaire.AffichageTableau("Couleur: " + couleur);
+            Utilitaire.AffichageTableau("Vitesse: " + vitesse);
         }
-
     }
-
-
-
 }

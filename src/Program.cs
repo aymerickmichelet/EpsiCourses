@@ -13,15 +13,11 @@ namespace Cclm.src
             {
                 Console.Clear();
                 Utilitaire.AffichageTableau("cclm");
-                if(voiture != null)
-                {
-                    Utilitaire.AffichageTableau("Voiture: " + voiture.GetType() is Twingo ? "Twingo" : voiture.GetType() is Ferrari ? "Ferrari" : "---");
-                    Utilitaire.AffichageTableau("Couleur: " + voiture.getCouleur() != null ? voiture.getCouleur() : "---");
-                    Utilitaire.AffichageTableau("Vitesse: " + voiture.getVitesse() != null ? voiture.getVitesse().ToString() + "hm/h" : "---");
-                }
+                if (voiture != null)
+                    Rendu.VoitureInfo(voiture);
                 switch (Utilitaire.Questionnaire("Menu",
                         new System.Collections.Generic.List<string>() { "Course", "Choisir son modèle", "Chronomètre enregistrés", "Règles", "Crédits"},
-                        new System.Collections.Generic.List<string>() { " ", " ", " ", " ", " " },
+                        new System.Collections.Generic.List<string>() { "Veuillez tout d'abord choisir votre modèle...", " ", "Arrive prochainement...", " ", "par aymerick michelet" },
                         false))
                 {
                     case 0:
@@ -45,51 +41,10 @@ namespace Cclm.src
             } while (true);
         }
 
-        static void Course(Voiture voiture)
-        {
-            voiture.setTemps(0); // temps en minutes
-
-            Rendu.StartCclm(); // display cooldown
-            do
-            {
-                // test victoire
-                // si oui STOP
-                // display info (temps, distance, vitesse, modele, couleur)
-                // attente 2s
-                // incrementation temps
-                // test capacitespecial (ajoute du temps pour ferrari - modifie vitesse pour twingo)
-                // deplacement (distance += 1/60 * vitesse |  calcule distance)
-                Console.Clear();
-                Utilitaire.AffichageTableau("cclm");
-                Utilitaire.AffichageTableau("[Course]");
-                if (voiture.getDistance() >= 50)                                                  // test victoire
-                {
-                    Utilitaire.AffichageTableau("-Fin de la course !-");
-                    Utilitaire.AffichageTableau("Temps: " + voiture.getTemps().ToString() + " min");
-                    Utilitaire.AffichageTableau("---");
-                    Utilitaire.pause("Tapes sur 'entrée' pour revenir au menu principal");
-                    // demander pseudo
-                    // enregistrer si temps > dernier temps enregistré
-                    return;
-                }
-                Utilitaire.AffichageTableau("Temps: " + voiture.getTemps().ToString() + " min");            // affichage info      
-                Utilitaire.AffichageTableau("Distance: " + voiture.getDistance().ToString() + " / 50 km");
-                Utilitaire.AffichageTableau("Vitesse: " + voiture.getVitesse().ToString() + " km / h");
-                Utilitaire.AffichageTableau("---");
-                Utilitaire.attendre(2000);                                                        // attente 2s
-                voiture.setTemps(voiture.getTemps() + 1F);                                        // incrementation temps
-                voiture.capaciteSpecial();                                                        // capaciteSpecial
-                voiture.deplacement();                                                            // deplacement
-            } while (true);
-        }
-
-
-
-
         static void Main(string[] args)
         {
-
             Console.Title = "Course contre la montre";
+            Console.WindowWidth = 55; // modifier taille fenetre
             Voiture voiture = null;
             do
             {
@@ -98,28 +53,24 @@ namespace Cclm.src
                     case 1: // Course
                         if (voiture != null)
                         {
-                            Course(voiture);
+                            Course.CourseContreLaMontre(voiture);
                         }
                         else
                         {
-                            Utilitaire.AffichageTableau("Merci de bien vouloir choisir votre véhicule dans:");
-                            Utilitaire.AffichageTableau("'Choisir son modèle'");
-                            Utilitaire.AffichageTableau("---");
-                            Utilitaire.attendre(2000);
+                            Utilitaire.pause();
                         }
                         break;
                     case 2: // ChoisirSonModèle
                         voiture = Modele.ChoisirSonModele();
                         break;
                     case 3: //ChronometreEnregistres - a faire mais pas obligatoire
-                        Utilitaire.AffichageTableau("Arrive prochainement...");
                         Utilitaire.attendre(2000);
                         break;
-                    case 4: // Règles - a modifier
+                    case 4: // Règles
                         Rendu.Regles();
                         break;
-                    case 5: // Credits - a faire mais pas obligatoire
-                        Rendu.Credits();
+                    case 5: // Credits
+                        Utilitaire.pause("Tapes sur 'entrée' pour revenir au menu principal");
                         break;
                     case 0:
                         return;

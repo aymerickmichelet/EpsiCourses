@@ -43,9 +43,18 @@ namespace Cclm.src.Vehicule
                 Random rand = new Random();
                 if (rand.Next(0, 100) < getProbatiliteBoost())
                 {
+                    String vitesse = "vitesse";
+                    StringBuilder essetiv = new StringBuilder(vitesse, 7);
+                    for(int i = 0, imax = vitesse.Length; i < imax; i++)
+                    {
+                        Random alea = new Random();
+                        int index = alea.Next(0, imax);
+                        essetiv.Append(essetiv[index]);
+                        essetiv.Remove(index, 1);
+                    }
                     DateTime start;
                     start = DateTime.Now; // début du chronometre
-                    String reponse = "", mot = "vitesse";
+                    String reponse = "";
                     do
                     {
                         Console.Clear();
@@ -53,14 +62,14 @@ namespace Cclm.src.Vehicule
                         Utilitaire.AffichageTableau("[Course]");
                         Utilitaire.AffichageTableau("   ");
                         Utilitaire.AffichageTableau("-Boost Disponible !-");
-                        Utilitaire.AffichageTableau("Ecrivez vite le mot 'VITESSE' en moins de 3sec.");
+                        Utilitaire.AffichageTableau("Ecrivez vite le mot '" + essetiv + "' en moins de 3sec.");
                         Utilitaire.AffichageTableau("pour bénificier du boost !");
                         Utilitaire.AffichageTableau("---");
                         Utilitaire.AffichageTableau("|?");
                         reponse = Console.ReadLine().ToLower();
                         Utilitaire.AffichageTableau(reponse + "?|");
                         Utilitaire.AffichageTableau("---");
-                    } while (reponse != mot);
+                    } while (reponse != essetiv.ToString());
                     if ((DateTime.Now - start).Seconds <= 3)
                     {
                         this.setCycleBoost(1);

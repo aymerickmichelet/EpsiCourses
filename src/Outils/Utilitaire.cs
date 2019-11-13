@@ -25,6 +25,12 @@ namespace Cclm.src.Outils
             Console.ReadLine();
         }
 
+        /*public static void ClearBuffer()
+        {
+            while (Console.bu != -1)
+                Console.In.Read();
+        }*/
+        
         public static int Questionnaire(String question, List<String> reponse_choix, List<String> reponse_reponse, Boolean sortie_sans_echec)
         {
             do
@@ -33,8 +39,8 @@ namespace Cclm.src.Outils
                 for(int i = 0, imax = reponse_choix.Count; i < imax; i++)
                 {
                     String reste_ligne = "";
-                    if (i == 0) Utilitaire.attendre(1000);
-                    else Utilitaire.attendre(500);
+                    if (i == 0) Utilitaire.attendre(100);
+                    else Utilitaire.attendre(100);
                     for(int j = 0, jmax = (55 - 1) - 6 - reponse_choix[i].Length; j <= jmax; j++)
                     {
                         reste_ligne += " ";
@@ -43,7 +49,7 @@ namespace Cclm.src.Outils
                     }
                     AffichageTableau(i + 1 + " - " + reponse_choix[i]);
                 }
-                Utilitaire.attendre(500);
+                Utilitaire.attendre(100);
                 AffichageTableau("0 - Quitter");
                 AffichageTableau("---");
                 AffichageTableau("|?");
@@ -62,6 +68,7 @@ namespace Cclm.src.Outils
                 {
                     AffichageTableau("Dommage, à bien j'espère...");
                     AffichageTableau("---");
+                    Utilitaire.attendre(2000);
                     return 0;
                 }
                 else if (sortie_sans_echec)
@@ -141,5 +148,7 @@ namespace Cclm.src.Outils
             }
             Console.WriteLine(message);
         }
+
+
     }
 }

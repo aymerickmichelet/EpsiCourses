@@ -12,12 +12,15 @@ namespace Cclm.src.Vehicule
         private float temps_reparation = 0;
         private List<String> composants = new List<string>() {
             "moteur",
-            "roue avant droite",
-            "roue avant gauche",
-            "roue arriere droite",
-            "roue arriere gauche",
+            "roue",
+            "roue",
+            "roue",
+            "roue",
             "volant",
-            "freins"
+            "frein",
+            "frein",
+            "frein",
+            "frein"
         };
 
         public float getProbabilitePanne()
@@ -43,14 +46,7 @@ namespace Cclm.src.Vehicule
             {
                 int index = rand.Next(0, getComposants().Count);
                 String composant = getComposants()[index];
-                String composant_copie = composant;
-                String mot = "";
-                foreach (Char letter in composant)
-                {
-                    index = rand.Next(0, composant_copie.Length);
-                    mot += composant_copie[index];
-                    composant_copie.Remove(index);
-                }
+                
                 DateTime start = DateTime.Now; // début du chronometre
                 TimeSpan time;
                 String reponse;
@@ -61,15 +57,14 @@ namespace Cclm.src.Vehicule
                     Utilitaire.AffichageTableau("[Course]");
                     Utilitaire.AffichageTableau("   ");
                     Utilitaire.AffichageTableau("-Reparation demandée !-");
-                    Utilitaire.AffichageTableau("La/le " + composant + " est cassé,");
-                    Utilitaire.AffichageTableau("Ecrit vite ce mot pour la/le réparer:");
-                    Utilitaire.AffichageTableau("['" + mot + "']");
-                    Utilitaire.AffichageTableau("/ Le temps est compté /");
+                    Utilitaire.AffichageTableau("Dépèche toi, le temps est compté !");
+                    Utilitaire.AffichageTableau("Composant cassé: " + composant);
+                    Utilitaire.AffichageTableau("Pour le réparer, réécrit le !");
                     Utilitaire.AffichageTableau("|?");
                     reponse = Console.ReadLine();
                     Utilitaire.AffichageTableau(reponse + "?|");
                     Utilitaire.AffichageTableau("---");
-                } while (reponse != mot);
+                } while (reponse != composant);
                 time = DateTime.Now - start; // fin du chronometre
                 setTemps(getTemps() + time.Seconds / 60F);
             }

@@ -28,7 +28,7 @@ namespace Cclm.src
                     default:
                         Utilitaire.AffichageTableau("Réponse incorrecte.");
                         Utilitaire.AffichageTableau("---");
-                        Utilitaire.attendre(2000);
+                        Utilitaire.pause();
                         break;
                 }
             } while (true);
@@ -70,7 +70,7 @@ namespace Cclm.src
                     default:
                         Utilitaire.AffichageTableau("Réponse incorrecte.");
                         Utilitaire.AffichageTableau("---");
-                        Utilitaire.attendre(2000);
+                        Utilitaire.pause();
                         break;
                 }
             } while (true);
@@ -83,13 +83,11 @@ namespace Cclm.src
                 Console.Clear();
                 Utilitaire.AffichageTableau("cclm");
                 Utilitaire.AffichageTableau("[Choisir son modèle]");
-                Utilitaire.AffichageTableau("Voiture: " + (voiture.GetType() is Twingo ? "Twingo" : voiture.GetType() is Ferrari ? "Ferrari" : "---"));
-                Utilitaire.AffichageTableau("Couleur: " + (voiture.getCouleur() != null ? voiture.getCouleur() : "---"));
-                Utilitaire.AffichageTableau("Vitesse: " + (voiture.getVitesse() != null ? voiture.getVitesse().ToString() + " km/h" : "---"));
+                Rendu.VoitureInfo(voiture);
                 switch (Utilitaire.Questionnaire("Es-tu sûr de bien vouloir cette voiture ?",
                     new System.Collections.Generic.List<string>() { "Oui", "Non" },
                     new System.Collections.Generic.List<string>() { "Ca marche !", "Bon très bien je repète..." },
-                    true))
+                    false))
                 {
                     case 0:
                         return 0; // Quitter
@@ -111,11 +109,11 @@ namespace Cclm.src
                 voiture = TypeVoiture();
                 if(voiture != null)
                 {
-                    Utilitaire.attendre(2000);
+                    Utilitaire.attendre(750);
                     voiture.setCouleur(CouleurVoiture()); // Définition de la couleur
                     if(voiture.getCouleur() != null)
                     {
-                        Utilitaire.attendre(2000);
+                        Utilitaire.attendre(750);
                         int valider = ValiderVoiture(ref voiture);
                         if(valider == 1)
                             return voiture;
