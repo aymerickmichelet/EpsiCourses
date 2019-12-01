@@ -1,0 +1,82 @@
+{
+    "stats": {
+        "animal": {
+            "adult_age": "1",
+            "retirement_age": "3",
+            "litter": "2"
+        },
+        "chicken": {
+            "adult_age": "1",
+            "retirement_age": "3",
+            "litter": "2"
+        },
+        "fox": {
+            "adult_age": "1",
+            "retirement_age": "3",
+            "litter": "2"
+        },
+        "koala": {
+            "adult_age": "1",
+            "retirement_age": "3",
+            "litter": "2"
+        },
+        "snake": {
+            "adult_age": "1",
+            "retirement_age": "3",
+            "litter": "2"
+        }
+    },
+    "farm": {
+        "name": "Bouzoula gang",
+        "animals": {
+            "1": {
+                "type": "chicken",
+                "sex": "female",
+                "name": "a",
+                "birthdate": "2019-12-1"
+            },
+            "2": {
+                "type": "chicken",
+                "sex": "male",
+                "name": "b",
+                "birthdate": "2019-12-1"
+            },
+            "3": {
+                "type": "fox",
+                "sex": "female",
+                "name": "c",
+                "birthdate": "2019-12-1"
+            },
+            "4": {
+                "type": "fox",
+                "sex": "male",
+                "name": "d",
+                "birthdate": "2019-12-1"
+            },
+            "5": {
+                "type": "koala",
+                "sex": "female",
+                "name": "e",
+                "birthdate": "2019-12-1"
+            },
+            "6": {
+                "type": "koala",
+                "sex": "male",
+                "name": "f",
+                "birthdate": "2019-12-1"
+            },
+            "7": {
+                "type": "snake",
+                "sex": "female",
+                "name": "g",
+                "birthdate": "2019-12-1"
+            },
+            "8": {
+                "type": "snake",
+                "sex": "male",
+                "name": "h",
+                "birthdate": "2019-12-1"
+            }
+        }
+    }
+}
