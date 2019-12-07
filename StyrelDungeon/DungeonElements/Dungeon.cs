@@ -9,18 +9,21 @@ namespace StyrelDungeon
     {
         //A dungeon is composed of rooms and a dragon's Lair
         private DragonsLair m_Lair;
-        private Room m_Room;
+        private List<Room> rooms;
 
         public Dungeon()
         {
             m_Lair = new DragonsLair();
-            m_Room = new Room(0);
+            for(int i = 0, imax = 5; i < imax; i++)
+            {
+                rooms.Add(new Room(i));
+            }
         }
 
         public void EnterRoom(Heros p_Heros, int p_iRoomIndex)
         {
-            p_Heros.SelectProtection();
-            m_Room.OpenDoor(p_Heros);
+            // p_Heros.SelectProtection();
+            this.rooms[p_iRoomIndex].OpenDoor(p_Heros);
         }
     }
 }

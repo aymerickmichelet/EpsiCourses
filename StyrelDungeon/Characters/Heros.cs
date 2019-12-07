@@ -5,9 +5,21 @@ namespace StyrelDungeon
 {
     public class Heros : Character
     {
-        private Dungeon m_Dungeon;
-        private bool IsDead
+        private String name;
+        public String Name
         {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        private Dungeon m_Dungeon;
+        private bool isDead = false;
+        public bool IsDead {
             get
             {
                 return IsDead;
@@ -27,16 +39,20 @@ namespace StyrelDungeon
 
         public void EnterDungeon()
         {
+            this.name = UserInterface.GamesName();
+            UserInterface.GamesIntro(this.name);
             m_Dungeon.EnterRoom(this, 0);
         }
 
-        public void SelectProtection()
+        public void SelectProtection() // ?
         {
             // a faire
         }
 
-        public void DiscoverEnnemy(Monster monster)
+        public void DiscoverEnnemy(Monster monster) // combat monster vs hero
         {
+            //boucle (hero attaque, monstre attaque, test mort hero, test mort monstre...)
+            monster.Attack(this);
             // a faire
         }
 

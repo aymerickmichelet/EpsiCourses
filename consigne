@@ -25,6 +25,7 @@ Compléter la logique de jeu avec ces nouveaux éléments.
 Créer la boucle de jeu.
 Analyser les endroits où on aura besoin de if/else et de switch et commencer à les ajouter.
 Compléter la logique de jeu là ou c'est possible.
+
 Commencer à compléter la classe UserInterface en ajoutant les méthodes nécessaires et en la rendant accessible aux autres classes.
 Créer une classe Arsenal qui contiendra une instance de chaque arme et qui sera enumerable.
 Donner une propriété ArsenalProp au heros et faire à la construction du heros un affichage de toutes les armes disponibles dans l'arsenal.

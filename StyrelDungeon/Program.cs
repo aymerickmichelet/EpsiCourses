@@ -20,7 +20,14 @@ namespace StyrelDungeon
             //heros.EnterDungeon();
             //Console.WriteLine("Thank you for playing");
             //Console.ReadLine();
-            UserInterface.MainMenu();
+
+            if(UserInterface.MainMenu() == 1)
+            {
+                Dungeon dungeon = new Dungeon();
+                Heros hero = new Heros(dungeon);
+                hero.EnterDungeon();
+                dungeon.EnterRoom(hero, 2);
+            }
         }
     }
 }

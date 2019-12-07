@@ -47,9 +47,9 @@ namespace DungeonStyrel.Utils
             if (quitter)
                 Display("0 - Quitter");
             Display("---");
-            Display("|?");
+            Display("?");
             String reponse_utilisateur = Console.ReadLine().ToLower();
-            Display(reponse_utilisateur + "?|");
+            //Display(reponse_utilisateur + "?|");
             for (int i = 0, imax = reponse_choix.Count; i < imax; i++) // affiche la reponse correspondante
             {
                 if (reponse_utilisateur == reponse_choix[i].ToLower() || reponse_utilisateur == (i + 1).ToString())
@@ -77,10 +77,11 @@ namespace DungeonStyrel.Utils
             {
                 message = "|-----------------------------------------------------|";
             }
-            else if (message == "|?")
+            else if (message == "?")
             {
-                message = "| ";
-                Console.Write(message);
+                message = " ";
+                Display(message);
+                Console.SetCursorPosition(2, Console.CursorTop - 1);
                 return;
             }
             else if (message.StartsWith("[") && message.EndsWith("]")) // "|---- message ----|"

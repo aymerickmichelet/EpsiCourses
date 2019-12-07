@@ -15,8 +15,8 @@
 | 	DragonsLair.cs 					| Weapon							 			|
 | 	Dungeon.cs 						| Chest											|
 | 	Room.cs 						| Item		 									|
-| Interface 						| 		 										|
-| 	UserInterface.cs 				| 		 										|
+| Interface 						| Util	 										|
+| 	UserInterface.cs 				| UserInterface									|
 | Items 							| 	 											|
 | 	Protection 						|												|
 | 		Protection.cs 				|												|
@@ -31,7 +31,8 @@
 | 																					|
 | --- Characters --- 																|
 | abstract																			|
-| protected	int 		m_iLifePoint{get,set}										|
+| protected	int 		m_iLifePoint												|
+| public 	int 		LifePoint {get,set} 										|
 | public	abstract 	void Attack(Character p_CharacterToAttack); 				|
 | public	abstract 	void ApplyDamagesToEnemy(Caracter p_CharacterToDamage) 		|
 | public 	abstract 	int ReceiveDamage(Character p_CharacterApplyingDamage) 		|
@@ -105,7 +106,7 @@
 | --- Protection ---																|
 | public 	enum 			PROTECTION_TYPE 										|
 | public 	PROTECTION_TYPE m_ProtectionType;										|
-|public 	int 			m_iAbsorbingDamage;										|
+| public 	int 			m_iAbsorbingDamage;										|
 | public 	Protection(PROTECTION_TYPE p_PT)										|
 |___________________________________________________________________________________|
 | 																					|
@@ -113,7 +114,7 @@
 | public 	enum  		WEAPON_TYPE													|
 | public 	WEAPON_TYPE m_WeaponType;												|
 | public 	int 		m_iWeaponDamage;											|
-|public 	Weapon(WEAPON_TYPE p_WT)												|
+| public 	Weapon(WEAPON_TYPE p_WT)												|
 |___________________________________________________________________________________|
 |																					|
 | --- Item ---																		|
@@ -133,9 +134,20 @@
 |																					|
 | --- Util ---																		|
 | abstract																			|
-| public 	static 	wait()															|
-| public 	static 	pause()															|
-| public 	static 	pause(string comment)											|
-| public 	static 	question()														|
-| public 	static 	display()														|
+| public 	static 	void 	wait()													|
+| public 	static 	void 	pause()													|
+| public 	static 	void 	pause(string comment)									|
+| public 	static 	void 	question()												|
+| public 	static 	void 	display()												|
 |___________________________________________________________________________________|
+|																					|
+| --- UserInterface ---																|
+| 																					|
+| public 	static 	void 	MainMenu()												|
+| public 	static 	string	GamesName()												|
+| public 	static 	void	GamesIntro(string name)									|
+| public 	static 	void 	Rules()													|
+| public 	static 	void 	Credits()												|
+| 																					|
+|___________________________________________________________________________________|
+
