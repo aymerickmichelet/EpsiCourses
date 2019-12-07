@@ -7,7 +7,9 @@ namespace StyrelDungeon
 { 
     abstract public class Character
     {
-        protected int m_iLifePoint
+        private int m_iLifePoint;
+        
+        protected int LifePoint
         {
             get
             {

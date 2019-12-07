@@ -19,6 +19,7 @@ namespace StyrelDungeon.Characters.Monsters
         public override int ReceiveDamage(Character p_Heros)
         {
             m_sMessageToPlayer = "The Barbarian has taken a blow of your sword. ";
+            LifePoint -= 10; // réduire point de vie barbarian
             return base.ReceiveDamage(p_Heros);
         }
         public override void ApplyDamagesToEnemy(Character p_Heros)

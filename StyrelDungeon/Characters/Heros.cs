@@ -40,7 +40,8 @@ namespace StyrelDungeon
 
         public override void Attack(Character p_CharacterToAttack)
         {
-
+            Console.WriteLine("Le Héros attaque " + p_CharacterToAttack.ToString());
+            this.ApplyDamagesToEnemy(p_CharacterToAttack);
         }
 
         public override void ApplyDamagesToEnemy(Character p_CharacterToApplyDamage)
@@ -50,7 +51,7 @@ namespace StyrelDungeon
 
         public override int ReceiveDamage(Character p_CharacterApplyingDamage)
         {
-            return m_iLifePoint;
+            return LifePoint;
         }
 
         public void SelectItemsFromChest(Chest RoomChest) 

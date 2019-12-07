@@ -18,6 +18,7 @@ namespace StyrelDungeon.Characters.Monsters
         public override int ReceiveDamage(Character p_Heros)
         {
             m_sMessageToPlayer = "The Thief has received your flying knife in the chest. ";
+            LifePoint -= 10;
             return base.ReceiveDamage(p_Heros); ;
         }
         public override void ApplyDamagesToEnemy(Character p_Heros)

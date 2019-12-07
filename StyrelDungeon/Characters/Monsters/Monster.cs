@@ -19,6 +19,7 @@ namespace StyrelDungeon
         public override void Attack(Character heros)
         {
             Console.WriteLine(m_sMessageToPlayer);
+            heros.ReceiveDamage(this); // pour enlever point de vie a heros
         }
         public override int ReceiveDamage(Character character) { return 0; }
         public override void ApplyDamagesToEnemy(Character heros) { }

@@ -56,7 +56,7 @@
 | public 	override void ApplyDamagesToEnemy(Character heros) 						|
 | 																					|
 | --- Sorcerer --- 																	|
-| public 	Sorcerer() 																|
+| public 	Sorcerer()				 												|
 | public 	override void Attack(Character p_Heros) 								|
 | public 	override int ReceiveDamage(Character p_Heros) 							|
 | public 	override void ApplyDamagesToEnemy(Character p_Heros)					|
