@@ -10,7 +10,7 @@ namespace StyrelDungeon
     public class Room
     {
         //A room contains a monster and a chest
-        protected Monster m_RoomMonster;
+        public Monster m_RoomMonster;
         private Chest m_Chest;
         private int m_iRoomNumber;
 
@@ -46,6 +46,8 @@ namespace StyrelDungeon
 
         virtual internal void OpenDoor(Heros p_heros) //If heros has won the battle he can clean the room before opening next door
         {
+            Console.WriteLine("Room[0] Monster " + this.m_RoomMonster.ToString());
+            Console.WriteLine("Room[0] Chest " + this.m_RoomMonster.ToString());
             p_heros.DiscoverEnnemy(m_RoomMonster); // lance combat
             // chest
             FinishCleaningRoom(p_heros);

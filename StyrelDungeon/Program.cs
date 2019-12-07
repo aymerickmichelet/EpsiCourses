@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using StyrelDungeon.Characters.Monsters;
+using DungeonStyrel.Utils;
 
 namespace StyrelDungeon
 {
@@ -25,6 +26,7 @@ namespace StyrelDungeon
             {
                 Dungeon dungeon = new Dungeon();
                 Heros hero = new Heros(dungeon);
+                Util.Pause();
                 hero.EnterDungeon();
                 dungeon.EnterRoom(hero, 2);
             }
