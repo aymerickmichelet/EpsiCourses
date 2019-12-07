@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using StyrelDungeon.Characters.Monsters;
 
 namespace StyrelDungeon
 {
@@ -13,13 +14,13 @@ namespace StyrelDungeon
         static void Main(string[] args)
         {
             //We instanciate a Dungeon and a Hero who will clean the Dungeon
-            Dungeon DungeonToClear = new Dungeon();
-            Heros DungeonCleaner = new Heros(DungeonToClear);
-            Console.WriteLine("Welcome to Styrel Dungeon");
-
-            DungeonCleaner.EnterDungeon();
-            Console.WriteLine("Thank you for playing");
-            Console.ReadLine();
+            //Dungeon Dungeon = new Dungeon();
+            //Heros heros = new Heros(Dungeon);
+            //Console.WriteLine("Welcome to Styrel Dungeon");
+            //heros.EnterDungeon();
+            //Console.WriteLine("Thank you for playing");
+            //Console.ReadLine();
+            UserInterface.MainMenu();
         }
     }
 }

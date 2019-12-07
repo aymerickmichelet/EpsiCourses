@@ -9,6 +9,7 @@ namespace StyrelDungeon.Characters.Monsters
     {
         public Barbarian()
         {
+            LifePoint = 100;
         }
 
         public override void Attack(Character p_Heros)

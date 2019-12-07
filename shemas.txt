@@ -24,6 +24,8 @@
 | 		Weapon.cs 					|												|
 | 	Chest.cs 						|												|
 | 	Item.cs 						|												|
+| Utils 							|												|
+| 	Util 							| 												|
 | Programm.cs 						|												|
 |___________________________________|_______________________________________________|
 | 																					|
@@ -127,4 +129,13 @@
 | --- Chest ---																		|
 | public 	Chest()																	|
 | public 	Item 	PickItem(int index)												|
+|___________________________________________________________________________________|
+|																					|
+| --- Util ---																		|
+| abstract																			|
+| public 	static 	wait()															|
+| public 	static 	pause()															|
+| public 	static 	pause(string comment)											|
+| public 	static 	question()														|
+| public 	static 	display()														|
 |___________________________________________________________________________________|
