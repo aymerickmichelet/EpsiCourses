@@ -7,6 +7,17 @@ namespace StyrelDungeon
     {
         private Dungeon m_Dungeon;
         bool m_bFirstAttack = true;
+        private bool IsDead
+        {
+            get
+            {
+                return IsDead;
+            }
+            set
+            {
+                IsDead = value;
+            }
+        }
 
         public Heros(Dungeon p_Dungeon)
         {
@@ -42,7 +53,9 @@ namespace StyrelDungeon
             return m_iLifePoint;
         }
 
-        public void SelectItemsFromChest(Chest RoomChest) { }
+        public void SelectItemsFromChest(Chest RoomChest) 
+        {
+        }
 
         private void Dies(string p_sCause)
         {

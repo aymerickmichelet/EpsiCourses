@@ -3,21 +3,21 @@
 | Tree 								| Heritage										|
 |									|												|
 | Characters						| Characters 	-> 	Heros 						|
-| 	Monsters						| 					Monsters 					|
-| 		Barbarian.cs 				| Characters	-> 	Heros 						|
-| 		Dragon.cs 					| 				-> 	Monsters	-> 	Sorcerer 	|
-| 		Monster.cs 					| 								-> 	Barbarian 	|
-| 		Sorcerer.cs 				|                      			-> 	Thief 		|
-| 		Thief.cs 					|								->	Dragon 		|
-| 	Character.cs 					| 												|
+| 	Monsters						| 					Monsters	->	Sorcerer	|
+| 		Barbarian.cs 				| 								->	Barbarian	|
+| 		Dragon.cs 					| 								-> 	Thief	 	|
+| 		Monster.cs 					| 								-> 	Dragon 		|
+| 		Sorcerer.cs 				|                      					 		|
+| 		Thief.cs 					| Dungeon										|
+| 	Character.cs 					| Room 		-> 	DragonsLair						|
 | 	Hero.cs 						|												|
-| DungeonElements 					| Dungeon 										|
-| 	DragonsLair.cs 					| Room 		->	DragonsLair 					|
-| 	Dungeon.cs 						| 												|
-| 	Room.cs 						| Protection 									|
-| Interface 						| Weapon 										|
-| 	UserInterface.cs 				| Chest 										|
-| Items 							| Item 											|
+| DungeonElements 					| Protection 									|
+| 	DragonsLair.cs 					| Weapon							 			|
+| 	Dungeon.cs 						| Chest											|
+| 	Room.cs 						| Item		 									|
+| Interface 						| 		 										|
+| 	UserInterface.cs 				| 		 										|
+| Items 							| 	 											|
 | 	Protection 						|												|
 | 		Protection.cs 				|												|
 | 	Weapons							|												|
@@ -29,7 +29,7 @@
 | 																					|
 | --- Characters --- 																|
 | abstract																			|
-| protected	int 		m_iLifePoint; 												|
+| protected	int 		m_iLifePoint{get,set}										|
 | public	abstract 	void Attack(Character p_CharacterToAttack); 				|
 | public	abstract 	void ApplyDamagesToEnemy(Caracter p_CharacterToDamage) 		|
 | public 	abstract 	int ReceiveDamage(Character p_CharacterApplyingDamage) 		|
@@ -37,8 +37,8 @@
 | --- Heros --- 																	|
 | private 	Dungeon 	m_Dungeon; 													|
 | bool 		m_bFirstAttack = true; 													|
-| 																					|
-| public 	Heros(Dungeon p_Dungeon) 												| 
+| private	bool 		IsDead {get,set}											|
+| public 	Heros(Dungeon p_Dungeon) 												|
 | public 	void 		EnterDungeon() 												|
 | public 	void 		SelectProtection() 											|
 | public 	void 		DiscoverEnnemy(Monster mnster) 								|
@@ -50,7 +50,7 @@
 | 																					|
 | --- Monster --- 																	|
 | abstract 																			|
-| protected string m_sMessageToPlayer; 												| 
+| protected string m_sMessageToPlayer; 												|
 | public 	override void Attack(Character heros) 									|
 | public 	override int ReceiveDamage(Character character) 						|
 | public 	override void ApplyDamagesToEnemy(Character heros) 						|
@@ -59,7 +59,7 @@
 | public 	Sorcerer() 																|
 | public 	override void Attack(Character p_Heros) 								|
 | public 	override int ReceiveDamage(Character p_Heros) 							|
-| public 	override void ApplyDamagesToEnemy(Character p_Heros)					| 
+| public 	override void ApplyDamagesToEnemy(Character p_Heros)					|
 |																					|
 | --- Barbarian --- 																|
 | public 	Barbarian() 															|
