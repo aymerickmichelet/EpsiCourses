@@ -1,0 +1,51 @@
+Chapitre 3
+	diapo 15, 17, 31, 36
+Chapitre 4
+	diapo 11, 18, 26
+
+
+3.15
+Quellle interface pourrait-il être intéressant d'ajouter à notre model ?                                                                          | 3.15
+Appliquer la modification et répercuter la dans le code.                                                                                          | -> ajouter interface utile
+-> (pas sur) interface de debug / interface de message au joueur                                                                                  |
+
+3.27
+Ajouter les propriétés                                                                                                                            | 3.27
+- int LifePoint                                                                                                                                   | -> explicite
+- bool IsDead                                                                                                                                     |
+Pour le héros, lorsque la valeur de LifePoint est négative, IsDead passe à true.                                                                  |
+
+
+3.31
+Ajouter les propriétés adéquates dans toutes les classes.                                                                                         | 3.31
+Implémenter leurs comportements (set / get).                                                                                                      | -> ajouter tt les propriétés possible
+Compléter la logique de jeu avec ces nouveaux éléments.                                                                                           |        et leur concéquence.
+
+3.36
+Créer la boucle de jeu.                                                                                                                           | 3.36
+Analyser les endroits où on aura besoin de if/else et de switch et commencer à les ajouter.                                                       |
+Compléter la logique de jeu là ou c'est possible.                                                                                                 | -> mettre en place la boucle de jeu (appliquer toutes les modifs concéquentes)
+Commencer à compléter la classe UserInterface en ajoutant les méthodes nécessaires et en la rendant accessible aux autres classes.                | -> explicite
+Créer une classe Arsenal qui contiendra une instance de chaque arme et qui sera enumerable.                                                       | -> explicite
+Donner une propriété ArsenalProp au heros et faire à la construction du heros un affichage de toutes les armes disponibles dans l'arsenal.        | -> explicite
+
+4.11
+Créer une nouvelle classe WorkInProgressException héritant de la classe Exception.                                                                | 4.11
+Ajouter dans cette classe les propriétés OrigiClassProp et OriginFunctionProp.                                                                    | -> explicite
+Faire un lancer de cette exception dans une méthode pas encore complètement implémentée.                                                          |
+Faire un try catch pour appeler cette méthode.                                                                                                    |
+
+4.18
+Ajouter une classe CommunicatingClass dont hériterons toutes les classes devant interagir avec le joueur.                                         | 4.18
+	Faire hériter les classses.                                                                                                                   |
+Ajouter 2 délégates                                                                                                                               | -> explicite
+	Un pour récupérer les actions du joueur (GetPlayerAction)                                                                                     |
+	L'autre pour lui faire parvenir des informations (InformPlayer)                                                                               |
+
+4.26
+Créer des EventHandler et les classes EventArg associées pour:                                                                                    | 4.26
+	La mort du héros (DeathEventsArg)                                                                                                             |
+	L'ouverture du coffre (ChestOpeningEventArgs)                                                                                                 | -> explicite
+	Le héros reçoit des dommages (EventArgs => pas besoin de spécifier)                                                                           |
+	L'ouverture d'une porte (EventArgs => pas besoin de spécifier)                                                                                |
+Ajouter les fonctions nécessaires pour les appeler                                                                                                |

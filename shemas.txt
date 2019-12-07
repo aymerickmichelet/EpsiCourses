@@ -1,0 +1,130 @@
+ ___________________________________ _______________________________________________
+|									|												|
+| Tree 								| Heritage										|
+|									|												|
+| Characters						| Characters 	-> 	Heros 						|
+| 	Monsters						| 					Monsters 					|
+| 		Barbarian.cs 				| Characters	-> 	Heros 						|
+| 		Dragon.cs 					| 				-> 	Monsters	-> 	Sorcerer 	|
+| 		Monster.cs 					| 								-> 	Barbarian 	|
+| 		Sorcerer.cs 				|                      			-> 	Thief 		|
+| 		Thief.cs 					|								->	Dragon 		|
+| 	Character.cs 					| 												|
+| 	Hero.cs 						|												|
+| DungeonElements 					| Dungeon 										|
+| 	DragonsLair.cs 					| Room 		->	DragonsLair 					|
+| 	Dungeon.cs 						| 												|
+| 	Room.cs 						| Protection 									|
+| Interface 						| Weapon 										|
+| 	UserInterface.cs 				| Chest 										|
+| Items 							| Item 											|
+| 	Protection 						|												|
+| 		Protection.cs 				|												|
+| 	Weapons							|												|
+| 		Weapon.cs 					|												|
+| 	Chest.cs 						|												|
+| 	Item.cs 						|												|
+| Programm.cs 						|												|
+|___________________________________|_______________________________________________|
+| 																					|
+| --- Characters --- 																|
+| abstract																			|
+| protected	int 		m_iLifePoint; 												|
+| public	abstract 	void Attack(Character p_CharacterToAttack); 				|
+| public	abstract 	void ApplyDamagesToEnemy(Caracter p_CharacterToDamage) 		|
+| public 	abstract 	int ReceiveDamage(Character p_CharacterApplyingDamage) 		|
+| 																					|
+| --- Heros --- 																	|
+| private 	Dungeon 	m_Dungeon; 													|
+| bool 		m_bFirstAttack = true; 													|
+| 																					|
+| public 	Heros(Dungeon p_Dungeon) 												| 
+| public 	void 		EnterDungeon() 												|
+| public 	void 		SelectProtection() 											|
+| public 	void 		DiscoverEnnemy(Monster mnster) 								|
+| public 	override 	void Attack(Character p_CharacterToAttack) 					|
+| public 	override 	void ApplyDamagesToEnnemy(Character p_CharacterToApplyDamage)
+| public 	override 	int ReceiveDamage(Character p_CharacterApplyingDamage) 		|
+| public 	void 		SelectItempsFromCHest(Chest RoomChest) 						|
+| private 	void 		Dies(string p_sCause) 										|
+| 																					|
+| --- Monster --- 																	|
+| abstract 																			|
+| protected string m_sMessageToPlayer; 												| 
+| public 	override void Attack(Character heros) 									|
+| public 	override int ReceiveDamage(Character character) 						|
+| public 	override void ApplyDamagesToEnemy(Character heros) 						|
+| 																					|
+| --- Sorcerer --- 																	|
+| public 	Sorcerer() 																|
+| public 	override void Attack(Character p_Heros) 								|
+| public 	override int ReceiveDamage(Character p_Heros) 							|
+| public 	override void ApplyDamagesToEnemy(Character p_Heros)					| 
+|																					|
+| --- Barbarian --- 																|
+| public 	Barbarian() 															|
+| public 	override void Attack(Character p_Heros) 								|
+| public 	override int ReceiveDamage(Character p_Heros) 							|
+| public 	override void ApplyDamagesToEnemy(Character p_Heros) 					|
+| 																					|
+| --- Thief ---																		|
+| public 	Tief()																	|
+| public 	override void Attack(Character p_Heros)									|
+| public 	override int ReceiveDamage(Character p_Heros)							|
+| public 	override void ApplyDamagesToEnemy(Character p_Heros)					|
+|																					|
+| --- Dragon ---																	|
+| public 	Dragon()																|
+| public 	override	void Attack(Character p_Heros)								|
+| private	void 		ChangeAttack(Character p_Heros)								|
+| public 	override 	int ReceiveDamage(Character p_Heros)						|
+| public 	override 	void ApplyDamagesToEnemy(Character p_Heros)					|
+|___________________________________________________________________________________|
+|																					|
+| --- Dungeon ---																	|
+| private 	DragonsLair m_Lair;														|
+| private 	Room 		m_Room;														|
+| public 	Dungeon()																|
+| public 	void EnterRoom(Heros p_Heros, int p_iRoomIndex)							|
+|																					|
+| --- Room ---																		|
+| protected Monster 	m_RoomMonster;												|
+| private 	Chest 		m_Chest;													|
+| private 	int 		m_iRoomNumber;												|
+| public 	Room(int index)															|
+| virtual 	internal 	void OpenDoor(Heros p_heros)								|
+| private 	void 		FinishCleaningRoom(Heros p_heros)							|
+| 																					|
+| --- DragonsLair ---																|
+| public 	DragonsLair() : base(0)													|
+| internal 	override void OpenDoor(Heros p_heros)									|
+|___________________________________________________________________________________|
+|																					|
+| --- Protection ---																|
+| public 	enum 			PROTECTION_TYPE 										|
+| public 	PROTECTION_TYPE m_ProtectionType;										|
+|public 	int 			m_iAbsorbingDamage;										|
+| public 	Protection(PROTECTION_TYPE p_PT)										|
+|___________________________________________________________________________________|
+| 																					|
+| --- Weapon --- 																	|
+| public 	enum  		WEAPON_TYPE													|
+| public 	WEAPON_TYPE m_WeaponType;												|
+| public 	int 		m_iWeaponDamage;											|
+|public 	Weapon(WEAPON_TYPE p_WT)												|
+|___________________________________________________________________________________|
+|																					|
+| --- Item ---																		|
+| public 	enum 	ITEM_TYPE														|
+| public 	enum 	ITEM_CLASS														|
+| public 	void	ApplEffect(Heros hero)											|
+| private 	void 	ImproveWeaponDamage(Heros hero)									|
+| private 	void 	HealHero(Heros hero)											|
+| private 	void  	RestoreProtection(Heros hero)									|
+| private 	void 	AddWeaponToInventory(Heros hero)								|
+|___________________________________________________________________________________|
+|																					|
+| --- Chest ---																		|
+| public 	Chest()																	|
+| public 	Item 	PickItem(int index)												|
+|___________________________________________________________________________________|
