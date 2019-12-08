@@ -19,6 +19,10 @@ namespace StyrelDungeon
             m_iRoomNumber = index;
             switch (index)
             {
+                case 0:
+                    m_RoomMonster = new Barbarian();
+                    m_Chest = new Chest();
+                    break;
                 case 1:
                     m_RoomMonster = new Barbarian();
                     m_Chest = new Chest();
@@ -35,10 +39,6 @@ namespace StyrelDungeon
                     m_RoomMonster = new Sorcerer();
                     m_Chest = new Chest();
                     break;
-                case 5:
-                    m_RoomMonster = new Sorcerer();
-                    m_Chest = new Chest();
-                    break;
             }
         }
 
@@ -47,7 +47,7 @@ namespace StyrelDungeon
         virtual internal void OpenDoor(Heros p_heros) //If heros has won the battle he can clean the room before opening next door
         {
             Console.WriteLine("Room[0] Monster " + this.m_RoomMonster.ToString());
-            Console.WriteLine("Room[0] Chest " + this.m_RoomMonster.ToString());
+            Console.WriteLine("Room[0] Chest " + this.m_Chest.ToString());
             p_heros.DiscoverEnnemy(m_RoomMonster); // lance combat
             // chest
             FinishCleaningRoom(p_heros);

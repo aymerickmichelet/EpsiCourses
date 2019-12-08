@@ -26,21 +26,16 @@ namespace StyrelDungeon
         {
             for(int i = 0, imax = 5; i < imax; i++)
             {
-                this.rooms.Add(new Room(i));
+                this.Rooms.Add(new Room(i));
             }
-            Console.WriteLine("Rooms: " + this.Rooms.ToString());
-            Console.WriteLine("Rooms[0]: " + this.Rooms[0].ToString());
-            Console.WriteLine("Rooms[1]: " + this.Rooms[1].ToString());
-            Console.WriteLine("Rooms[2]: " + this.Rooms[2].ToString());
-            Console.WriteLine("Rooms[3]: " + this.Rooms[3].ToString());
-            Console.WriteLine("Rooms[4]: " + this.Rooms[4].ToString());
             m_Lair = new DragonsLair();
         }
 
         public void EnterRoom(Heros p_Heros, int p_iRoomIndex)
         {
             // p_Heros.SelectProtection();
-            this.rooms[p_iRoomIndex].OpenDoor(p_Heros);
+            Console.WriteLine(this.Rooms[p_iRoomIndex].m_RoomMonster.ToString());
+            this.Rooms[p_iRoomIndex].OpenDoor(p_Heros);
         }
     }
 }
