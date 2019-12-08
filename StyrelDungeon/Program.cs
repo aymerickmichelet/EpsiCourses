@@ -14,21 +14,31 @@ namespace StyrelDungeon
 
         static void Main(string[] args)
         {
-            //We instanciate a Dungeon and a Hero who will clean the Dungeon
-            //Dungeon Dungeon = new Dungeon();
-            //Heros heros = new Heros(Dungeon);
-            //Console.WriteLine("Welcome to Styrel Dungeon");
-            //heros.EnterDungeon();
-            //Console.WriteLine("Thank you for playing");
-            //Console.ReadLine();
-
-            if(UserInterface.MainMenu() == 1)
+            do
             {
-                Dungeon dungeon = new Dungeon();
-                Heros hero = new Heros(dungeon);
-                hero.EnterDungeon();
-                dungeon.EnterRoom(hero, 2);
-            }
+                if(UserInterface.MainMenu() == 1)
+                {
+                    Dungeon dungeon = new Dungeon();
+                    Heros hero = new Heros(dungeon);
+                    hero.EnterDungeon();
+                    for(int i = 1, imax = 5; i < imax; i++)
+                    {
+                        if(hero.IsDead == false)
+                        {
+                            dungeon.EnterRoom(hero, i);
+                        }
+                    }
+                    if (hero.IsDead == false)
+                    {
+                        dungeon.EnterDragonsLair(hero);
+                    }
+
+                }
+                else
+                {
+                    return;
+                }
+            } while (true);
         }
     }
 }

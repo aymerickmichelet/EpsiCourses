@@ -1,35 +1,35 @@
 ﻿using StyrelDungeon.DungeonElements;
 using System;
+using DungeonStyrel.Utils;
 
 namespace StyrelDungeon
 {
     public class Heros : Character
     {
-        private String name;
-        public String Name
-        {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
         private Dungeon m_Dungeon;
         private bool isDead = false;
         public bool IsDead {
             get
             {
-                return IsDead;
+                return isDead;
             }
             set
             {
                 IsDead = value;
             }
         }
-        //bool m_bFirstAttack = true;
+        private int index_room = 0;
+        public int IndexRoom
+        {
+            get
+            {
+                return index_room;
+            }
+            set
+            {
+                index_room = value;
+            }
+        }
 
         public Heros(Dungeon p_Dungeon)
         {
@@ -44,21 +44,14 @@ namespace StyrelDungeon
             m_Dungeon.EnterRoom(this, 0);
         }
 
-        public void SelectProtection() // ?
-        {
-            // a faire
-        }
-
         public void DiscoverEnnemy(Monster monster) // combat monster vs hero
         {
-            //boucle (hero attaque, monstre attaque, test mort hero, test mort monstre...)
-            monster.Attack(this);
-            // a faire
+            UserInterface.Fight(this, monster);
         }
 
         public override void Attack(Character p_CharacterToAttack)
         {
-            Console.WriteLine("Le Héros attaque " + p_CharacterToAttack.ToString());
+            Util.Display(this.Name + " attaque " + p_CharacterToAttack.Name);
             this.ApplyDamagesToEnemy(p_CharacterToAttack);
         }
 

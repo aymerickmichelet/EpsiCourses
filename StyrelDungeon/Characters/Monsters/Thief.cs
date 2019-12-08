@@ -9,10 +9,12 @@ namespace StyrelDungeon.Characters.Monsters
     {
         public Thief()
         {
+            Name = "Voleur";
+            LifePoint = 100;
         }
         public override void Attack(Character p_Heros)
         {
-            Console.WriteLine("The Thief is shooting arrows at you ");
+            Console.WriteLine(this.Name + " tire des flèches sur " + p_Heros.Name);
             base.Attack(p_Heros);
         }
         public override int ReceiveDamage(Character p_Heros)

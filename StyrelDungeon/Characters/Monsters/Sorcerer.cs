@@ -9,10 +9,12 @@ namespace StyrelDungeon.Characters.Monsters
     {
         public Sorcerer()
         {
+            Name = "Sorciere";
+            LifePoint = 100;
         }
         public override void Attack(Character p_Heros)
         {
-            Console.WriteLine("The Sorcerer is invoking a lightning bolt attack");
+            Console.WriteLine(this.Name + " invoque un éclair");
             base.Attack(p_Heros);
         }
         public override int ReceiveDamage(Character p_Heros)

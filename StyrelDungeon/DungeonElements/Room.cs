@@ -4,6 +4,7 @@ using StyrelDungeon.DungeonElements;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DungeonStyrel.Utils;
 
 namespace StyrelDungeon
 {
@@ -46,8 +47,6 @@ namespace StyrelDungeon
 
         virtual internal void OpenDoor(Heros p_heros) //If heros has won the battle he can clean the room before opening next door
         {
-            Console.WriteLine("Room[0] Monster " + this.m_RoomMonster.ToString());
-            Console.WriteLine("Room[0] Chest " + this.m_Chest.ToString());
             p_heros.DiscoverEnnemy(m_RoomMonster); // lance combat
             // chest
             FinishCleaningRoom(p_heros);
@@ -55,7 +54,11 @@ namespace StyrelDungeon
 
         private void FinishCleaningRoom(Heros p_heros)
         {
-            
+            Console.Clear();
+            Util.Display("DS");
+            Util.Display("Bravo vous avez fini la salle n°" + (p_heros.IndexRoom + 1).ToString());
+            Util.Display("Vous entrez à présent dans la prochaine salle.");
+            Util.Pause();
         }
     }
 }

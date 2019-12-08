@@ -33,18 +33,19 @@
 | abstract																			|
 | protected	int 		m_iLifePoint												|
 | public 	int 		LifePoint {get,set} 										|
+| public 	String 		Name {get,set} 												|
 | public	abstract 	void Attack(Character p_CharacterToAttack); 				|
 | public	abstract 	void ApplyDamagesToEnemy(Caracter p_CharacterToDamage) 		|
 | public 	abstract 	int ReceiveDamage(Character p_CharacterApplyingDamage) 		|
 | 																					|
 | --- Heros --- 																	|
 | private 	Dungeon 	m_Dungeon; 													|
-| bool 		m_bFirstAttack = true; 													|
 | private	bool 		IsDead {get,set}											|
+| public 	int 		IndexRoom {get,set} 										|
 | public 	Heros(Dungeon p_Dungeon) 												|
 | public 	void 		EnterDungeon() 												|
 | public 	void 		SelectProtection() 											|
-| public 	void 		DiscoverEnnemy(Monster mnster) 								|
+| public 	void 		DiscoverEnnemy(Monster monster)		// combat monster vs he.|
 | public 	override 	void Attack(Character p_CharacterToAttack) 					|
 | public 	override 	void ApplyDamagesToEnnemy(Character p_CharacterToApplyDamage)
 | public 	override 	int ReceiveDamage(Character p_CharacterApplyingDamage) 		|
@@ -60,8 +61,8 @@
 | 																					|
 | --- Sorcerer --- 																	|
 | public 	Sorcerer()				 												|
-| public 	override void Attack(Character p_Heros) 								|
-| public 	override int ReceiveDamage(Character p_Heros) 							|
+| public 	override void Attack(Character p_Heros) 	// attaque					|
+| public 	override int ReceiveDamage(Character p_Heros) 		// dommage recu		|
 | public 	override void ApplyDamagesToEnemy(Character p_Heros)					|
 |																					|
 | --- Barbarian --- 																|
@@ -85,22 +86,24 @@
 |___________________________________________________________________________________|
 |																					|
 | --- Dungeon ---																	|
-| private 	DragonsLair m_Lair;														|
-| private 	Room 		m_Room;														|
+| public 	DragonsLair m_Lair;														|
+| private 	Room 		m_Room; = new List<Room>();									|
+| public	List<Room> 	Rooms {get,set}												|
 | public 	Dungeon()																|
 | public 	void EnterRoom(Heros p_Heros, int p_iRoomIndex)							|
 |																					|
 | --- Room ---																		|
-| protected Monster 	m_RoomMonster;												|
-| private 	Chest 		m_Chest;													|
+| protected Monster 	m_RoomMonster;	// Monstre dans la piece					|
+| private 	Chest 		m_Chest;		// Chest ds la piece						|
 | private 	int 		m_iRoomNumber;												|
 | public 	Room(int index)															|
-| virtual 	internal 	void OpenDoor(Heros p_heros)								|
-| private 	void 		FinishCleaningRoom(Heros p_heros)							|
+| virtual 	internal 	void OpenDoor(Heros p_heros)	// Entreée nouvelle salle	|
+| private 	void 		FinishCleaningRoom(Heros p_heros)	 						|
 | 																					|
 | --- DragonsLair ---																|
 | public 	DragonsLair() : base(0)													|
 | internal 	override void OpenDoor(Heros p_heros)									|
+| private 	void 		FinishCleaningRoom()				 						|
 |___________________________________________________________________________________|
 |																					|
 | --- Protection ---																|
@@ -148,6 +151,8 @@
 | public 	static 	void	GamesIntro(string name)									|
 | public 	static 	void 	Rules()													|
 | public 	static 	void 	Credits()												|
+| private 	static 	void 	Health(Character, int)									|
+| public 	static 	void 	Fight(Heros, Monster)									|
 | 																					|
 |___________________________________________________________________________________|
 

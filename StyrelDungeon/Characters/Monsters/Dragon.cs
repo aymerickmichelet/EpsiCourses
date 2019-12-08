@@ -11,7 +11,8 @@ namespace StyrelDungeon.Characters
         private bool m_bWeaponChange = true;
         public Dragon()
         {
-
+            Name = "Dragon";
+            LifePoint = 200;
         }
 
         public override void Attack(Character p_Heros)

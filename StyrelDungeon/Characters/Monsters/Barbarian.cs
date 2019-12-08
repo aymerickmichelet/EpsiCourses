@@ -9,12 +9,13 @@ namespace StyrelDungeon.Characters.Monsters
     {
         public Barbarian()
         {
+            Name = "Barbare";
             LifePoint = 100;
         }
 
         public override void Attack(Character p_Heros)
         {
-            m_sMessageToPlayer = "The Barbarian is launching a close combat attack ";
+            m_sMessageToPlayer = this.Name + " attaque au corps à corps";
             base.Attack(p_Heros);
         }
         public override int ReceiveDamage(Character p_Heros)

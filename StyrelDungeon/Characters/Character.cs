@@ -7,6 +7,18 @@ namespace StyrelDungeon
 { 
     abstract public class Character
     {
+        protected String name;
+        public String Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
         protected int m_iLifePoint;
         public int LifePoint
         {

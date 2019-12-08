@@ -20,7 +20,7 @@ namespace StyrelDungeon
                 rooms = value;
             }
         }
-        private DragonsLair m_Lair;
+        public DragonsLair m_Lair;
 
         public Dungeon()
         {
@@ -34,8 +34,13 @@ namespace StyrelDungeon
         public void EnterRoom(Heros p_Heros, int p_iRoomIndex)
         {
             // p_Heros.SelectProtection();
-            Console.WriteLine(this.Rooms[p_iRoomIndex].m_RoomMonster.ToString());
+            p_Heros.IndexRoom = p_iRoomIndex;
             this.Rooms[p_iRoomIndex].OpenDoor(p_Heros);
+        }
+        public void EnterDragonsLair(Heros p_Heros)
+        {
+            p_Heros.IndexRoom = 5;
+            this.m_Lair.OpenDoor(p_Heros);
         }
     }
 }

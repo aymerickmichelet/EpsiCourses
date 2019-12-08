@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Timers;
+using DungeonStyrel.Utils;
 
 namespace StyrelDungeon
 {
@@ -18,7 +19,7 @@ namespace StyrelDungeon
 
         public override void Attack(Character heros)
         {
-            Console.WriteLine(m_sMessageToPlayer);
+            Util.Display(m_sMessageToPlayer);
             heros.ReceiveDamage(this); // pour enlever point de vie a heros
         }
         public override int ReceiveDamage(Character character) { return 0; }

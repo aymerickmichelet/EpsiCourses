@@ -113,11 +113,13 @@ namespace DungeonStyrel.Utils
                         message += "-";
                 }
             }
-            else if (message.EndsWith("|")) // "| Console.Write |"
+            else if (message.EndsWith(">")) // "| Console.Write |"
             {
-                int imax = 55 - 4 - message.Length;
-                Console.SetCursorPosition(54, Console.CursorTop - 1);
-                message = "|";
+                message = message.Remove(message.Length - 1);
+                Console.Write("|");
+                Console.SetCursorPosition(54 - 1 - message.Length, Console.CursorTop);
+                Console.WriteLine(message + " |");
+                return;
             }
             else                        // "| message                                             |"
             {
