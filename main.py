@@ -10,5 +10,3 @@ if __name__ == '__main__':
     list.append(receiver(name="Receveur 1"))
     for thread in list:
         thread.start()
-    # for thread in list:
-    #     thread.join()

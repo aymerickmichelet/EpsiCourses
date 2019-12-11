@@ -1,7 +1,7 @@
 import socket, threading, os, sys, time
 UDP_IP = "127.0.0.1"
 UDP_PORT = 5010
-NB_MESSAGE = 5
+NB_MESSAGE = 1
 
 class receiver(threading.Thread):
     def __init__(self, name="Thread"):
