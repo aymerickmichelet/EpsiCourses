@@ -9,6 +9,7 @@ class receiver(threading.Thread):
         self.name = name
 
     def run(self):
+        print ("[" + str(self.name) + "] > Process starting. (IP: "+str(UDP_IP)+", PORT: "+str(UDP_PORT)+")")
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.bind((UDP_IP, UDP_PORT))
         i = 0
