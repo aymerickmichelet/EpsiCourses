@@ -4,95 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".LoginActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="300dp"
-        android:layout_height="330dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/registerpage_textView_pseudo"
+            android:id="@+id/loginpage_textView_pseudo"
             android:layout_width="0dp"
             android:layout_height="45dp"
-            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="Pseudo:"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/registerpage_textView_password"
+            android:id="@+id/loginpage_textView_password"
             android:layout_width="0dp"
             android:layout_height="47dp"
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Mot de passe:"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerpage_editText_pseudo" />
-
-        <TextView
-            android:id="@+id/registerpage_textView_passwordconfirm"
-            android:layout_width="0dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="Confirme mot de passe:"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerpage_editText_password" />
+            app:layout_constraintTop_toBottomOf="@+id/loginpage_editText_pseudo" />
 
         <EditText
-            android:id="@+id/registerpage_editText_password"
+            android:id="@+id/loginpage_editText_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:imeOptions="actionNext"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerpage_textView_password" />
-
-        <EditText
-            android:id="@+id/registerpage_editText_passwordconfirm"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerpage_textView_passwordconfirm" />
+            app:layout_constraintTop_toBottomOf="@+id/loginpage_textView_password" />
 
         <EditText
-            android:id="@+id/registerpage_editText_pseudo"
+            android:id="@+id/loginpage_editText_pseudo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:imeOptions="actionNext"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/registerpage_textView_pseudo" />
+            app:layout_constraintTop_toBottomOf="@+id/loginpage_textView_pseudo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/registerpage_title"
+        android:id="@+id/loginpage_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Inscription"
+        android:text="Connection"
         android:textSize="30sp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -100,17 +78,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/registerpage_button_register"
+        android:id="@+id/loginpage_button_login"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:text="S'inscrire"
+        android:text="Se connecter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/registerpage_imageView_back"
+        android:id="@+id/loginpage_imageView_back"
         android:layout_width="35dp"
         android:layout_height="41dp"
         android:layout_marginStart="16dp"
