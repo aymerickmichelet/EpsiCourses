@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 import com.android.volley.RequestQueue;
 
+import java.util.Map;
+
 import fr.aymerickmichelet.pfct_empty.myrequest.MyRequest;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -23,6 +25,11 @@ public class RegisterActivity extends AppCompatActivity {
     private Button registerpage_button_register;
     private RequestQueue queue;
     private MyRequest request;
+
+    private static RegisterActivity Instance = new RegisterActivity();
+    public static RegisterActivity getInstance(){
+        return Instance;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +49,16 @@ public class RegisterActivity extends AppCompatActivity {
         registerpage_button_register.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String pseudo = registerpage_editText_pseudo.getText().toString().trim();
+                final String pseudo = registerpage_editText_pseudo.getText().toString().trim();
                 String password = registerpage_editText_password.getText().toString().trim();
                 String passwordconfirm =
                         getRegisterpage_editText_passwordconfirm.getText().toString().trim();
-                Log.e("Bouzoula", "Pseudo: "+pseudo);
-                Log.e("Bouzoula", "Password: "+password);
-                Log.e("Bouzoula", "PasswordConfirm: "+passwordconfirm);
-
+                if(pseudo.length() == 0){
+                    Log.e("Bouzoula", "Pseudo vide");
+                }
+                if(password.length() == 0){
+                    Log.e("Bouzoula", "Password vide");
+                }
                 if(pseudo.length() < 2 || pseudo.length() > 15){
                     Log.e("Bouzoula", "Pseudo incompatible");
                     return;
@@ -58,7 +67,9 @@ public class RegisterActivity extends AppCompatActivity {
                     Log.e("Bouzoula", "Les mdp sont différents");
                     return;
                 }
+                // tester si existe deja
                 request.register(pseudo, password);
+                finish();
             }
         });
 
