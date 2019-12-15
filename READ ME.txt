@@ -1,0 +1,3 @@
+compte administrateur:
+utilisateur: ADMIN
+mot de passe: 9999
