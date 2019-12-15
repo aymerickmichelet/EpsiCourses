@@ -26,6 +26,7 @@ def getJoke(client): # a factoriser
 def addJoke(joker): # insert != select pour methode ???
     request = 'SELECT user_id FROM user WHERE user_pseudo = "' + str(joker.pseudo) + '"'
     joker.id = bdd.request(request, 3)
+    print("joker: ", joker)
     if type(joker.id) == type(None): # si user n'existe pas
         request = "INSERT INTO `user` (`user_pseudo`, `user_experience`) VALUES ('" + str(joker.pseudo) + "', '" + str(joker.experience) + "');"
         bdd.request_insert(request)
