@@ -1,0 +1,125 @@
+issues compte_rendu
+
+rename fichiers et items
+fenêtre listes echantillons
+ajouter commentaire saisie CR
+ajouter accueil dernier CR
+ajouter photo profil
+modification photo profil
+connecxion bdd
+
+
+
+
+---------------
+
+FormLogin.cs 	-> Fenêtre de la page de connexion
+FormHome.cs		-> Fenêtre de l'accueil
+FormSample.cs	-> Fenêtre de la liste d'échantillon
+
+UCHome.cs 		-> Partie 'accueil' de la fenêtre accueil
+UCProfile.cs 	-> Partie 'profil' de la fenêtre accueil
+UCSample.cs 	-> Element de la fenêtre 'echantillon' représentant un echantillon
+UCWriteCR.cs 	-> Partie 'saisie de compte rendu' de la fenêtre accueil
+
+---------------
+
+FormLogin
+
+logo_gsb
+labelTitle
+labelUsername
+labelPassword
+labelInfo 		-> texte mauvais identifiant/mdp
+bmtUsername 	-> BunifuMaterialTextbox Username
+bmtPassword 	-> BunifuMaterialTextbox Password
+bConnection 	-> Button Connection
+bClose 			-> Button X
+panelLeft
+
+---------------
+
+FormHome
+
+logo_gsb
+panelLeft
+panelTop
+panelSide 	-> item qui bouge en fonction de l'onglet selectionné dans 'Accueil'
+bHome
+bProfile
+bWriteCR
+bReadCR
+bDisconnection
+ucHome
+ucProfile
+ucWriteCR
+
+---------------
+
+FormSample
+
+panelTop
+labelTitle
+bClose
+panelListSample
+ucSample
+bddSample
+bibAddSample
+
+--------------
+
+UCHome
+
+labelText1
+labelSubtitle1
+labelTitle
+bunifuCards
+img_france
+labelText3
+labelSubtitle3
+labelText2
+labelSubtitle2
+
+--------------
+
+UCProfile
+
+labelTitle
+bunifuCards
+imgProfile
+labelLastnameText
+labelNameText
+labelName
+labelLastname
+labelStatusText
+labelStatus
+labelBirthdayText
+labelBirthday
+labelRegion
+labelRegionText
+
+-------------
+
+UCWriteCR
+
+labelTitle
+bunifuCards
+labelPractitioner
+labelPractitionerLastname
+bmtPractitionerLastname
+labelPractitionerName
+bmtPractitionerName
+labelDate
+labelPatern
+labelSample
+labelProduct
+bddDate
+bddPatern
+bddProduct2
+labelProduct2
+bddProduct1
+labelProduct1
+bSave
+bunifuDragControl
+bEditSample
+labelListSample
