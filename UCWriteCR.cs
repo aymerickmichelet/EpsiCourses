@@ -13,29 +13,17 @@ namespace compte_rendu
     public partial class UCWriteCR : UserControl
     {
 
-        private FormSample echantillon;
+        private FormSample echantillon = new FormSample();
 
         public UCWriteCR()
         {
             InitializeComponent();
-            
         }
 
         private void bEditSample_Click(object sender, EventArgs e)
         {
-            if(this.echantillon == null)
-            {
-                this.echantillon = new FormSample();
-                this.echantillon.Show();
-            }
+            this.echantillon.Show();
         }
-
-
-        public void setEchantillonNull()
-        {
-            this.echantillon.Close();
-            this.echantillon = null;
-        }
-
+        
     }
 }

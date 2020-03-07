@@ -12,9 +12,20 @@ namespace compte_rendu
 {
     public partial class UCSample : UserControl
     {
-        public UCSample()
+        public UCSample(String title)
         {
             InitializeComponent();
+            bmtSampleText.Text = title;
         }
+
+        private void bibClose_Click(object sender, EventArgs e)
+        {
+            //FormSample.FS.removeSample(this);
+        }
+
+        /*public void Delete()
+        {
+            Hide();
+        }*/
     }
 }

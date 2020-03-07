@@ -29,32 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bunifuDragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bibClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.textboxPraticienLastname = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.bmtSampleText = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            ((System.ComponentModel.ISupportInitialize)(this.bibClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // bunifuDragControl1
+            // bunifuDragControl
             // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = null;
-            this.bunifuDragControl1.Vertical = true;
+            this.bunifuDragControl.Fixed = true;
+            this.bunifuDragControl.Horizontal = true;
+            this.bunifuDragControl.TargetControl = null;
+            this.bunifuDragControl.Vertical = true;
             // 
-            // bunifuImageButton1
+            // bibClose
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::compte_rendu.Properties.Resources.icons8_delete_521;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(329, 4);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(45, 36);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 0;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.bibClose.BackColor = System.Drawing.Color.Transparent;
+            this.bibClose.Image = global::compte_rendu.Properties.Resources.icons8_delete_521;
+            this.bibClose.ImageActive = null;
+            this.bibClose.Location = new System.Drawing.Point(247, 4);
+            this.bibClose.Margin = new System.Windows.Forms.Padding(2);
+            this.bibClose.Name = "bibClose";
+            this.bibClose.Size = new System.Drawing.Size(34, 29);
+            this.bibClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bibClose.TabIndex = 0;
+            this.bibClose.TabStop = false;
+            this.bibClose.Zoom = 10;
+            this.bibClose.Click += new System.EventHandler(this.bibClose_Click);
             // 
             // textboxPraticienLastname
             // 
@@ -68,52 +70,53 @@
             this.textboxPraticienLastname.LineIdleColor = System.Drawing.Color.Transparent;
             this.textboxPraticienLastname.LineMouseHoverColor = System.Drawing.Color.Transparent;
             this.textboxPraticienLastname.LineThickness = 3;
-            this.textboxPraticienLastname.Location = new System.Drawing.Point(4, 4);
+            this.textboxPraticienLastname.Location = new System.Drawing.Point(3, 3);
             this.textboxPraticienLastname.Margin = new System.Windows.Forms.Padding(4);
             this.textboxPraticienLastname.Name = "textboxPraticienLastname";
-            this.textboxPraticienLastname.Size = new System.Drawing.Size(304, 33);
+            this.textboxPraticienLastname.Size = new System.Drawing.Size(228, 27);
             this.textboxPraticienLastname.TabIndex = 29;
             this.textboxPraticienLastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuMaterialTextbox1
+            // bmtSampleText
             // 
-            this.bunifuMaterialTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMaterialTextbox1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuMaterialTextbox1.ForeColor = System.Drawing.Color.White;
-            this.bunifuMaterialTextbox1.HintForeColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.HintText = "";
-            this.bunifuMaterialTextbox1.isPassword = false;
-            this.bunifuMaterialTextbox1.LineFocusedColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.LineIdleColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.LineMouseHoverColor = System.Drawing.Color.Empty;
-            this.bunifuMaterialTextbox1.LineThickness = 3;
-            this.bunifuMaterialTextbox1.Location = new System.Drawing.Point(5, 4);
-            this.bunifuMaterialTextbox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bunifuMaterialTextbox1.Name = "bunifuMaterialTextbox1";
-            this.bunifuMaterialTextbox1.Size = new System.Drawing.Size(303, 36);
-            this.bunifuMaterialTextbox1.TabIndex = 30;
-            this.bunifuMaterialTextbox1.Text = "hola quetal";
-            this.bunifuMaterialTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bmtSampleText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmtSampleText.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bmtSampleText.ForeColor = System.Drawing.Color.White;
+            this.bmtSampleText.HintForeColor = System.Drawing.Color.Empty;
+            this.bmtSampleText.HintText = "";
+            this.bmtSampleText.isPassword = false;
+            this.bmtSampleText.LineFocusedColor = System.Drawing.Color.Empty;
+            this.bmtSampleText.LineIdleColor = System.Drawing.Color.Empty;
+            this.bmtSampleText.LineMouseHoverColor = System.Drawing.Color.Empty;
+            this.bmtSampleText.LineThickness = 3;
+            this.bmtSampleText.Location = new System.Drawing.Point(4, 3);
+            this.bmtSampleText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.bmtSampleText.Name = "bmtSampleText";
+            this.bmtSampleText.Size = new System.Drawing.Size(227, 29);
+            this.bmtSampleText.TabIndex = 30;
+            this.bmtSampleText.Text = "hola quetal";
+            this.bmtSampleText.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // UserControlEchantillon
+            // UCSample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
-            this.Controls.Add(this.bunifuMaterialTextbox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.Controls.Add(this.bmtSampleText);
             this.Controls.Add(this.textboxPraticienLastname);
-            this.Controls.Add(this.bunifuImageButton1);
-            this.Name = "UserControlEchantillon";
-            this.Size = new System.Drawing.Size(377, 43);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.Controls.Add(this.bibClose);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "UCSample";
+            this.Size = new System.Drawing.Size(283, 35);
+            ((System.ComponentModel.ISupportInitialize)(this.bibClose)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl;
+        private Bunifu.Framework.UI.BunifuImageButton bibClose;
         private Bunifu.Framework.UI.BunifuMaterialTextbox textboxPraticienLastname;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox bunifuMaterialTextbox1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmtSampleText;
     }
 }

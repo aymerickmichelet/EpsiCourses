@@ -32,12 +32,11 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.bunifuDragControl = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelListSample = new System.Windows.Forms.Panel();
-            this.ucSample = new compte_rendu.UCSample();
             this.bddSample = new Bunifu.Framework.UI.BunifuDropdown();
             this.bibAddSample = new Bunifu.Framework.UI.BunifuImageButton();
             this.bClose = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.panelListSample.SuspendLayout();
+            this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bibAddSample)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,8 +45,9 @@
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Margin = new System.Windows.Forms.Padding(2);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(407, 16);
+            this.panelTop.Size = new System.Drawing.Size(318, 13);
             this.panelTop.TabIndex = 0;
             // 
             // bunifuDragControl
@@ -59,19 +59,12 @@
             // 
             // panelListSample
             // 
-            this.panelListSample.Controls.Add(this.ucSample);
-            this.panelListSample.Location = new System.Drawing.Point(0, 85);
+            this.panelListSample.AutoScroll = true;
+            this.panelListSample.Location = new System.Drawing.Point(0, 69);
+            this.panelListSample.Margin = new System.Windows.Forms.Padding(2);
             this.panelListSample.Name = "panelListSample";
-            this.panelListSample.Size = new System.Drawing.Size(407, 385);
+            this.panelListSample.Size = new System.Drawing.Size(318, 313);
             this.panelListSample.TabIndex = 51;
-            // 
-            // ucSample
-            // 
-            this.ucSample.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.ucSample.Location = new System.Drawing.Point(15, 4);
-            this.ucSample.Name = "ucSample";
-            this.ucSample.Size = new System.Drawing.Size(377, 43);
-            this.ucSample.TabIndex = 0;
             // 
             // bddSample
             // 
@@ -81,19 +74,19 @@
             this.bddSample.DisabledColor = System.Drawing.Color.Gray;
             this.bddSample.ForeColor = System.Drawing.Color.White;
             this.bddSample.Items = new string[] {
+        "",
         "Hola",
         "Quetal",
         "Como",
         "Esta",
         "Wesh",
         "Alors"};
-            this.bddSample.Location = new System.Drawing.Point(13, 489);
-            this.bddSample.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bddSample.Location = new System.Drawing.Point(10, 397);
             this.bddSample.Name = "bddSample";
             this.bddSample.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddSample.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddSample.selectedIndex = -1;
-            this.bddSample.Size = new System.Drawing.Size(316, 43);
+            this.bddSample.Size = new System.Drawing.Size(247, 35);
             this.bddSample.TabIndex = 50;
             // 
             // bibAddSample
@@ -101,14 +94,15 @@
             this.bibAddSample.BackColor = System.Drawing.Color.Transparent;
             this.bibAddSample.Image = global::compte_rendu.Properties.Resources.icons8_add_96;
             this.bibAddSample.ImageActive = null;
-            this.bibAddSample.Location = new System.Drawing.Point(336, 476);
+            this.bibAddSample.Location = new System.Drawing.Point(262, 385);
+            this.bibAddSample.Margin = new System.Windows.Forms.Padding(2);
             this.bibAddSample.Name = "bibAddSample";
-            this.bibAddSample.Size = new System.Drawing.Size(71, 71);
+            this.bibAddSample.Size = new System.Drawing.Size(53, 58);
             this.bibAddSample.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bibAddSample.TabIndex = 49;
             this.bibAddSample.TabStop = false;
             this.bibAddSample.Zoom = 10;
-            this.bibAddSample.Click += new System.EventHandler(this.bunifuImageButton1_Click);
+            this.bibAddSample.Click += new System.EventHandler(this.bibAddSample_Click);
             // 
             // bClose
             // 
@@ -119,32 +113,37 @@
             this.bClose.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
             this.bClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bClose.Location = new System.Drawing.Point(371, 1);
-            this.bClose.Margin = new System.Windows.Forms.Padding(4);
+            this.bClose.Location = new System.Drawing.Point(290, 2);
             this.bClose.Name = "bClose";
-            this.bClose.Size = new System.Drawing.Size(45, 53);
+            this.bClose.Size = new System.Drawing.Size(34, 43);
             this.bClose.TabIndex = 52;
             this.bClose.Text = "x";
             this.bClose.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.bClose.UseVisualStyleBackColor = false;
-            this.bClose.Click += new System.EventHandler(this.button4_Click);
+            this.bClose.Click += new System.EventHandler(this.bClose_Click);
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelTitle.Location = new System.Drawing.Point(111, 33);
+            this.labelTitle.Location = new System.Drawing.Point(89, 27);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(187, 37);
+            this.labelTitle.Size = new System.Drawing.Size(155, 30);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "Echantillons";
             // 
+            // bunifuElipse
+            // 
+            this.bunifuElipse.ElipseRadius = 25;
+            this.bunifuElipse.TargetControl = this;
+            // 
             // FormSample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 543);
+            this.ClientSize = new System.Drawing.Size(318, 441);
             this.ControlBox = false;
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.labelTitle);
@@ -152,10 +151,11 @@
             this.Controls.Add(this.panelListSample);
             this.Controls.Add(this.bddSample);
             this.Controls.Add(this.bibAddSample);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSample";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.panelListSample.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bibAddSample)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -169,8 +169,8 @@
         private System.Windows.Forms.Panel panelListSample;
         private Bunifu.Framework.UI.BunifuDropdown bddSample;
         private Bunifu.Framework.UI.BunifuImageButton bibAddSample;
-        private UCSample ucSample;
         private System.Windows.Forms.Button bClose;
         private System.Windows.Forms.Label labelTitle;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse;
     }
 }

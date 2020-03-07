@@ -61,9 +61,8 @@
             this.panelLeft.Controls.Add(this.bHome);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelLeft.Margin = new System.Windows.Forms.Padding(4);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(343, 869);
+            this.panelLeft.Size = new System.Drawing.Size(257, 706);
             this.panelLeft.TabIndex = 0;
             // 
             // bDisconnection
@@ -75,10 +74,9 @@
             this.bDisconnection.ForeColor = System.Drawing.Color.White;
             this.bDisconnection.Image = global::compte_rendu.Properties.Resources.icons8_alarme_de_porte_50;
             this.bDisconnection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bDisconnection.Location = new System.Drawing.Point(32, 774);
-            this.bDisconnection.Margin = new System.Windows.Forms.Padding(4);
+            this.bDisconnection.Location = new System.Drawing.Point(24, 629);
             this.bDisconnection.Name = "bDisconnection";
-            this.bDisconnection.Size = new System.Drawing.Size(311, 80);
+            this.bDisconnection.Size = new System.Drawing.Size(233, 65);
             this.bDisconnection.TabIndex = 11;
             this.bDisconnection.Text = "  Déconnexion";
             this.bDisconnection.UseVisualStyleBackColor = true;
@@ -93,10 +91,9 @@
             this.bReadCR.ForeColor = System.Drawing.Color.White;
             this.bReadCR.Image = global::compte_rendu.Properties.Resources.icons8_page_vue_d_ensemble_90;
             this.bReadCR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bReadCR.Location = new System.Drawing.Point(32, 449);
-            this.bReadCR.Margin = new System.Windows.Forms.Padding(4);
+            this.bReadCR.Location = new System.Drawing.Point(24, 365);
             this.bReadCR.Name = "bReadCR";
-            this.bReadCR.Size = new System.Drawing.Size(311, 80);
+            this.bReadCR.Size = new System.Drawing.Size(233, 65);
             this.bReadCR.TabIndex = 10;
             this.bReadCR.Text = "    Consultation compte-rendu";
             this.bReadCR.UseVisualStyleBackColor = true;
@@ -111,10 +108,9 @@
             this.bWriteCR.ForeColor = System.Drawing.Color.White;
             this.bWriteCR.Image = global::compte_rendu.Properties.Resources.icons8_stylo_à_bille_100;
             this.bWriteCR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bWriteCR.Location = new System.Drawing.Point(32, 362);
-            this.bWriteCR.Margin = new System.Windows.Forms.Padding(4);
+            this.bWriteCR.Location = new System.Drawing.Point(24, 294);
             this.bWriteCR.Name = "bWriteCR";
-            this.bWriteCR.Size = new System.Drawing.Size(311, 80);
+            this.bWriteCR.Size = new System.Drawing.Size(233, 65);
             this.bWriteCR.TabIndex = 7;
             this.bWriteCR.Text = "                Saisie compte-rendu";
             this.bWriteCR.UseVisualStyleBackColor = true;
@@ -129,10 +125,9 @@
             this.bProfile.ForeColor = System.Drawing.Color.White;
             this.bProfile.Image = global::compte_rendu.Properties.Resources._25;
             this.bProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bProfile.Location = new System.Drawing.Point(32, 274);
-            this.bProfile.Margin = new System.Windows.Forms.Padding(4);
+            this.bProfile.Location = new System.Drawing.Point(24, 223);
             this.bProfile.Name = "bProfile";
-            this.bProfile.Size = new System.Drawing.Size(311, 80);
+            this.bProfile.Size = new System.Drawing.Size(233, 65);
             this.bProfile.TabIndex = 5;
             this.bProfile.Text = "                  Profil";
             this.bProfile.UseVisualStyleBackColor = true;
@@ -141,10 +136,10 @@
             // logo_gsb
             // 
             this.logo_gsb.Image = global::compte_rendu.Properties.Resources.logo_gsb;
-            this.logo_gsb.Location = new System.Drawing.Point(51, 34);
-            this.logo_gsb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.logo_gsb.Location = new System.Drawing.Point(38, 28);
+            this.logo_gsb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logo_gsb.Name = "logo_gsb";
-            this.logo_gsb.Size = new System.Drawing.Size(227, 122);
+            this.logo_gsb.Size = new System.Drawing.Size(170, 99);
             this.logo_gsb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo_gsb.TabIndex = 3;
             this.logo_gsb.TabStop = false;
@@ -152,10 +147,9 @@
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
-            this.panelSide.Location = new System.Drawing.Point(-3, 187);
-            this.panelSide.Margin = new System.Windows.Forms.Padding(4);
+            this.panelSide.Location = new System.Drawing.Point(-2, 152);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(19, 80);
+            this.panelSide.Size = new System.Drawing.Size(14, 65);
             this.panelSide.TabIndex = 3;
             // 
             // bHome
@@ -167,10 +161,9 @@
             this.bHome.ForeColor = System.Drawing.Color.White;
             this.bHome.Image = global::compte_rendu.Properties.Resources.icons8_clinique_50;
             this.bHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bHome.Location = new System.Drawing.Point(32, 187);
-            this.bHome.Margin = new System.Windows.Forms.Padding(4);
+            this.bHome.Location = new System.Drawing.Point(24, 152);
             this.bHome.Name = "bHome";
-            this.bHome.Size = new System.Drawing.Size(311, 80);
+            this.bHome.Size = new System.Drawing.Size(233, 65);
             this.bHome.TabIndex = 3;
             this.bHome.Text = "             Accueil";
             this.bHome.UseVisualStyleBackColor = true;
@@ -180,10 +173,9 @@
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(343, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
+            this.panelTop.Location = new System.Drawing.Point(257, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1270, 12);
+            this.panelTop.Size = new System.Drawing.Size(953, 10);
             this.panelTop.TabIndex = 1;
             // 
             // bunifuElipse
@@ -207,39 +199,39 @@
             // 
             // ucWriteCR
             // 
-            this.ucWriteCR.Location = new System.Drawing.Point(343, 15);
+            this.ucWriteCR.Location = new System.Drawing.Point(257, 12);
+            this.ucWriteCR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ucWriteCR.Name = "ucWriteCR";
-            this.ucWriteCR.Size = new System.Drawing.Size(1269, 855);
+            this.ucWriteCR.Size = new System.Drawing.Size(952, 695);
             this.ucWriteCR.TabIndex = 14;
             // 
             // ucProfile
             // 
-            this.ucProfile.Location = new System.Drawing.Point(343, 15);
-            this.ucProfile.Margin = new System.Windows.Forms.Padding(5);
+            this.ucProfile.Location = new System.Drawing.Point(257, 12);
+            this.ucProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucProfile.Name = "ucProfile";
-            this.ucProfile.Size = new System.Drawing.Size(1269, 855);
+            this.ucProfile.Size = new System.Drawing.Size(952, 695);
             this.ucProfile.TabIndex = 13;
             // 
             // ucHome
             // 
-            this.ucHome.Location = new System.Drawing.Point(343, 14);
-            this.ucHome.Margin = new System.Windows.Forms.Padding(5);
+            this.ucHome.Location = new System.Drawing.Point(257, 11);
+            this.ucHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(1269, 855);
+            this.ucHome.Size = new System.Drawing.Size(952, 695);
             this.ucHome.TabIndex = 12;
             // 
             // FormHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1613, 869);
+            this.ClientSize = new System.Drawing.Size(1210, 706);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
             this.Controls.Add(this.ucWriteCR);
             this.Controls.Add(this.ucProfile);
             this.Controls.Add(this.ucHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
