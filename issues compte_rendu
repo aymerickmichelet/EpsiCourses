@@ -1,16 +1,5 @@
 issues compte_rendu
 
-rename fichiers et items
-fenêtre listes echantillons
-ajouter commentaire saisie CR
-ajouter accueil dernier CR
-ajouter photo profil
-modification photo profil
-connecxion bdd
-
-
-
-
 ---------------
 
 FormLogin.cs 	-> Fenêtre de la page de connexion

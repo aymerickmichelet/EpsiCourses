@@ -28,3 +28,4 @@ C:\Users\aymerick-michelet\Documents\Projets\compte-rendu\obj\Debug\compte_rendu
 C:\Users\aymerick-michelet\Documents\Projets\compte-rendu\obj\Debug\compte_rendu.UCSample.resources
 C:\Users\aymerick-michelet\Documents\Projets\compte-rendu\obj\Debug\compte_rendu.UCProfile.resources
 C:\Users\aymerick-michelet\Documents\Projets\compte-rendu\obj\Debug\compte_rendu.UCWriteCR.resources
+C:\Users\aymerick-michelet\Documents\Projets\compte-rendu\obj\Debug\compte_rendu.csprojAssemblyReference.cache

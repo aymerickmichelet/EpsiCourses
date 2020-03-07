@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.labelTitle = new System.Windows.Forms.Label();
             this.bunifuCards = new Bunifu.Framework.UI.BunifuCards();
+            this.bmtComment = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.labelComment = new System.Windows.Forms.Label();
+            this.labelVisit = new System.Windows.Forms.Label();
             this.bEditSample = new System.Windows.Forms.Button();
             this.bSave = new System.Windows.Forms.Button();
             this.bddDate = new Bunifu.Framework.UI.BunifuDatepicker();
@@ -58,10 +61,9 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
-            this.labelTitle.Location = new System.Drawing.Point(351, 29);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTitle.Location = new System.Drawing.Point(263, 24);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(552, 75);
+            this.labelTitle.Size = new System.Drawing.Size(441, 61);
             this.labelTitle.TabIndex = 6;
             this.labelTitle.Text = "Saisie de compte rendu";
             // 
@@ -72,6 +74,9 @@
             this.bunifuCards.BorderRadius = 5;
             this.bunifuCards.BottomSahddow = true;
             this.bunifuCards.color = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.bunifuCards.Controls.Add(this.bmtComment);
+            this.bunifuCards.Controls.Add(this.labelComment);
+            this.bunifuCards.Controls.Add(this.labelVisit);
             this.bunifuCards.Controls.Add(this.bEditSample);
             this.bunifuCards.Controls.Add(this.bSave);
             this.bunifuCards.Controls.Add(this.bddDate);
@@ -91,13 +96,54 @@
             this.bunifuCards.Controls.Add(this.bmtPractitionerLastname);
             this.bunifuCards.Controls.Add(this.labelPractitioner);
             this.bunifuCards.LeftSahddow = false;
-            this.bunifuCards.Location = new System.Drawing.Point(106, 125);
-            this.bunifuCards.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuCards.Location = new System.Drawing.Point(80, 102);
             this.bunifuCards.Name = "bunifuCards";
             this.bunifuCards.RightSahddow = true;
             this.bunifuCards.ShadowDepth = 20;
-            this.bunifuCards.Size = new System.Drawing.Size(1029, 674);
+            this.bunifuCards.Size = new System.Drawing.Size(772, 577);
             this.bunifuCards.TabIndex = 7;
+            // 
+            // bmtComment
+            // 
+            this.bmtComment.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.bmtComment.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.bmtComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bmtComment.HintForeColor = System.Drawing.Color.Empty;
+            this.bmtComment.HintText = "";
+            this.bmtComment.isPassword = false;
+            this.bmtComment.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.bmtComment.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.bmtComment.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.bmtComment.LineThickness = 8;
+            this.bmtComment.Location = new System.Drawing.Point(429, 430);
+            this.bmtComment.Name = "bmtComment";
+            this.bmtComment.Size = new System.Drawing.Size(284, 37);
+            this.bmtComment.TabIndex = 42;
+            this.bmtComment.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // labelComment
+            // 
+            this.labelComment.AutoSize = true;
+            this.labelComment.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.labelComment.Location = new System.Drawing.Point(424, 370);
+            this.labelComment.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelComment.Name = "labelComment";
+            this.labelComment.Size = new System.Drawing.Size(181, 30);
+            this.labelComment.TabIndex = 53;
+            this.labelComment.Text = "Commentaire";
+            // 
+            // labelVisit
+            // 
+            this.labelVisit.AutoSize = true;
+            this.labelVisit.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVisit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.labelVisit.Location = new System.Drawing.Point(34, 131);
+            this.labelVisit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelVisit.Name = "labelVisit";
+            this.labelVisit.Size = new System.Drawing.Size(76, 30);
+            this.labelVisit.TabIndex = 52;
+            this.labelVisit.Text = "Visite";
             // 
             // bEditSample
             // 
@@ -105,11 +151,11 @@
             this.bEditSample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bEditSample.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.bEditSample.ForeColor = System.Drawing.Color.White;
-            this.bEditSample.Location = new System.Drawing.Point(583, 373);
-            this.bEditSample.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bEditSample.Location = new System.Drawing.Point(39, 430);
+            this.bEditSample.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bEditSample.Name = "bEditSample";
-            this.bEditSample.Size = new System.Drawing.Size(379, 45);
-            this.bEditSample.TabIndex = 51;
+            this.bEditSample.Size = new System.Drawing.Size(284, 37);
+            this.bEditSample.TabIndex = 40;
             this.bEditSample.Text = "Modifier";
             this.bEditSample.UseVisualStyleBackColor = false;
             this.bEditSample.Click += new System.EventHandler(this.bEditSample_Click);
@@ -120,11 +166,11 @@
             this.bSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bSave.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSave.ForeColor = System.Drawing.Color.White;
-            this.bSave.Location = new System.Drawing.Point(52, 588);
-            this.bSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bSave.Location = new System.Drawing.Point(39, 525);
+            this.bSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(910, 45);
-            this.bSave.TabIndex = 49;
+            this.bSave.Size = new System.Drawing.Size(682, 37);
+            this.bSave.TabIndex = 44;
             this.bSave.Text = "Enregistrer";
             this.bSave.UseVisualStyleBackColor = false;
             // 
@@ -135,11 +181,10 @@
             this.bddDate.ForeColor = System.Drawing.Color.White;
             this.bddDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.bddDate.FormatCustom = null;
-            this.bddDate.Location = new System.Drawing.Point(583, 209);
-            this.bddDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bddDate.Location = new System.Drawing.Point(429, 191);
             this.bddDate.Name = "bddDate";
-            this.bddDate.Size = new System.Drawing.Size(379, 44);
-            this.bddDate.TabIndex = 48;
+            this.bddDate.Size = new System.Drawing.Size(284, 36);
+            this.bddDate.TabIndex = 34;
             this.bddDate.Value = new System.DateTime(2020, 3, 2, 14, 17, 8, 979);
             // 
             // bddPatern
@@ -156,23 +201,23 @@
         "Esta",
         "Wesh",
         "Alors"};
-            this.bddPatern.Location = new System.Drawing.Point(583, 124);
-            this.bddPatern.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bddPatern.Location = new System.Drawing.Point(39, 191);
             this.bddPatern.Name = "bddPatern";
             this.bddPatern.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddPatern.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddPatern.selectedIndex = -1;
-            this.bddPatern.Size = new System.Drawing.Size(379, 43);
-            this.bddPatern.TabIndex = 47;
+            this.bddPatern.Size = new System.Drawing.Size(284, 35);
+            this.bddPatern.TabIndex = 32;
             // 
             // labelListSample
             // 
             this.labelListSample.AutoSize = true;
             this.labelListSample.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelListSample.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelListSample.Location = new System.Drawing.Point(579, 344);
+            this.labelListSample.Location = new System.Drawing.Point(36, 405);
+            this.labelListSample.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelListSample.Name = "labelListSample";
-            this.labelListSample.Size = new System.Drawing.Size(196, 23);
+            this.labelListSample.Size = new System.Drawing.Size(158, 21);
             this.labelListSample.TabIndex = 46;
             this.labelListSample.Text = "Liste d\'échantillons:";
             // 
@@ -190,23 +235,23 @@
         "Esta",
         "Wesh",
         "Alors"};
-            this.bddProduct2.Location = new System.Drawing.Point(63, 465);
-            this.bddProduct2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bddProduct2.Location = new System.Drawing.Point(429, 307);
             this.bddProduct2.Name = "bddProduct2";
             this.bddProduct2.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddProduct2.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddProduct2.selectedIndex = -1;
-            this.bddProduct2.Size = new System.Drawing.Size(379, 43);
-            this.bddProduct2.TabIndex = 45;
+            this.bddProduct2.Size = new System.Drawing.Size(284, 35);
+            this.bddProduct2.TabIndex = 38;
             // 
             // labelProduct2
             // 
             this.labelProduct2.AutoSize = true;
             this.labelProduct2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProduct2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelProduct2.Location = new System.Drawing.Point(59, 436);
+            this.labelProduct2.Location = new System.Drawing.Point(426, 285);
+            this.labelProduct2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProduct2.Name = "labelProduct2";
-            this.labelProduct2.Size = new System.Drawing.Size(101, 23);
+            this.labelProduct2.Size = new System.Drawing.Size(84, 21);
             this.labelProduct2.TabIndex = 44;
             this.labelProduct2.Text = "produit 2:";
             // 
@@ -224,23 +269,23 @@
         "Esta",
         "Wesh",
         "Alors"};
-            this.bddProduct1.Location = new System.Drawing.Point(63, 373);
-            this.bddProduct1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bddProduct1.Location = new System.Drawing.Point(39, 307);
             this.bddProduct1.Name = "bddProduct1";
             this.bddProduct1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddProduct1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bddProduct1.selectedIndex = -1;
-            this.bddProduct1.Size = new System.Drawing.Size(379, 43);
-            this.bddProduct1.TabIndex = 43;
+            this.bddProduct1.Size = new System.Drawing.Size(284, 35);
+            this.bddProduct1.TabIndex = 36;
             // 
             // labelSample
             // 
             this.labelSample.AutoSize = true;
             this.labelSample.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSample.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelSample.Location = new System.Drawing.Point(576, 289);
+            this.labelSample.Location = new System.Drawing.Point(34, 370);
+            this.labelSample.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSample.Name = "labelSample";
-            this.labelSample.Size = new System.Drawing.Size(209, 37);
+            this.labelSample.Size = new System.Drawing.Size(172, 30);
             this.labelSample.TabIndex = 41;
             this.labelSample.Text = "Echantillon(s)";
             // 
@@ -249,9 +294,10 @@
             this.labelProduct1.AutoSize = true;
             this.labelProduct1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProduct1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelProduct1.Location = new System.Drawing.Point(59, 344);
+            this.labelProduct1.Location = new System.Drawing.Point(36, 285);
+            this.labelProduct1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProduct1.Name = "labelProduct1";
-            this.labelProduct1.Size = new System.Drawing.Size(101, 23);
+            this.labelProduct1.Size = new System.Drawing.Size(84, 21);
             this.labelProduct1.TabIndex = 37;
             this.labelProduct1.Text = "produit 1:";
             // 
@@ -260,9 +306,10 @@
             this.labelProduct.AutoSize = true;
             this.labelProduct.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelProduct.Location = new System.Drawing.Point(56, 289);
+            this.labelProduct.Location = new System.Drawing.Point(34, 245);
+            this.labelProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProduct.Name = "labelProduct";
-            this.labelProduct.Size = new System.Drawing.Size(154, 37);
+            this.labelProduct.Size = new System.Drawing.Size(122, 30);
             this.labelProduct.TabIndex = 36;
             this.labelProduct.Text = "Produit(s)";
             // 
@@ -271,9 +318,10 @@
             this.labelDate.AutoSize = true;
             this.labelDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelDate.Location = new System.Drawing.Point(579, 182);
+            this.labelDate.Location = new System.Drawing.Point(426, 169);
+            this.labelDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(63, 23);
+            this.labelDate.Size = new System.Drawing.Size(53, 21);
             this.labelDate.TabIndex = 34;
             this.labelDate.Text = "date:";
             // 
@@ -282,9 +330,10 @@
             this.labelPatern.AutoSize = true;
             this.labelPatern.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPatern.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelPatern.Location = new System.Drawing.Point(579, 97);
+            this.labelPatern.Location = new System.Drawing.Point(36, 169);
+            this.labelPatern.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPatern.Name = "labelPatern";
-            this.labelPatern.Size = new System.Drawing.Size(63, 23);
+            this.labelPatern.Size = new System.Drawing.Size(54, 21);
             this.labelPatern.TabIndex = 32;
             this.labelPatern.Text = "motif:";
             // 
@@ -293,9 +342,10 @@
             this.labelPractitionerName.AutoSize = true;
             this.labelPractitionerName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPractitionerName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelPractitionerName.Location = new System.Drawing.Point(59, 182);
+            this.labelPractitionerName.Location = new System.Drawing.Point(426, 64);
+            this.labelPractitionerName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPractitionerName.Name = "labelPractitionerName";
-            this.labelPractitionerName.Size = new System.Drawing.Size(92, 23);
+            this.labelPractitionerName.Size = new System.Drawing.Size(75, 21);
             this.labelPractitionerName.TabIndex = 29;
             this.labelPractitionerName.Text = "prenom:";
             // 
@@ -310,11 +360,10 @@
             this.bmtPractitionerName.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bmtPractitionerName.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bmtPractitionerName.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.bmtPractitionerName.LineThickness = 3;
-            this.bmtPractitionerName.Location = new System.Drawing.Point(63, 198);
-            this.bmtPractitionerName.Margin = new System.Windows.Forms.Padding(4);
+            this.bmtPractitionerName.LineThickness = 8;
+            this.bmtPractitionerName.Location = new System.Drawing.Point(429, 76);
             this.bmtPractitionerName.Name = "bmtPractitionerName";
-            this.bmtPractitionerName.Size = new System.Drawing.Size(379, 33);
+            this.bmtPractitionerName.Size = new System.Drawing.Size(284, 31);
             this.bmtPractitionerName.TabIndex = 30;
             this.bmtPractitionerName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -323,9 +372,10 @@
             this.labelPractitionerLastname.AutoSize = true;
             this.labelPractitionerLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPractitionerLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelPractitionerLastname.Location = new System.Drawing.Point(59, 97);
+            this.labelPractitionerLastname.Location = new System.Drawing.Point(36, 64);
+            this.labelPractitionerLastname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPractitionerLastname.Name = "labelPractitionerLastname";
-            this.labelPractitionerLastname.Size = new System.Drawing.Size(59, 23);
+            this.labelPractitionerLastname.Size = new System.Drawing.Size(49, 21);
             this.labelPractitionerLastname.TabIndex = 27;
             this.labelPractitionerLastname.Text = "nom:";
             // 
@@ -340,11 +390,10 @@
             this.bmtPractitionerLastname.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bmtPractitionerLastname.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
             this.bmtPractitionerLastname.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.bmtPractitionerLastname.LineThickness = 3;
-            this.bmtPractitionerLastname.Location = new System.Drawing.Point(63, 113);
-            this.bmtPractitionerLastname.Margin = new System.Windows.Forms.Padding(4);
+            this.bmtPractitionerLastname.LineThickness = 8;
+            this.bmtPractitionerLastname.Location = new System.Drawing.Point(39, 76);
             this.bmtPractitionerLastname.Name = "bmtPractitionerLastname";
-            this.bmtPractitionerLastname.Size = new System.Drawing.Size(379, 33);
+            this.bmtPractitionerLastname.Size = new System.Drawing.Size(284, 31);
             this.bmtPractitionerLastname.TabIndex = 28;
             this.bmtPractitionerLastname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -353,9 +402,10 @@
             this.labelPractitioner.AutoSize = true;
             this.labelPractitioner.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPractitioner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelPractitioner.Location = new System.Drawing.Point(56, 40);
+            this.labelPractitioner.Location = new System.Drawing.Point(34, 27);
+            this.labelPractitioner.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPractitioner.Name = "labelPractitioner";
-            this.labelPractitioner.Size = new System.Drawing.Size(144, 37);
+            this.labelPractitioner.Size = new System.Drawing.Size(117, 30);
             this.labelPractitioner.TabIndex = 18;
             this.labelPractitioner.Text = "Praticien";
             // 
@@ -368,12 +418,13 @@
             // 
             // UCWriteCR
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.bunifuCards);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCWriteCR";
-            this.Size = new System.Drawing.Size(1269, 855);
+            this.Size = new System.Drawing.Size(952, 695);
             this.bunifuCards.ResumeLayout(false);
             this.bunifuCards.PerformLayout();
             this.ResumeLayout(false);
@@ -404,5 +455,8 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl;
         private System.Windows.Forms.Button bEditSample;
         private System.Windows.Forms.Label labelListSample;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox bmtComment;
+        private System.Windows.Forms.Label labelComment;
+        private System.Windows.Forms.Label labelVisit;
     }
 }
