@@ -94,7 +94,7 @@
             this.bibAddSample.BackColor = System.Drawing.Color.Transparent;
             this.bibAddSample.Image = global::compte_rendu.Properties.Resources.icons8_add_96;
             this.bibAddSample.ImageActive = null;
-            this.bibAddSample.Location = new System.Drawing.Point(262, 385);
+            this.bibAddSample.Location = new System.Drawing.Point(259, 383);
             this.bibAddSample.Margin = new System.Windows.Forms.Padding(2);
             this.bibAddSample.Name = "bibAddSample";
             this.bibAddSample.Size = new System.Drawing.Size(53, 58);
@@ -106,19 +106,19 @@
             // 
             // bClose
             // 
+            this.bClose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bClose.BackColor = System.Drawing.Color.Transparent;
             this.bClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bClose.FlatAppearance.BorderSize = 0;
             this.bClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bClose.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bClose.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
             this.bClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bClose.Location = new System.Drawing.Point(290, 2);
+            this.bClose.Location = new System.Drawing.Point(271, 13);
             this.bClose.Name = "bClose";
-            this.bClose.Size = new System.Drawing.Size(34, 43);
+            this.bClose.Size = new System.Drawing.Size(47, 36);
             this.bClose.TabIndex = 52;
-            this.bClose.Text = "x";
-            this.bClose.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.bClose.Text = "OK";
             this.bClose.UseVisualStyleBackColor = false;
             this.bClose.Click += new System.EventHandler(this.bClose_Click);
             // 

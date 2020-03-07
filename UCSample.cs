@@ -20,12 +20,14 @@ namespace compte_rendu
 
         private void bibClose_Click(object sender, EventArgs e)
         {
-            //FormSample.FS.removeSample(this);
+            FormSample fs = UCWriteCR.getInstance();
+            fs.removeSample(this);
+            Console.WriteLine(fs.listSample.Count);
         }
 
-        /*public void Delete()
+        public void Delete()
         {
             Hide();
-        }*/
+        }
     }
 }

@@ -12,12 +12,6 @@ namespace compte_rendu
 {
     public partial class FormSample : Form
     {
-        /*public static FormSample FS;
-        public static FormSample getInstance()
-        {
-            return FS;
-        }*/
-        
         public List<UCSample> listSample = new List<UCSample>();
 
         public FormSample()
@@ -31,15 +25,7 @@ namespace compte_rendu
 
             if (bddSample.selectedIndex > 0)
             {
-                UCSample sample = new UCSample(bddSample.selectedValue);
-
-                panelListSample.Controls.Add(sample);
-
-                sample.Left = 10;
-                sample.Top = (sample.Height + 5) * listSample.Count();
-                sample.Visible = true;
-
-                listSample.Add(sample);
+                addSample(new UCSample(bddSample.selectedValue), true);
                 bddSample.selectedIndex = 0;
             }
         }
@@ -49,11 +35,25 @@ namespace compte_rendu
             Hide();
         }
 
-        /*public void removeSample(UCSample sample)
+        public void addSample(UCSample sample, Boolean addListSample)
         {
-            Console.WriteLine(sample);
-            //listSample.Remove(sample);
+            panelListSample.Controls.Add(sample);
+            sample.Left = 10;
+            sample.Top = (sample.Height + 5) * listSample.Count();
+            sample.Visible = true;
+            if(addListSample)
+                listSample.Add(sample);
+        }
+
+        public void removeSample(UCSample sample)
+        {
+            int index = listSample.IndexOf(sample);
+            for (int i = index + 1, imax = listSample.Count; i < imax; i++)
+            {
+                listSample[i].Top -= listSample[i].Height + 5;
+            }
+            listSample.Remove(sample);
             sample.Delete();
-        }*/
+        }
     }
 }

@@ -13,7 +13,11 @@ namespace compte_rendu
     public partial class UCWriteCR : UserControl
     {
 
-        private FormSample echantillon = new FormSample();
+        private static FormSample echantillon = new FormSample();
+        public static FormSample getInstance()
+        {
+            return echantillon;
+        }
 
         public UCWriteCR()
         {
@@ -22,7 +26,7 @@ namespace compte_rendu
 
         private void bEditSample_Click(object sender, EventArgs e)
         {
-            this.echantillon.Show();
+            echantillon.Show();
         }
         
     }
