@@ -22,7 +22,6 @@ namespace compte_rendu
         {
             FormSample fs = UCWriteCR.getInstance();
             fs.removeSample(this);
-            Console.WriteLine(fs.listSample.Count);
         }
 
         public void Delete()
