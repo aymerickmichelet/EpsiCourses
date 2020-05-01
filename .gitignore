@@ -1,8 +1,8 @@
 # Specify filepatterns you want git to ignore.
 
-.vs
-obj
-bin
-packages
-Properties
-Ressources
+.vs/
+obj/
+bin/
+packages/
+Properties/
+Ressources/
