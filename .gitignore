@@ -6,3 +6,5 @@ bin/
 packages/
 Properties/
 Ressources/
+# Ignorer les objets et les archives
+*.[oa]
