@@ -102,7 +102,6 @@
             // 
             // img_france
             // 
-            this.img_france.Image = global::compte_rendu.Properties.Resources.mapgsb;
             this.img_france.Location = new System.Drawing.Point(591, 886);
             this.img_france.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.img_france.Name = "img_france";

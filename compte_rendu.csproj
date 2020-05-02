@@ -78,6 +78,11 @@
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UCSample.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,14 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="UCSample.resx">
       <DependentUpon>UCSample.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,8 +141,6 @@
     <EmbeddedResource Include="UCWriteCR.resx">
       <DependentUpon>UCWriteCR.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,25 +170,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\profile.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\icons8-bloc-notes-100.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\icons8-stylo-à-bille-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\icons8-utilisateur-1000.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\icons8-page-vue-d%27ensemble-90.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\25.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\icons8-propriété-100.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\icons8-clinique-90.png" />
@@ -203,12 +192,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\icons8-alarme-de-porte-50.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mapgsb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\orgagsb.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\icons8-delete-52.png" />

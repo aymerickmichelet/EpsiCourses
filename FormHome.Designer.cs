@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.panelLeft = new System.Windows.Forms.Panel();
             this.bDisconnection = new System.Windows.Forms.Button();
             this.bReadCR = new System.Windows.Forms.Button();
@@ -72,7 +73,7 @@
             this.bDisconnection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bDisconnection.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bDisconnection.ForeColor = System.Drawing.Color.White;
-            this.bDisconnection.Image = global::compte_rendu.Properties.Resources.icons8_alarme_de_porte_50;
+            this.bDisconnection.Image = ((System.Drawing.Image)(resources.GetObject("bDisconnection.Image")));
             this.bDisconnection.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bDisconnection.Location = new System.Drawing.Point(24, 629);
             this.bDisconnection.Name = "bDisconnection";
@@ -89,7 +90,7 @@
             this.bReadCR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bReadCR.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bReadCR.ForeColor = System.Drawing.Color.White;
-            this.bReadCR.Image = global::compte_rendu.Properties.Resources.icons8_page_vue_d_ensemble_90;
+            this.bReadCR.Image = ((System.Drawing.Image)(resources.GetObject("bReadCR.Image")));
             this.bReadCR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bReadCR.Location = new System.Drawing.Point(24, 365);
             this.bReadCR.Name = "bReadCR";
@@ -106,7 +107,7 @@
             this.bWriteCR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bWriteCR.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bWriteCR.ForeColor = System.Drawing.Color.White;
-            this.bWriteCR.Image = global::compte_rendu.Properties.Resources.icons8_stylo_à_bille_100;
+            this.bWriteCR.Image = ((System.Drawing.Image)(resources.GetObject("bWriteCR.Image")));
             this.bWriteCR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bWriteCR.Location = new System.Drawing.Point(24, 294);
             this.bWriteCR.Name = "bWriteCR";
@@ -123,7 +124,7 @@
             this.bProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bProfile.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bProfile.ForeColor = System.Drawing.Color.White;
-            this.bProfile.Image = global::compte_rendu.Properties.Resources._25;
+            this.bProfile.Image = ((System.Drawing.Image)(resources.GetObject("bProfile.Image")));
             this.bProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bProfile.Location = new System.Drawing.Point(24, 223);
             this.bProfile.Name = "bProfile";
@@ -135,9 +136,11 @@
             // 
             // logo_gsb
             // 
-            this.logo_gsb.Image = global::compte_rendu.Properties.Resources.logo_gsb;
+            this.logo_gsb.ErrorImage = null;
+            this.logo_gsb.Image = ((System.Drawing.Image)(resources.GetObject("logo_gsb.Image")));
+            this.logo_gsb.InitialImage = null;
             this.logo_gsb.Location = new System.Drawing.Point(38, 28);
-            this.logo_gsb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logo_gsb.Margin = new System.Windows.Forms.Padding(2);
             this.logo_gsb.Name = "logo_gsb";
             this.logo_gsb.Size = new System.Drawing.Size(170, 99);
             this.logo_gsb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,7 +162,7 @@
             this.bHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bHome.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bHome.ForeColor = System.Drawing.Color.White;
-            this.bHome.Image = global::compte_rendu.Properties.Resources.icons8_clinique_50;
+            this.bHome.Image = ((System.Drawing.Image)(resources.GetObject("bHome.Image")));
             this.bHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bHome.Location = new System.Drawing.Point(24, 152);
             this.bHome.Name = "bHome";
@@ -200,7 +203,7 @@
             // ucWriteCR
             // 
             this.ucWriteCR.Location = new System.Drawing.Point(257, 12);
-            this.ucWriteCR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucWriteCR.Margin = new System.Windows.Forms.Padding(2);
             this.ucWriteCR.Name = "ucWriteCR";
             this.ucWriteCR.Size = new System.Drawing.Size(952, 695);
             this.ucWriteCR.TabIndex = 14;
@@ -208,7 +211,7 @@
             // ucProfile
             // 
             this.ucProfile.Location = new System.Drawing.Point(257, 12);
-            this.ucProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucProfile.Margin = new System.Windows.Forms.Padding(4);
             this.ucProfile.Name = "ucProfile";
             this.ucProfile.Size = new System.Drawing.Size(952, 695);
             this.ucProfile.TabIndex = 13;
@@ -216,7 +219,7 @@
             // ucHome
             // 
             this.ucHome.Location = new System.Drawing.Point(257, 11);
-            this.ucHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucHome.Margin = new System.Windows.Forms.Padding(4);
             this.ucHome.Name = "ucHome";
             this.ucHome.Size = new System.Drawing.Size(952, 695);
             this.ucHome.TabIndex = 12;
