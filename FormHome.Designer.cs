@@ -31,40 +31,79 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.bReadMedicament = new System.Windows.Forms.Button();
+            this.bReadMedecin = new System.Windows.Forms.Button();
             this.bDisconnection = new System.Windows.Forms.Button();
             this.bReadCR = new System.Windows.Forms.Button();
             this.bWriteCR = new System.Windows.Forms.Button();
-            this.bProfile = new System.Windows.Forms.Button();
+            this.bReadVisiteur = new System.Windows.Forms.Button();
             this.logo_gsb = new System.Windows.Forms.PictureBox();
             this.panelSide = new System.Windows.Forms.Panel();
-            this.bHome = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.panelTopRight = new System.Windows.Forms.Panel();
+            this.panelSideTopRight = new System.Windows.Forms.Panel();
+            this.buttonTopRight = new System.Windows.Forms.Button();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.ucWriteCR = new compte_rendu.UCWriteCR();
-            this.ucProfile = new compte_rendu.UCProfile();
-            this.ucHome = new compte_rendu.UCHome();
+            this.ucProfile1 = new compte_rendu.UCProfile();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_gsb)).BeginInit();
+            this.panelTop.SuspendLayout();
+            this.panelTopRight.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
             // 
             this.panelLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panelLeft.Controls.Add(this.bReadMedicament);
+            this.panelLeft.Controls.Add(this.bReadMedecin);
             this.panelLeft.Controls.Add(this.bDisconnection);
             this.panelLeft.Controls.Add(this.bReadCR);
             this.panelLeft.Controls.Add(this.bWriteCR);
-            this.panelLeft.Controls.Add(this.bProfile);
+            this.panelLeft.Controls.Add(this.bReadVisiteur);
             this.panelLeft.Controls.Add(this.logo_gsb);
             this.panelLeft.Controls.Add(this.panelSide);
-            this.panelLeft.Controls.Add(this.bHome);
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(257, 706);
             this.panelLeft.TabIndex = 0;
+            // 
+            // bReadMedicament
+            // 
+            this.bReadMedicament.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bReadMedicament.FlatAppearance.BorderSize = 0;
+            this.bReadMedicament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bReadMedicament.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bReadMedicament.ForeColor = System.Drawing.Color.White;
+            this.bReadMedicament.Image = ((System.Drawing.Image)(resources.GetObject("bReadMedicament.Image")));
+            this.bReadMedicament.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bReadMedicament.Location = new System.Drawing.Point(24, 365);
+            this.bReadMedicament.Name = "bReadMedicament";
+            this.bReadMedicament.Size = new System.Drawing.Size(233, 65);
+            this.bReadMedicament.TabIndex = 13;
+            this.bReadMedicament.Text = "        Consultation          Medicament";
+            this.bReadMedicament.UseVisualStyleBackColor = true;
+            this.bReadMedicament.Click += new System.EventHandler(this.bReadMedicament_Click);
+            // 
+            // bReadMedecin
+            // 
+            this.bReadMedecin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bReadMedecin.FlatAppearance.BorderSize = 0;
+            this.bReadMedecin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bReadMedecin.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bReadMedecin.ForeColor = System.Drawing.Color.White;
+            this.bReadMedecin.Image = ((System.Drawing.Image)(resources.GetObject("bReadMedecin.Image")));
+            this.bReadMedecin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bReadMedecin.Location = new System.Drawing.Point(24, 294);
+            this.bReadMedecin.Name = "bReadMedecin";
+            this.bReadMedecin.Size = new System.Drawing.Size(233, 65);
+            this.bReadMedecin.TabIndex = 12;
+            this.bReadMedecin.Text = "        Consultation                Medecin";
+            this.bReadMedecin.UseVisualStyleBackColor = true;
+            this.bReadMedecin.Click += new System.EventHandler(this.bReadMedecin_Click);
             // 
             // bDisconnection
             // 
@@ -92,7 +131,7 @@
             this.bReadCR.ForeColor = System.Drawing.Color.White;
             this.bReadCR.Image = ((System.Drawing.Image)(resources.GetObject("bReadCR.Image")));
             this.bReadCR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bReadCR.Location = new System.Drawing.Point(24, 365);
+            this.bReadCR.Location = new System.Drawing.Point(24, 436);
             this.bReadCR.Name = "bReadCR";
             this.bReadCR.Size = new System.Drawing.Size(233, 65);
             this.bReadCR.TabIndex = 10;
@@ -109,7 +148,7 @@
             this.bWriteCR.ForeColor = System.Drawing.Color.White;
             this.bWriteCR.Image = ((System.Drawing.Image)(resources.GetObject("bWriteCR.Image")));
             this.bWriteCR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bWriteCR.Location = new System.Drawing.Point(24, 294);
+            this.bWriteCR.Location = new System.Drawing.Point(24, 152);
             this.bWriteCR.Name = "bWriteCR";
             this.bWriteCR.Size = new System.Drawing.Size(233, 65);
             this.bWriteCR.TabIndex = 7;
@@ -117,22 +156,22 @@
             this.bWriteCR.UseVisualStyleBackColor = true;
             this.bWriteCR.Click += new System.EventHandler(this.bWriteCR_Click);
             // 
-            // bProfile
+            // bReadVisiteur
             // 
-            this.bProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bProfile.FlatAppearance.BorderSize = 0;
-            this.bProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bProfile.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bProfile.ForeColor = System.Drawing.Color.White;
-            this.bProfile.Image = ((System.Drawing.Image)(resources.GetObject("bProfile.Image")));
-            this.bProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bProfile.Location = new System.Drawing.Point(24, 223);
-            this.bProfile.Name = "bProfile";
-            this.bProfile.Size = new System.Drawing.Size(233, 65);
-            this.bProfile.TabIndex = 5;
-            this.bProfile.Text = "                  Profil";
-            this.bProfile.UseVisualStyleBackColor = true;
-            this.bProfile.Click += new System.EventHandler(this.bProfile_Click);
+            this.bReadVisiteur.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bReadVisiteur.FlatAppearance.BorderSize = 0;
+            this.bReadVisiteur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bReadVisiteur.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bReadVisiteur.ForeColor = System.Drawing.Color.White;
+            this.bReadVisiteur.Image = ((System.Drawing.Image)(resources.GetObject("bReadVisiteur.Image")));
+            this.bReadVisiteur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bReadVisiteur.Location = new System.Drawing.Point(24, 223);
+            this.bReadVisiteur.Name = "bReadVisiteur";
+            this.bReadVisiteur.Size = new System.Drawing.Size(233, 65);
+            this.bReadVisiteur.TabIndex = 5;
+            this.bReadVisiteur.Text = "        Consultation                  Visiteur";
+            this.bReadVisiteur.UseVisualStyleBackColor = true;
+            this.bReadVisiteur.Click += new System.EventHandler(this.bReadVisiteur_Click);
             // 
             // logo_gsb
             // 
@@ -155,31 +194,52 @@
             this.panelSide.Size = new System.Drawing.Size(14, 65);
             this.panelSide.TabIndex = 3;
             // 
-            // bHome
-            // 
-            this.bHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bHome.FlatAppearance.BorderSize = 0;
-            this.bHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bHome.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bHome.ForeColor = System.Drawing.Color.White;
-            this.bHome.Image = ((System.Drawing.Image)(resources.GetObject("bHome.Image")));
-            this.bHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bHome.Location = new System.Drawing.Point(24, 152);
-            this.bHome.Name = "bHome";
-            this.bHome.Size = new System.Drawing.Size(233, 65);
-            this.bHome.TabIndex = 3;
-            this.bHome.Text = "             Accueil";
-            this.bHome.UseVisualStyleBackColor = true;
-            this.bHome.Click += new System.EventHandler(this.bHome_Click);
-            // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
+            this.panelTop.Controls.Add(this.panelTopRight);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(257, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(953, 10);
+            this.panelTop.Size = new System.Drawing.Size(953, 72);
             this.panelTop.TabIndex = 1;
+            // 
+            // panelTopRight
+            // 
+            this.panelTopRight.BackColor = System.Drawing.Color.Transparent;
+            this.panelTopRight.Controls.Add(this.panelSideTopRight);
+            this.panelTopRight.Controls.Add(this.buttonTopRight);
+            this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelTopRight.Location = new System.Drawing.Point(709, 0);
+            this.panelTopRight.Name = "panelTopRight";
+            this.panelTopRight.Size = new System.Drawing.Size(244, 72);
+            this.panelTopRight.TabIndex = 0;
+            // 
+            // panelSideTopRight
+            // 
+            this.panelSideTopRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.panelSideTopRight.Location = new System.Drawing.Point(3, 0);
+            this.panelSideTopRight.Name = "panelSideTopRight";
+            this.panelSideTopRight.Size = new System.Drawing.Size(244, 15);
+            this.panelSideTopRight.TabIndex = 4;
+            // 
+            // buttonTopRight
+            // 
+            this.buttonTopRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonTopRight.FlatAppearance.BorderSize = 0;
+            this.buttonTopRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTopRight.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTopRight.ForeColor = System.Drawing.Color.White;
+            this.buttonTopRight.Image = ((System.Drawing.Image)(resources.GetObject("buttonTopRight.Image")));
+            this.buttonTopRight.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonTopRight.Location = new System.Drawing.Point(3, 12);
+            this.buttonTopRight.Name = "buttonTopRight";
+            this.buttonTopRight.Size = new System.Drawing.Size(229, 60);
+            this.buttonTopRight.TabIndex = 12;
+            this.buttonTopRight.Text = "NOM Prénom      ";
+            this.buttonTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonTopRight.UseVisualStyleBackColor = true;
+            this.buttonTopRight.Click += new System.EventHandler(this.buttonTopRight_Click);
             // 
             // bunifuElipse
             // 
@@ -200,46 +260,31 @@
             this.bunifuDragControl2.TargetControl = this.panelTop;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // ucWriteCR
+            // ucProfile1
             // 
-            this.ucWriteCR.Location = new System.Drawing.Point(257, 12);
-            this.ucWriteCR.Margin = new System.Windows.Forms.Padding(2);
-            this.ucWriteCR.Name = "ucWriteCR";
-            this.ucWriteCR.Size = new System.Drawing.Size(952, 695);
-            this.ucWriteCR.TabIndex = 14;
-            // 
-            // ucProfile
-            // 
-            this.ucProfile.Location = new System.Drawing.Point(257, 12);
-            this.ucProfile.Margin = new System.Windows.Forms.Padding(4);
-            this.ucProfile.Name = "ucProfile";
-            this.ucProfile.Size = new System.Drawing.Size(952, 695);
-            this.ucProfile.TabIndex = 13;
-            // 
-            // ucHome
-            // 
-            this.ucHome.Location = new System.Drawing.Point(257, 11);
-            this.ucHome.Margin = new System.Windows.Forms.Padding(4);
-            this.ucHome.Name = "ucHome";
-            this.ucHome.Size = new System.Drawing.Size(952, 695);
-            this.ucHome.TabIndex = 12;
+            this.ucProfile1.BackColor = System.Drawing.SystemColors.Control;
+            this.ucProfile1.Location = new System.Drawing.Point(257, 72);
+            this.ucProfile1.Name = "ucProfile1";
+            this.ucProfile1.Size = new System.Drawing.Size(953, 634);
+            this.ucProfile1.TabIndex = 2;
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1210, 706);
+            this.Controls.Add(this.ucProfile1);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
-            this.Controls.Add(this.ucWriteCR);
-            this.Controls.Add(this.ucProfile);
-            this.Controls.Add(this.ucHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logo_gsb)).EndInit();
+            this.panelTop.ResumeLayout(false);
+            this.panelTopRight.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,18 +294,20 @@
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.PictureBox logo_gsb;
-        private System.Windows.Forms.Button bHome;
         private System.Windows.Forms.Panel panelSide;
         private System.Windows.Forms.Button bReadCR;
         private System.Windows.Forms.Button bWriteCR;
-        private System.Windows.Forms.Button bProfile;
+        private System.Windows.Forms.Button bReadVisiteur;
         private System.ComponentModel.BackgroundWorker backgroundWorker;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl2;
         private System.Windows.Forms.Button bDisconnection;
-        private UCHome ucHome;
-        private UCProfile ucProfile;
-        private UCWriteCR ucWriteCR;
+        private System.Windows.Forms.Panel panelTopRight;
+        private System.Windows.Forms.Panel panelSideTopRight;
+        private System.Windows.Forms.Button bReadMedicament;
+        private System.Windows.Forms.Button bReadMedecin;
+        private System.Windows.Forms.Button buttonTopRight;
+        private UCProfile ucProfile1;
     }
 }

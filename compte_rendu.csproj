@@ -95,12 +95,6 @@
     <Compile Include="UCProfile.Designer.cs">
       <DependentUpon>UCProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCHome.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCHome.Designer.cs">
-      <DependentUpon>UCHome.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCWriteCR.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCSample.resx">
       <DependentUpon>UCSample.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCHome.resx">
-      <DependentUpon>UCHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCProfile.resx">
       <DependentUpon>UCProfile.cs</DependentUpon>

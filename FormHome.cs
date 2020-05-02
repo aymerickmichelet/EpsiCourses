@@ -15,7 +15,7 @@ namespace compte_rendu
         public FormHome()
         {
             InitializeComponent();
-            displayCategory(category.HOME);
+            displayCategory(category.PROFILE);
         }
 
         private void bDisconnection_Click(object sender, EventArgs e)
@@ -25,12 +25,7 @@ namespace compte_rendu
             login.Show();
         }
 
-        private void bHome_Click(object sender, EventArgs e)
-        {
-            displayCategory(category.HOME);
-        }
-
-        private void bProfile_Click(object sender, EventArgs e)
+        private void buttonTopRight_Click(object sender, EventArgs e)
         {
             displayCategory(category.PROFILE);
         }
@@ -38,6 +33,21 @@ namespace compte_rendu
         private void bWriteCR_Click(object sender, EventArgs e)
         {
             displayCategory(category.WRITE_CR);
+        }
+        
+        private void bReadVisiteur_Click(object sender, EventArgs e)
+        {
+            displayCategory(category.READ_VISITEUR);
+        }
+
+        private void bReadMedecin_Click(object sender, EventArgs e)
+        {
+            displayCategory(category.READ_MEDECIN);
+        }
+
+        private void bReadMedicament_Click(object sender, EventArgs e)
+        {
+            displayCategory(category.READ_MEDICAMENT);
         }
 
         private void bReadCR_Click(object sender, EventArgs e)
@@ -47,9 +57,11 @@ namespace compte_rendu
 
         private enum category // onglet d'accueil
         {
-            HOME,
             PROFILE,
             WRITE_CR,
+            READ_VISITEUR,
+            READ_MEDECIN,
+            READ_MEDICAMENT,
             READ_CR
         }
 
@@ -57,38 +69,46 @@ namespace compte_rendu
         {
             switch (c)
             {
-                case category.HOME:
-                    ucHome.Visible = true; // afficher partie home
-                    ucProfile.Visible = false; // cacher les autres partie
-                    ucWriteCR.Visible = false;
-                    panelSide.Height = bHome.Height; // deplacer le curseur bleu sur l'onglet selectionné
-                    panelSide.Top = bHome.Top;
-                    break;
-
                 case category.PROFILE:
-                    ucHome.Visible = false;
-                    ucProfile.Visible = true;
-                    ucWriteCR.Visible = false;
-                    panelSide.Height = bProfile.Height;
-                    panelSide.Top = bProfile.Top;
+                    panelSideTopRight.Visible = true;
+                    panelSide.Visible = false;
                     break;
                 
                 case category.WRITE_CR:
-                    ucHome.Visible = false;
-                    ucProfile.Visible = false;
-                    ucWriteCR.Visible = true;
+                    panelSideTopRight.Visible = false;
+                    panelSide.Visible = true;
                     panelSide.Height = bWriteCR.Height;
                     panelSide.Top = bWriteCR.Top;
                     break;
-                
+
+                case category.READ_VISITEUR:
+                    panelSideTopRight.Visible = false;
+                    panelSide.Visible = true;
+                    panelSide.Height = bReadVisiteur.Height;
+                    panelSide.Top = bReadVisiteur.Top;
+                    break;
+
+                case category.READ_MEDECIN:
+                    panelSideTopRight.Visible = false;
+                    panelSide.Visible = true;
+                    panelSide.Height = bReadMedecin.Height;
+                    panelSide.Top = bReadMedecin.Top;
+                    break;
+
+                case category.READ_MEDICAMENT:
+                    panelSideTopRight.Visible = false;
+                    panelSide.Visible = true;
+                    panelSide.Height = bReadMedicament.Height;
+                    panelSide.Top = bReadMedicament.Top;
+                    break;
+
                 case category.READ_CR:
-                    ucHome.Visible = false;
-                    ucProfile.Visible = false;
-                    ucWriteCR.Visible = false;
+                    panelSideTopRight.Visible = false;
+                    panelSide.Visible = true;
                     panelSide.Height = bReadCR.Height;
                     panelSide.Top = bReadCR.Top;
                     break;
             }
-        }
+        }        
     }
 }

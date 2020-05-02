@@ -28,212 +28,334 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.bunifuCards = new Bunifu.Framework.UI.BunifuCards();
             this.labelRegion = new System.Windows.Forms.Label();
             this.labelRegionText = new System.Windows.Forms.Label();
-            this.labelStatusText = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.labelBirthdayText = new System.Windows.Forms.Label();
-            this.labelBirthday = new System.Windows.Forms.Label();
-            this.labelNameText = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
             this.labelLastname = new System.Windows.Forms.Label();
-            this.labelLastnameText = new System.Windows.Forms.Label();
-            this.imgProfile = new System.Windows.Forms.PictureBox();
-            this.bunifuCards.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgProfile)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bunifuCards3 = new Bunifu.Framework.UI.BunifuCards();
+            this.label12 = new System.Windows.Forms.Label();
+            this.bunifuCards1.SuspendLayout();
+            this.bunifuCards2.SuspendLayout();
+            this.bunifuCards3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
-            this.labelTitle.Location = new System.Drawing.Point(544, 31);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(147, 75);
-            this.labelTitle.TabIndex = 4;
-            this.labelTitle.Text = "Profil";
-            // 
-            // bunifuCards
-            // 
-            this.bunifuCards.AutoScroll = true;
-            this.bunifuCards.BackColor = System.Drawing.Color.White;
-            this.bunifuCards.BorderRadius = 5;
-            this.bunifuCards.BottomSahddow = true;
-            this.bunifuCards.color = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
-            this.bunifuCards.Controls.Add(this.labelRegion);
-            this.bunifuCards.Controls.Add(this.labelRegionText);
-            this.bunifuCards.Controls.Add(this.labelStatusText);
-            this.bunifuCards.Controls.Add(this.labelStatus);
-            this.bunifuCards.Controls.Add(this.labelBirthdayText);
-            this.bunifuCards.Controls.Add(this.labelBirthday);
-            this.bunifuCards.Controls.Add(this.labelNameText);
-            this.bunifuCards.Controls.Add(this.labelName);
-            this.bunifuCards.Controls.Add(this.labelLastname);
-            this.bunifuCards.Controls.Add(this.labelLastnameText);
-            this.bunifuCards.Controls.Add(this.imgProfile);
-            this.bunifuCards.LeftSahddow = false;
-            this.bunifuCards.Location = new System.Drawing.Point(117, 121);
-            this.bunifuCards.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuCards.Name = "bunifuCards";
-            this.bunifuCards.RightSahddow = true;
-            this.bunifuCards.ShadowDepth = 20;
-            this.bunifuCards.Size = new System.Drawing.Size(1029, 373);
-            this.bunifuCards.TabIndex = 5;
             // 
             // labelRegion
             // 
             this.labelRegion.AutoSize = true;
+            this.labelRegion.BackColor = System.Drawing.SystemColors.Window;
             this.labelRegion.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelRegion.Location = new System.Drawing.Point(697, 284);
+            this.labelRegion.Location = new System.Drawing.Point(91, 92);
+            this.labelRegion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRegion.Name = "labelRegion";
-            this.labelRegion.Size = new System.Drawing.Size(210, 37);
+            this.labelRegion.Size = new System.Drawing.Size(171, 30);
             this.labelRegion.TabIndex = 26;
             this.labelRegion.Text = "Ile-de-France";
             // 
             // labelRegionText
             // 
             this.labelRegionText.AutoSize = true;
+            this.labelRegionText.BackColor = System.Drawing.SystemColors.Window;
             this.labelRegionText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegionText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelRegionText.Location = new System.Drawing.Point(569, 296);
+            this.labelRegionText.Location = new System.Drawing.Point(19, 100);
+            this.labelRegionText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRegionText.Name = "labelRegionText";
-            this.labelRegionText.Size = new System.Drawing.Size(81, 23);
+            this.labelRegionText.Size = new System.Drawing.Size(68, 21);
             this.labelRegionText.TabIndex = 25;
             this.labelRegionText.Text = "Région:";
-            // 
-            // labelStatusText
-            // 
-            this.labelStatusText.AutoSize = true;
-            this.labelStatusText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatusText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelStatusText.Location = new System.Drawing.Point(577, 238);
-            this.labelStatusText.Name = "labelStatusText";
-            this.labelStatusText.Size = new System.Drawing.Size(73, 23);
-            this.labelStatusText.TabIndex = 24;
-            this.labelStatusText.Text = "Status:";
             // 
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.BackColor = System.Drawing.SystemColors.Window;
+            this.labelStatus.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelStatus.Location = new System.Drawing.Point(697, 228);
+            this.labelStatus.Location = new System.Drawing.Point(18, 58);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(120, 37);
+            this.labelStatus.Size = new System.Drawing.Size(97, 28);
             this.labelStatus.TabIndex = 23;
             this.labelStatus.Text = "Visiteur";
-            // 
-            // labelBirthdayText
-            // 
-            this.labelBirthdayText.AutoSize = true;
-            this.labelBirthdayText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBirthdayText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelBirthdayText.Location = new System.Drawing.Point(452, 177);
-            this.labelBirthdayText.Name = "labelBirthdayText";
-            this.labelBirthdayText.Size = new System.Drawing.Size(200, 23);
-            this.labelBirthdayText.TabIndex = 22;
-            this.labelBirthdayText.Text = "Date de naissance:";
-            // 
-            // labelBirthday
-            // 
-            this.labelBirthday.AutoSize = true;
-            this.labelBirthday.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelBirthday.Location = new System.Drawing.Point(697, 167);
-            this.labelBirthday.Name = "labelBirthday";
-            this.labelBirthday.Size = new System.Drawing.Size(179, 37);
-            this.labelBirthday.TabIndex = 21;
-            this.labelBirthday.Text = "19/08/2000";
-            // 
-            // labelNameText
-            // 
-            this.labelNameText.AutoSize = true;
-            this.labelNameText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelNameText.Location = new System.Drawing.Point(564, 118);
-            this.labelNameText.Name = "labelNameText";
-            this.labelNameText.Size = new System.Drawing.Size(90, 23);
-            this.labelNameText.TabIndex = 20;
-            this.labelNameText.Text = "Prenom:";
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelName.Location = new System.Drawing.Point(697, 107);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(152, 37);
-            this.labelName.TabIndex = 19;
-            this.labelName.Text = "Aymerick";
             // 
             // labelLastname
             // 
             this.labelLastname.AutoSize = true;
-            this.labelLastname.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLastname.BackColor = System.Drawing.SystemColors.Window;
+            this.labelLastname.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLastname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelLastname.Location = new System.Drawing.Point(697, 52);
+            this.labelLastname.Location = new System.Drawing.Point(16, 20);
+            this.labelLastname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLastname.Name = "labelLastname";
-            this.labelLastname.Size = new System.Drawing.Size(157, 37);
+            this.labelLastname.Size = new System.Drawing.Size(322, 38);
             this.labelLastname.TabIndex = 18;
-            this.labelLastname.Text = "MICHELET";
+            this.labelLastname.Text = "MICHELET Aymerick";
             // 
-            // labelLastnameText
+            // label1
             // 
-            this.labelLastnameText.AutoSize = true;
-            this.labelLastnameText.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLastnameText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
-            this.labelLastnameText.Location = new System.Drawing.Point(592, 62);
-            this.labelLastnameText.Name = "labelLastnameText";
-            this.labelLastnameText.Size = new System.Drawing.Size(62, 23);
-            this.labelLastnameText.TabIndex = 17;
-            this.labelLastnameText.Text = "Nom:";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label1.Location = new System.Drawing.Point(97, 123);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 30);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Nord";
             // 
-            // imgProfile
+            // label2
             // 
-            this.imgProfile.Location = new System.Drawing.Point(49, 52);
-            this.imgProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.imgProfile.Name = "imgProfile";
-            this.imgProfile.Size = new System.Drawing.Size(397, 271);
-            this.imgProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imgProfile.TabIndex = 16;
-            this.imgProfile.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label2.Location = new System.Drawing.Point(19, 131);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 21);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Secteur:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label3.Location = new System.Drawing.Point(117, 154);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 30);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "a131";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label4.Location = new System.Drawing.Point(19, 162);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 21);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "identifiant:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Window;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label5.Location = new System.Drawing.Point(96, 184);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(351, 30);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "20 rue bleue Elancourt 78990";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label6.Location = new System.Drawing.Point(19, 192);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 21);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "adresse:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Window;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label7.Location = new System.Drawing.Point(123, 214);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 30);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Plaisir";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.Window;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label8.Location = new System.Drawing.Point(19, 223);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 21);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "laboratoire:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.SystemColors.Window;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label9.Location = new System.Drawing.Point(181, 245);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 30);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "01/04/2020";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.SystemColors.Window;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label10.Location = new System.Drawing.Point(19, 253);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(158, 21);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "date d\'embauche:";
+            // 
+            // bunifuCards1
+            // 
+            this.bunifuCards1.BackColor = System.Drawing.Color.White;
+            this.bunifuCards1.BorderRadius = 10;
+            this.bunifuCards1.BottomSahddow = true;
+            this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
+            this.bunifuCards1.Controls.Add(this.label9);
+            this.bunifuCards1.Controls.Add(this.label10);
+            this.bunifuCards1.Controls.Add(this.label7);
+            this.bunifuCards1.Controls.Add(this.label8);
+            this.bunifuCards1.Controls.Add(this.label5);
+            this.bunifuCards1.Controls.Add(this.labelLastname);
+            this.bunifuCards1.Controls.Add(this.label6);
+            this.bunifuCards1.Controls.Add(this.labelStatus);
+            this.bunifuCards1.Controls.Add(this.label3);
+            this.bunifuCards1.Controls.Add(this.labelRegionText);
+            this.bunifuCards1.Controls.Add(this.label4);
+            this.bunifuCards1.Controls.Add(this.labelRegion);
+            this.bunifuCards1.Controls.Add(this.label1);
+            this.bunifuCards1.Controls.Add(this.label2);
+            this.bunifuCards1.LeftSahddow = true;
+            this.bunifuCards1.Location = new System.Drawing.Point(44, 33);
+            this.bunifuCards1.Name = "bunifuCards1";
+            this.bunifuCards1.RightSahddow = true;
+            this.bunifuCards1.ShadowDepth = 40;
+            this.bunifuCards1.Size = new System.Drawing.Size(611, 294);
+            this.bunifuCards1.TabIndex = 37;
+            // 
+            // bunifuCards2
+            // 
+            this.bunifuCards2.BackColor = System.Drawing.Color.White;
+            this.bunifuCards2.BorderRadius = 10;
+            this.bunifuCards2.BottomSahddow = true;
+            this.bunifuCards2.color = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
+            this.bunifuCards2.Controls.Add(this.label11);
+            this.bunifuCards2.LeftSahddow = true;
+            this.bunifuCards2.Location = new System.Drawing.Point(679, 33);
+            this.bunifuCards2.Name = "bunifuCards2";
+            this.bunifuCards2.RightSahddow = true;
+            this.bunifuCards2.ShadowDepth = 40;
+            this.bunifuCards2.Size = new System.Drawing.Size(224, 294);
+            this.bunifuCards2.TabIndex = 38;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Window;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label11.Location = new System.Drawing.Point(16, 15);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(194, 28);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "Médecins suivis";
+            // 
+            // bunifuCards3
+            // 
+            this.bunifuCards3.BackColor = System.Drawing.Color.White;
+            this.bunifuCards3.BorderRadius = 10;
+            this.bunifuCards3.BottomSahddow = true;
+            this.bunifuCards3.color = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
+            this.bunifuCards3.Controls.Add(this.label12);
+            this.bunifuCards3.LeftSahddow = true;
+            this.bunifuCards3.Location = new System.Drawing.Point(44, 352);
+            this.bunifuCards3.Name = "bunifuCards3";
+            this.bunifuCards3.RightSahddow = true;
+            this.bunifuCards3.ShadowDepth = 40;
+            this.bunifuCards3.Size = new System.Drawing.Size(859, 253);
+            this.bunifuCards3.TabIndex = 39;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.Window;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(163)))), ((int)(((byte)(211)))));
+            this.label12.Location = new System.Drawing.Point(16, 15);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(299, 28);
+            this.label12.TabIndex = 37;
+            this.label12.Text = "Derniers compte-rendus:";
             // 
             // UCProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.labelTitle);
-            this.Controls.Add(this.bunifuCards);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.bunifuCards3);
+            this.Controls.Add(this.bunifuCards2);
+            this.Controls.Add(this.bunifuCards1);
             this.Name = "UCProfile";
-            this.Size = new System.Drawing.Size(1269, 855);
-            this.bunifuCards.ResumeLayout(false);
-            this.bunifuCards.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgProfile)).EndInit();
+            this.Size = new System.Drawing.Size(953, 634);
+            this.bunifuCards1.ResumeLayout(false);
+            this.bunifuCards1.PerformLayout();
+            this.bunifuCards2.ResumeLayout(false);
+            this.bunifuCards2.PerformLayout();
+            this.bunifuCards3.ResumeLayout(false);
+            this.bunifuCards3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label labelTitle;
-        private Bunifu.Framework.UI.BunifuCards bunifuCards;
-        private System.Windows.Forms.PictureBox imgProfile;
-        private System.Windows.Forms.Label labelLastnameText;
-        private System.Windows.Forms.Label labelNameText;
-        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelLastname;
-        private System.Windows.Forms.Label labelStatusText;
         private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.Label labelBirthdayText;
-        private System.Windows.Forms.Label labelBirthday;
         private System.Windows.Forms.Label labelRegion;
         private System.Windows.Forms.Label labelRegionText;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards1;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards2;
+        private System.Windows.Forms.Label label11;
+        private Bunifu.Framework.UI.BunifuCards bunifuCards3;
+        private System.Windows.Forms.Label label12;
     }
 }
