@@ -209,34 +209,36 @@
             this.panelTopRight.Controls.Add(this.panelSideTopRight);
             this.panelTopRight.Controls.Add(this.bTopRight);
             this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelTopRight.Location = new System.Drawing.Point(709, 0);
+            this.panelTopRight.Location = new System.Drawing.Point(731, 0);
             this.panelTopRight.Name = "panelTopRight";
-            this.panelTopRight.Size = new System.Drawing.Size(244, 72);
+            this.panelTopRight.Size = new System.Drawing.Size(222, 72);
             this.panelTopRight.TabIndex = 0;
             // 
             // panelSideTopRight
             // 
             this.panelSideTopRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panelSideTopRight.Location = new System.Drawing.Point(3, 0);
+            this.panelSideTopRight.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSideTopRight.Location = new System.Drawing.Point(0, 0);
             this.panelSideTopRight.Name = "panelSideTopRight";
-            this.panelSideTopRight.Size = new System.Drawing.Size(244, 15);
+            this.panelSideTopRight.Size = new System.Drawing.Size(222, 15);
             this.panelSideTopRight.TabIndex = 4;
             // 
             // bTopRight
             // 
             this.bTopRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bTopRight.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bTopRight.FlatAppearance.BorderSize = 0;
             this.bTopRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bTopRight.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bTopRight.ForeColor = System.Drawing.Color.White;
             this.bTopRight.Image = ((System.Drawing.Image)(resources.GetObject("bTopRight.Image")));
             this.bTopRight.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bTopRight.Location = new System.Drawing.Point(3, 12);
+            this.bTopRight.Location = new System.Drawing.Point(0, 12);
             this.bTopRight.Name = "bTopRight";
-            this.bTopRight.Size = new System.Drawing.Size(229, 60);
+            this.bTopRight.Size = new System.Drawing.Size(222, 60);
             this.bTopRight.TabIndex = 12;
-            this.bTopRight.Text = "NOM Prénom      ";
-            this.bTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bTopRight.Text = "NOM Prénom";
+            this.bTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bTopRight.UseVisualStyleBackColor = true;
             this.bTopRight.Click += new System.EventHandler(this.buttonTopRight_Click);
             // 
