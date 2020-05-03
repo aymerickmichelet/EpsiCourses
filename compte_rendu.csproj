@@ -200,15 +200,6 @@
     <None Include="img\icons8-left-48.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\test\icons8-pills-50-2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\test\icons8-pills-50-6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="img\test\icons8-stethoscope-50.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="img\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

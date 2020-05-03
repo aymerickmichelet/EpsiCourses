@@ -12,10 +12,13 @@ namespace compte_rendu
 {
     public partial class FormHome : Form
     {
+        UCProfile profile;
+
         public FormHome()
         {
             InitializeComponent();
-            displayCategory(category.PROFILE);
+            panelTopRight.Width = bTopRight.Text.Length * 12 + 67; // taille panel profil
+            displayCategory(category.PROFILE); // ouvrir catégorie profil
         }
 
         private void bDisconnection_Click(object sender, EventArgs e)
@@ -65,6 +68,8 @@ namespace compte_rendu
             READ_CR
         }
 
+
+
         private void displayCategory(category c) // taches a executer lors des changements d'onglet
         {
             switch (c)
@@ -72,11 +77,14 @@ namespace compte_rendu
                 case category.PROFILE:
                     panelSideTopRight.Visible = true;
                     panelSide.Visible = false;
-                    UCProfile p = new UCProfile();
-                    p.Top = panelTopRight.Size.Height;
-                    p.Left = panelLeft.Size.Width;
-                    Controls.Add(p);
-                    p.Show();
+                    if(profile == null)
+                    {
+                        this.profile = new UCProfile();
+                        profile.Top = panelTopRight.Size.Height;
+                        profile.Left = panelLeft.Size.Width;
+                        Controls.Add(profile);
+                    }
+                    profile.Show();
                     break;
                 
                 case category.WRITE_CR:
@@ -84,6 +92,7 @@ namespace compte_rendu
                     panelSide.Visible = true;
                     panelSide.Height = bWriteCR.Height;
                     panelSide.Top = bWriteCR.Top;
+                    profile.Hide();
                     break;
 
                 case category.READ_VISITEUR:
@@ -91,6 +100,7 @@ namespace compte_rendu
                     panelSide.Visible = true;
                     panelSide.Height = bReadVisiteur.Height;
                     panelSide.Top = bReadVisiteur.Top;
+                    profile.Hide();
                     break;
 
                 case category.READ_MEDECIN:
@@ -98,6 +108,7 @@ namespace compte_rendu
                     panelSide.Visible = true;
                     panelSide.Height = bReadMedecin.Height;
                     panelSide.Top = bReadMedecin.Top;
+                    profile.Hide();
                     break;
 
                 case category.READ_MEDICAMENT:
@@ -105,6 +116,7 @@ namespace compte_rendu
                     panelSide.Visible = true;
                     panelSide.Height = bReadMedicament.Height;
                     panelSide.Top = bReadMedicament.Top;
+                    profile.Hide();
                     break;
 
                 case category.READ_CR:
@@ -112,6 +124,7 @@ namespace compte_rendu
                     panelSide.Visible = true;
                     panelSide.Height = bReadCR.Height;
                     panelSide.Top = bReadCR.Top;
+                    profile.Hide();
                     break;
             }
         }        

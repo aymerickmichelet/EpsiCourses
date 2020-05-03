@@ -237,7 +237,7 @@
             this.bTopRight.Name = "bTopRight";
             this.bTopRight.Size = new System.Drawing.Size(222, 60);
             this.bTopRight.TabIndex = 12;
-            this.bTopRight.Text = "NOM Prénom";
+            this.bTopRight.Text = "SOULIER Titouan";
             this.bTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bTopRight.UseVisualStyleBackColor = true;
             this.bTopRight.Click += new System.EventHandler(this.buttonTopRight_Click);
