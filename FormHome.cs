@@ -37,17 +37,17 @@ namespace compte_rendu
         
         private void bReadVisiteur_Click(object sender, EventArgs e)
         {
-            displayCategory(category.READ_VISITEUR);
+            displayCategory(category.SEARCH_VISITEUR);
         }
 
         private void bReadMedecin_Click(object sender, EventArgs e)
         {
-            displayCategory(category.READ_MEDECIN);
+            displayCategory(category.SEARCH_MEDECIN);
         }
 
         private void bReadMedicament_Click(object sender, EventArgs e)
         {
-            displayCategory(category.READ_MEDICAMENT);
+            displayCategory(category.SEARCH_MEDICAMENT);
         }
 
         private void bReadCR_Click(object sender, EventArgs e)
@@ -59,9 +59,9 @@ namespace compte_rendu
         {
             PROFILE,
             WRITE_CR,
-            READ_VISITEUR,
-            READ_MEDECIN,
-            READ_MEDICAMENT,
+            SEARCH_VISITEUR,
+            SEARCH_MEDECIN,
+            SEARCH_MEDICAMENT,
             READ_CR
         }
 
@@ -86,21 +86,21 @@ namespace compte_rendu
                     panelSide.Top = bWriteCR.Top;
                     break;
 
-                case category.READ_VISITEUR:
+                case category.SEARCH_VISITEUR:
                     panelSideTopRight.Visible = false;
                     panelSide.Visible = true;
                     panelSide.Height = bReadVisiteur.Height;
                     panelSide.Top = bReadVisiteur.Top;
                     break;
 
-                case category.READ_MEDECIN:
+                case category.SEARCH_MEDECIN:
                     panelSideTopRight.Visible = false;
                     panelSide.Visible = true;
                     panelSide.Height = bReadMedecin.Height;
                     panelSide.Top = bReadMedecin.Top;
                     break;
 
-                case category.READ_MEDICAMENT:
+                case category.SEARCH_MEDICAMENT:
                     panelSideTopRight.Visible = false;
                     panelSide.Visible = true;
                     panelSide.Height = bReadMedicament.Height;
