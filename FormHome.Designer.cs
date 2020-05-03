@@ -42,12 +42,11 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelTopRight = new System.Windows.Forms.Panel();
             this.panelSideTopRight = new System.Windows.Forms.Panel();
-            this.buttonTopRight = new System.Windows.Forms.Button();
+            this.bTopRight = new System.Windows.Forms.Button();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.bunifuElipse = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuDragControl2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.ucProfile1 = new compte_rendu.UCProfile();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo_gsb)).BeginInit();
             this.panelTop.SuspendLayout();
@@ -208,7 +207,7 @@
             // 
             this.panelTopRight.BackColor = System.Drawing.Color.Transparent;
             this.panelTopRight.Controls.Add(this.panelSideTopRight);
-            this.panelTopRight.Controls.Add(this.buttonTopRight);
+            this.panelTopRight.Controls.Add(this.bTopRight);
             this.panelTopRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelTopRight.Location = new System.Drawing.Point(709, 0);
             this.panelTopRight.Name = "panelTopRight";
@@ -223,23 +222,23 @@
             this.panelSideTopRight.Size = new System.Drawing.Size(244, 15);
             this.panelSideTopRight.TabIndex = 4;
             // 
-            // buttonTopRight
+            // bTopRight
             // 
-            this.buttonTopRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonTopRight.FlatAppearance.BorderSize = 0;
-            this.buttonTopRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTopRight.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTopRight.ForeColor = System.Drawing.Color.White;
-            this.buttonTopRight.Image = ((System.Drawing.Image)(resources.GetObject("buttonTopRight.Image")));
-            this.buttonTopRight.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonTopRight.Location = new System.Drawing.Point(3, 12);
-            this.buttonTopRight.Name = "buttonTopRight";
-            this.buttonTopRight.Size = new System.Drawing.Size(229, 60);
-            this.buttonTopRight.TabIndex = 12;
-            this.buttonTopRight.Text = "NOM Prénom      ";
-            this.buttonTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonTopRight.UseVisualStyleBackColor = true;
-            this.buttonTopRight.Click += new System.EventHandler(this.buttonTopRight_Click);
+            this.bTopRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bTopRight.FlatAppearance.BorderSize = 0;
+            this.bTopRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTopRight.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTopRight.ForeColor = System.Drawing.Color.White;
+            this.bTopRight.Image = ((System.Drawing.Image)(resources.GetObject("bTopRight.Image")));
+            this.bTopRight.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bTopRight.Location = new System.Drawing.Point(3, 12);
+            this.bTopRight.Name = "bTopRight";
+            this.bTopRight.Size = new System.Drawing.Size(229, 60);
+            this.bTopRight.TabIndex = 12;
+            this.bTopRight.Text = "NOM Prénom      ";
+            this.bTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.bTopRight.UseVisualStyleBackColor = true;
+            this.bTopRight.Click += new System.EventHandler(this.buttonTopRight_Click);
             // 
             // bunifuElipse
             // 
@@ -260,21 +259,12 @@
             this.bunifuDragControl2.TargetControl = this.panelTop;
             this.bunifuDragControl2.Vertical = true;
             // 
-            // ucProfile1
-            // 
-            this.ucProfile1.BackColor = System.Drawing.SystemColors.Control;
-            this.ucProfile1.Location = new System.Drawing.Point(257, 72);
-            this.ucProfile1.Name = "ucProfile1";
-            this.ucProfile1.Size = new System.Drawing.Size(953, 634);
-            this.ucProfile1.TabIndex = 2;
-            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1210, 706);
-            this.Controls.Add(this.ucProfile1);
             this.Controls.Add(this.panelTop);
             this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -307,7 +297,6 @@
         private System.Windows.Forms.Panel panelSideTopRight;
         private System.Windows.Forms.Button bReadMedicament;
         private System.Windows.Forms.Button bReadMedecin;
-        private System.Windows.Forms.Button buttonTopRight;
-        private UCProfile ucProfile1;
+        private System.Windows.Forms.Button bTopRight;
     }
 }

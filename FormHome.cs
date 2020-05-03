@@ -72,6 +72,11 @@ namespace compte_rendu
                 case category.PROFILE:
                     panelSideTopRight.Visible = true;
                     panelSide.Visible = false;
+                    UCProfile p = new UCProfile();
+                    p.Top = panelTopRight.Size.Height;
+                    p.Left = panelLeft.Size.Width;
+                    Controls.Add(p);
+                    p.Show();
                     break;
                 
                 case category.WRITE_CR:
