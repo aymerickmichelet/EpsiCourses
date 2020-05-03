@@ -9,6 +9,7 @@ namespace compte_rendu
 {
     static class Program
     {
+        //mettre a jour le framwork du projet
         [STAThread]
         static void Main()
         {

@@ -1,6 +1,6 @@
 ﻿namespace compte_rendu
 {
-    partial class UCProfile
+    partial class UCVisiteur
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
@@ -48,13 +48,10 @@
             this.labelMedecinTitle = new System.Windows.Forms.Label();
             this.bcCR = new Bunifu.Framework.UI.BunifuCards();
             this.bcCRList = new Bunifu.Framework.UI.BunifuCards();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.labelCRTitle = new System.Windows.Forms.Label();
             this.bcVisiteur.SuspendLayout();
             this.bcMedecin.SuspendLayout();
             this.bcCR.SuspendLayout();
-            this.bcCRList.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelRegion
@@ -335,8 +332,6 @@
             this.bcCRList.BorderRadius = 0;
             this.bcCRList.BottomSahddow = true;
             this.bcCRList.color = System.Drawing.Color.Transparent;
-            this.bcCRList.Controls.Add(this.button2);
-            this.bcCRList.Controls.Add(this.button1);
             this.bcCRList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bcCRList.LeftSahddow = true;
             this.bcCRList.Location = new System.Drawing.Point(0, 58);
@@ -345,38 +340,6 @@
             this.bcCRList.ShadowDepth = 20;
             this.bcCRList.Size = new System.Drawing.Size(859, 195);
             this.bcCRList.TabIndex = 40;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(849, 32);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "19/08/2000 - PICHON Maxime - MICHELET Aymerick";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(849, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "19/08/2000 - PICHON Maxime - MICHELET Aymerick";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // labelCRTitle
             // 
@@ -406,7 +369,6 @@
             this.bcMedecin.PerformLayout();
             this.bcCR.ResumeLayout(false);
             this.bcCR.PerformLayout();
-            this.bcCRList.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -433,7 +395,5 @@
         private System.Windows.Forms.Label labelCRTitle;
         private Bunifu.Framework.UI.BunifuCards bcMedecinList;
         private Bunifu.Framework.UI.BunifuCards bcCRList;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
     }
 }

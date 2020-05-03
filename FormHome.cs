@@ -12,7 +12,7 @@ namespace compte_rendu
 {
     public partial class FormHome : Form
     {
-        UCProfile profile;
+        UCVisiteur profile;
 
         public FormHome()
         {
@@ -79,7 +79,7 @@ namespace compte_rendu
                     panelSide.Visible = false;
                     if(profile == null)
                     {
-                        this.profile = new UCProfile();
+                        this.profile = new UCVisiteur();
                         profile.Top = panelTopRight.Size.Height;
                         profile.Left = panelLeft.Size.Width;
                         Controls.Add(profile);

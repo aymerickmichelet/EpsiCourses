@@ -89,11 +89,11 @@
     <Compile Include="UCSample.Designer.cs">
       <DependentUpon>UCSample.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCProfile.cs">
+    <Compile Include="UCVisiteur.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCProfile.Designer.cs">
-      <DependentUpon>UCProfile.cs</DependentUpon>
+    <Compile Include="UCVisiteur.Designer.cs">
+      <DependentUpon>UCVisiteur.cs</DependentUpon>
     </Compile>
     <Compile Include="UCWriteCR.cs">
       <SubType>UserControl</SubType>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="UCSample.resx">
       <DependentUpon>UCSample.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCProfile.resx">
-      <DependentUpon>UCProfile.cs</DependentUpon>
+    <EmbeddedResource Include="UCVisiteur.resx">
+      <DependentUpon>UCVisiteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCWriteCR.resx">
       <DependentUpon>UCWriteCR.cs</DependentUpon>

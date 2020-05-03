@@ -225,6 +225,7 @@
             // 
             // bTopRight
             // 
+            this.bTopRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(160)))), ((int)(((byte)(210)))));
             this.bTopRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bTopRight.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bTopRight.FlatAppearance.BorderSize = 0;
@@ -239,7 +240,7 @@
             this.bTopRight.TabIndex = 12;
             this.bTopRight.Text = "SOULIER Titouan";
             this.bTopRight.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bTopRight.UseVisualStyleBackColor = true;
+            this.bTopRight.UseVisualStyleBackColor = false;
             this.bTopRight.Click += new System.EventHandler(this.buttonTopRight_Click);
             // 
             // bunifuElipse
