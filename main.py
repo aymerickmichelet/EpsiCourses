@@ -21,6 +21,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
+config = Config()
 token = config.getToken()
 
 epsib3_message_id = 777854216160804874
