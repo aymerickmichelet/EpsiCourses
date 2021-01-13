@@ -1,4 +1,4 @@
-<!-- 
+<!--
 	MARIO peut sauter
 	il peut sauter sur la plateforme et en tomber
 	il se deplace sans sortir de l'écran
@@ -6,7 +6,7 @@
 	en cas de collision, mario meurt
 	on ne peut pas traverser la plateforme
 	animation de sprite
-	
+
 	BONUS:
 		disign
 		boulette de feu de mario
@@ -16,15 +16,18 @@
 <!DOCTYPE html>
 <html lang="FR">
 	<head>
-		<title>JS Mario</title>
-		<link rel="icon" type="image/png" href="image/logo.png" />
+		<title>Js Mario</title>
+		<link rel="icon" type="image/png" href="image/mushroom.png" />
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 
-	<body>
-		<img id="mario" src="image/wait.jpg" width="5%" height="5%"/>
-		<img id="goomba" src="image/goomba.png" width="3%" height="3%"/>
-		<img id="flag" src="image/flag.png" width="10%" height="30%"/>
+	<body id="body">
+		<div>
+			<span id="points">0</span> point(s)
+		</div>
+		<div>
+			<span id="godmod">0</span> second(s) invisibilité
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="js/script.js"></script>
 	</body>
