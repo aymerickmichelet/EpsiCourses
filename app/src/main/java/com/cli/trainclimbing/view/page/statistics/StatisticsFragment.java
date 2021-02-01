@@ -1,4 +1,4 @@
-package com.cli.trainclimbing.view.page.dashboard;
+package com.cli.trainclimbing.view.page.statistics;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.cli.trainclimbing.R;
 
-public class DashboardFragment extends Fragment {
+public class StatisticsFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private StatisticsViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+                new ViewModelProvider(this).get(StatisticsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_statistics, container, false);
         final TextView textView = root.findViewById(R.id.text_dashboard);
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

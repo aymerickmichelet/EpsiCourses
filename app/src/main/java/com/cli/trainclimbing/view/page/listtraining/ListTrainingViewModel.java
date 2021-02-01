@@ -1,16 +1,16 @@
-package com.cli.trainclimbing.view.page.dashboard;
+package com.cli.trainclimbing.view.page.listtraining;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class ListTrainingViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public ListTrainingViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is ListTraining fragment");
     }
 
     public LiveData<String> getText() {

@@ -1,4 +1,4 @@
-package com.cli.trainclimbing.view.page.notifications;
+package com.cli.trainclimbing.view.page.addtraining;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.cli.trainclimbing.R;
 
-public class NotificationsFragment extends Fragment {
+public class AddTrainingFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private AddTrainingViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        homeViewModel =
+                new ViewModelProvider(this).get(AddTrainingViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_add_training, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

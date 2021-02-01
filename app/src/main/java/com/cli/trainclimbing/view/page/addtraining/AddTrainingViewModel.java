@@ -1,16 +1,16 @@
-package com.cli.trainclimbing.view.page.home;
+package com.cli.trainclimbing.view.page.addtraining;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class AddTrainingViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public AddTrainingViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is addTraining fragment");
     }
 
     public LiveData<String> getText() {
