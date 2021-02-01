@@ -1,4 +1,4 @@
-package com.cli.trainclimbing.ui.notifications;
+package com.cli.trainclimbing.view.page.notifications;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

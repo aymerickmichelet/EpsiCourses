@@ -1,4 +1,4 @@
-package com.cli.trainclimbing.ui.home;
+package com.cli.trainclimbing.view.page.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

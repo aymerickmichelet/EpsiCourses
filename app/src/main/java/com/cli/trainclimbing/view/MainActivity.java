@@ -1,7 +1,8 @@
-package com.cli.trainclimbing;
+package com.cli.trainclimbing.view;
 
 import android.os.Bundle;
 
+import com.cli.trainclimbing.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
