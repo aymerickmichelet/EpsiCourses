@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/it_LinearLayout_date"
+      android:layout_margin="5dp"
+      android:orientation="horizontal"
+      >
+      <TextView
+          android:id="@+id/it_textView_date"
+          android:layout_width="wrap_content"
+          android:textColor="@color/black"
+          android:layout_height="wrap_content"
+          android:textSize="20sp"
+          android:text="Date : 22/02/2000"
+          android:layout_weight="3"
+       />
+      <TextView
+          android:id="@+id/it_textView_hours"
+          android:layout_width="wrap_content"
+          android:textAlignment="textEnd"
+          android:textColor="@color/black"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:text="2h00"
+          android:layout_weight="1"
+          />
+  </LinearLayout>
+    <LinearLayout
+        android:id="@+id/it_LinearLayout_lv"
+        android:layout_below="@id/it_LinearLayout_date"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lv_green"
+            android:textSize="15sp"
+            android:text="10 Facile"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lv_yellow"
+            android:textSize="15sp"
+            android:text="5 Moyen"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lv_orange"
+            android:textSize="15sp"
+            android:text="10 Diffile"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/lv_red"
+            android:textSize="15sp"
+            android:text="0 Très Difficile"
+            />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/it_LinearLayout_lv"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="10dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/ic_baseline_delete_24"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>
