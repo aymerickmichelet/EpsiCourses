@@ -17,22 +17,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginBottom="20dp">
 
             <TextView
                 android:id="@+id/at_textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:paddingHorizontal="70dp"
                 android:text="@string/ad_textView_title"
                 android:textAlignment="center"
-                />
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:padding="10dp"
             >
 
             <TextView
@@ -41,66 +43,57 @@
                 android:layout_height="wrap_content"
                 android:text="@string/ad_textView_date_key"
                 android:textAlignment="textEnd"
+                android:textSize="25sp"
+                />
+
+            <DatePicker
+                android:id="@+id/simpleDatePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:datePickerMode="calendar"
+                android:firstDayOfWeek="0"
+                android:headerBackground="@color/blue"
+                android:calendarViewShown="false"
+                />
+
+<!--            <EditText-->
+<!--                android:id="@+id/at_editTextDate_value"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="date"-->
+<!--                android:layout_marginHorizontal="10sp"-->
+<!--                />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/ad_textView_time_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ad_textView_time_key"
+                android:textAlignment="textEnd"
+                android:textSize="25sp"
                 />
 
             <EditText
-                android:id="@+id/at_editTextDate_value"
+                android:id="@+id/editTextNumberSigned"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="5"
-                android:inputType="date" />
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:inputType="numberSigned" />
+
+
         </LinearLayout>
 
 
 
-
-
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            >-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/ad_textView_time_key"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/ad_textView_time_key"-->
-<!--                android:textAlignment="textEnd"-->
-<!--                />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/ad_textView_time_value"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="DD/MM/YYYY"-->
-<!--                android:textAlignment="textStart"-->
-<!--                />-->
-<!--        </LinearLayout>-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal"-->
-<!--            >-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/ad_textView_level_key"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/ad_textView_level_key"-->
-<!--                android:textAlignment="textEnd"-->
-<!--                />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/ad_textView_level_value"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text=""-->
-<!--                android:textAlignment="textStart"-->
-<!--                />-->
-<!--        </LinearLayout>-->
 
 
     </LinearLayout>
