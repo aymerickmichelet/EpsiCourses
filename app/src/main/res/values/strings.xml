@@ -5,13 +5,13 @@
     <string name="title_list_training">Listes</string>
 
     <string name="ad_textView_title">Ajouter un nouvel entrainement</string>
-    <string name="ad_textView_date_key">Date: </string>
-    <string name="ad_textView_time_key">Temps: </string>
-    <string name="ad_textView_level_key">Niveau: </string>
-    <string name="ad_text_level_low">Facile</string>
-    <string name="ad_text_level_middle">Moyen</string>
-    <string name="ad_text_level_high">Difficile</string>
-    <string name="ad_text_level_export">Expert</string>
+    <string name="ad_textView_dateKey">Date: </string>
+    <string name="ad_textView_timeKey">Temps: </string>
+    <string name="ad_textView_levelTitle">Voies pratiquées: </string>
+    <string name="ad_textView_levelEasyKey">4a/5c: </string>
+    <string name="ad_textView_levelMiddleKey">6a/6c: </string>
+    <string name="ad_textView_levelHighKey">7a/7c: </string>
+    <string name="ad_textView_levelExpertKey">8a/+: </string>
     <string name="ad_button_submit">Ajouter</string>
 
 </resources>
