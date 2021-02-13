@@ -2,19 +2,19 @@ package com.cli.trainclimbing.model;
 
 public class Level {
 
-    private NameLevel name;
+    private String name;
     private int number;
 
-    public Level(NameLevel name, int number) {
+    public Level(String name, int number) {
         this.name = name;
         this.number = number;
     }
 
-    public NameLevel getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(NameLevel name) {
+    public void setName(String name) {
         this.name = name;
     }
 

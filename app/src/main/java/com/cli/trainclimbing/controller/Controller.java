@@ -3,6 +3,7 @@ package com.cli.trainclimbing.controller;
 import android.content.Context;
 
 import com.cli.trainclimbing.model.AccesLocal;
+import com.cli.trainclimbing.model.Training;
 
 public final class Controller {
 
@@ -18,6 +19,15 @@ public final class Controller {
         }
         return Controller.instance;
     }
+
+    public void AddTraining(Training training) {
+        accesLocal.addTrainingAndLevel(training);
+    }
+
+    public int getLastIdTraining() {
+        return accesLocal.getLastIdTraining();
+    }
+
 
     public void addExample() {
         accesLocal.addExample();

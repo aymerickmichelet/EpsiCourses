@@ -13,10 +13,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.cli.trainclimbing.R;
 import com.cli.trainclimbing.controller.Controller;
+import com.cli.trainclimbing.model.Level;
+import com.cli.trainclimbing.model.Training;
 import com.cli.trainclimbing.model.TrainingTest;
 import com.cli.trainclimbing.view.itemtraining.ListTrainingAdapter;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ListTrainingFragment extends Fragment {
@@ -45,7 +48,18 @@ public class ListTrainingFragment extends Fragment {
 
     public void testBDD() {
         System.out.println("COUCOU");
-        this.controller.addExample();
+
+        int lastId = this.controller.getLastIdTraining();
+
+        ArrayList<Level> listLevel = new ArrayList<>();
+        listLevel.add(new Level("EASY", 2));
+        listLevel.add(new Level("MEDIUM", 1));
+
+        Date date = new Date();
+
+        Training training = new Training(lastId+ 1, date, 5, listLevel);
+
+        this.controller.AddTraining(training);
     }
 
     private List<TrainingTest> generateTraining() {

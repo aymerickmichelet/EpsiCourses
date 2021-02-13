@@ -27,12 +27,13 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                 "date INTEGER, time REAL);";
 
         String tableLevel = "CREATE TABLE level (id_level INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "id_training INTEGER, number INTEGER, name TEXT" +
-                "FOREIGN KEY(id_training) REFERENCES training(id_training);";
+                "id_training INTEGER, number INTEGER, name TEXT," +
+                "FOREIGN KEY(id_training) REFERENCES training(id_training));";
 
-        String creation = tableTraining + tableLevel;
+       // String creation = tableTraining +" " +tableLevel;
 
-        db.execSQL(creation);
+        db.execSQL(tableTraining);
+        db.execSQL(tableLevel);
     }
 
 
