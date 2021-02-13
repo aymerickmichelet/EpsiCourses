@@ -1,11 +1,11 @@
 package com.cli.trainclimbing.model;
 
 //Ceci est un model provisoire, le temps de faire les views.
-public class Training {
+public class TrainingTest {
     private String date;
     private String hours;
 
-    public Training(String date, String hours) {
+    public TrainingTest(String date, String hours) {
         this.date = date;
         this.hours = hours;
     }

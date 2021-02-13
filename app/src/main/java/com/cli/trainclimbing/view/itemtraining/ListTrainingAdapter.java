@@ -11,13 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.cli.trainclimbing.R;
-import com.cli.trainclimbing.model.Training;
+import com.cli.trainclimbing.model.TrainingTest;
 
 import java.util.List;
 
-public class ListTrainingAdapter extends ArrayAdapter<Training> {
+public class ListTrainingAdapter extends ArrayAdapter<TrainingTest> {
 
-    public ListTrainingAdapter(@NonNull Context context, List<Training> trainings) {
+    public ListTrainingAdapter(@NonNull Context context, List<TrainingTest> trainings) {
         super(context, 0, trainings);
     }
 
@@ -36,7 +36,7 @@ public class ListTrainingAdapter extends ArrayAdapter<Training> {
             convertView.setTag(viewHolder);
         }
 
-        Training training = getItem(position);
+        TrainingTest training = getItem(position);
         viewHolder.date.setText(training.getDate());
         viewHolder.hours.setText(training.getHours());
 
