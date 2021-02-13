@@ -23,14 +23,34 @@
             card_view:cardCornerRadius="20dp"
             >
 
-            <TextView
-                android:id="@+id/st_textView_nbTrainingValue"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Nombre d'entraînement"
-                android:gravity="center">
-            </TextView>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                >
 
+                <TextView
+                    android:id="@+id/st_textView_nbTrainingValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="3"
+                    android:textSize="32dp"
+                    android:layout_marginRight="10dp"
+                    android:textStyle="bold"
+                    android:gravity="center">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/st_textView_nbTrainingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="entraînements le dernier mois"
+
+                    android:gravity="center">
+                </TextView>
+
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -40,17 +60,66 @@
             android:id="@+id/st_cardView_lvlDifficulty"
             android:layout_gravity="center"
             android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:layout_marginTop="20dp"
             card_view:cardElevation="30dp"
             card_view:cardCornerRadius="20dp">
 
-            <TextView
-                android:id="@+id/st_textView_lvlDifficultyValue"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Niveau de difficulté"
-                android:gravity="center"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/st_textView_lvlDifficultyMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="En moyenne par training :"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/st_textView_easyValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lv_green"
+                    android:textSize="15sp"
+                    android:text="10 Facile"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/st_textView_mediumValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lv_yellow"
+                    android:textSize="15sp"
+                    android:text="5 Moyen"
+
+                    />
+                <TextView
+                    android:id="@+id/st_textView_hardValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lv_orange"
+                    android:textSize="15sp"
+                    android:text="10 Diffile"
+
+                    />
+                <TextView
+                    android:id="@+id/st_textView_hardcoreValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lv_red"
+                    android:textSize="15sp"
+                    android:text="0 Très Difficile"
+                    />
+
+            </LinearLayout>
+
+
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -63,12 +132,32 @@
             card_view:cardElevation="30dp"
             card_view:cardCornerRadius="20dp">
 
-            <TextView
-                android:id="@+id/st_textView_durationTrainingValue"
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Durée entraînement"
-                android:gravity="center"/>
+                android:orientation="vertical"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/st_textView_durationTrainingMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Durée entraînement"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/st_textView_durationTrainingValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2h00"
+                    android:textSize="32dp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -81,12 +170,32 @@
             card_view:cardElevation="30dp"
             card_view:cardCornerRadius="20dp">
 
-            <TextView
-                android:id="@+id/lvlUserValue"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Niveau user"
-                android:gravity="center"/>
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/lvlUserMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Votre niveau :"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/lvlUserValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lv_yellow"
+                    android:textSize="32dp"
+                    android:textStyle="bold"
+                    android:text="Confirmé"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
