@@ -6,7 +6,8 @@
 
     <string name="ad_textView_title">Ajouter un nouvel entrainement</string>
     <string name="ad_textView_dateKey">Date: </string>
-    <string name="ad_textView_timeKey">Temps: </string>
+    <string name="ad_textView_timeKey">Durée (min): </string>
+    <string name="ad_button_date">Aujourd\'hui</string>
     <string name="ad_textView_levelTitle">Voies pratiquées: </string>
     <string name="ad_textView_levelEasyKey">4a/5c: </string>
     <string name="ad_textView_levelMiddleKey">6a/6c: </string>

@@ -34,24 +34,34 @@
             android:padding="10dp"
             >
 
-            <TextView
-                android:id="@+id/ad_textView_date_key"
+            <Button
+                android:id="@+id/at_button_date"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/ad_textView_dateKey"
-                android:textSize="25sp"
-                android:gravity="center_vertical"
-                />
-
-            <EditText
-                android:id="@+id/at_editTextDate_dateValue"
-                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="date"
                 android:layout_weight="1"
-                android:layout_marginHorizontal="10sp"
-                android:gravity="center_vertical"
-                />
+                android:gravity="center"
+                android:text="@string/ad_button_date"/>
+
+<!--            <TextView-->
+<!--                android:id="@+id/ad_textView_date_key"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:text="@string/ad_textView_dateKey"-->
+<!--                android:textSize="25sp"-->
+<!--                android:gravity="center_vertical"-->
+<!--                />-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/at_editTextDate_dateValue"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="date"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_marginHorizontal="10sp"-->
+<!--                android:gravity="center_vertical"-->
+<!--                />-->
+
+
         </LinearLayout>
 
         <LinearLayout
@@ -96,7 +106,7 @@
                 android:text="@string/ad_textView_levelTitle"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:layout_margin="20dp"/>
 
         </LinearLayout>
@@ -192,11 +202,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <Button
                 android:id="@+id/at_button_submit"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
