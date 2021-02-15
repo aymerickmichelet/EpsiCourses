@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -16,8 +17,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.cli.trainclimbing.R;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class AddTrainingFragment extends Fragment {
@@ -101,13 +104,16 @@ public class AddTrainingFragment extends Fragment {
         EditText highET = root.findViewById(R.id.at_editTextNumberSigned_levelHighValue);
         EditText expertET = root.findViewById(R.id.at_editTextNumberSigned_levelExpertValue);
 
+        StringBuilder errors = new StringBuilder();
+        errors.append("Erreur:\n");
+
         Calendar calendarNow = Calendar.getInstance();
-        Calendar calendarDateButton = calendarNow;
+        Calendar calendarDateButton = new GregorianCalendar();
         if (!dateButton.getText().toString().equalsIgnoreCase("Aujourd'hui")){
             int day = Integer.parseInt(dateButton.getText().toString().split("/")[0]);
             int month = Integer.parseInt(dateButton.getText().toString().split("/")[1]);
             int year = Integer.parseInt(dateButton.getText().toString().split("/")[2]);
-            calendarDateButton.set(year, month, day);
+            calendarDateButton.set(year, month-1, day);
         }
 
         int time = Integer.parseInt(timeET.getText().toString());
@@ -117,21 +123,32 @@ public class AddTrainingFragment extends Fragment {
         int highNumber = Integer.parseInt(highET.getText().toString());
         int expertNumber = Integer.parseInt(expertET.getText().toString());
 
-        if (calendarDateButton.compareTo(calendarNow) >= 0)
-            System.out.println("> La date est correcte");
-        else
-            System.out.println("> La date n'est pas correcte !");
+        // if dateNow is recent as dateDateButton -> OK
+        if (calendarNow.compareTo(calendarDateButton) >= 0){
+            // if time is between 0 and 1440 min
+            if (time > 0 && time < 24*60){
+                // if numbers are positives
+                if (easyNumber >= 0 && middleNumber >= 0 && highNumber >= 0 || expertNumber >= 0){
+                    // if numbers > 0
+                    if (easyNumber > 0 || middleNumber > 0 || highNumber > 0 || expertNumber > 0){
+                        Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
+                        // save data
+                        initForm(root); // init value of Form
+                        return;
+                    }else{
+                        errors.append("Toutes les valeurs de voies sont nulles !\n");
+                    }
+                }else{
+                    errors.append("Toutes les valeurs de voies ne sont pas positive !\n");
+                }
+            }else{
+                errors.append("La durée n'est pas comprise entre 0 et 1440 min !\n");
+            }
+        }else{
+            errors.append("La date selectionné est plus récente que celle d'aujourd'hui !\n");
+        }
 
-
-        if (time > 0 && time < 24*60)
-            System.out.println("> La durée est correcte");
-        else
-            System.out.println("> La durée n'est pas correcte !");
-
-
-        if (easyNumber > 0 || middleNumber > 0 || highNumber > 0 || expertNumber > 0)
-            System.out.println("> Le nombre de voie est correcte");
-        else
-            System.out.println("> Le nombre de voie n'est pas correcte !");
+        Toast toast = Toast.makeText(getContext(), errors.toString(), Toast.LENGTH_LONG);
+        toast.show();
     }
 }
