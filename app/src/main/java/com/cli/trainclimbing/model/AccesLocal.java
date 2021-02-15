@@ -7,9 +7,11 @@ import android.util.Log;
 
 import com.cli.trainclimbing.utils.MySQLiteOpenHelper;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class AccesLocal {
@@ -69,7 +71,7 @@ public class AccesLocal {
         //loop cursor
         while(!cursor.isAfterLast()) {
 
-            Level newLevel = new Level(cursor.getString(3), cursor.getInt(4));
+            Level newLevel = new Level(cursor.getString(4), cursor.getInt(3));
             boolean findTraining = false;
             for(Training training: listTraining) {
 
@@ -94,6 +96,113 @@ public class AccesLocal {
             cursor.moveToNext();
         }
         return listTraining;
+    }
+
+    public Stat getStat() {
+        db = accesDB.getReadableDatabase();
+
+        ArrayList<Training> listTraining = new ArrayList<Training>();
+
+        //get startMonth
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = 1;
+        long startMonth = new Date(year - 1900, month, day, 0, 0, 0).getTime();
+
+        String req = "SELECT training.id_training AS id, date, time, number, name FROM training " +
+                "INNER JOIN level ON training.id_training = level.id_training" +
+                " WHERE date >= " + startMonth +";";
+
+        System.out.println(req);
+
+        Cursor cursor = db.rawQuery(req, null);
+
+        cursor.moveToFirst();
+        //loop cursor
+        while(!cursor.isAfterLast()) {
+
+            Level newLevel = new Level(cursor.getString(4), cursor.getInt(3));
+            boolean findTraining = false;
+            for(Training training: listTraining) {
+
+                //if training existe
+                if(training.getId() == cursor.getInt(0)) {
+                    //add level
+                    training.addLevel(newLevel);
+                    findTraining = true;
+                    break;
+                }
+            }
+            //create new element
+            if(!findTraining) {
+                Date date = new Date(cursor.getLong(1));
+
+                Training newTraining = new Training(cursor.getInt(0),
+                        date, cursor.getFloat(2), new ArrayList<Level>()
+                );
+                newTraining.addLevel(newLevel);
+                listTraining.add(newTraining);
+            }
+            cursor.moveToNext();
+        }
+
+        //Création des stats
+        int numberTrainingMonth = listTraining.size();
+        float averageTimeTraining = 0;
+        String levelUser = "EASY";
+        HashMap<String, Integer> averageLevelTraining = new HashMap<String, Integer>();
+
+        HashMap<String, Integer> levelTraining = new HashMap<String, Integer>();
+
+        levelTraining.put("EASY", 0);
+        levelTraining.put("MEDIUM", 0);
+        levelTraining.put("HIGHT", 0);
+        levelTraining.put("HARDCORE", 0);
+
+        //parcours training
+        for(Training training : listTraining) {
+            averageTimeTraining += training.getTime();
+
+            //parcours level
+            for(Level level: training.getListLevel()) {
+
+                Log.d(level.getName(),""+ level.getNumber());
+
+                switch (level.getName()){
+                    case "EASY":
+                        levelTraining.put("EASY", levelTraining.get("EASY") + level.getNumber());
+                        break;
+                    case "MEDIUM":
+                        levelTraining.put("MEDIUM", levelTraining.get("MEDIUM") + level.getNumber());
+                        break;
+                    case "HIGHT":
+                        levelTraining.put("HIGHT", levelTraining.get("HIGHT") + level.getNumber());
+                        break;
+                    case "HARDCORE":
+                        levelTraining.put("HARDCORE", levelTraining.get("HARDCORE") + level.getNumber());
+                        break;
+                }
+            }
+        }
+
+        averageTimeTraining = averageTimeTraining / numberTrainingMonth;
+
+        int levelUserData = 0;
+        for(String key: levelTraining.keySet()) {
+            Log.d(key, ""+ levelTraining.get(key));
+            averageLevelTraining.put(key, levelTraining.get(key)/numberTrainingMonth);
+            if(levelTraining.get(key) >= levelUserData && levelTraining.get(key) > 0) {
+                levelUserData = levelTraining.get(key);
+                levelUser = key;
+            }
+        }
+        Log.d("LEVELUSERDATA",""+ levelUserData);
+
+        //IL FAUT JUSTE LA MOYENNE PAR NIVEAU !!!!!!
+
+        Stat stat = new Stat(numberTrainingMonth, averageTimeTraining, levelUser, averageLevelTraining);
+        return stat;
     }
 
     public void addExample() {

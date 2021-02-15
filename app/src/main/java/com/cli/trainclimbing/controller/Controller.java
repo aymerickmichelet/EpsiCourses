@@ -3,6 +3,7 @@ package com.cli.trainclimbing.controller;
 import android.content.Context;
 
 import com.cli.trainclimbing.model.AccesLocal;
+import com.cli.trainclimbing.model.Stat;
 import com.cli.trainclimbing.model.Training;
 
 import java.util.ArrayList;
@@ -33,6 +34,10 @@ public final class Controller {
     public ArrayList<Training> getTraining() {
         return accesLocal.getTraining();
 
+    }
+
+    public Stat getStat() {
+        return accesLocal.getStat();
     }
 
 

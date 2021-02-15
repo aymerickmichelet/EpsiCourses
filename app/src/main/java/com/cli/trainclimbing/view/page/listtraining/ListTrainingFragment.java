@@ -1,6 +1,7 @@
 package com.cli.trainclimbing.view.page.listtraining;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.cli.trainclimbing.R;
 import com.cli.trainclimbing.controller.Controller;
 import com.cli.trainclimbing.model.Level;
+import com.cli.trainclimbing.model.Stat;
 import com.cli.trainclimbing.model.Training;
 import com.cli.trainclimbing.model.TrainingTest;
 import com.cli.trainclimbing.view.itemtraining.ListTrainingAdapter;
@@ -61,12 +63,21 @@ public class ListTrainingFragment extends Fragment {
 
         Training training = new Training(lastId+ 1, date, 5, listLevel);
 
-        this.controller.AddTraining(training);
+        Stat stat = this.controller.getStat();
+
+        System.out.println("STAT");
+        System.out.println("AverageTime: " + stat.getAverageTimeTraining());
+        System.out.println("levelUser : " + stat.getLevelUser());
+        System.out.println("NumberTraining : " + stat.getNumberTrainingMonth());
+        System.out.println("EASY : " + stat.getAverageLevelTraining().get("EASY"));
+        System.out.println("HARDCORE : " + stat.getAverageLevelTraining().get("HARDCORE"));
+
+        //this.controller.AddTraining(training);
 
 
-        ArrayList<Training>  Listrainings = this.controller.getTraining();
+        //ArrayList<Training>  Listrainings = this.controller.getTraining();
 
-        Log.d("TRAINING", "training" );
+       /* Log.d("TRAINING", "training" );
         System.out.println(Listrainings);
 
         for(Training t: Listrainings) {
@@ -74,7 +85,7 @@ public class ListTrainingFragment extends Fragment {
             long time = date.getTime();
             System.out.println(t.getDate());
             System.out.println(t.getListLevel().size());
-        }
+        } */
     }
 
     private List<TrainingTest> generateTraining() {
