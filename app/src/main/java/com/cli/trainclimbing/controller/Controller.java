@@ -5,6 +5,8 @@ import android.content.Context;
 import com.cli.trainclimbing.model.AccesLocal;
 import com.cli.trainclimbing.model.Training;
 
+import java.util.ArrayList;
+
 public final class Controller {
 
     private static Controller instance = null;
@@ -26,6 +28,11 @@ public final class Controller {
 
     public int getLastIdTraining() {
         return accesLocal.getLastIdTraining();
+    }
+
+    public ArrayList<Training> getTraining() {
+        return accesLocal.getTraining();
+
     }
 
 

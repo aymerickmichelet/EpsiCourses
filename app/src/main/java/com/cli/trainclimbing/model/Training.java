@@ -17,6 +17,10 @@ public class Training {
         this.listLevel = listLevel;
     }
 
+    public void addLevel(Level level) {
+        this.listLevel.add(level);
+    }
+
     public int getId() {
         return id;
     }

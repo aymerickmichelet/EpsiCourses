@@ -1,6 +1,7 @@
 package com.cli.trainclimbing.view.page.listtraining;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,10 +57,24 @@ public class ListTrainingFragment extends Fragment {
         listLevel.add(new Level("MEDIUM", 1));
 
         Date date = new Date();
+        System.out.println("Date"+ date);
 
         Training training = new Training(lastId+ 1, date, 5, listLevel);
 
         this.controller.AddTraining(training);
+
+
+        ArrayList<Training>  Listrainings = this.controller.getTraining();
+
+        Log.d("TRAINING", "training" );
+        System.out.println(Listrainings);
+
+        for(Training t: Listrainings) {
+            System.out.println(t.getId());
+            long time = date.getTime();
+            System.out.println(t.getDate());
+            System.out.println(t.getListLevel().size());
+        }
     }
 
     private List<TrainingTest> generateTraining() {

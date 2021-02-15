@@ -7,7 +7,9 @@ import android.util.Log;
 
 import com.cli.trainclimbing.utils.MySQLiteOpenHelper;
 
+import java.util.Date;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccesLocal {
@@ -53,6 +55,45 @@ public class AccesLocal {
         }
 
         return lastId;
+    }
+
+    public ArrayList<Training> getTraining() {
+        db = accesDB.getReadableDatabase();
+        ArrayList<Training> listTraining = new ArrayList<Training>();
+
+        String req = "SELECT training.id_training AS id, date, time, number, name FROM training " +
+                "INNER JOIN level ON training.id_training = level.id_training";
+
+        Cursor cursor = db.rawQuery(req, null);
+        cursor.moveToFirst();
+        //loop cursor
+        while(!cursor.isAfterLast()) {
+
+            Level newLevel = new Level(cursor.getString(3), cursor.getInt(4));
+            boolean findTraining = false;
+            for(Training training: listTraining) {
+
+                //if training existe
+                if(training.getId() == cursor.getInt(0)) {
+                    //add level
+                    training.addLevel(newLevel);
+                    findTraining = true;
+                    break;
+                }
+            }
+            //create new element
+            if(!findTraining) {
+                Date date = new Date(cursor.getLong(1));
+
+                Training newTraining = new Training(cursor.getInt(0),
+                        date, cursor.getFloat(2), new ArrayList<Level>()
+                        );
+                newTraining.addLevel(newLevel);
+                listTraining.add(newTraining);
+            }
+            cursor.moveToNext();
+        }
+        return listTraining;
     }
 
     public void addExample() {
