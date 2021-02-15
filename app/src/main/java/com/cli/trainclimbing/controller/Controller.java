@@ -33,12 +33,13 @@ public final class Controller {
 
     public ArrayList<Training> getTraining() {
         return accesLocal.getTraining();
-
     }
 
     public Stat getStat() {
         return accesLocal.getStat();
     }
+
+    public void deleteTraining(int id_training) { accesLocal.deleteTraining(id_training);}
 
 
     public void addExample() {

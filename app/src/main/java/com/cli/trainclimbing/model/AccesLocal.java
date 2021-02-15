@@ -144,6 +144,19 @@ public class AccesLocal {
         return stat;
     }
 
+    public void deleteTraining(int id_training) {
+        db = accesDB.getWritableDatabase();
+
+        String deleteTraining = "DELETE FROM training WHERE" +
+                " id_training =" + id_training +";";
+
+        String deleteLevel = "DELETE FROM level WHERE" +
+                " id_training =" + id_training +";";
+
+        db.execSQL(deleteTraining);
+        db.execSQL(deleteLevel);
+    }
+
     public ArrayList<Training> setTrainingWithCursor(Cursor cursor) {
         ArrayList<Training> listTraining = new ArrayList<Training>();
 
@@ -178,6 +191,8 @@ public class AccesLocal {
         return listTraining;
 
     }
+
+
 
     public void addExample() {
         db = accesDB.getWritableDatabase();
