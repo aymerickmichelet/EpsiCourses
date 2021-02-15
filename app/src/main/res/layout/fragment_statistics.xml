@@ -34,7 +34,7 @@
                     android:id="@+id/st_textView_nbTrainingValue"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="3"
+
                     android:textSize="32dp"
                     android:layout_marginRight="10dp"
                     android:textStyle="bold"
@@ -86,7 +86,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/lv_green"
                     android:textSize="15sp"
-                    android:text="10 Facile"
                     android:gravity="center"
                     />
                 <TextView
@@ -95,7 +94,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/lv_yellow"
                     android:textSize="15sp"
-                    android:text="5 Moyen"
 
                     />
                 <TextView
@@ -104,7 +102,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/lv_orange"
                     android:textSize="15sp"
-                    android:text="10 Diffile"
 
                     />
                 <TextView
@@ -113,7 +110,6 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/lv_red"
                     android:textSize="15sp"
-                    android:text="0 Très Difficile"
                     />
 
             </LinearLayout>
@@ -151,7 +147,6 @@
                     android:id="@+id/st_textView_durationTrainingValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2h00"
                     android:textSize="32dp"
                     android:textStyle="bold"
                     android:gravity="center"/>
@@ -184,13 +179,12 @@
                     android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/lvlUserValue"
+                    android:id="@+id/st_textView_lvlUserValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/lv_yellow"
                     android:textSize="32dp"
                     android:textStyle="bold"
-                    android:text="Confirmé"
                     android:gravity="center"/>
 
             </LinearLayout>
