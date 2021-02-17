@@ -31,8 +31,15 @@ public class AccesLocal {
         long date = training.getDate().getTime();
 
         db = accesDB.getWritableDatabase();
-        String insertTraining = "INSERT INTO training(date, time) VALUES" +
-                "("+ date +"," + training.getTime() +");";
+
+        String insertTraining;
+        if(training.getId() == 1) {
+            insertTraining = "INSERT INTO training(id_training, date, time) VALUES" +
+                    "("+ training.getId() +","+date +"," + training.getTime() +");";
+        } else {
+            insertTraining = "INSERT INTO training(date, time) VALUES" +
+                    "("+ date +"," + training.getTime() +");";
+        }
 
         db.execSQL(insertTraining);
 
