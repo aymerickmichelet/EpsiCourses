@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -123,26 +122,31 @@ public class AddTrainingFragment extends Fragment {
         int highNumber = Integer.parseInt(highET.getText().toString());
         int expertNumber = Integer.parseInt(expertET.getText().toString());
 
+        System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendarDateButton.getTime()) + " / " + new SimpleDateFormat("dd-MM-yyyy").format(calendarNow.getTime()));
         // if dateNow is recent as dateDateButton -> OK
         if (calendarNow.compareTo(calendarDateButton) >= 0){
             // if time is between 0 and 1440 min
-            if (time > 0 && time < 24*60){
-                // if numbers are positives
-                if (easyNumber >= 0 && middleNumber >= 0 && highNumber >= 0 || expertNumber >= 0){
-                    // if numbers > 0
-                    if (easyNumber > 0 || middleNumber > 0 || highNumber > 0 || expertNumber > 0){
-                        Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
-                        // save data
-                        initForm(root); // init value of Form
-                        return;
+            if (time > 0){
+                if(time < 24*60){
+                    // if numbers are positives
+                    if (easyNumber >= 0 && middleNumber >= 0 && highNumber >= 0 || expertNumber >= 0){
+                        // if numbers > 0
+                        if (easyNumber > 0 || middleNumber > 0 || highNumber > 0 || expertNumber > 0){
+                            Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
+                            // save data
+                            initForm(root); // init value of Form
+                            return;
+                        }else{
+                            errors.append("Toutes les valeurs de voies sont nulles !\n");
+                        }
                     }else{
-                        errors.append("Toutes les valeurs de voies sont nulles !\n");
+                        errors.append("Toutes les valeurs de voies ne sont pas positive !\n");
                     }
                 }else{
-                    errors.append("Toutes les valeurs de voies ne sont pas positive !\n");
+                    errors.append("La durée ne doit pas exceder 1440 min.");
                 }
             }else{
-                errors.append("La durée n'est pas comprise entre 0 et 1440 min !\n");
+                errors.append("La durée doit être supérieur à 0 min.\n");
             }
         }else{
             errors.append("La date selectionné est plus récente que celle d'aujourd'hui !\n");
