@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.cli.trainclimbing.R;
+import com.cli.trainclimbing.controller.Controller;
 import com.cli.trainclimbing.model.Level;
 import com.cli.trainclimbing.model.Training;
 
@@ -19,8 +21,11 @@ import java.util.List;
 
 public class ListTrainingAdapter extends ArrayAdapter<Training> {
 
+    private Controller controller;
     public ListTrainingAdapter(@NonNull Context context, List<Training> trainings) {
         super(context, 0, trainings);
+        controller = Controller.getInstance(context);
+
     }
 
     @NonNull
@@ -39,6 +44,7 @@ public class ListTrainingAdapter extends ArrayAdapter<Training> {
             viewHolder.medium = (TextView) convertView.findViewById(R.id.it_textView_medium);
             viewHolder.hight = (TextView) convertView.findViewById(R.id.it_textView_hight);
             viewHolder.hardcore = (TextView) convertView.findViewById(R.id.it_textView_hardcore);
+            viewHolder.deleteBtn = (ImageButton) convertView.findViewById(R.id.it_ImageButton_delete);
             convertView.setTag(viewHolder);
         }
 
@@ -74,7 +80,19 @@ public class ListTrainingAdapter extends ArrayAdapter<Training> {
         viewHolder.hight.setText(hight + " - 7a/7c");
         viewHolder.hardcore.setText(hardcore + " - 8a/+");
 
-        return convertView;
+        viewHolder.deleteBtn.setOnClickListener(v-> deletedTraining(training));
 
+
+        return convertView;
     }
+
+
+    public void deletedTraining(Training training) {
+        this.controller.deleteTraining(training.getId());
+        remove(training);
+        System.out.println("DELETED");
+    }
+
+
+
 }

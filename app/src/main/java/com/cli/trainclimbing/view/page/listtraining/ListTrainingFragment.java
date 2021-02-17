@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -47,6 +48,9 @@ public class ListTrainingFragment extends Fragment {
        ListTrainingAdapter adapter = new ListTrainingAdapter(root.getContext(), trainingList);
        this.lvList = (ListView) root.findViewById(R.id.lt_ListView_training);
        this.lvList.setAdapter(adapter);
+
+
+
         return root;
     }
 
