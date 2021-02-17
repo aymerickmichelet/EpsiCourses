@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.cli.trainclimbing.R;
 import com.cli.trainclimbing.controller.Controller;
@@ -152,6 +154,10 @@ public class AddTrainingFragment extends Fragment {
                         this.controller.AddTraining(training);
 
                         initForm(root); // init value of Form
+
+                        // redirection to stats page
+                        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                        navController.navigate(R.id.navigation_list_training);
                         return;
                     }else{
                         errors.append("Toutes les valeurs de voies ne sont pas positive !\n");
