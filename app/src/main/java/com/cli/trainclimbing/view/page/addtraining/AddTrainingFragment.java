@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -44,7 +45,7 @@ public class AddTrainingFragment extends Fragment {
 
         // initialize form
         setCalendarToFrench();
-        initForm();
+        initForm(root);
 
         // event click on calendar button
         dateButton.setOnClickListener(v -> chooseDateFromCalendar(dateButton));
@@ -72,16 +73,23 @@ public class AddTrainingFragment extends Fragment {
     private int getValueOfField(int reference){
         Object obj = getView().findViewById(reference);
         if (obj instanceof EditText)
-            return Integer.parseInt(((EditText) obj).getText().toString());
+            if (!((EditText) obj).getText().toString().equalsIgnoreCase(""))
+                return Integer.parseInt(((EditText) obj).getText().toString());
+            else
+                return 0;
         else if (obj instanceof Button)
-            return Integer.parseInt(((Button) obj).getText().toString());
+            if (!((Button) obj).getText().toString().equalsIgnoreCase(""))
+                return Integer.parseInt(((Button) obj).getText().toString());
+            else
+                return 0;
         else
             return -1;
     }
 
     // set the value of text for Button and EditText
-    private void setValueOfField(int reference, String value){
-        Object obj = getView().findViewById(reference);
+    private void setValueOfField(View root, int reference, String value){
+        Object obj = root.findViewById(reference);
+        System.out.println(obj.toString());
         if (obj instanceof EditText)
             ((EditText) obj).setText(value);
         else if (obj instanceof Button)
@@ -121,15 +129,17 @@ public class AddTrainingFragment extends Fragment {
     }
 
     // reset all values in form
-    private void initForm(){
+    private void initForm(@Nullable View view){
         inputCalendar = formatCalendar(new GregorianCalendar());
 
-        setValueOfField(R.id.at_button_date, "Aujourd'hui");
-        setValueOfField(R.id.at_editTextNumberSigned_timeValue, "0");
-        setValueOfField(R.id.at_editTextNumberSigned_levelEasyValue, "0");
-        setValueOfField(R.id.at_editTextNumberSigned_levelMiddleValue, "0");
-        setValueOfField(R.id.at_editTextNumberSigned_levelHighValue, "0");
-        setValueOfField(R.id.at_editTextNumberSigned_levelExpertValue, "0");
+        if (view == null) view = getView();
+
+        setValueOfField(view, R.id.at_button_date, getContext().getString(R.string.ad_button_date));
+        setValueOfField(view, R.id.at_editTextNumberSigned_timeValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelEasyValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelMiddleValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelHighValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelExpertValue, "0");
     }
 
     // event on click submit button
@@ -146,23 +156,23 @@ public class AddTrainingFragment extends Fragment {
         if (time > 0){
             if(time < 24*60){
                 // if numbers are positives
-                if (easyNumber >= 0 && mediumNumber >= 0 && highNumber >= 0 || hardcoreNumber >= 0){
+                if (easyNumber >= 0 && mediumNumber >= 0 && highNumber >= 0 && hardcoreNumber >= 0){
 
                     // save data
                     int id = this.controller.getLastIdTraining() + 1;
 
                     ArrayList<Level> listLevel = new ArrayList<>();
-                    if (easyNumber > 0) listLevel.add(new Level("EASY", easyNumber));
-                    if (mediumNumber > 0) listLevel.add(new Level("MEDIUM", mediumNumber));
-                    if (highNumber > 0) listLevel.add(new Level("HIGHT", highNumber));
-                    if (hardcoreNumber > 0) listLevel.add(new Level("HARDCORE", hardcoreNumber));
+                    listLevel.add(new Level("EASY", easyNumber));
+                    listLevel.add(new Level("MEDIUM", mediumNumber));
+                    listLevel.add(new Level("HIGHT", highNumber));
+                    listLevel.add(new Level("HARDCORE", hardcoreNumber));
 
                     Training training = new Training(id, inputCalendar.getTime(), time, listLevel);
 
                     this.controller.AddTraining(training);
 
                     // init values of Form
-                    initForm();
+                    initForm(null);
 
                     // redirection to stats page
                     Navigation.findNavController(getActivity(),
