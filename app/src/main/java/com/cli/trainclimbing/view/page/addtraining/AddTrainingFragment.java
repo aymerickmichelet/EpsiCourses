@@ -79,7 +79,7 @@ public class AddTrainingFragment extends Fragment {
     }
 
     private void initForm(View root){
-//        Button dateButton = root.findViewById(R.id.at_button_date);
+        Button dateButton = root.findViewById(R.id.at_button_date);
         EditText timeET = root.findViewById(R.id.at_editTextNumberSigned_timeValue);
         EditText easyET = root.findViewById(R.id.at_editTextNumberSigned_levelEasyValue);
         EditText middleET = root.findViewById(R.id.at_editTextNumberSigned_levelMiddleValue);
@@ -87,6 +87,7 @@ public class AddTrainingFragment extends Fragment {
         EditText expertET = root.findViewById(R.id.at_editTextNumberSigned_levelExpertValue);
 
         setCalendarToFrench();
+        dateButton.setText("Aujourd'hui");
         timeET.setText("0");
         easyET.setText("0");
         middleET.setText("0");
@@ -122,7 +123,6 @@ public class AddTrainingFragment extends Fragment {
         int highNumber = Integer.parseInt(highET.getText().toString());
         int expertNumber = Integer.parseInt(expertET.getText().toString());
 
-        System.out.println(new SimpleDateFormat("dd-MM-yyyy").format(calendarDateButton.getTime()) + " / " + new SimpleDateFormat("dd-MM-yyyy").format(calendarNow.getTime()));
         // if dateNow is recent as dateDateButton -> OK
         if (calendarNow.compareTo(calendarDateButton) >= 0){
             // if time is between 0 and 1440 min
@@ -130,15 +130,10 @@ public class AddTrainingFragment extends Fragment {
                 if(time < 24*60){
                     // if numbers are positives
                     if (easyNumber >= 0 && middleNumber >= 0 && highNumber >= 0 || expertNumber >= 0){
-                        // if numbers > 0
-                        if (easyNumber > 0 || middleNumber > 0 || highNumber > 0 || expertNumber > 0){
-                            Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
-                            // save data
-                            initForm(root); // init value of Form
-                            return;
-                        }else{
-                            errors.append("Toutes les valeurs de voies sont nulles !\n");
-                        }
+                        Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
+                        // save data
+                        initForm(root); // init value of Form
+                        return;
                     }else{
                         errors.append("Toutes les valeurs de voies ne sont pas positive !\n");
                     }
