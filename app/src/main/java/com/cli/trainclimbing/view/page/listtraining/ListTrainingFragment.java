@@ -38,9 +38,9 @@ public class ListTrainingFragment extends Fragment {
 
        controller = Controller.getInstance(root.getContext());
 
-        Button button = root.findViewById(R.id.lt_Button_sendtraing);
+       Button button = root.findViewById(R.id.lt_Button_sendtraing);
 
-        button.setOnClickListener((v) -> testBDD());
+       button.setOnClickListener((v) -> testBDD());
 
        List<TrainingTest> trainingList = generateTraining();
        ListTrainingAdapter adapter = new ListTrainingAdapter(root.getContext(), trainingList);

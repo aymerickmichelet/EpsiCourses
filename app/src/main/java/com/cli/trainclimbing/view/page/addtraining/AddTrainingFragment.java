@@ -15,9 +15,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.cli.trainclimbing.R;
+import com.cli.trainclimbing.controller.Controller;
+import com.cli.trainclimbing.model.Level;
+import com.cli.trainclimbing.model.Training;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -25,6 +28,7 @@ import java.util.Locale;
 public class AddTrainingFragment extends Fragment {
 
     private AddTrainingViewModel homeViewModel;
+    private Controller controller;
 
     DatePickerDialog datePickerDialog;
 
@@ -34,6 +38,7 @@ public class AddTrainingFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(AddTrainingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_add_training, container, false);
+        controller = Controller.getInstance(root.getContext());
         Button dateButton = root.findViewById(R.id.at_button_date);
         Button submit = root.findViewById(R.id.at_button_submit);
 
@@ -78,6 +83,7 @@ public class AddTrainingFragment extends Fragment {
         datePickerDialog.show();
     }
 
+    // reset all values in form
     private void initForm(View root){
         Button dateButton = root.findViewById(R.id.at_button_date);
         EditText timeET = root.findViewById(R.id.at_editTextNumberSigned_timeValue);
@@ -131,7 +137,20 @@ public class AddTrainingFragment extends Fragment {
                     // if numbers are positives
                     if (easyNumber >= 0 && middleNumber >= 0 && highNumber >= 0 || expertNumber >= 0){
                         Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
+
                         // save data
+                        int id = this.controller.getLastIdTraining() + 1;
+
+                        ArrayList<Level> listLevel = new ArrayList<>();
+                        if (easyNumber > 0) listLevel.add(new Level("EASY", easyNumber));
+                        if (middleNumber > 0) listLevel.add(new Level("MEDIUM", middleNumber));
+                        if (highNumber > 0) listLevel.add(new Level("HIGHT", highNumber));
+                        if (expertNumber > 0) listLevel.add(new Level("HARDCORE", expertNumber));
+
+                        Training training = new Training(id, calendarDateButton.getTime(), time, listLevel);
+
+                        this.controller.AddTraining(training);
+
                         initForm(root); // init value of Form
                         return;
                     }else{
@@ -144,10 +163,11 @@ public class AddTrainingFragment extends Fragment {
                 errors.append("La durée doit être supérieur à 0 min.\n");
             }
         }else{
-            errors.append("La date selectionné est plus récente que celle d'aujourd'hui !\n");
+            errors.append("La date selectionnée est plus récente que celle d'aujourd'hui !\n");
         }
 
         Toast toast = Toast.makeText(getContext(), errors.toString(), Toast.LENGTH_LONG);
         toast.show();
     }
+
 }
