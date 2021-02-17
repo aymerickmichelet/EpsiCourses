@@ -6,6 +6,7 @@
     <color name="dark_green">#71BB6B</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="lv_unkown">#888686</color>
     <color name="lv_green">#68DF5E</color>
     <color name="lv_yellow">#F1C40F</color>
     <color name="lv_orange">#F39C12</color>

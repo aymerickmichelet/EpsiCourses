@@ -19,5 +19,11 @@
     <string name="it_textView_date">Date</string>
     <string name="lt_TextView_noTraining">Aucun entrainement</string>
 
+    <string name="unknown_level">Inconnu</string>
+    <string name="easy_level">Débutant</string>
+    <string name="medium_level">Intermédiaire</string>
+    <string name="hight_level">Confirmé</string>
+    <string name="harcore_level">Expert</string>
+
 
 </resources>

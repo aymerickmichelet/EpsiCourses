@@ -32,7 +32,6 @@ public class ListTrainingFragment extends Fragment {
     private Controller controller;
     private List<Training>  trainingList;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
