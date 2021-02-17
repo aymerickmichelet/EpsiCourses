@@ -146,10 +146,10 @@ public class StatisticsFragment extends Fragment {
         textViewNbTrainingValue.setText(String.valueOf(nbTraining));
 
         // Affiche le nombre de parcours effectués par difficultées
-        textViewEasyValue.setText(nbEasy + " Facile(s)");
-        textViewMediumValue.setText(nbMedium + " Moyen(s)");
-        textViewHardValue.setText(nbHight + " Difficile(s)");
-        textViewHardcoreValue.setText(nbHardcore + " Très difficile(s)");
+        textViewEasyValue.setText(nbEasy + " 4a/5c");
+        textViewMediumValue.setText(nbMedium + " 6a/6c");
+        textViewHardValue.setText(nbHight + " 7a/7c");
+        textViewHardcoreValue.setText(nbHardcore + " 8a/+");
 
         // Affiche le temps moyen d'entraînements
         textViewDurationTrainingValue.setText(durationTraining);
