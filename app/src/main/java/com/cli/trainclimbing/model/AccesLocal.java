@@ -94,7 +94,7 @@ public class AccesLocal {
 
         //Création des stats
         int numberTrainingMonth = listTraining.size();
-        float averageTimeTraining = 0;
+        int averageTimeTraining = 0;
         String levelUser = "EASY";
         HashMap<String, Integer> averageLevelTraining = new HashMap<String, Integer>();
 
@@ -181,7 +181,7 @@ public class AccesLocal {
                 Date date = new Date(cursor.getLong(1));
 
                 Training newTraining = new Training(cursor.getInt(0),
-                        date, cursor.getFloat(2), new ArrayList<Level>()
+                        date, cursor.getInt(2), new ArrayList<Level>()
                 );
                 newTraining.addLevel(newLevel);
                 listTraining.add(newTraining);
