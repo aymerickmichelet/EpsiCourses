@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -44,12 +45,16 @@ public class ListTrainingFragment extends Fragment {
 
         List<Training>  trainingList = this.controller.getTraining();
 
-       //List<TrainingTest> trainingList = generateTraining();
-       ListTrainingAdapter adapter = new ListTrainingAdapter(root.getContext(), trainingList);
-       this.lvList = (ListView) root.findViewById(R.id.lt_ListView_training);
-       this.lvList.setAdapter(adapter);
+        System.out.println(trainingList.size());
 
-
+        if(trainingList.size() == 0) {
+            TextView textNoTraining = root.findViewById(R.id.lt_TextView_noTraining);
+            textNoTraining.setVisibility(View.VISIBLE);
+        } else {
+            ListTrainingAdapter adapter = new ListTrainingAdapter(root.getContext(), trainingList);
+            this.lvList = (ListView) root.findViewById(R.id.lt_ListView_training);
+            this.lvList.setAdapter(adapter);
+        }
 
         return root;
     }

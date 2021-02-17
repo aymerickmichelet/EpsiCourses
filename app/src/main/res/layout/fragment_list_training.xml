@@ -24,4 +24,16 @@
          />
     </LinearLayout>
 
+    <TextView
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/lt_Button_sendtraing"
+        android:id="@id/lt_TextView_noTraining"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aucun entrainement"
+        />
+
 </RelativeLayout>
