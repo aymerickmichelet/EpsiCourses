@@ -15,4 +15,9 @@
     <string name="ad_textView_levelExpertKey">8a/+: </string>
     <string name="ad_button_submit">Ajouter</string>
 
+    <string name="lt_Button_sendtraing">Partager mon entrainement</string>
+    <string name="it_textView_date">Date</string>
+    <string name="lt_TextView_noTraining">Aucun entrainement</string>
+
+
 </resources>

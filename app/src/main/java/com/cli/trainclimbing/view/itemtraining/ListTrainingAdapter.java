@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.cli.trainclimbing.R;
 import com.cli.trainclimbing.controller.Controller;
@@ -73,7 +74,7 @@ public class ListTrainingAdapter extends ArrayAdapter<Training> {
             }
         }
 
-        viewHolder.date.setText("Date : " + training.formatDate());
+        viewHolder.date.setText(getContext().getString(R.string.it_textView_date) + " : " + training.formatDate());
         viewHolder.times.setText(training.formatTimes());
         viewHolder.easy.setText(easy + " - 4a/5c");
         viewHolder.medium.setText(medium + " - 6a/6c");
