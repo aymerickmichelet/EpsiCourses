@@ -7,10 +7,10 @@ public class Training {
 
     private int id;
     private Date date;
-    private float time;
+    private int time;
     private ArrayList<Level> listLevel;
 
-    public Training(int id, Date date, float time, ArrayList<Level> listLevel) {
+    public Training(int id, Date date, int time, ArrayList<Level> listLevel) {
         this.id = id;
         this.date = date;
         this.time = time;
@@ -37,11 +37,11 @@ public class Training {
         this.date = date;
     }
 
-    public float getTime() {
+    public int getTime() {
         return time;
     }
 
-    public void setTime(float time) {
+    public void setTime(int time) {
         this.time = time;
     }
 

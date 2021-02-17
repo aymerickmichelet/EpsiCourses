@@ -24,7 +24,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String tableTraining = "CREATE TABLE training (id_training INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "date INTEGER, time REAL);";
+                "date INTEGER, time INTEGER);";
 
         String tableLevel = "CREATE TABLE level (id_level INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "id_training INTEGER, number INTEGER, name TEXT," +

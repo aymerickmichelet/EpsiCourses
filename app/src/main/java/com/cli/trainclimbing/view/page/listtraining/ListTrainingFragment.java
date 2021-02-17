@@ -74,6 +74,8 @@ public class ListTrainingFragment extends Fragment {
 
         //this.controller.AddTraining(training);
 
+        this.controller.deleteTraining(7);
+
 
         //ArrayList<Training>  Listrainings = this.controller.getTraining();
 

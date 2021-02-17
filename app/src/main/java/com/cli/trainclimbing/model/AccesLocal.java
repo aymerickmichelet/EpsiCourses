@@ -94,7 +94,7 @@ public class AccesLocal {
 
         //Création des stats
         int numberTrainingMonth = listTraining.size();
-        float averageTimeTraining = 0;
+        int averageTimeTraining = 0;
         String levelUser = "EASY";
         HashMap<String, Integer> averageLevelTraining = new HashMap<String, Integer>();
 
@@ -144,6 +144,19 @@ public class AccesLocal {
         return stat;
     }
 
+    public void deleteTraining(int id_training) {
+        db = accesDB.getWritableDatabase();
+
+        String deleteTraining = "DELETE FROM training WHERE" +
+                " id_training =" + id_training +";";
+
+        String deleteLevel = "DELETE FROM level WHERE" +
+                " id_training =" + id_training +";";
+
+        db.execSQL(deleteTraining);
+        db.execSQL(deleteLevel);
+    }
+
     public ArrayList<Training> setTrainingWithCursor(Cursor cursor) {
         ArrayList<Training> listTraining = new ArrayList<Training>();
 
@@ -168,7 +181,7 @@ public class AccesLocal {
                 Date date = new Date(cursor.getLong(1));
 
                 Training newTraining = new Training(cursor.getInt(0),
-                        date, cursor.getFloat(2), new ArrayList<Level>()
+                        date, cursor.getInt(2), new ArrayList<Level>()
                 );
                 newTraining.addLevel(newLevel);
                 listTraining.add(newTraining);
@@ -178,6 +191,8 @@ public class AccesLocal {
         return listTraining;
 
     }
+
+
 
     public void addExample() {
         db = accesDB.getWritableDatabase();
