@@ -1,29 +1,28 @@
 package com.cli.trainclimbing.view.page.listtraining;
 
+
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.cli.trainclimbing.R;
 import com.cli.trainclimbing.controller.Controller;
 import com.cli.trainclimbing.model.Level;
-import com.cli.trainclimbing.model.Stat;
 import com.cli.trainclimbing.model.Training;
 import com.cli.trainclimbing.model.TrainingTest;
 import com.cli.trainclimbing.view.itemtraining.ListTrainingAdapter;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -31,87 +30,42 @@ public class ListTrainingFragment extends Fragment {
 
     private ListView lvList;
     private Controller controller;
+    private List<Training>  trainingList;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        //init View and Controller
        View root = inflater.inflate(R.layout.fragment_list_training, container, false);
-
        controller = Controller.getInstance(root.getContext());
 
+       //init SendViewList
         Button button = root.findViewById(R.id.lt_Button_sendtraing);
-        button.setOnClickListener((v) -> testBDD());
+        button.setOnClickListener((v) -> sendLastTraining());
 
-        List<Training>  trainingList = this.controller.getTraining();
+        //init listTraining
+        this.initListTraining(root);
 
-        System.out.println(trainingList.size());
+        return root;
+    }
+
+    public void initListTraining(View root) {
+        trainingList = this.controller.getTraining();
 
         if(trainingList.size() == 0) {
             TextView textNoTraining = root.findViewById(R.id.lt_TextView_noTraining);
             textNoTraining.setVisibility(View.VISIBLE);
         } else {
+            Collections.reverse(trainingList);
             ListTrainingAdapter adapter = new ListTrainingAdapter(root.getContext(), trainingList);
             this.lvList = (ListView) root.findViewById(R.id.lt_ListView_training);
             this.lvList.setAdapter(adapter);
         }
-
-        return root;
     }
 
-    public void testBDD() {
-        System.out.println("COUCOU");
-
-        int lastId = this.controller.getLastIdTraining();
-
-        ArrayList<Level> listLevel = new ArrayList<>();
-        listLevel.add(new Level("EASY", 2));
-        listLevel.add(new Level("MEDIUM", 1));
-
-        Date date = new Date();
-        System.out.println("Date"+ date);
-
-        Training training = new Training(lastId+ 1, date, 5, listLevel);
-
-        this.controller.AddTraining(training);
-
-        //Stat stat = this.controller.getStat();
-
-       // System.out.println("STAT");
-       // System.out.println("AverageTime: " + stat.getAverageTimeTraining());
-       // System.out.println("levelUser : " + stat.getLevelUser());
-       // System.out.println("NumberTraining : " + stat.getNumberTrainingMonth());
-        //System.out.println("EASY : " + stat.getAverageLevelTraining().get("EASY"));
-        //System.out.println("HARDCORE : " + stat.getAverageLevelTraining().get("HARDCORE"));
-
-
-
-        //this.controller.deleteTraining(7);
-
-
-        //ArrayList<Training>  Listrainings = this.controller.getTraining();
-
-       /* Log.d("TRAINING", "training" );
-        System.out.println(Listrainings);
-
-        for(Training t: Listrainings) {
-            System.out.println(t.getId());
-            long time = date.getTime();
-            System.out.println(t.getDate());
-            System.out.println(t.getListLevel().size());
-        } */
-    }
-
-    private List<TrainingTest> generateTraining() {
-        List<TrainingTest> trainingList = new ArrayList<TrainingTest>();
-        trainingList.add(new TrainingTest("Date : 21/09/2000", "2h00"));
-        trainingList.add(new TrainingTest("Date : 21/09/2000", "2h00"));
-        trainingList.add(new TrainingTest("Date : 21/09/2000", "2h00"));
-        trainingList.add(new TrainingTest("Date : 21/09/2000", "2h00"));
-        trainingList.add(new TrainingTest("Date : 21/09/2000", "2h00"));
-        trainingList.add(new TrainingTest("Date : 21/09/2000", "2h00"));
-
-        return trainingList;
+    public void sendLastTraining() {
 
     }
+
 }
