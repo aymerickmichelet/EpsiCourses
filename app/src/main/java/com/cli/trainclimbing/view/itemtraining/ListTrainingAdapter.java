@@ -11,13 +11,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.cli.trainclimbing.R;
-import com.cli.trainclimbing.model.TrainingTest;
+import com.cli.trainclimbing.model.Level;
+import com.cli.trainclimbing.model.Training;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
-public class ListTrainingAdapter extends ArrayAdapter<TrainingTest> {
+public class ListTrainingAdapter extends ArrayAdapter<Training> {
 
-    public ListTrainingAdapter(@NonNull Context context, List<TrainingTest> trainings) {
+    public ListTrainingAdapter(@NonNull Context context, List<Training> trainings) {
         super(context, 0, trainings);
     }
 
@@ -32,13 +34,45 @@ public class ListTrainingAdapter extends ArrayAdapter<TrainingTest> {
         if(viewHolder == null) {
             viewHolder = new ItemTrainingViewHolder();
             viewHolder.date = (TextView) convertView.findViewById(com.cli.trainclimbing.R.id.it_textView_date);
-            viewHolder.hours = (TextView) convertView.findViewById(R.id.it_textView_hours);
+            viewHolder.times = (TextView) convertView.findViewById(R.id.it_textView_times);
+            viewHolder.easy = (TextView) convertView.findViewById(R.id.it_textView_easy);
+            viewHolder.medium = (TextView) convertView.findViewById(R.id.it_textView_medium);
+            viewHolder.hight = (TextView) convertView.findViewById(R.id.it_textView_hight);
+            viewHolder.hardcore = (TextView) convertView.findViewById(R.id.it_textView_hardcore);
             convertView.setTag(viewHolder);
         }
 
-        TrainingTest training = getItem(position);
-        viewHolder.date.setText(training.getDate());
-        viewHolder.hours.setText(training.getHours());
+        Training training = getItem(position);
+
+        String easy = "0";
+        String medium = "0";
+        String hight = "0";
+        String hardcore = "0";
+
+        for(Level level: training.getListLevel()) {
+
+            switch(level.getName()) {
+                case "EASY":
+                    easy = String.valueOf(level.getNumber());
+                    break;
+                case "MEDIUM":
+                    medium = String.valueOf(level.getNumber());
+                    break;
+                case "HIGHT":
+                    hight = String.valueOf(level.getNumber());
+                    break;
+                case "HARDCORE":
+                    hardcore = String.valueOf(level.getNumber());
+                    break;
+            }
+        }
+
+        viewHolder.date.setText("Date : " + training.formatDate());
+        viewHolder.times.setText(training.formatTimes());
+        viewHolder.easy.setText(easy + " - 4a/5c");
+        viewHolder.medium.setText(medium + " - 6a/6c");
+        viewHolder.hight.setText(hight + " - 7a/7c");
+        viewHolder.hardcore.setText(hardcore + " - 8a/+");
 
         return convertView;
 

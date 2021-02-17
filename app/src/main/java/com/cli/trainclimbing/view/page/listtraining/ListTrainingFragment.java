@@ -39,10 +39,11 @@ public class ListTrainingFragment extends Fragment {
        controller = Controller.getInstance(root.getContext());
 
         Button button = root.findViewById(R.id.lt_Button_sendtraing);
-
         button.setOnClickListener((v) -> testBDD());
 
-       List<TrainingTest> trainingList = generateTraining();
+        List<Training>  trainingList = this.controller.getTraining();
+
+       //List<TrainingTest> trainingList = generateTraining();
        ListTrainingAdapter adapter = new ListTrainingAdapter(root.getContext(), trainingList);
        this.lvList = (ListView) root.findViewById(R.id.lt_ListView_training);
        this.lvList.setAdapter(adapter);
@@ -63,18 +64,20 @@ public class ListTrainingFragment extends Fragment {
 
         Training training = new Training(lastId+ 1, date, 5, listLevel);
 
-        Stat stat = this.controller.getStat();
+        this.controller.AddTraining(training);
 
-        System.out.println("STAT");
-        System.out.println("AverageTime: " + stat.getAverageTimeTraining());
-        System.out.println("levelUser : " + stat.getLevelUser());
-        System.out.println("NumberTraining : " + stat.getNumberTrainingMonth());
-        System.out.println("EASY : " + stat.getAverageLevelTraining().get("EASY"));
-        System.out.println("HARDCORE : " + stat.getAverageLevelTraining().get("HARDCORE"));
+        //Stat stat = this.controller.getStat();
 
-        //this.controller.AddTraining(training);
+       // System.out.println("STAT");
+       // System.out.println("AverageTime: " + stat.getAverageTimeTraining());
+       // System.out.println("levelUser : " + stat.getLevelUser());
+       // System.out.println("NumberTraining : " + stat.getNumberTrainingMonth());
+        //System.out.println("EASY : " + stat.getAverageLevelTraining().get("EASY"));
+        //System.out.println("HARDCORE : " + stat.getAverageLevelTraining().get("HARDCORE"));
 
-        this.controller.deleteTraining(7);
+
+
+        //this.controller.deleteTraining(7);
 
 
         //ArrayList<Training>  Listrainings = this.controller.getTraining();
