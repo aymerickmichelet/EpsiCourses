@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Partager mon entrainement" />
+        android:text="@string/lt_Button_sendtraing" />
 
     <LinearLayout
         android:layout_below="@id/lt_Button_sendtraing"
@@ -23,5 +23,17 @@
             android:layout_height="match_parent"
          />
     </LinearLayout>
+
+    <TextView
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/lt_Button_sendtraing"
+        android:id="@id/lt_TextView_noTraining"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lt_TextView_noTraining"
+        />
 
 </RelativeLayout>
