@@ -30,7 +30,6 @@ public class ListTrainingFragment extends Fragment {
     private ListView lvList;
     private Controller controller;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -63,18 +62,18 @@ public class ListTrainingFragment extends Fragment {
 
         Training training = new Training(lastId+ 1, date, 5, listLevel);
 
-        Stat stat = this.controller.getStat();
+       /* Stat stat = this.controller.getStat();
 
         System.out.println("STAT");
         System.out.println("AverageTime: " + stat.getAverageTimeTraining());
         System.out.println("levelUser : " + stat.getLevelUser());
         System.out.println("NumberTraining : " + stat.getNumberTrainingMonth());
         System.out.println("EASY : " + stat.getAverageLevelTraining().get("EASY"));
-        System.out.println("HARDCORE : " + stat.getAverageLevelTraining().get("HARDCORE"));
+        System.out.println("HARDCORE : " + stat.getAverageLevelTraining().get("HARDCORE"));*/
 
-        //this.controller.AddTraining(training);
+        this.controller.AddTraining(training);
 
-        this.controller.deleteTraining(7);
+        //this.controller.deleteTraining(7);
 
 
         //ArrayList<Training>  Listrainings = this.controller.getTraining();

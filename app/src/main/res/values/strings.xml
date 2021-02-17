@@ -3,4 +3,9 @@
     <string name="title_statistics">Stats</string>
     <string name="title_add_training">Ajouter</string>
     <string name="title_list_training">Listes</string>
+    <string name="unknown_level">Inconnu</string>
+    <string name="easy_level">Débutant</string>
+    <string name="medium_level">Intermédiaire</string>
+    <string name="hight_level">Confirmé</string>
+    <string name="harcore_level">Expert</string>
 </resources>
