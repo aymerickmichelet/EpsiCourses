@@ -1,8 +1,11 @@
 package com.cli.trainclimbing.view.page.listtraining;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,7 @@ import com.cli.trainclimbing.model.Training;
 import com.cli.trainclimbing.model.TrainingTest;
 import com.cli.trainclimbing.view.itemtraining.ListTrainingAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -64,6 +68,27 @@ public class ListTrainingFragment extends Fragment {
     }
 
     public void sendLastTraining() {
+        Training lastTraining;
+        try {
+            lastTraining = trainingList.get(trainingList.size() - 1);
+        }
+        catch(ArrayIndexOutOfBoundsException e) {
+            Log.d("Debug","Training list was found empty, last training session could not be fetched");
+            return;
+        }
+
+        String msgBody = "Regarde un peu ma dernière session d'entrainement!\n";
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String formatDate = formatter.format(lastTraining.getDate());
+
+        int trainingDuration = lastTraining.getTime();
+
+        msgBody += "Je me suis exercé le " + formatDate + " pendant " + trainingDuration + " minutes!";
+
+        Intent intentSMS = new Intent( Intent.ACTION_VIEW, Uri.parse( "sms:" + "" ) );
+        intentSMS.putExtra( "sms_body", msgBody );
+        startActivity( intentSMS );
 
     }
 
