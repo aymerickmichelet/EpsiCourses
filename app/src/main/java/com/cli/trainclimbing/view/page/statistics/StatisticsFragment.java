@@ -27,15 +27,13 @@ import java.time.LocalDateTime;
 
 public class StatisticsFragment extends Fragment {
 
-    private StatisticsViewModel dashboardViewModel;
     private Controller controller;
     private Context context;
 
     @SuppressLint("ResourceAsColor")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(StatisticsViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_statistics, container, false);
 
         controller = Controller.getInstance(root.getContext());

@@ -30,14 +30,12 @@ import java.util.Locale;
 
 public class AddTrainingFragment extends Fragment {
 
-    private AddTrainingViewModel homeViewModel;
     private Controller controller; // database
     private Calendar inputCalendar = formatCalendar(new GregorianCalendar()); // set calendar with today day
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-        homeViewModel = new ViewModelProvider(this).get(AddTrainingViewModel.class);
+        
         View root = inflater.inflate(R.layout.fragment_add_training, container, false);
         controller = Controller.getInstance(root.getContext()); // database
         Button dateButton = root.findViewById(R.id.at_button_date);
