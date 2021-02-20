@@ -78,26 +78,11 @@ public class StatisticsFragment extends Fragment {
 
             // Temps moyen des entraînements
             averageTime = stat.getAverageTimeTraining();
-
-            float hours = averageTime / 60;
-            float minutes = averageTime % 60;
-
-            if(hours < 10 && minutes < 10) {
-                durationTraining =  "0" + Math.round(hours) + ":0" + Math.round(minutes);
-            }
-
-            else if (minutes < 10)
-            {
-                durationTraining =  Math.round(hours) + ":0" + Math.round(minutes);
-            }
-            else
-            {
-                durationTraining = Math.round(hours) + ":" + Math.round(minutes);
-            }
+            System.out.println("Temps moyen :" + averageTime);
+            durationTraining = stat.formatTime(averageTime);
 
             // Niveau de l'utilisateur
              levelUser = stat.getLevelUser();
-
              switch (levelUser)
              {
                  case "EASY" :
