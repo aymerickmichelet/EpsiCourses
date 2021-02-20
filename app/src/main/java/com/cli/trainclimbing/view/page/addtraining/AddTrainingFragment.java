@@ -11,15 +11,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.cli.trainclimbing.R;
 import com.cli.trainclimbing.controller.Controller;
 import com.cli.trainclimbing.model.Level;
 import com.cli.trainclimbing.model.Training;
 
-import java.time.LocalDateTime;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -28,30 +31,69 @@ import java.util.Locale;
 public class AddTrainingFragment extends Fragment {
 
     private AddTrainingViewModel homeViewModel;
-    private Controller controller;
-
-    DatePickerDialog datePickerDialog;
+    private Controller controller; // database
+    private Calendar inputCalendar = formatCalendar(new GregorianCalendar()); // set calendar with today day
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        homeViewModel =
-                new ViewModelProvider(this).get(AddTrainingViewModel.class);
+        homeViewModel = new ViewModelProvider(this).get(AddTrainingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_add_training, container, false);
-        controller = Controller.getInstance(root.getContext());
+        controller = Controller.getInstance(root.getContext()); // database
         Button dateButton = root.findViewById(R.id.at_button_date);
         Button submit = root.findViewById(R.id.at_button_submit);
 
         // initialize form
+        setCalendarToFrench();
         initForm(root);
 
         // event click on calendar button
-        dateButton.setOnClickListener(v -> getDateFromCalendar(dateButton));
+        dateButton.setOnClickListener(v -> chooseDateFromCalendar(dateButton));
 
         // event click on submit button
-        submit.setOnClickListener(v -> submitForm(root));
+        submit.setOnClickListener(v -> submitForm());
 
         return root;
+    }
+
+    // return Calendar object with hour, min & sec at 0
+    private Calendar formatCalendar(Calendar calendar){
+        calendar.set(
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH),
+                0,
+                0,
+                0
+        );
+        return calendar;
+    }
+
+    // return the value of text for Button and EditText
+    private int getValueOfField(int reference){
+        Object obj = getView().findViewById(reference);
+        if (obj instanceof EditText)
+            if (!((EditText) obj).getText().toString().equalsIgnoreCase(""))
+                return Integer.parseInt(((EditText) obj).getText().toString());
+            else
+                return 0;
+        else if (obj instanceof Button)
+            if (!((Button) obj).getText().toString().equalsIgnoreCase(""))
+                return Integer.parseInt(((Button) obj).getText().toString());
+            else
+                return 0;
+        else
+            return -1;
+    }
+
+    // set the value of text for Button and EditText
+    private void setValueOfField(View root, int reference, String value){
+        Object obj = root.findViewById(reference);
+        System.out.println(obj.toString());
+        if (obj instanceof EditText)
+            ((EditText) obj).setText(value);
+        else if (obj instanceof Button)
+            ((Button) obj).setText(value);
     }
 
     private void setCalendarToFrench(){
@@ -63,111 +105,86 @@ public class AddTrainingFragment extends Fragment {
     }
 
     // event click on calendar button
-    private void getDateFromCalendar(Button dateButton){
-        LocalDateTime dateNow = LocalDateTime.now();
+    private void chooseDateFromCalendar(Button dateButton){
+        DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar nowCalendar = formatCalendar(Calendar.getInstance());
 
-        datePickerDialog = new DatePickerDialog(getContext(),
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(),
                 R.style.Theme_TrainClimbing_DatePicker,
                 (v, y, m, d) -> {
-                    m++;
-                    if(dateNow.getDayOfMonth() == d &&
-                            dateNow.getMonth().getValue() == m &&
-                            dateNow.getYear() == y)
-                        dateButton.setText("Aujourd'hui");
+                    inputCalendar.set(y, m, d);
+                    if (inputCalendar.after(nowCalendar))
+                        dateButton.setText(R.string.ad_button_date);
                     else
-                        dateButton.setText(d+"/"+m+"/"+y);
-                }, dateNow.getYear(),dateNow.getMonth().getValue()-1, dateNow.getDayOfMonth());
+                        dateButton.setText(sdf.format(inputCalendar.getTime()));
+                }, inputCalendar.get(Calendar.YEAR),
+                inputCalendar.get(Calendar.MONTH),
+                inputCalendar.get(Calendar.DAY_OF_MONTH));
+
         datePickerDialog.getDatePicker().setFirstDayOfWeek(Calendar.MONDAY);
-//                datePickerDialog.getDatePicker().setMinDate();
-//                datePickerDialog.getDatePicker().setMaxDate();
+        datePickerDialog.getDatePicker().setMinDate(formatCalendar(
+                new GregorianCalendar(2000, 7, 19)).getTimeInMillis());
+        datePickerDialog.getDatePicker().setMaxDate(nowCalendar.getTimeInMillis());
         datePickerDialog.show();
     }
 
     // reset all values in form
-    private void initForm(View root){
-        Button dateButton = root.findViewById(R.id.at_button_date);
-        EditText timeET = root.findViewById(R.id.at_editTextNumberSigned_timeValue);
-        EditText easyET = root.findViewById(R.id.at_editTextNumberSigned_levelEasyValue);
-        EditText middleET = root.findViewById(R.id.at_editTextNumberSigned_levelMiddleValue);
-        EditText highET = root.findViewById(R.id.at_editTextNumberSigned_levelHighValue);
-        EditText expertET = root.findViewById(R.id.at_editTextNumberSigned_levelExpertValue);
+    private void initForm(@Nullable View view){
+        inputCalendar = formatCalendar(new GregorianCalendar());
 
-        setCalendarToFrench();
-        dateButton.setText("Aujourd'hui");
-        timeET.setText("0");
-        easyET.setText("0");
-        middleET.setText("0");
-        highET.setText("0");
-        expertET.setText("0");
+        if (view == null) view = getView();
+
+        setValueOfField(view, R.id.at_button_date, getContext().getString(R.string.ad_button_date));
+        setValueOfField(view, R.id.at_editTextNumberSigned_timeValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelEasyValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelMiddleValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelHighValue, "0");
+        setValueOfField(view, R.id.at_editTextNumberSigned_levelExpertValue, "0");
     }
 
     // event on click submit button
-    private void submitForm(View root){
-        Button dateButton = root.findViewById(R.id.at_button_date);
-        EditText timeET = root.findViewById(R.id.at_editTextNumberSigned_timeValue);
-        EditText easyET = root.findViewById(R.id.at_editTextNumberSigned_levelEasyValue);
-        EditText middleET = root.findViewById(R.id.at_editTextNumberSigned_levelMiddleValue);
-        EditText highET = root.findViewById(R.id.at_editTextNumberSigned_levelHighValue);
-        EditText expertET = root.findViewById(R.id.at_editTextNumberSigned_levelExpertValue);
+    private void submitForm(){
+        String toast_message;
 
-        StringBuilder errors = new StringBuilder();
-        errors.append("Erreur:\n");
+        int time = getValueOfField(R.id.at_editTextNumberSigned_timeValue);
+        int easyNumber = getValueOfField(R.id.at_editTextNumberSigned_levelEasyValue);
+        int mediumNumber = getValueOfField(R.id.at_editTextNumberSigned_levelMiddleValue);
+        int highNumber = getValueOfField(R.id.at_editTextNumberSigned_levelHighValue);
+        int hardcoreNumber = getValueOfField(R.id.at_editTextNumberSigned_levelExpertValue);
 
-        Calendar calendarNow = Calendar.getInstance();
-        Calendar calendarDateButton = new GregorianCalendar();
-        if (!dateButton.getText().toString().equalsIgnoreCase("Aujourd'hui")){
-            int day = Integer.parseInt(dateButton.getText().toString().split("/")[0]);
-            int month = Integer.parseInt(dateButton.getText().toString().split("/")[1]);
-            int year = Integer.parseInt(dateButton.getText().toString().split("/")[2]);
-            calendarDateButton.set(year, month-1, day);
-        }
+        // if time is between 0 and 1440 min
+        if (time > 0){
+            if(time < 24*60){
+                // if numbers are positives
+                if (easyNumber >= 0 && mediumNumber >= 0 && highNumber >= 0 && hardcoreNumber >= 0){
 
-        int time = Integer.parseInt(timeET.getText().toString());
+                    // save data
+                    int id = this.controller.getLastIdTraining() + 1;
 
-        int easyNumber = Integer.parseInt(easyET.getText().toString());
-        int middleNumber = Integer.parseInt(middleET.getText().toString());
-        int highNumber = Integer.parseInt(highET.getText().toString());
-        int expertNumber = Integer.parseInt(expertET.getText().toString());
+                    ArrayList<Level> listLevel = new ArrayList<>();
+                    listLevel.add(new Level("EASY", easyNumber));
+                    listLevel.add(new Level("MEDIUM", mediumNumber));
+                    listLevel.add(new Level("HIGHT", highNumber));
+                    listLevel.add(new Level("HARDCORE", hardcoreNumber));
 
-        // if dateNow is recent as dateDateButton -> OK
-        if (calendarNow.compareTo(calendarDateButton) >= 0){
-            // if time is between 0 and 1440 min
-            if (time > 0){
-                if(time < 24*60){
-                    // if numbers are positives
-                    if (easyNumber >= 0 && middleNumber >= 0 && highNumber >= 0 || expertNumber >= 0){
-                        Toast.makeText(getContext(), "L'entrainement a bien été ajouté !", Toast.LENGTH_LONG).show();
+                    Training training = new Training(id, inputCalendar.getTime(), time, listLevel);
 
-                        // save data
-                        int id = this.controller.getLastIdTraining() + 1;
+                    this.controller.AddTraining(training);
 
-                        ArrayList<Level> listLevel = new ArrayList<>();
-                        if (easyNumber > 0) listLevel.add(new Level("EASY", easyNumber));
-                        if (middleNumber > 0) listLevel.add(new Level("MEDIUM", middleNumber));
-                        if (highNumber > 0) listLevel.add(new Level("HIGHT", highNumber));
-                        if (expertNumber > 0) listLevel.add(new Level("HARDCORE", expertNumber));
+                    // init values of Form
+                    initForm(null);
 
-                        Training training = new Training(id, calendarDateButton.getTime(), time, listLevel);
+                    // redirection to stats page
+                    Navigation.findNavController(getActivity(),
+                            R.id.nav_host_fragment).navigate(R.id.navigation_list_training);
 
-                        this.controller.AddTraining(training);
+                    toast_message = "L'entrainement a bien été ajouté !";
+                }else toast_message = "Erreur:\nToutes les valeurs de voies ne sont pas positive !";
+            }else toast_message = "La durée ne doit pas exceder 1440 min.";
+        }else toast_message = "La durée doit être supérieur à 0 min.\n";
 
-                        initForm(root); // init value of Form
-                        return;
-                    }else{
-                        errors.append("Toutes les valeurs de voies ne sont pas positive !\n");
-                    }
-                }else{
-                    errors.append("La durée ne doit pas exceder 1440 min.");
-                }
-            }else{
-                errors.append("La durée doit être supérieur à 0 min.\n");
-            }
-        }else{
-            errors.append("La date selectionnée est plus récente que celle d'aujourd'hui !\n");
-        }
-
-        Toast toast = Toast.makeText(getContext(), errors.toString(), Toast.LENGTH_LONG);
-        toast.show();
+        // Send alert
+        Toast.makeText(getContext(), toast_message, Toast.LENGTH_LONG).show();
     }
 
 }
