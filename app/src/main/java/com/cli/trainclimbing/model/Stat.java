@@ -28,6 +28,24 @@ public class Stat {
         return averageTimeTraining;
     }
 
+    public String formatTime(float averageTimeTraining)
+    {
+        String durationTraining;
+        int hours = (int) averageTimeTraining / 60;
+        int minutes = (int) averageTimeTraining % 60;
+
+        if(minutes < 10) {
+            durationTraining =  hours + "h0" + minutes;
+        }
+
+        else
+        {
+            durationTraining = hours + "h" + minutes;
+        }
+
+        return durationTraining;
+    }
+
     public void setAverageTimeTraining(float averageTimeTraining) {
         this.averageTimeTraining = averageTimeTraining;
     }
