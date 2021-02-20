@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -74,17 +75,16 @@ public class ListTrainingFragment extends Fragment {
         }
         catch(ArrayIndexOutOfBoundsException e) {
             Log.d("Debug","Training list was found empty, last training session could not be fetched");
+
+            String toast_message = "Aucun entrainement à partager !";
+            Toast.makeText(getContext(), toast_message, Toast.LENGTH_LONG).show();
             return;
         }
 
         String msgBody = "Regarde un peu ma dernière session d'entrainement!\n";
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String formatDate = formatter.format(lastTraining.getDate());
-
-        int trainingDuration = lastTraining.getTime();
-
-        msgBody += "Je me suis exercé le " + formatDate + " pendant " + trainingDuration + " minutes!";
+        String formatDate = lastTraining.formatDate();
+        String trainingDuration = lastTraining.formatTimes();
+        msgBody += "Je me suis exercé le " + formatDate + " pendant " + trainingDuration;
 
         Intent intentSMS = new Intent( Intent.ACTION_VIEW, Uri.parse( "sms:" + "" ) );
         intentSMS.putExtra( "sms_body", msgBody );
