@@ -1,4 +1,4 @@
-package fr.aymerickmichelet.primevideo;
+package fr.aymerickmichelet.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,8 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @EnableEurekaServer
-public class PrimeVideoApplication {
-
+public class EurekaApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(PrimeVideoApplication.class, args);
+		SpringApplication.run(EurekaApplication.class, args);
 	}
-
 }
