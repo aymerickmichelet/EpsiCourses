@@ -1,4 +1,4 @@
-package fr.aymerickmichelet.PrimeVideo;
+package fr.aymerickmichelet.primevideo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
