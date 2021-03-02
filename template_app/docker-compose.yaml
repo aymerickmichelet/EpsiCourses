@@ -1,0 +1,15 @@
+version: "3"
+services:
+  docker-mongodb:
+    container_name: "docker-mongodb"
+    image: mongo:3.4.9
+
+  docker-mongoapp:
+    container_name: "docker-mongoapp"
+    image: docker-mongoapp:latest
+    build:
+      context: ./application
+      dockerfile: Dockerfile
+    ports: ["5000:5000"]
+    depends_on:
+      - docker-mongodb
