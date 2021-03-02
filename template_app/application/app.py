@@ -38,7 +38,7 @@ def question_0():
     result_count = mongo_collection.find().count()
 
     return app.response_class(
-        response=json.dumps({"movie count": result_count}),
+        response=json.dumps({"movie_count": result_count}),
         status=200,
         mimetype='application/json'
     )
@@ -51,7 +51,7 @@ def question_1():
     result_count = mongo_collection.find().count()
 
     return app.response_class(
-        response=json.dumps({"user count": result_count}),
+        response=json.dumps({"user_count": result_count}),
         status=200,
         mimetype='application/json'
     )
@@ -64,7 +64,7 @@ def question_2():
     result_count = mongo_collection.find().count()
 
     return app.response_class(
-        response=json.dumps({"movie count": result_count}),
+        response=json.dumps({"movie_count": result_count}),
         status=200,
         mimetype='application/json'
     )
@@ -78,6 +78,59 @@ def question_3():
 
     return app.response_class(
         response=json.dumps({"user": result}),
+        status=200,
+        mimetype='application/json'
+    )
+
+
+@app.route("/question/4")
+def question_4():
+    mongo_database: Database = client["movielens"]
+    mongo_collection: Collection = mongo_database["users"]
+
+    result = mongo_collection.find({"age" : {"$gte": 18, "$lte": 30}}).count()
+
+    return app.response_class(
+        response=json.dumps({"user_count": result}),
+        status=200,
+        mimetype='application/json'
+    )
+
+@app.route("/question/5")
+def question_5():
+    mongo_database: Database = client["movielens"]
+    mongo_collection: Collection = mongo_database["users"]
+
+    result = mongo_collection.find({"$or": [{"occupation": "artist"}, {"occupation": "scientist"}]}).count()
+
+    return app.response_class(
+        response=json.dumps({"user_count": result}),
+        status=200,
+        mimetype='application/json'
+    )
+
+@app.route("/question/6")
+def question_6():
+    mongo_database: Database = client["movielens"]
+    mongo_collection: Collection = mongo_database["users"]
+
+    result = mongo_collection.find({"occupation": "writer", "gender": "F"}, {"movies": 0}).sort("age", -1).limit(10)
+
+    return app.response_class(
+        response=json.dumps({"result": [r for r in result]}),
+        status=200,
+        mimetype='application/json'
+    )
+
+@app.route("/question/7")
+def question_7():
+    mongo_database: Database = client["movielens"]
+    mongo_collection: Collection = mongo_database["users"]
+
+    result = mongo_collection.find({}, {"_id": 0, "occupation": 1}).distinct("occupation")
+
+    return app.response_class(
+        response=json.dumps({"occupations": [r for r in result]}),
         status=200,
         mimetype='application/json'
     )
