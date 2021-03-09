@@ -1,37 +1,8 @@
-from os import system, name
 from Casino import Casino
-from math import ceil
 from time import sleep
+from Utils import clear, pause, getStringFromUser, getNumberFromUser
 
 casino = Casino()
-
-
-def clear():
-    if name == 'it':
-        _ = system('cls')
-    else:
-        _ = system('clear')
-    print("-=-= Casino =-=-")
-
-
-def pause():
-    print(input("Appuyer sur <ENTREE> pour continuer..."))
-
-
-def getStringFromUser(inputText):
-    return str(input(inputText))
-
-
-def getNumberFromUser(inputText, min, max):
-    while True:
-        try:
-            number = ceil(int(input(inputText)))
-            if min <= number <= max:
-                return number
-            else:
-                print("La valeur n'est pas correcte...")
-        except ValueError:
-            print("Le type de valeur n'est pas correcte...")
 
 
 def menuRegister():
