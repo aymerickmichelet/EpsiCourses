@@ -1,14 +1,14 @@
 
 
-var textTitle = document.getElementById("title");
-var textDescription = document.getElementById("description");
-var buttonAskJoke = document.getElementById("buttonAfkJoke");
+// var textTitle = document.getElementById("title");
+// var textDescription = document.getElementById("description");
+var buttonAskJoke = document.getElementById("buttonAskJoke");
 var buttonTellJoke = document.getElementById("buttonTellJoke");
 var buttonBack = document.getElementById("buttonBack");
 var buttonNext = document.getElementById("buttonNext");
 
 
-const headerMain = '<header class="masthead d-flex">\n' +
+var headerMain = '<header class="masthead d-flex">\n' +
     '    <div class="container text-center my-auto">\n' +
     '      <h1 class="mb-1">BottleFlip</h1>\n' +
     '      <h3 class="mb-5">\n' +
