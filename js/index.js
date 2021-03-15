@@ -1,9 +1,9 @@
 
 
-var buttonAskJoke = document.getElementById("buttonAfkJoke");
+var buttonAskJoke = document.getElementById("buttonAskJoke");
 var buttonTellJoke = document.getElementById("buttonTellJoke");
 
-const headerMain = '<header class="masthead d-flex">\n' +
+var headerMain = '<header class="masthead d-flex">\n' +
     '    <div class="container text-center my-auto">\n' +
     '      <h1 class="mb-1">BottleFlip</h1>\n' +
     '      <h3 class="mb-5">\n' +
