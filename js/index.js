@@ -1,12 +1,9 @@
-
-
-// var textTitle = document.getElementById("title");
-// var textDescription = document.getElementById("description");
+var textTitle = document.getElementById("title");
+var textDescription = document.getElementById("description");
 var buttonAskJoke = document.getElementById("buttonAskJoke");
 var buttonTellJoke = document.getElementById("buttonTellJoke");
 var buttonBack = document.getElementById("buttonBack");
 var buttonNext = document.getElementById("buttonNext");
-
 
 var headerMain = '<header class="masthead d-flex">\n' +
     '    <div class="container text-center my-auto">\n' +
