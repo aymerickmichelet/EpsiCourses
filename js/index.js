@@ -1,7 +1,12 @@
 
 
+var textTitle = document.getElementById("title");
+var textDescription = document.getElementById("description");
 var buttonAskJoke = document.getElementById("buttonAfkJoke");
 var buttonTellJoke = document.getElementById("buttonTellJoke");
+var buttonBack = document.getElementById("buttonBack");
+var buttonNext = document.getElementById("buttonNext");
+
 
 const headerMain = '<header class="masthead d-flex">\n' +
     '    <div class="container text-center my-auto">\n' +
@@ -22,5 +27,13 @@ buttonAskJoke.onclick = function(){
 };
 
 buttonTellJoke.onclick = function(){
+    alert("wesh alors");
+};
+
+buttonBack.onclick = function(){
+    alert("wesh alors");
+};
+
+buttonNext.onclick = function(){
     alert("wesh alors");
 };
