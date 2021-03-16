@@ -44,17 +44,19 @@
 
   <header class="masthead d-flex">
     <div class="container text-center my-auto">
-      <h1 class="mb-1">BottleFlip</h1>
+      <h1 id="title" class="mb-1"></h1>
       <br>
       <h3 class="mb-5">
-        <em>Bot humour. Fait des blagues sur demande !</em>
+        <em id="description"></em>
+        <p></p>
+        <div id="inputDiv"></div>
       </h3>
-      <a id="buttonAskJoke" class="btn btn-primary btn-xl js-scroll-trigger" href="">Racompte moi une blague</a>
-      <a id="buttonTellJoke" class="btn btn-primary btn-xl js-scroll-trigger" href="">Propose en moi</a>
+      <a id="buttonLeft" class="btn btn-primary btn-xl js-scroll-trigger"></a>
+      <a id="buttonRight" class="btn btn-primary btn-xl js-scroll-trigger"></a>
     </div>
-    <div class="overlay"></div>
   </header>
-  <p class="text-muted small mb-0"></p>
+
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
