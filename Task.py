@@ -1,5 +1,5 @@
 class Task:
-    def __init__(self, label):
+    def __init__(self, id, label):
         self.id = 0
         self.label = label
-        self.status = ""
+        self.status = "TODO"

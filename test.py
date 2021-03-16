@@ -40,6 +40,8 @@ def test_parseInput():
     parseInputActionToDo()
 
 
-
-# def test_saveOneTask():
-#     tm = TaskManager()
+def test_saveOneTask():
+    tm = TaskManager()
+    tm.exec("+ Acheter du pain")
+    assert tm.tasks[0].label == "Acheter du pain"
+    assert tm.tasks[0].status == "TODO"
