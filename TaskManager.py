@@ -46,3 +46,8 @@ class TaskManager:
             if task.id > lastId:
                 lastId = task.id
         return lastId
+
+    def displayTasks(self):
+        for task in self.tasks:
+            status = "A FAIRE" if task.status == "TODO" else "FAIT"
+            print(str(task.id) + ": " + str(status) + " - " + str(task.label))

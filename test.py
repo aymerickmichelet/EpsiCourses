@@ -73,3 +73,13 @@ def test_toDoTask():
     tm.exec("x 1")
     tm.exec("o 1")
     assert tm.tasks[0].status == "TODO"
+
+
+# def test_displayTasks():
+#     tm = TaskManager()
+#     tm.exec("+ Acheter du pain")
+#     tm.exec("+ Acheter du lait")
+#     tm.exec("o 1")
+#     tm.exec("x 2")
+#     tm.displayTasks()
+#     # je ne vois pas comment tester l'affichage
