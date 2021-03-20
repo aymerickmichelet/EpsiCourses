@@ -45,3 +45,16 @@ def test_saveOneTask():
     tm.exec("+ Acheter du pain")
     assert tm.tasks[0].label == "Acheter du pain"
     assert tm.tasks[0].status == "TODO"
+
+
+# def test_removeTask():
+#     tm = TaskManager()
+#     tm.exec("+ Acheter du pain")
+#     tm.exec("- 1")
+#     for t in tm.tasks:
+#         print(t)
+#     assert len(tm.tasks) == 0
+#     # je ne comprends pas pourquoi le remove ne fonctionne pas.
+#     # "- 1" ne marche pas mais "- 2" et "- djazj" fonctionne.
+
+

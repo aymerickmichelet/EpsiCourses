@@ -19,3 +19,6 @@ class Action:
     def __init__(self, command):
         self.type = getActionTypeFromCommand(command)
         self.command = getCommand(command) if self.type is not None else None
+
+    def __str__(self):
+        return "type:"+str(self.type)+",command:"+str(self.command)
