@@ -16,19 +16,22 @@ def parseInputActionAdd():
 
 def parseInputActionRemove():
     tm = TaskManager()
-    tm.exec("- Acheter du pain")
+    tm.exec("+ Acheter du pain")
+    tm.exec("- 1")
     assert tm.action.type == "REMOVE"
 
 
 def parseInputActionDone():
     tm = TaskManager()
-    tm.exec("x Acheter du pain")
+    tm.exec("+ Acheter du pain")
+    tm.exec("x 1")
     assert tm.action.type == "DONE"
 
 
 def parseInputActionToDo():
     tm = TaskManager()
-    tm.exec("o Acheter du pain")
+    tm.exec("+ Acheter du pain")
+    tm.exec("o 1")
     assert tm.action.type == "TODO"
 
 
@@ -56,5 +59,11 @@ def test_saveOneTask():
 #     assert len(tm.tasks) == 0
 #     # je ne comprends pas pourquoi le remove ne fonctionne pas.
 #     # "- 1" ne marche pas mais "- 2" et "- djazj" fonctionne.
+
+def test_doneTask():
+    tm = TaskManager()
+    tm.exec("+ Acheter du pain")
+    tm.exec("x 1")
+    assert tm.tasks[0].status == "DONE"
 
 
