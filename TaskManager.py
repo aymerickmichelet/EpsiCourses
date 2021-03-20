@@ -17,6 +17,8 @@ class TaskManager:
             self.removeTask(self.action.command)
         elif self.action.type == "DONE":
             self.doneTask(self.action.command)
+        elif self.action.type == "TODO":
+            self.toDoTask(self.action.command)
 
     def addTask(self, labelTask):
         task = Task(self.getLastId()+1, labelTask)
@@ -25,15 +27,18 @@ class TaskManager:
     def removeTask(self, idTask):
         idTask = int(idTask)
         for task in self.tasks:
-            if task.id == idTask:
+            if task.id == int(idTask):
                 self.tasks.remove(task)
-                return True
-        return False
 
     def doneTask(self, idTask):
         for task in self.tasks:
             if task.id == int(idTask):
                 task.done()
+
+    def toDoTask(self, idTask):
+        for task in self.tasks:
+            if task.id == int(idTask):
+                task.toDo()
 
     def getLastId(self):
         lastId = 0

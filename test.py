@@ -67,3 +67,9 @@ def test_doneTask():
     assert tm.tasks[0].status == "DONE"
 
 
+def test_toDoTask():
+    tm = TaskManager()
+    tm.exec("+ Acheter du pain")
+    tm.exec("x 1")
+    tm.exec("o 1")
+    assert tm.tasks[0].status == "TODO"
