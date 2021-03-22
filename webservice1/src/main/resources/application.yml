@@ -1,6 +1,8 @@
 spring:
   application:
     name: webservice1
+server:
+  port: 8081
 eureka:
   client:
     serviceUrl:

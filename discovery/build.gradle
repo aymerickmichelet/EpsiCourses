@@ -19,10 +19,10 @@ ext {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflixeureka-client'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflixhystrix'
-//	implementation 'org.springframework.cloud:spring-cloud-starter-netflixribbon'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
