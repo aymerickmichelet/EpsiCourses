@@ -1,5 +1,6 @@
 package fr.aymerickmichelet.discovery;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -15,6 +16,7 @@ public class FrontwebserviceApplication {
     @Autowired
     DiscoveryClient discoveryClient;
 
+    @HystrixCommand(fallbackMethod = "defaultMessage")
     @GetMapping("/")
     public String hello() {
         List<ServiceInstance> instances = discoveryClient.getInstances("webservice1");
@@ -27,5 +29,9 @@ public class FrontwebserviceApplication {
                 restTemplate.getForEntity(microservice1Address, String.class);
         String s = response.getBody();
         return s;
+    }
+
+    public String defaultMessage() {
+        return "Error message";
     }
 }
