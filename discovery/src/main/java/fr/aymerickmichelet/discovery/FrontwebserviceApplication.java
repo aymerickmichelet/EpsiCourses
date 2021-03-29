@@ -4,6 +4,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,9 @@ import java.util.List;
 public class FrontwebserviceApplication {
     @Autowired
     DiscoveryClient discoveryClient;
+
+    @Autowired
+    private LoadBalancerClient loadBalancerClient;
 
     @HystrixCommand(fallbackMethod = "defaultMessage")
     @GetMapping("/")
@@ -29,6 +33,13 @@ public class FrontwebserviceApplication {
                 restTemplate.getForEntity(microservice1Address, String.class);
         String s = response.getBody();
         return s;
+    }
+
+    @GetMapping("/ms1-from-ms3")
+    public String method(){
+        ServiceInstance serviceInstance = loadBalancerClient.choose("webservice1");
+        System.out.println(serviceInstance.getUri());
+        return serviceInstance.getUri().toString();
     }
 
     public String defaultMessage() {
