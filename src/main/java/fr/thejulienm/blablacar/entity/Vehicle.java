@@ -1,25 +1,24 @@
 package fr.thejulienm.blablacar.entity;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Vehicle {
 
-    private long id;
-    private String brand;
-    private int price;
-    private boolean isRented;
-    private Date rentBegin;
-    private Date rentEnd;
+    protected long id;
+    protected String plateNumber;
+    protected String brand;
+    protected int price;
+    protected boolean isRented;
+    protected List<Rent> rentList;
 
 
     public Vehicle(){
         super();
     }
-
 
     public Vehicle(String plateNumber, String brand, int price) {
         super();
@@ -28,7 +27,6 @@ public class Vehicle {
         this.price = price;
         this.isRented = false;
     }
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,6 +37,7 @@ public class Vehicle {
     public void setId(long key) {
         this.id = key;
     }
+
     public String getPlateNumber() {
         return plateNumber;
     }
@@ -71,20 +70,17 @@ public class Vehicle {
         isRented = rented;
     }
 
-    public Date getRentBegin() {
-        return rentBegin;
+    @OneToMany
+    @JsonIgnore
+    public List<Rent> getRentList() {
+        return rentList;
     }
 
-    public void setRentBegin(Date rentBegin) {
-        this.rentBegin = rentBegin;
+    public void setRentList(List<Rent> rent) {
+        this.rentList = rent;
     }
 
-    public Date getRentEnd() {
-        return rentEnd;
+    public void addRentToList(Rent rent){
+        rentList.add(rent);
     }
-
-    public void setRentEnd(Date rentEnd) {
-        this.rentEnd = rentEnd;
-    }
-
 }

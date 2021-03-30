@@ -1,7 +1,9 @@
 package fr.thejulienm.blablacar.controller;
 
 import fr.thejulienm.blablacar.entity.Car;
+import fr.thejulienm.blablacar.entity.Van;
 import fr.thejulienm.blablacar.repository.CarRepository;
+import fr.thejulienm.blablacar.repository.VanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,11 +11,13 @@ import org.springframework.web.bind.annotation.*;
 public class BlablacarController {
 
     CarRepository carRepository;
+    VanRepository vanRepository;
 
     @Autowired
-    public BlablacarController(CarRepository carRepository) {
+    public BlablacarController(CarRepository carRepository, VanRepository vanRepository) {
         super();
         this.carRepository = carRepository;
+        this.vanRepository = vanRepository;
     }
 
     @GetMapping(value = "/cars")
@@ -21,7 +25,7 @@ public class BlablacarController {
         return carRepository.findAll();
     }
 
-    @GetMapping(value="/cars/getCarByPlateNumber") // ?plateNumber=...
+    @GetMapping(value="/cars/getCarByPlateNumber")// ?plateNumber=...
     public Car getCarByplateNumber(@RequestParam String plateNumber) {
         for(Car car: carRepository.findAll())
         {
@@ -44,13 +48,14 @@ public class BlablacarController {
         for (Car c : carRepository.findAll()) {
             if (c.getPlateNumber().equalsIgnoreCase(car.getPlateNumber())){
                 c.setRented(true);
-                c.setRentBegin(car.getRentBegin());
-                c.setRentEnd(car.getRentEnd());
+                c.addRentToList(car.getRentList().get(0));
                 carRepository.save(c);
                 return c;
             }
         }
+
         return null;
+
     }
 
     @PutMapping(value = "/cars/rentCarReset")
@@ -58,13 +63,19 @@ public class BlablacarController {
         for (Car c : carRepository.findAll()) {
             if (c.getPlateNumber().equalsIgnoreCase(car.getPlateNumber())){
                 c.setRented(false);
-                c.setRentBegin(null);
-                c.setRentEnd(null);
                 carRepository.save(c);
                 return c;
             }
         }
         return null;
+    }
+
+    // VANS
+
+    @PostMapping("/vans")
+    public Iterable<Van> addVan(@RequestBody Van van) {
+        vanRepository.save(van);
+        return vanRepository.findAll();
     }
 
 }
