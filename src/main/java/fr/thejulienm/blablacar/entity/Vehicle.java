@@ -23,7 +23,7 @@ public class Vehicle {
 
     public Vehicle(String plateNumber, String brand, int price) {
         super();
-        this.plateNumber = plateNumber;
+//        this.plateNumber = plateNumber;
         this.brand = brand;
         this.price = price;
         this.isRented = false;
@@ -39,13 +39,14 @@ public class Vehicle {
     public void setId(long key) {
         this.id = key;
     }
-    public String getPlateNumber() {
-        return plateNumber;
-    }
 
-    public void setPlateNumber(String plateNumber) {
-        this.plateNumber = plateNumber;
-    }
+//    public String getPlateNumber() {
+//        return plateNumber;
+//    }
+
+//    public void setPlateNumber(String plateNumber) {
+//        this.plateNumber = plateNumber;
+//    }
 
     public String getBrand() {
         return brand;
