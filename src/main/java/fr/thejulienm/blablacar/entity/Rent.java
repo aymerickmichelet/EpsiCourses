@@ -1,27 +1,29 @@
 package fr.thejulienm.blablacar.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Rent {
 
     private long id;
-    private User user;
-    private Car car;
+    //private long idUser;
     private Date rentBegin;
     private Date rentEnd;
     private boolean isRented;
+    private Vehicle vehicle;
 
     public Rent(){
         super();
     }
 
-    public Rent(User user, Car car) {
+    public Rent(/*User user,*/ Vehicle vehicle)
+    {
         super();
-        this.user = user;
-        this.car = car;
+        //this.idUser = user.getId();
+        this.vehicle = vehicle;
         this.rentBegin = null;
         this.rentEnd = null;
         this.isRented = false;
@@ -37,21 +39,21 @@ public class Rent {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
-    }
+//    public long getIdUser() {
+//        return idUser;
+//    }
+//
+//    public void setIdUser(long idUser) {
+//        this.idUser = idUser;
+//    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
+//    public long getIdVehicle() {
+//        return idVehicle;
+//    }
+//
+//    public void setIdVehicle(long idVehicle) {
+//        this.idVehicle = idVehicle;
+//    }
 
     public Date getRentBegin() {
         return rentBegin;
@@ -75,5 +77,15 @@ public class Rent {
 
     public void setRented(boolean rented) {
         isRented = rented;
+    }
+
+    @OneToOne
+    @JsonIgnore
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 }
