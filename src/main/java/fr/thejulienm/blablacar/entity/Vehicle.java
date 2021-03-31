@@ -2,6 +2,7 @@ package fr.thejulienm.blablacar.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,11 +13,12 @@ public class Vehicle {
     protected String brand;
     protected int price;
     protected boolean isRented;
-    protected List<Rent> rentList;
+    protected List<Rent> rents;
 
 
     public Vehicle(){
         super();
+        this.rents = new ArrayList<>();
     }
 
     public Vehicle(String plateNumber, String brand, int price) {
@@ -25,6 +27,7 @@ public class Vehicle {
         this.brand = brand;
         this.price = price;
         this.isRented = false;
+        this.rents = new ArrayList<>();
     }
 
     @Id
@@ -69,17 +72,17 @@ public class Vehicle {
         isRented = rented;
     }
 
-    @OneToMany
+    @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL)
     @JsonIgnore
-    public List<Rent> getRentList() {
-        return rentList;
+    public List<Rent> getRents() {
+        return rents;
     }
 
-    public void setRentList(List<Rent> rent) {
-        this.rentList = rent;
+    public void setRents(List<Rent> rent) {
+        this.rents = rent;
     }
 
     public void addRentToList(Rent rent){
-        rentList.add(rent);
+        rents.add(rent);
     }
 }

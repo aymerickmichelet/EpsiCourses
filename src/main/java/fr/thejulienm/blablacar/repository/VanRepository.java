@@ -3,8 +3,8 @@ package fr.thejulienm.blablacar.repository;
 import fr.thejulienm.blablacar.entity.Van;
 import org.springframework.data.repository.CrudRepository;
 
-//import java.util.List;
+import java.util.List;
 
 public interface VanRepository extends CrudRepository<Van, Long> {
-//   List<Car> findByPlateNumber(String plateNumber);
+    List<Van> findByPlateNumber(String plateNumber);
 }

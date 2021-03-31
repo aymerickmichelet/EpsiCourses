@@ -9,24 +9,31 @@ import java.util.Date;
 public class Rent {
 
     private long id;
-    //private long idUser;
+    private Vehicle vehicle;
+    private User user;
     private Date rentBegin;
     private Date rentEnd;
-    private boolean isRented;
-    private Vehicle vehicle;
 
     public Rent(){
         super();
     }
 
-    public Rent(/*User user,*/ Vehicle vehicle)
+    public Rent(User user, Vehicle vehicle)
     {
         super();
-        //this.idUser = user.getId();
+        this.user = user;
         this.vehicle = vehicle;
         this.rentBegin = null;
         this.rentEnd = null;
-        this.isRented = false;
+    }
+
+    public Rent(User user, Date rentBegin, Date rentEnd)
+    {
+        super();
+        this.user = user;
+        this.vehicle = null;
+        this.rentBegin = rentBegin;
+        this.rentEnd = rentEnd;
     }
 
     @Id
@@ -38,22 +45,6 @@ public class Rent {
     public void setId(long id) {
         this.id = id;
     }
-
-//    public long getIdUser() {
-//        return idUser;
-//    }
-//
-//    public void setIdUser(long idUser) {
-//        this.idUser = idUser;
-//    }
-
-//    public long getIdVehicle() {
-//        return idVehicle;
-//    }
-//
-//    public void setIdVehicle(long idVehicle) {
-//        this.idVehicle = idVehicle;
-//    }
 
     public Date getRentBegin() {
         return rentBegin;
@@ -71,15 +62,7 @@ public class Rent {
         this.rentEnd = rentEnd;
     }
 
-    public boolean isRented() {
-        return isRented;
-    }
-
-    public void setRented(boolean rented) {
-        isRented = rented;
-    }
-
-    @OneToOne
+    @ManyToOne
     @JsonIgnore
     public Vehicle getVehicle() {
         return vehicle;
@@ -87,5 +70,15 @@ public class Rent {
 
     public void setVehicle(Vehicle vehicle) {
         this.vehicle = vehicle;
+    }
+
+    @ManyToOne
+    @JsonIgnore
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
