@@ -1,0 +1,23 @@
+version: "3"
+services:
+  bottleflip-db:
+    container_name: "bottleflip-db"
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_USER: mysql
+      MYSQL_ROOT_PASSWORD: 'weshalors'
+
+  bottleflip-api:
+    container_name: "bottleflip-api"
+    image: bottleflip-api
+    build:
+      context: ./program
+      dockerfile: Dockerfile
+    ports: ["5000:5000"]
+    volumes:
+    - ./program:/program
+    depends_on:
+      - bottleflip-db
+volumes:
+  program:
