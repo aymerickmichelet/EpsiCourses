@@ -2,6 +2,7 @@ import mysql.connector
 from flask import Flask
 from flask import json
 from flask import request
+from flask_cors import CORS
 import db_mysql
 
 app = Flask(__name__)
@@ -27,6 +28,7 @@ def requestDd(request, value=None):
 
 
 @app.route("/", methods=['GET'])
+@cross_origin()
 def home():
     return "wesh alors"
 
@@ -41,6 +43,7 @@ def database():
 
 
 @app.route("/joke", methods=['GET'])
+@cross_origin()
 def getJoke():
     # vérification si step accepted > 0
     joke = requestDd("SELECT * FROM `jokes` WHERE step = 'JOKE_ACCEPTED' ORDER BY RAND() LIMIT 1")[0]
@@ -58,6 +61,7 @@ def getJoke():
 
 
 @app.route("/joke/all", methods=['GET'])
+@cross_origin()
 def getJokes():
     response = []
     for joke in requestDd("SELECT * FROM `jokes`"):
@@ -76,6 +80,7 @@ def getJokes():
 
 
 @app.route("/joke/all/<string:stepJoke>", methods=['GET'])
+@cross_origin()
 def getJokesStep(stepJoke: str):
     if stepJoke.lower() == "accepted":
         stepJoke: str = "JOKE_ACCEPTED"
@@ -104,6 +109,7 @@ def getJokesStep(stepJoke: str):
 
 
 @app.route("/joke", methods=['POST'])
+@cross_origin()
 def addJoke():
     joke = request.json['joke']
     author = request.json['author']
@@ -124,6 +130,7 @@ def addJoke():
 
 
 @app.route("/joke/<int:idJoke>/<string:stepJoke>", methods=['PUT'])
+@cross_origin()
 def stepJoke(idJoke: int, stepJoke: str):
     if stepJoke.lower() == "accepted":
         stepJoke = "JOKE_ACCEPTED"
