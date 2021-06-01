@@ -1,0 +1,19 @@
+version: "3"
+services:
+    msprjava_api:
+        container_name: "msprjava_api"
+        image: msprjava_api
+        ports:
+        - 8080:8080
+        build:
+            context: ./msprjava
+            dockerfile: Dockerfile
+        # volumes:
+        # - ./msprjava:/api
+
+# msprjava_db:
+#     image: 'postgres:13.1-alpine'
+#     container_name: msprjava_db
+#     environment:
+#         - POSTGRES_USER=compose-postgresADEFINIR
+#         - POSTGRES_PASSWORD=compose-postgresADEFINIR
