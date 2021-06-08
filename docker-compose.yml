@@ -1,14 +1,5 @@
 version: "3"
 services:
-    # msprjava_api:
-    #     container_name: "msprjava_api"
-    #     image: msprjava_api
-    #     ports:
-    #     - 8080:8080
-    #     build:
-    #         context: ./msprjava
-    #         dockerfile: Dockerfile
-
     msprjava_db:
         image: 'postgres:13.1-alpine'
         container_name: msprjava_db
@@ -22,3 +13,14 @@ services:
         restart: always
         ports:
             - 5000:8080
+
+    #msprjava_api:
+    #    container_name: "msprjava_api"
+    #    image: msprjava_api
+    #    ports:
+    #    - 8080:8080
+    #    build:
+    #        context: ./msprjava
+    #        dockerfile: Dockerfile
+    #    depends_on:
+    #        - msprjava_db
