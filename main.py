@@ -27,12 +27,13 @@ def actionUser(action):
         offusc()
         print("Offuscation effectué dans le fichier : Liste_des_gagnants_du_Loto_ano.txt")
     elif action == "3":
-        print("Encryptage et Décryptage RSA en cours")
+        print("Encryptage  RSA en cours")
         rsa_encrypt()
-        rsa_decrypt()
-        print("Encryptage et décryptage effectué (les fichier se trouve à la racine)")
+        print("Encryptage  RSA effectué dans le fichier : iste_des_gagnants_du_Loto_rsa_encrypt.txt")
     elif action == "4":
-        print("4")
+        print("Encryptage  RSA en cours")
+        rsa_decrypt()
+        print("Encryptage  RSA effectué dans le fichier : iste_des_gagnants_du_Loto_rsa_decrypt.txt")
     elif action == "5":
         print("5")
     else:
