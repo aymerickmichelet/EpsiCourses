@@ -1,7 +1,7 @@
 from Crypto.Cipher import Blowfish
 import unidecode
 
-filename = "blowfish.txt"
+filename = "file.txt"
 key = "This is a key123"
 
 

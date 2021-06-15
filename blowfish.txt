@@ -1,6 +1,0 @@
-Noms;Date Naissance;Montant (euros);Téléphone
-Jacques Dupont;05/11/1995;1500;0623252628
-Alain Martin;02/08/1990;1000;0712131415
-Tony Marchal;10/01/1998;1200;0631323334
-Eva Mendes;05/04/2000;800;0612131415
-Steven Larson;12/11/1999;1300;0721222324
