@@ -20,6 +20,8 @@ public class Project {
 
     private Date date;
 
+    private String address;
+
     @OneToMany
     private List<UserProject> userProjects;
 
@@ -57,6 +59,14 @@ public class Project {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<UserProject> getUserProject() {
