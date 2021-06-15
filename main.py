@@ -1,5 +1,6 @@
 from anonymisation import anony
 from offuscation import offusc
+from rsa import create_save_key
 
 def init():
     continue_program = True
@@ -35,7 +36,7 @@ def actionUser(action):
 
 
 if __name__ == "__main__":
-    init()
+    create_save_key()
 
 
 

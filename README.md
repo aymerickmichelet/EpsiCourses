@@ -5,6 +5,9 @@ Développement d'un module de chiffrement et d'anonymsation des données en Pyth
 ## Setup le projet
 
 Il n'y a rien à installer pour l'instant
+```bash
+pip install crypto
+```
 
 ## Lancer le programme
 ```bash
