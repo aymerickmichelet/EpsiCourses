@@ -1,6 +1,7 @@
 from anonymisation import anony
 from offuscation import offusc
-from rsa import create_save_key
+from rsa import rsa_decrypt
+from rsa import rsa_encrypt
 
 def init():
     continue_program = True
@@ -8,7 +9,7 @@ def init():
     print("---------Menu---------")
     print("1. Anonymisation du fichier")
     print("2. Offuscation du fichier")
-    print("3. ")
+    print("3. Encryptage et décryptage RSA")
     print("4. ")
     print("5. ")
 
@@ -26,7 +27,10 @@ def actionUser(action):
         offusc()
         print("Offuscation effectué dans le fichier : Liste_des_gagnants_du_Loto_ano.txt")
     elif action == "3":
-        print("3")
+        print("Encryptage et Décryptage RSA en cours")
+        rsa_encrypt()
+        rsa_decrypt()
+        print("Encryptage et décryptage effectué (les fichier se trouve à la racine)")
     elif action == "4":
         print("4")
     elif action == "5":
@@ -36,8 +40,7 @@ def actionUser(action):
 
 
 if __name__ == "__main__":
-    create_save_key()
-
+    init()
 
 
 

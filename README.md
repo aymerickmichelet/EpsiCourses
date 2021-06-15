@@ -4,12 +4,14 @@ Développement d'un module de chiffrement et d'anonymsation des données en Pyth
 
 ## Setup le projet
 
-Il n'y a rien à installer pour l'instant
 ```bash
-pip install crypto
+pip install PYcryptodome
 ```
 
 ## Lancer le programme
 ```bash
 python main.py
 ```
+
+## Avertissement
+L'encryptage/décryptage RSA peut parfois rater. Cela est lié au faites que la chaine de caractères et parfois trop longue. Il suffit alors de réessayer. 
