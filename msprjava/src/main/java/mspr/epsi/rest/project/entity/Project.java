@@ -5,7 +5,6 @@ import mspr.epsi.rest.request.entity.Request;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +17,11 @@ public class Project {
 
     private String name;
 
-    private Date date;
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
 
     private String address;
 
@@ -37,6 +40,14 @@ public class Project {
 
     public Project() { super();}
 
+    public Project(String name, Date start, Date end, String address, List<Subcontractor> subcontractors) {
+        this.name = name;
+        this.startDate = start;
+        this.endDate = end;
+        this.address = address;
+        this.subcontractors = subcontractors;
+    }
+
     public int getId() {
         return id;
     }
@@ -53,12 +64,19 @@ public class Project {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setStartDate(Date start) {
+        this.startDate = start;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+    public void setEndDate(Date end) {
+        this.endDate = end;
     }
 
     public String getAddress() {
