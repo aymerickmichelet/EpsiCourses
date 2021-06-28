@@ -2,9 +2,10 @@ package mspr.epsi.rest.project;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import mspr.epsi.rest.capture.CaptureRepository;
-import mspr.epsi.rest.capture.CaptureService;
 import mspr.epsi.rest.project.entity.Project;
 import mspr.epsi.rest.project.repository.ProjectRepository;
+import mspr.epsi.rest.project.entity.CountSubContractorJob;
+import mspr.epsi.rest.project.response.CountSubContractorJobResponse;
 import mspr.epsi.rest.project.response.ProjectResponse;
 import mspr.epsi.rest.project.response.ProjectSizeResponse;
 import mspr.epsi.rest.subcontractor.repository.SubcontractorRepository;
@@ -79,6 +80,11 @@ public class ProjectController {
 
     }
 
-
-
+    @GetMapping("/projects-subconstractor-size/{id}")
+    public ResponseEntity<Response>  getSubconstractorSize(@PathVariable("id") long idProject) {
+        List<CountSubContractorJob> list = this.projectService.findLengthSub(idProject);
+        System.out.println(list);
+        CountSubContractorJobResponse response = new CountSubContractorJobResponse(HttpStatus.OK.value(), "Ok Request", list);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

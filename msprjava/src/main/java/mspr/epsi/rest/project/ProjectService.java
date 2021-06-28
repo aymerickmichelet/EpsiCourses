@@ -3,19 +3,17 @@ package mspr.epsi.rest.project;
 import mspr.epsi.rest.capture.CaptureRepository;
 import mspr.epsi.rest.capture.CaptureService;
 import mspr.epsi.rest.capture.entity.Capture;
-import mspr.epsi.rest.example.entity.Example;
 import mspr.epsi.rest.project.entity.Project;
 import mspr.epsi.rest.project.repository.ProjectRepository;
+import mspr.epsi.rest.project.entity.CountSubContractorJob;
 import mspr.epsi.rest.subcontractor.SubcontractorService;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
 import mspr.epsi.rest.subcontractor.repository.SubcontractorRepository;
 import mspr.epsi.rest.utils.DateUtils;
 
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 public class ProjectService {
     private ProjectRepository projectRepository;
@@ -83,6 +81,10 @@ public class ProjectService {
 
     public long findLength(Date dateCompare) {
         return this.projectRepository.countBetweenDate(dateCompare);
+    }
+
+    public List<CountSubContractorJob>  findLengthSub(long projectId) {
+        return this.projectRepository.countSubcontractorForeachJob(projectId);
     }
 
 }
