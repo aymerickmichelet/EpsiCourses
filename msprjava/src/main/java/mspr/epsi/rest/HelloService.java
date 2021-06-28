@@ -10,5 +10,10 @@ public class HelloService {
     public String hello() {
         return "wesh";
     }
+
+    @GetMapping(value="/wesh")
+    public String weshAlors() {
+        return "alors";
+    }
 }
 

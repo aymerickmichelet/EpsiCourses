@@ -15,7 +15,7 @@ public class DateUtils {
             return date;
         }
         catch(ParseException e) {
-            return new Date();
+            return new Date(); // pk ne pas return null ?
         }
     }
 
@@ -39,7 +39,22 @@ public class DateUtils {
 
     }
 
+    public static boolean compareDay(int day, Date date){
+        SimpleDateFormat df = new SimpleDateFormat("dd");
+        int dayDate = Integer.parseInt(df.format(date));
+
+        System.out.println("dayDate :" + dayDate);
+
+        return dayDate == day;
+    }
+
     public static boolean isWithinRange(Date start, Date end, Date date) {
         return !(date.before(start) || date.after(end));
+    }
+
+    public static boolean compareDate(int year, int month, int day, Date date){
+        return DateUtils.compareYears(year, date) &&
+                DateUtils.compareMonth(month, date) &&
+                DateUtils.compareDay(day, date);
     }
 }
