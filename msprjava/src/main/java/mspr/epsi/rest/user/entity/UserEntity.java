@@ -8,17 +8,18 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
     private String userId;
     private String lastName;
     private String firstName;
     private String role;
     private String password;
     private int tryPassword;
+    @Temporal(TemporalType.DATE)
     private Date updatePassword;
 
     @OneToMany
@@ -27,9 +28,29 @@ public class User {
     @OneToMany
     private List<Request> requests;
 
-    public User(){super();}
+    public UserEntity(String userId,
+                      String lastName,
+                      String firstName,
+                      String role,
+                      String password,
+                      int tryPassword,
+                      Date updatePassword,
+                      List<UserProject> userProjects,
+                      List<Request> requests){
+        this.userId = userId;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.role = role;
+        this.password = password;
+        this.tryPassword = tryPassword;
+        this.updatePassword = updatePassword;
+        this.userProjects = userProjects;
+        this.requests = requests;
+    }
 
-    public int getId() {
+    public UserEntity(){super();}
+
+    public long getId() {
         return id;
     }
 

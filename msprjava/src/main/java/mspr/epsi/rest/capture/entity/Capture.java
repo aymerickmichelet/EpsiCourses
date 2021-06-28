@@ -12,7 +12,7 @@ public class Capture {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private String path;
 
@@ -30,7 +30,7 @@ public class Capture {
 
     public Capture() { super(); }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

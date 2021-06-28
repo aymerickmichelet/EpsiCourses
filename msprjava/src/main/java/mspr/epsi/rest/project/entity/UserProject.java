@@ -1,6 +1,6 @@
 package mspr.epsi.rest.project.entity;
 
-import mspr.epsi.rest.user.entity.User;
+import mspr.epsi.rest.user.entity.UserEntity;
 
 import javax.persistence.*;
 
@@ -9,7 +9,7 @@ public class UserProject {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private boolean manager;
 
@@ -17,11 +17,11 @@ public class UserProject {
     private Project project;
 
     @ManyToOne
-    private User user;
+    private UserEntity userEntity;
 
     public UserProject(){super();}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -45,11 +45,11 @@ public class UserProject {
         this.project = project;
     }
 
-    public User getUser() {
-        return user;
+    public UserEntity getUser() {
+        return userEntity;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 }

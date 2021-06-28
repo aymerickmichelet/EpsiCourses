@@ -23,27 +23,19 @@ public class DateUtils {
         SimpleDateFormat df = new SimpleDateFormat("yyyy");
         int yearDate = Integer.parseInt(df.format(date));
 
-        System.out.println("yearDate : " + yearDate);
-
         return yearDate == year;
-
     }
 
     public static boolean compareMonth(int month, Date date) {
         SimpleDateFormat df = new SimpleDateFormat("MM");
         int monthDate = Integer.parseInt(df.format(date));
 
-        System.out.println("monthDate :" + monthDate);
-
         return monthDate == month;
-
     }
 
     public static boolean compareDay(int day, Date date){
         SimpleDateFormat df = new SimpleDateFormat("dd");
         int dayDate = Integer.parseInt(df.format(date));
-
-        System.out.println("dayDate :" + dayDate);
 
         return dayDate == day;
     }
