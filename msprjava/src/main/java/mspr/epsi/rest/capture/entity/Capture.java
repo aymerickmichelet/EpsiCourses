@@ -16,6 +16,8 @@ public class Capture {
 
     private String path;
 
+    private String incident;
+
     private Date date;
 
     private float latitude;
@@ -33,8 +35,9 @@ public class Capture {
     public Capture() { super(); }
 
 
-    public Capture(String path, Date date, float latitude, float longitude, List<Subcontractor> subcontractors) {
+    public Capture(String path, Date date, String incident, float latitude, float longitude, List<Subcontractor> subcontractors) {
         this.path = path;
+        this.incident = incident;
         this.date = date;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -43,9 +46,10 @@ public class Capture {
 
 
 
-    public Capture(String path, Date date, float latitude, float longitude, Project project, List<Subcontractor> subcontractors) {
+    public Capture(String path, Date date,  String incident, float latitude, float longitude, Project project, List<Subcontractor> subcontractors) {
         this.path = path;
         this.date = date;
+        this.incident = incident;
         this.latitude = latitude;
         this.longitude = longitude;
         this.project = project;
