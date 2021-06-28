@@ -1,9 +1,11 @@
 package mspr.epsi.rest.subcontractor.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import mspr.epsi.rest.capture.entity.Capture;
 import mspr.epsi.rest.project.entity.Project;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,16 +17,25 @@ public class Subcontractor {
 
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Job job;
 
     @ManyToMany
+    @JsonIgnore
     private List<Capture> captures;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @JsonIgnore
     private List<Project> projects;
 
     public Subcontractor() { super(); }
+
+    public Subcontractor(String name, Job job) {
+        this.name = name;
+        this.job = job;
+        this.captures = new ArrayList<>();
+        this.projects = new ArrayList<>();
+    }
 
     public long getId() {
         return id;

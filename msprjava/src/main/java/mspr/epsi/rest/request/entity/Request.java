@@ -63,6 +63,4 @@ public class Request {
     public void setUser(UserEntity userEntity) {
         this.userEntity = userEntity;
     }
-
-
 }

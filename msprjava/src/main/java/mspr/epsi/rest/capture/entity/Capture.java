@@ -23,18 +23,40 @@ public class Capture {
     private float longitude;
 
     @ManyToOne
+    @JsonIgnore
     private Project project;
 
     @ManyToMany
+    @JsonIgnore
     private List<Subcontractor> subcontractors;
 
     public Capture() { super(); }
+
+
+    public Capture(String path, Date date, float latitude, float longitude, List<Subcontractor> subcontractors) {
+        this.path = path;
+        this.date = date;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.subcontractors = subcontractors;
+    }
+
+
+
+    public Capture(String path, Date date, float latitude, float longitude, Project project, List<Subcontractor> subcontractors) {
+        this.path = path;
+        this.date = date;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.project = project;
+        this.subcontractors = subcontractors;
+    }
 
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
