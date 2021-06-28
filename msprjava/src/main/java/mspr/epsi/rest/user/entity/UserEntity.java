@@ -19,6 +19,7 @@ public class UserEntity {
     private String role;
     private String password;
     private int tryPassword;
+    @Temporal(TemporalType.DATE)
     private Date updatePassword;
 
     @OneToMany
@@ -27,9 +28,29 @@ public class UserEntity {
     @OneToMany
     private List<Request> requests;
 
+    public UserEntity(String userId,
+                      String lastName,
+                      String firstName,
+                      String role,
+                      String password,
+                      int tryPassword,
+                      Date updatePassword,
+                      List<UserProject> userProjects,
+                      List<Request> requests){
+        this.userId = userId;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.role = role;
+        this.password = password;
+        this.tryPassword = tryPassword;
+        this.updatePassword = updatePassword;
+        this.userProjects = userProjects;
+        this.requests = requests;
+    }
+
     public UserEntity(){super();}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

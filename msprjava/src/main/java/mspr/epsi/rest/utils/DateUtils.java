@@ -15,7 +15,7 @@ public class DateUtils {
             return date;
         }
         catch(ParseException e) {
-            return new Date();
+            return new Date(); // pk ne pas return null ?
         }
     }
 
@@ -23,23 +23,30 @@ public class DateUtils {
         SimpleDateFormat df = new SimpleDateFormat("yyyy");
         int yearDate = Integer.parseInt(df.format(date));
 
-        System.out.println("yearDate : " + yearDate);
-
         return yearDate == year;
-
     }
 
     public static boolean compareMonth(int month, Date date) {
         SimpleDateFormat df = new SimpleDateFormat("MM");
         int monthDate = Integer.parseInt(df.format(date));
 
-        System.out.println("monthDate :" + monthDate);
-
         return monthDate == month;
+    }
 
+    public static boolean compareDay(int day, Date date){
+        SimpleDateFormat df = new SimpleDateFormat("dd");
+        int dayDate = Integer.parseInt(df.format(date));
+
+        return dayDate == day;
     }
 
     public static boolean isWithinRange(Date start, Date end, Date date) {
         return !(date.before(start) || date.after(end));
+    }
+
+    public static boolean compareDate(int year, int month, int day, Date date){
+        return DateUtils.compareYears(year, date) &&
+                DateUtils.compareMonth(month, date) &&
+                DateUtils.compareDay(day, date);
     }
 }

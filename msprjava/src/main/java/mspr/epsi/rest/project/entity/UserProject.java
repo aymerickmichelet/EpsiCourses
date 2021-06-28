@@ -9,7 +9,7 @@ public class UserProject {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private boolean manager;
 
@@ -23,7 +23,7 @@ public class UserProject {
 
     public UserProject(){super();}
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -48,10 +48,10 @@ public class UserProject {
     }
 
     public UserEntity getUser() {
-        return user;
+        return userEntity;
     }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
+    public void setUser(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 }

@@ -13,7 +13,7 @@ public class Subcontractor {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private String name;
 
@@ -37,7 +37,7 @@ public class Subcontractor {
         this.projects = new ArrayList<>();
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

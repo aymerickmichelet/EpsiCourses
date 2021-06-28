@@ -30,7 +30,7 @@ public class CaptureService {
         List<Capture> captures = new ArrayList<>();
 
         for(int i = 0; i < 5; i++) {
-            captures.add(new Capture("https://perdu.com", date, 44.63f, (float) -1.08,
+            captures.add(new Capture("https://perdu.com", date, "Incident", 44.63f, (float) -1.08,
                     subcontractors));
 
         }

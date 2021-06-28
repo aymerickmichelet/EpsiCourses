@@ -11,18 +11,28 @@ public class Request {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
+
+    @Temporal(TemporalType.DATE)
     private Date date;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Project project;
 
-    @ManyToOne
-    private UserEntity user;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private UserEntity userEntity;
 
-    public Request() { super(); }
+    public Request(Date date, Project project, UserEntity userEntity) {
+        this.date = date;
+        this.project = project;
+        this.userEntity = userEntity;
+    }
 
-    public int getId() {
+    public Request() {
+        super();
+    }
+
+    public long getId() {
         return id;
     }
 
@@ -47,10 +57,10 @@ public class Request {
     }
 
     public UserEntity getUser() {
-        return user;
+        return userEntity;
     }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
+    public void setUser(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 }
