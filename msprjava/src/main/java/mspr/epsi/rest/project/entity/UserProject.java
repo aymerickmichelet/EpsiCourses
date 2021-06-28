@@ -1,6 +1,6 @@
 package mspr.epsi.rest.project.entity;
-
-import mspr.epsi.rest.user.entity.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import mspr.epsi.rest.user.entity.UserEntity;
 
 import javax.persistence.*;
 
@@ -14,10 +14,12 @@ public class UserProject {
     private boolean manager;
 
     @ManyToOne
+    @JsonIgnore
     private Project project;
 
     @ManyToOne
-    private User user;
+    @JsonIgnore
+    private UserEntity user;
 
     public UserProject(){super();}
 
@@ -45,11 +47,11 @@ public class UserProject {
         this.project = project;
     }
 
-    public User getUser() {
+    public UserEntity getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserEntity user) {
         this.user = user;
     }
 }

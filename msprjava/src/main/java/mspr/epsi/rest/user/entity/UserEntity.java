@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -27,7 +27,7 @@ public class User {
     @OneToMany
     private List<Request> requests;
 
-    public User(){super();}
+    public UserEntity(){super();}
 
     public int getId() {
         return id;

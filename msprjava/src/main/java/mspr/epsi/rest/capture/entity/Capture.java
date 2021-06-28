@@ -1,7 +1,9 @@
 package mspr.epsi.rest.capture.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import mspr.epsi.rest.project.entity.Project;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
+import mspr.epsi.rest.utils.DateUtils;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,7 +14,7 @@ public class Capture {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private String path;
 
@@ -23,18 +25,40 @@ public class Capture {
     private float longitude;
 
     @ManyToOne
+    @JsonIgnore
     private Project project;
 
     @ManyToMany
+    @JsonIgnore
     private List<Subcontractor> subcontractors;
 
     public Capture() { super(); }
 
-    public int getId() {
+
+    public Capture(String path, Date date, float latitude, float longitude, List<Subcontractor> subcontractors) {
+        this.path = path;
+        this.date = date;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.subcontractors = subcontractors;
+    }
+
+
+
+    public Capture(String path, Date date, float latitude, float longitude, Project project, List<Subcontractor> subcontractors) {
+        this.path = path;
+        this.date = date;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.project = project;
+        this.subcontractors = subcontractors;
+    }
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

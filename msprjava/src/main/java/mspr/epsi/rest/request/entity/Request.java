@@ -1,7 +1,7 @@
 package mspr.epsi.rest.request.entity;
 
 import mspr.epsi.rest.project.entity.Project;
-import mspr.epsi.rest.user.entity.User;
+import mspr.epsi.rest.user.entity.UserEntity;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -18,7 +18,7 @@ public class Request {
     private Project project;
 
     @ManyToOne
-    private User user;
+    private UserEntity user;
 
     public Request() { super(); }
 
@@ -46,11 +46,11 @@ public class Request {
         this.project = project;
     }
 
-    public User getUser() {
+    public UserEntity getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserEntity user) {
         this.user = user;
     }
 }

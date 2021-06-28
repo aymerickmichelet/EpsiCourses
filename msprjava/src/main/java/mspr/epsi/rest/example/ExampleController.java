@@ -18,6 +18,7 @@ public class ExampleController {
     @GetMapping("/examples")
     public List<Example> getAllExample() throws  Exception {
         List<Example> examples = this.exempleService.findAll();
+        System.out.println(examples);
         return examples;
     }
 
