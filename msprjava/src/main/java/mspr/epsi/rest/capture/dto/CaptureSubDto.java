@@ -1,18 +1,16 @@
-package mspr.epsi.rest.capture.entity;
+package mspr.epsi.rest.capture.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import mspr.epsi.rest.capture.entity.Capture;
 import mspr.epsi.rest.project.entity.Project;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
-import mspr.epsi.rest.utils.DateUtils;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity
-public class Capture {
+public class CaptureSubDto {
 
-    @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private long id;
 
@@ -28,39 +26,31 @@ public class Capture {
 
     private String step;
 
-    @ManyToOne
     @JsonIgnore
     private Project project;
 
-    @ManyToMany
-    @JsonIgnore
     private List<Subcontractor> subcontractors;
 
-    public Capture() { super(); }
+    public CaptureSubDto() { super(); }
 
+    public CaptureSubDto(Capture capture) {
+        this.id = capture.getId();
+        this.path = capture.getPath();
+        this.incident = capture.getIncident();
+        this.date = capture.getDate();
+        this.latitude = capture.getLatitude();
+        this.longitude = capture.getLongitude();
+        this.step = capture.getStep();
 
-    public Capture(String path, Date date, String incident, float latitude, float longitude, String step, List<Subcontractor> subcontractors) {
-        this.path = path;
-        this.incident = incident;
-        this.date = date;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.step = step;
-        this.subcontractors = subcontractors;
+        for(Subcontractor sub: capture.getSubcontractors()) {
+            System.out.println(sub.getName());
+        }
+
+        this.subcontractors = capture.getSubcontractors();
     }
 
 
 
-    public Capture(String path, Date date,  String incident, float latitude, float longitude, String step, Project project, List<Subcontractor> subcontractors) {
-        this.path = path;
-        this.date = date;
-        this.incident = incident;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.step = step;
-        this.project = project;
-        this.subcontractors = subcontractors;
-    }
 
     public long getId() {
         return id;
@@ -133,4 +123,5 @@ public class Capture {
     public void setStep(String step) {
         this.step = step;
     }
+
 }

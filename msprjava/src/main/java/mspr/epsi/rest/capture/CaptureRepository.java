@@ -1,5 +1,6 @@
 package mspr.epsi.rest.capture;
 
+import mspr.epsi.rest.capture.dto.CaptureSubDto;
 import mspr.epsi.rest.capture.entity.Capture;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -20,4 +21,17 @@ public interface CaptureRepository  extends CrudRepository<Capture, Long> {
                                              @Param("longs") float longs,
                                             @Param("date") Date date
                                              );
+
+    @Query("SELECT new mspr.epsi.rest.capture.dto.CaptureSubDto(c) FROM Capture c WHERE c.project.id = :projectId AND c.step = :step")
+    public List<CaptureSubDto> findCapturesByProjectIdAndStep(@Param("projectId") long projectId,
+                                                              @Param("step") String step);
+
+    @Query("SELECT new mspr.epsi.rest.capture.dto.CaptureSubDto(c) FROM Capture c WHERE c.project.id = :projectId AND c.step = :step AND c.date >= :startDate AND c.date <= :endDate")
+    public List<CaptureSubDto> findCapturesByProjectIdAndStep(@Param("projectId") long projectId,
+                                                        @Param("step") String step,
+                                                        @Param("startDate") Date startDate,
+                                                        @Param("endDate") Date endDate);
+
+
+
 }

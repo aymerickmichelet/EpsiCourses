@@ -1,21 +1,20 @@
-package mspr.epsi.rest.capture.Params;
+package mspr.epsi.rest.capture.dto;
 
 import mspr.epsi.rest.capture.entity.Capture;
 import mspr.epsi.rest.project.entity.Project;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
 import mspr.epsi.rest.utils.DateUtils;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.Date;
 import java.util.List;
 
-public class AddCapture {
+public class AddCaptureDto {
 
     private String path;
 
     private String incident;
+
+    private String step;
 
     private Date date;
 
@@ -27,9 +26,10 @@ public class AddCapture {
 
     private List<Long> subcontractorsId;
 
-    public AddCapture(String path, String date, String incident, float latitude, float longitude, long projectId, List<Long> subcontractorsId) {
+    public AddCaptureDto(String path, String date, String incident, String step, float latitude, float longitude, long projectId, List<Long> subcontractorsId) {
         this.path = path;
         this.incident = incident;
+        this.step = step;
         this.date = DateUtils.getDate(date);
         this.latitude = latitude;
         this.longitude = longitude;
@@ -39,14 +39,15 @@ public class AddCapture {
 
     public Capture getCapture(Project project, List<Subcontractor> subcontractors) {
         return new Capture(
-               this.path,
-                this.date,
-               this.incident,
-               this.latitude,
-               this.longitude,
-                project,
-                subcontractors
-        );
+                       this.path,
+                       this.date,
+                       this.incident,
+                       this.latitude,
+                       this.longitude,
+                       this.step,
+                       project,
+                       subcontractors
+                );
     }
 
 
@@ -64,6 +65,14 @@ public class AddCapture {
 
     public void setIncident(String incident) {
         this.incident = incident;
+    }
+
+    public String getStep() {
+        return step;
+    }
+
+    public void setStep(String step) {
+        this.step = step;
     }
 
     public Date getDate() {

@@ -1,5 +1,6 @@
 package mspr.epsi.rest.capture;
 
+import mspr.epsi.rest.capture.dto.CaptureSubDto;
 import mspr.epsi.rest.capture.entity.Capture;
 import mspr.epsi.rest.project.ProjectService;
 import mspr.epsi.rest.project.entity.Project;
@@ -31,7 +32,7 @@ public class CaptureService {
         List<Capture> captures = new ArrayList<>();
 
         for(int i = 0; i < 5; i++) {
-            captures.add(new Capture("https://perdu.com", date, "Incident", 44.63f, (float) -1.08,
+            captures.add(new Capture("https://perdu.com", date, "Incident", 44.63f, (float) -1.08, "Etape 1",
                     subcontractors));
 
         }
@@ -76,6 +77,15 @@ public class CaptureService {
                 );
         return captures;
     }
+
+    public List<CaptureSubDto> findCapturesByProjectIdAndStep(long projectId, String step) {
+        return this.captureRepository.findCapturesByProjectIdAndStep(projectId, step);
+    }
+
+    public List<CaptureSubDto> findCapturesByProjectIdAndStep(long projectId, String step, Date startDate, Date endDate) {
+        return this.captureRepository.findCapturesByProjectIdAndStep(projectId, step, startDate, endDate);
+    }
+
 
     public Capture addCapture(Capture capture){
         return this.captureRepository.save(capture);
