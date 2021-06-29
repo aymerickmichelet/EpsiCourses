@@ -28,21 +28,16 @@ public class SubcontractorService {
 
     }
 
+    public List<Subcontractor> getListSubcontractorById(List<Long> ids) {
 
+        List<Subcontractor> subcontractors = new ArrayList<>();
+        for(Long id: ids) {
 
-
-    public List<Capture> getListFictiveCapture() {
-        Date date = DateUtils.getDate("2021-06-28");
-        List<Subcontractor> subcontractors = new ArrayList<Subcontractor>();
-
-        List<Capture> captures = new ArrayList<>();
-
-        for(int i = 0; i < 5; i++) {
-            captures.add(new Capture("https://perdu.com", date,"Incident",  44.63f, (float) -1.08,
-                    subcontractors));
-
+            if(this.subcontractorRepository.findById(id).isPresent()) {
+                subcontractors.add(this.subcontractorRepository.findById(id).get());
+            }
         }
-        return captures;
+        return subcontractors;
     }
 
 

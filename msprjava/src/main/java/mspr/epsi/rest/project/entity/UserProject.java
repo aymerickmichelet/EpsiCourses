@@ -48,10 +48,10 @@ public class UserProject {
     }
 
     public UserEntity getUser() {
-        return userEntity;
+        return user;
     }
 
     public void setUser(UserEntity userEntity) {
-        this.userEntity = userEntity;
+        this.user = userEntity;
     }
 }

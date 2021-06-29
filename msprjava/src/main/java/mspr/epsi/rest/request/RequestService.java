@@ -19,7 +19,7 @@ public class RequestService {
     public RequestService(RequestRepository requestRepository){
         this.requestRepository = requestRepository;
 
-        this.requestRepository.save(
+        /*this.requestRepository.save(
                 new Request(
                         DateUtils.getDate("2021-01-01"),
                         new Project(
@@ -65,7 +65,7 @@ public class RequestService {
                                 new ArrayList<Request>()
                         )
                 )
-        );
+        ); */
     }
 
     public List<Request> findAll(){

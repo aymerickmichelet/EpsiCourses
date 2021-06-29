@@ -7,9 +7,10 @@ import mspr.epsi.rest.project.repository.ProjectRepository;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
 import mspr.epsi.rest.utils.DateUtils;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CaptureService {
 
@@ -35,6 +36,49 @@ public class CaptureService {
 
         }
         return captures;
+    }
+
+    public List<Capture> detectDuplicateCapture(List<Capture> captures) {
+
+        List<Capture> duplicateCaptureList = new ArrayList<>();
+        Set<String> incidents = new HashSet<String>();
+        Set<Date> dates = new HashSet<Date>();
+        Set<Float> lats = new HashSet<Float>();
+        Set<Float> longs = new HashSet<Float>();
+
+        for(Capture capture: captures) {
+
+            if (incidents.contains(capture.getIncident())
+                    && dates.contains(capture.getDate())
+                    && lats.contains(capture.getLatitude())
+                    && longs.contains(capture.getLongitude())
+            ) {
+                duplicateCaptureList.add(capture);
+            } else {
+                incidents.add(capture.getIncident());
+                dates.add(capture.getDate());
+                lats.add(capture.getLatitude());
+                longs.add(capture.getLongitude());
+            }
+        }
+
+        return duplicateCaptureList;
+    }
+
+    public List<Capture> getDuplicateCatpure(long idProject) {
+        List<Capture> captures = this.captureRepository.getCaptureByProjectId(idProject);
+        return detectDuplicateCapture(captures);
+    }
+
+    public List<Capture> getCapturesIdenticals(Capture capture) {
+        List<Capture> captures = this.captureRepository.getCapturesIdenticals(capture.getProject().getId(),
+                capture.getIncident(), capture.getLatitude(), capture.getLongitude(), capture.getDate()
+                );
+        return captures;
+    }
+
+    public Capture addCapture(Capture capture){
+        return this.captureRepository.save(capture);
     }
 
 

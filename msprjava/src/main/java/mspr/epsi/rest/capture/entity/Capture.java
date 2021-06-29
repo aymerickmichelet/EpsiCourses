@@ -1,7 +1,9 @@
 package mspr.epsi.rest.capture.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import mspr.epsi.rest.project.entity.Project;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
+import mspr.epsi.rest.utils.DateUtils;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -78,6 +80,14 @@ public class Capture {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getIncident() {
+        return incident;
+    }
+
+    public void setIncident(String incident) {
+        this.incident = incident;
     }
 
     public float getLatitude() {
