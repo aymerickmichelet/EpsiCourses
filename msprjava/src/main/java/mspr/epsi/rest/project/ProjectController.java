@@ -57,10 +57,13 @@ public class ProjectController {
 
     @GetMapping("/projects-size")
     @JsonFormat
-    public ResponseEntity<Response> getSize(@RequestParam(defaultValue = "") String year,
-                                            @RequestParam(defaultValue =  "") String month) {
+    public ResponseEntity<Response> getSize(@RequestParam() String year,
+                                            @RequestParam() String month,
+                                            @RequestParam(required = false) String nameProject,
+                                            @RequestParam(required = false) String address,
+                                            @RequestParam(required = false) List<Long> subcontractorsId
 
-
+    ) {
         Date dateCompare = DateUtils.getDate(year + "-" + month + "-01");
 
         //Test Years and month
@@ -72,9 +75,18 @@ public class ProjectController {
 
         }
 
-        long size = this.projectService.findLength(dateCompare);
-        String msg = "Ok Resquest";
+        long size = 0;
+        if( nameProject != null && address != null && subcontractorsId != null) {
+            size = this.projectService.findLength(dateCompare, nameProject, address, subcontractorsId);
+        } else if (nameProject != null || address != null || subcontractorsId != null){
+            Response response = new Response(HttpStatus.BAD_REQUEST.value(), "Bad request parameters");
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+        } else {
+            size = this.projectService.findLength(dateCompare);
+        }
 
+
+        String msg = "Ok Resquest";
         ProjectSizeResponse response = new ProjectSizeResponse(HttpStatus.OK.value(), msg, size);
         return new ResponseEntity<>(response, HttpStatus.OK);
 

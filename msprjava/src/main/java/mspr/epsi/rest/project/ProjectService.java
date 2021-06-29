@@ -83,6 +83,11 @@ public class ProjectService {
         return this.projectRepository.countBetweenDate(dateCompare);
     }
 
+    public long findLength(Date dateCompare, String name, String address, List<Long> subcontractorsId) {
+        return this.projectRepository.countProject(dateCompare, name, address, subcontractorsId);
+    }
+
+
     public List<CountSubContractorJob>  findLengthSub(long projectId) {
         return this.projectRepository.countSubcontractorForeachJob(projectId);
     }
