@@ -1,7 +1,9 @@
 package mspr.epsi.rest.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import mspr.epsi.rest.project.entity.UserProject;
 import mspr.epsi.rest.request.entity.Request;
+import mspr.epsi.rest.utils.DateUtils;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -10,6 +12,10 @@ import java.util.List;
 @Entity
 public class UserEntity {
 
+    @Transient
+    @JsonIgnore
+    private final int tryPasswordMax = 3;
+
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private int id;
@@ -17,6 +23,7 @@ public class UserEntity {
     private String lastName;
     private String firstName;
     private String role;
+    @JsonIgnore
     private String password;
     private int tryPassword;
     @Temporal(TemporalType.DATE)
@@ -28,12 +35,13 @@ public class UserEntity {
     @OneToMany
     private List<Request> requests;
 
+    public UserEntity(){super();}
+
     public UserEntity(String userId,
                       String lastName,
                       String firstName,
                       String role,
                       String password,
-                      int tryPassword,
                       Date updatePassword,
                       List<UserProject> userProjects,
                       List<Request> requests){
@@ -42,13 +50,29 @@ public class UserEntity {
         this.firstName = firstName;
         this.role = role;
         this.password = password;
-        this.tryPassword = tryPassword;
+        this.tryPassword = this.tryPasswordMax;
         this.updatePassword = updatePassword;
         this.userProjects = userProjects;
         this.requests = requests;
     }
 
-    public UserEntity(){super();}
+    public UserEntity(String userId, String lastName, String firstName, String role, String password) {
+        this.userId = userId;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.role = role;
+        this.password = password;
+        this.tryPassword = this.tryPasswordMax;
+        this.updatePassword = DateUtils.getDate("");
+    }
+
+    public void resetTryPassword(){
+        this.tryPassword = this.tryPasswordMax;
+    }
+
+    public void decrementTryPassword(){
+        this.tryPassword--;
+    }
 
     public long getId() {
         return id;

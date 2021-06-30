@@ -2,16 +2,10 @@ package mspr.epsi.rest.capture;
 
 import mspr.epsi.rest.capture.dto.CaptureSubDto;
 import mspr.epsi.rest.capture.entity.Capture;
-import mspr.epsi.rest.project.ProjectService;
-import mspr.epsi.rest.project.entity.Project;
-import mspr.epsi.rest.project.repository.ProjectRepository;
 import mspr.epsi.rest.subcontractor.entity.Subcontractor;
 import mspr.epsi.rest.utils.DateUtils;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class CaptureService {
 
@@ -86,10 +80,7 @@ public class CaptureService {
         return this.captureRepository.findCapturesByProjectIdAndStep(projectId, step, startDate, endDate);
     }
 
-
     public Capture addCapture(Capture capture){
         return this.captureRepository.save(capture);
     }
-
-
 }
