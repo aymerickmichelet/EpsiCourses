@@ -117,6 +117,10 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public UserEntity findById(Long id) {
+        return this.userRepository.findById(id).get();
+    }
+
     public UserEntity findByUserId(String userId) {
         return this.userRepository.findByUserId(userId);
     }

@@ -57,7 +57,7 @@ public class JwtTokenService {
 
     private Date getTokenExpirationDate() {
         Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.MONTH, 1);
+        calendar.add(Calendar.DATE, 1);
 
         return calendar.getTime();
     }

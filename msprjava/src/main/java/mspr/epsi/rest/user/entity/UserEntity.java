@@ -18,7 +18,7 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    private int id;
+    private long id;
     private String userId;
     private String lastName;
     private String firstName;
@@ -78,7 +78,7 @@ public class UserEntity {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
