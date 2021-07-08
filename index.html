@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        const title = new Vue({
+            el: 'title',
+            data: {
+                title: "TaVueCa"
+            }
+        })
+    </script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: "Wesh alors"
+            }
+        });
+    </script>
+</body>
+</html>
