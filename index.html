@@ -6,34 +6,31 @@
 <body>
     <div id="app">
         <h1>{{message}}</h1>
-        <ul>
-            <li>Banane: {{costOfBananas}}</li>
-            <li>Ananas: {{costOfPineapple}}</li>
-            <li>Fraise: {{costOfStrawberry}}</li>
-            <li>Total: {{ total }}</li>
-        </ul>
+        <button @click="showColor">Show Color</button>
+        <input type="text" id="inputColor" @keyup.enter="alert('weshalors')" />
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
         const title = new Vue({
             el: 'title',
             data: {
-                title: "TaVueCa"
+                title: "TaVueCa",
             }
         })
-    </script>
+        </script>
     <script>
         const app = new Vue({
             el: '#app',
             data: {
                 message: "Wesh alors",
-                costOfBananas: 0,
-                costOfPineapple: 11,
-                costOfStrawberry: 1
+                color: "Blue"
             },
-            computed: {
-                total(){
-                    return this.costOfBananas + this.costOfPineapple + this.costOfStrawberry;
+            methods: {
+                changeColor(){
+                    this.color = document.getElementById("inputColor").value;
+                },
+                showColor(){
+                    alert(this.color);
                 }
             }
         });
