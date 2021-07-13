@@ -11,7 +11,11 @@ RUN apt install curl -y
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN apt install nodejs -y
 RUN npm install -g @vue/cli
-RUN npm install -g nuxt
+
+# RUN cd /workspaces/TaVueCa/my-first-vue-cli-app
+# RUN npm install --force
+# RUN cd ../nutnut
+# RUN npm install --force
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \

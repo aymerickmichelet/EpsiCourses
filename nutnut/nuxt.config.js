@@ -43,7 +43,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/axios'
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -60,6 +61,10 @@ export default {
       themeColor: '#4DBA87',
       msTileColor: '#000000'
     }
+  },
+
+  axios: {
+    proxy: false
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
