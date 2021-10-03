@@ -4,13 +4,20 @@ import { Pun } from "./entity/Pun"
 
 const punRepository = () => getRepository(Pun);
 
+export const findPun = async () => {
+    const pun = await punRepository().query(`
+        SELECT * FROM pun
+        ORDER BY RAND()
+        LIMIT 1`);
+    return pun[0];
+};
 
-// export const findCampaign = async (campaignId) => {
-//     const campaign = await campaignRepository().findOne({where: {
-//         id: campaignId
-//     }});
-//     return campaign;
-// };
+export const findPunById = async (punId) => {
+    const pun = await punRepository().findOne({where: {
+        id: punId
+    }});
+    return pun;
+};
 
 // export const createCampaign = async (data, user) => {
 

@@ -1,10 +1,12 @@
 
 import * as Router from "koa-router"; 
-import { getPun } from "./pun.controller";
+import { editPun, createPun, getPun } from "./pun.controller";
 
 const router: Router = new Router(); 
 
 router.get('/pun', getPun);
-// router.get('/campaign/:campaignId', authAccess, getOneCampaign);
+router.get('/pun/:id', getPun);
+// router.post('/pun', createPun);
+// router.put('/pun', editPun);
 
 export default router;
