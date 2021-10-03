@@ -1,9 +1,9 @@
 version: '3.0'
 
 services: 
-    workshop-api:
+    pun-back:
         image: node:alpine
-        container_name: pun-api
+        container_name: pun-back
         working_dir: /app
         volumes: 
             - .:/app
@@ -13,9 +13,11 @@ services:
             - '${SERVER_PORT}:${SERVER_PORT}'
         restart: unless-stopped
         command:  /bin/sh -c "yarn install && yarn run dev"
+        depends_on:
+            - pun-db
         networks: 
             - pun
-    workshop_db:
+    pun-db:
         image: mysql:latest
         container_name: pun-db
         volumes:
@@ -34,8 +36,6 @@ services:
     phpmyadmin:
         image: phpmyadmin
         restart: unless-stopped
-        links:
-            - pun
         ports:
          - 5000:80
         environment:
@@ -43,9 +43,12 @@ services:
             PMA_PORT: 3306
             PMA_ARBITRARY: 1
             UPLOAD_LIMIT: 300M
+        depends_on:
+            - pun-db
         networks:
             - pun
-            
+
+
 networks: 
     pun:
 
