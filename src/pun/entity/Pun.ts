@@ -1,10 +1,10 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryColumn, TableForeignKey } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, TableForeignKey } from "typeorm";
 // import { User } from "../../user/entity/User";
 
 @Entity()
 export class Pun {
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn('increment')
     id: number;
 
     @Column()
@@ -13,9 +13,11 @@ export class Pun {
     @Column()
     lastname: string; 
 
-    @Column()
+    @Column({
+        nullable: true
+    })
     author: string;
-
+    
     @Column()
     date_creation: Date; 
 
