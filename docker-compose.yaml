@@ -1,0 +1,56 @@
+version: '3.0'
+
+services: 
+    workshop-api:
+        image: node:alpine
+        container_name: pun-api
+        working_dir: /app
+        volumes: 
+            - .:/app
+            - appnodemodules:/app/node_modules
+            - ./nodemon.json:/home/node/app/nodemon.json
+        ports: 
+            - '${SERVER_PORT}:${SERVER_PORT}'
+        restart: unless-stopped
+        command:  /bin/sh -c "yarn install && yarn run dev"
+        networks: 
+            - pun
+    workshop_db:
+        image: mysql:latest
+        container_name: pun-db
+        volumes:
+          - db_data:/var/lib/mysql
+        ports:
+            - '${DATABASE_PORT}:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+            MYSQL_DATABASE: ${DATABASE_DATABASE}
+            MYSQL_USER: ${DATABASE_USER}
+            MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+        restart: unless-stopped
+        command: --character-set-server=utf8mb4 --innodb-buffer-pool-size=4G
+        networks:
+            - pun
+    phpmyadmin:
+        image: phpmyadmin
+        restart: unless-stopped
+        links:
+            - pun
+        ports:
+         - 5000:80
+        environment:
+            PMA_HOST: pun-db
+            PMA_PORT: 3306
+            PMA_ARBITRARY: 1
+            UPLOAD_LIMIT: 300M
+        networks:
+            - pun
+            
+networks: 
+    pun:
+
+volumes: 
+    pun-api:
+    db_data:
+    appnodemodules:
+        external: true
