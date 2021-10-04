@@ -24,16 +24,20 @@
 
 Request type | request | body
 -- | -- | --
-GET | /pun?id=01 | :x:
-POST | /pun |
+- GET /pun?id=01
 
-```json{
+- POST /pun
+
+```json
+{
 	"firstname": "Alain",
 	"lastname": "Fini",
 	"author": "aymnms"
 }
 ```
-PUT | /pun |
+
+- PUT /pun
+
 ```json
 {
 	"id": 01,
@@ -42,6 +46,3 @@ PUT | /pun |
 	"author": "aymnms"
 }
 ```
-
-
-
