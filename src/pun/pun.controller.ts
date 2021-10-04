@@ -1,6 +1,6 @@
 import { Context, Next } from "koa";
 import ErrorMsg from "../interface/ErrorMsg";
-import { findPun, findPunById, createPun, editPun } from "./pun.service";
+import { findPun, findPunById, createPun, editPun, deletePun } from "./pun.service";
 
 // import { findAllCampaign, findCampaignById, createCampaign } from "./pun.service";
 
@@ -72,6 +72,27 @@ export const setPun = async (context: Context, next: Next) => {
     }
 }
 
+export const removePun = async (context: Context, next: Next) => {
+    try {
+        const pun = await deletePun(context.params.id);
+        context.response.status = 200;
+        context.response.body = {
+            "deleted": 1
+        };
+
+        next();
+    } catch(error) {
+        console.log('error', error)
+        const errorMsg: ErrorMsg = {
+            status: 400, 
+            msg: "Couldn't delete the pun"
+        }
+
+        context.response.status = 400; 
+        context.response.body = errorMsg
+    }
+}
+
 export const addPuns = async (context: Context, next: Next) => {
     try {
         const data = context.request.body;
@@ -120,6 +141,28 @@ export const setPuns = async (context: Context, next: Next) => {
         const errorMsg: ErrorMsg = {
             status: 400, 
             msg: "Couldn't edit the pun"
+        }
+
+        context.response.status = 400; 
+        context.response.body = errorMsg
+    }
+}
+
+export const removePuns = async (context: Context, next: Next) => {
+    try {
+        const data = context.request.body.id;
+        await deletePun(context.request.body.id);
+        context.response.status = 200;
+        context.response.body = {
+            "deleted": data.length
+        };
+
+        next();
+    } catch(error) {
+        console.log('error', error)
+        const errorMsg: ErrorMsg = {
+            status: 400, 
+            msg: "Couldn't delete the pun"
         }
 
         context.response.status = 400; 

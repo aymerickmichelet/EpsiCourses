@@ -44,5 +44,8 @@ export const editPun = async (newPun) => {
     }
 
     return await punRepository().save(pun);
+}
 
+export const deletePun = async (punId) => { //enable with 1 ou several id in array
+    return await punRepository().delete(punId);
 }
