@@ -1,6 +1,6 @@
 import { Context, Next } from "koa";
 import ErrorMsg from "../interface/ErrorMsg";
-import { findPun, findPunById, createPun } from "./pun.service";
+import { findPun, findPunById, createPun, editPun } from "./pun.service";
 
 // import { findAllCampaign, findCampaignById, createCampaign } from "./pun.service";
 
@@ -45,6 +45,28 @@ export const addPun = async (context: Context, next: Next) => {
     }
 };
 
-export const editPun = async (context: Context, next: Next) => {
+export const setPun = async (context: Context, next: Next) => {
+    try {
+        const bodyPun = {
+            id: context.request.body.id,
+            firstname: context.request.body.firstname,
+            lastname: context.request.body.lastname,
+            author: context.request.body.author,
+            date_modification: Date()
+        }
+        const pun = await editPun(bodyPun);
+        context.response.status = 200;
+        context.response.body = pun;
 
+        next();
+    } catch(error) {
+        console.log('error', error)
+        const errorMsg: ErrorMsg = {
+            status: 400, 
+            msg: "Couldn't edit the pun"
+        }
+
+        context.response.status = 400; 
+        context.response.body = errorMsg
+    }
 }
