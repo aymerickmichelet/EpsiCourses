@@ -32,17 +32,17 @@ export const createPun = async (data) => {
     return await punRepository().save(newPun);
 }
 
-export const editPun = async (pun) => {
+export const editPun = async (newPun) => {
 
-    let editedPun = await punRepository().findOne({ where: {
-            id: pun.id
+    let pun = await punRepository().findOne({ where: {
+            id: newPun.id
     }});
 
-    editedPun = {
-        ...editedPun,
-        ...pun
+    pun = {
+        ...pun,
+        ...newPun
     }
 
-    return await punRepository().save(editedPun);
+    return await punRepository().save(pun);
 
 }
