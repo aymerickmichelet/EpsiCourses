@@ -1,6 +1,6 @@
 import { Context, Next } from "koa";
 import ErrorMsg from "../interface/ErrorMsg";
-import { findPun, findPunById } from "./pun.service";
+import { findPun, findPunById, createPun } from "./pun.service";
 
 // import { findAllCampaign, findCampaignById, createCampaign } from "./pun.service";
 
@@ -25,27 +25,24 @@ export const getPun = async (context: Context, next: Next) => {
     }
 };
 
-export const createPun = async (context: Context, next: Next) => {
-    // try {
-    //     const user = context.state.user; 
-    //     const data = context.request.body;
-    //     console.log(data);
-        
-    //     const output = await createCampaign(data, user);
-    //     context.response.status = 200;
-    //     context.response.body = output;
+export const addPun = async (context: Context, next: Next) => {
+    try {
+        const data = context.request.body;
+        const output = await createPun(data);
+        context.response.status = 200;
+        context.response.body = output;
 
-    //     next()
-    // } catch(error) {
-    //     console.log('error', error)
-    //     const errorMsg: ErrorMsg = {
-    //         status: 400, 
-    //         msg: "Couldn't create a new campaign"
-    //     }
+        next()
+    } catch(error) {
+        console.log('error', error)
+        const errorMsg: ErrorMsg = {
+            status: 400, 
+            msg: "Couldn't create a new pun"
+        }
 
-    //     context.response.status = 400; 
-    //     context.response.body = errorMsg
-    // }
+        context.response.status = 400; 
+        context.response.body = errorMsg
+    }
 };
 
 export const editPun = async (context: Context, next: Next) => {

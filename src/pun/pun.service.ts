@@ -19,25 +19,18 @@ export const findPunById = async (punId) => {
     return pun;
 };
 
-// export const createCampaign = async (data, user) => {
+export const createPun = async (data) => {
 
-//     const employees = data.employees.map(employee => ({
-//         ...employee, 
-//         id: uuidv4()
-//     }))
-
-//     const newCampaign = campaignRepository().create({ 
-//         id: uuidv4(), 
-//         title: data.title, 
-//         template: data.template, 
-//         sent: false,
-//         date: Date(), 
-//         employee: employees, 
-//         user: user
-//     })
+    const newPun = punRepository().create({ 
+        firstname: data.firstname,
+        lastname: data.lastname,
+        author: data.author,
+        date_creation: Date(),
+        date_modification: Date()
+    });
     
-//     return await campaignRepository().save(newCampaign);
-// }
+    return await punRepository().save(newPun);
+}
 
 // export const editPun = async (pun) => {
 
