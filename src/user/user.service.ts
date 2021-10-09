@@ -4,13 +4,12 @@ import { Pun } from "./entity/Pun"
 
 const punRepository = () => getRepository(Pun);
 
-export const findRandomPun = async () => {
-    const pun = await punRepository().createQueryBuilder('pun')
-        .where('validate = :validate', { validate: true })
-        .orderBy('RAND()')
-        .limit(1)
-        .getOne();
-    return pun;
+export const findPun = async () => {
+    const pun = await punRepository().query(`
+        SELECT * FROM pun
+        ORDER BY RAND()
+        LIMIT 1`);
+    return pun[0];
 };
 
 export const findPunById = async (punId) => {
@@ -20,24 +19,12 @@ export const findPunById = async (punId) => {
     return pun;
 };
 
-export const findPuns = async (punIdBegin, count, validate) => {
-    const pun = await punRepository().createQueryBuilder('pun')
-        .where('validate = :validate', { validate: validate })
-        .andWhere('id >= :id', { id: punIdBegin })
-        .limit(count)
-        .getMany();
-    return pun;
-};
-
 export const createPun = async (data) => {
-    
-    let validate = false;
-    if (data.validate) validate = data.validate;
+
     const newPun = punRepository().create({ 
         firstname: data.firstname,
         lastname: data.lastname,
         author: data.author,
-        validate: validate,
         date_creation: Date(),
         date_modification: Date()
     });

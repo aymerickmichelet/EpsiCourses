@@ -17,6 +17,9 @@ export class Pun {
         nullable: true
     })
     author: string;
+
+    @Column()
+    validate: boolean;
     
     @Column()
     date_creation: Date; 
