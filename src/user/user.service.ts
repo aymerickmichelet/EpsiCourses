@@ -1,51 +1,79 @@
 import { getRepository } from "typeorm";
-import { Pun } from "./entity/Pun"
-// import { v4 as uuidv4 } from 'uuid'
+import * as bcrypt from 'bcrypt';
+import * as jwt from 'jsonwebtoken';
 
-const punRepository = () => getRepository(Pun);
+import { User } from "./entity/User"
 
-export const findPun = async () => {
-    const pun = await punRepository().query(`
-        SELECT * FROM pun
-        ORDER BY RAND()
-        LIMIT 1`);
-    return pun[0];
-};
+const userRepository = () => getRepository(User);
+const JSON_SIGN_SECRET = "jaàdjapzjdpoajpJOPHOPHPNPOY1PU0°U0PNOuà)nopnlmnopU0°1J0¨4557487876988743"
 
-export const findPunById = async (punId) => {
-    const pun = await punRepository().findOne({where: {
-        id: punId
+function generateToken(userId){
+    return jwt.sign({
+        userId: userId
+    },
+    JSON_SIGN_SECRET,
+    {
+        expiresIn: '30m'
+    })
+}
+
+export const findUserById = async (userId) => {
+    const user = await userRepository().findOne({where: {
+        id: userId
     }});
-    return pun;
+    return user;
 };
 
-export const createPun = async (data) => {
+export const checkUsernameAndPassword = async (username, password) => {
+    
+    const user = await userRepository().findOne({where: {
+        username: username
+    }});
 
-    const newPun = punRepository().create({ 
-        firstname: data.firstname,
-        lastname: data.lastname,
-        author: data.author,
-        date_creation: Date(),
-        date_modification: Date()
+    if(bcrypt.compareSync(password, user.password)){
+        return {
+            "user_id": user.id,
+            "token": generateToken(user.id)
+        }
+    }else{
+        return {
+            "error: ": "Wrong password"
+        }
+    }
+};
+
+export const createUser = async (data) => {
+
+    const user = await userRepository().findOne({where: {
+        username: data.username
+    }});
+
+    if (user !== undefined) return "409 Conflict";
+
+    const hash = await bcrypt.hash(data.password, 10);
+
+    const newUser = userRepository().create({ 
+        username: data.username,
+        password: hash
     });
     
-    return await punRepository().save(newPun);
+    return await userRepository().save(newUser);
 }
 
-export const editPun = async (newPun) => {
+export const editUser = async (newUser) => {
 
-    let pun = await punRepository().findOne({ where: {
-            id: newPun.id
+    let user = await userRepository().findOne({ where: {
+            id: newUser.id
     }});
 
-    pun = {
-        ...pun,
-        ...newPun
+    user = {
+        ...user,
+        ...newUser
     }
 
-    return await punRepository().save(pun);
+    return await userRepository().save(user);
 }
 
-export const deletePun = async (punId) => { //enable with 1 ou several id in array
-    return await punRepository().delete(punId);
+export const deleteUser = async (userId) => { //enable with 1 ou several id in array
+    return await userRepository().delete(userId);
 }

@@ -1,16 +1,14 @@
-import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, TableForeignKey } from "typeorm";
-// import { User } from "../../user/entity/User";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-// @Entity()
-// export class Pun {
+@Entity()
+export class User {
 
-//     @PrimaryGeneratedColumn('increment')
-//     id: number;
+    @PrimaryGeneratedColumn('increment')
+    id: number;
 
-//     @Column()
-//     username: string;
+    @Column()
+    username: string;
 
-//     @Column()
-//     password: string; 
-    
-// }
+    @Column()
+    password: string; 
+}
