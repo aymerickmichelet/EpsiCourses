@@ -42,7 +42,9 @@ docker-compose stop <container_name>
 
 To connect in webconsole minecraft, click [here](https://mc.epsiwis.fr)
 
-Clic on "Your servers" and "Add server" (image)
+Clic on "Your servers" and "Add server"
+
+![image](https://user-images.githubusercontent.com/32719398/138145371-bc3f61ee-f9d3-4866-8734-44e10a1e1e7a.png)
 
 Complete the form with this information:
 ```
@@ -51,6 +53,6 @@ Server Ip: localhost
 WebConsole port: 25564
 Server is SSL enabled: No
 ```
-(image)
+![image](https://user-images.githubusercontent.com/32719398/138145416-bdc4f4d4-cd1c-4a73-ba38-e3d3f51e75a9.png)
 
 Enter the password as you can see in webconsole config in /main/plugins/webconsole/config.yaml
