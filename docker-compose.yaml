@@ -1,0 +1,45 @@
+version: "3"
+services:
+  epsiwis-bungeecord:
+    image: epsiwis-bungeecord
+    container_name: epsiwis-bungeecord
+    ports:
+      - 25565:25565
+    build:
+        context: ./bungeecord
+        dockerfile: Dockerfile
+    volumes:
+      - ./bungeecord:/server
+
+  epsiwis-main:
+    image: itzg/minecraft-server
+    container_name: epsiwis-main
+    volumes:
+      - ./main:/data/
+    environment:
+      TYPE: PAPER
+      VERSION: 1.17.1
+      EULA: "TRUE"
+      OPS: aymnms
+      MAX_PLAYERS: 50
+      ALLOW_NETHER: "true"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
+      ENABLE_COMMAND_BLOCK: "true"
+      GENERATE_STRUCTURES: "true"
+      HARDCORE: "false"
+      SPAWN_ANIMALS: "true"
+      SPAWN_MONSTERS: "true"
+      SPAWN_NPCS: "true"
+      SPAWN_PROTECTION: 0
+      VIEW_DISTANCE: 10
+      PVP: "true"
+      RESOURCE_PACK:
+      RESOURCE_PACK_SHA1:
+      WORLD:
+      ONLINE_MODE: "false"
+      INIT_MEMORY: 128M
+      MAX_MEMORY: 1G
+      EXEC_DIRECTLY: "true"
+      TZ: Europe/Paris
+      SERVER_PORT: 25566
+      DISABLE_HEALTHCHECK: "true"
