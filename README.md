@@ -14,7 +14,6 @@ git clone git@github.com:EpsiWisBES/MinecraftDocker.git
 ## Usage
 
 Start all servers:
-
 ```bash
 docker-compose up -d
 ```
@@ -38,3 +37,20 @@ Stop 1 server:
 ```bash
 docker-compose stop <container_name>
 ```
+
+## WebConsole
+
+To connect in webconsole minecraft, click [here](https://mc.epsiwis.fr)
+
+Clic on "Your servers" and "Add server" (image)
+
+Complete the form with this information:
+```
+Server name: epsiwis-main
+Server Ip: localhost
+WebConsole port: 25564
+Server is SSL enabled: No
+```
+(image)
+
+Enter the password as you can see in webconsole config in /main/plugins/webconsole/config.yaml

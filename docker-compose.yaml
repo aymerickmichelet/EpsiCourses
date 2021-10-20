@@ -14,6 +14,8 @@ services:
   epsiwis-main:
     image: itzg/minecraft-server
     container_name: epsiwis-main
+    ports:
+      - 25564:8080
     volumes:
       - ./main:/data/
     environment:
