@@ -1,8 +1,8 @@
-useSSL: false
+useSSL: true
 StoreType: JKS
 KeyStore: plugins/WebConsole/keystore.jks
-StorePassword: storepassword
-KeyPassword: keypassword
+StorePassword: weshalors
+KeyPassword: weshalors
 host: 0.0.0.0
 port: 8080
 language: fr
