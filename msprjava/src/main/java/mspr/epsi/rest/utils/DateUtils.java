@@ -2,7 +2,9 @@ package mspr.epsi.rest.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class DateUtils {
 
@@ -17,6 +19,26 @@ public class DateUtils {
         catch(ParseException e) {
             return new Date(); // pk ne pas return null ?
         }
+    }
+
+    public static boolean compareDatePassword(Date date) {
+        Date dateNow = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("dd");
+
+        long diff = dateNow.getTime() - date.getTime();
+
+        long days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        return days > 30;
+    }
+
+    public static boolean blockPassword(Date date) {
+        Date dateNow = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("dd");
+
+        long diff = dateNow.getTime() - date.getTime();
+
+        long days = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
+        return days > 37;
     }
 
     public static boolean compareYears(int year, Date date) {
