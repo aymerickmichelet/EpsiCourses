@@ -19,12 +19,20 @@ $ git checkout 'branchname'
 
 Project name | Langage | Description
 ---: | :---: | :---
+android-ios | Java | Android application to learn java for android
+AsignSpe | Python | Discord bot that gives a role to a user based on their reaction to a message
 BanqueCpp | C++ | Examen C++
 BanqueJava | Java | Banque project in java (personal exercice)
 BlaBlaCar | Java | Examen / Exercice
+botPronote | Python | Exercice bot discord x pronote
+BottleFlipFront | Html/CSS/SCSS/JS/Gulp | BottleFlip is a website who ask and tell jokes.
+BottleFlipDiscord | Python | Bot discord who use the api bottleflip.
 Casino | Python | Examen to learn python
 CompteRendu | C# | BTS Project (not finished)
 CourseContreLaMontre | C# | Examen
+Crypton | Python | Exercice Crypto module
+djangoExo | Python | django exercice
+docker-init | Docker/Shell | To start a docker project with a script to build, run, stop and delete image/container easily.
 JsMarioB3| JavaScript | JS Examen
 MarioDstJs | JavaScript | Examen
 nosql-docker | nosql + docker | Exercice
