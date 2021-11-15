@@ -1,6 +1,6 @@
 # Getting started
 
-This repository of the project is to setup the server. 
+This repository of the project is to setup the minecraft server. 
 
 ## Installation
 
