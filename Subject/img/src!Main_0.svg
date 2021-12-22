@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1420 1043" style="enable-background:new 0 0 1420 1043;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st3{font-family:'Arial-BoldMT';}
+	.st4{font-size:13px;}
+	.st5{font-family:'ArialMT';}
+	.st6{font-family:'Arial-BoldItalicMT';}
+	.st7{font-family:'Arial-ItalicMT';}
+	.st8{font-size:20px;}
+	.st9{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3;}
+</style>
+<g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="95" y="23" class="st0" width="265.9" height="87"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="88" y="16" class="st1" width="265.9" height="87"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M88,16h265.9v87H88V16z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M88,41h265.9"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M88,51h265.9"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 194.5481 35.5)" class="st3 st4">Dungeon</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 93 68.5)" class="st5 st4">+getRoom(p_iRoomIndex: int): Room</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 93 83.5)" class="st5 st4">+greetHeros(p_Hero: Hero)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="175" y="167" class="st0" width="248.5" height="87"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="168" y="160" class="st1" width="248.5" height="87"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M168,160h248.5v87H168V160z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M168,185h248.5"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M168,195h248.5"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 274.9131 179.5)" class="st3 st4">Room</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 212.5)" class="st5 st4">+getMonster(): Monster</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 227.5)" class="st5 st4">+enterRoom(p_Hero: Hero)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="175" y="311" class="st0" width="372.2" height="190"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="168" y="304" class="st1" width="372.2" height="190"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M168,304h372.2v190H168V304z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M168,329h372.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M168,442h372.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 330.6011 323.5)" class="st3 st4">Monster</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 346.5)" class="st5 st4">+m_sEffectiveWeaponType: String</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 361.5)" class="st5 st4">+s_iNbZombieInstances: int</text>
+			<path class="st2" d="M173,361.5h160.8"/>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 376.5)" class="st5 st4">+s_iNbThiefInstances: int</text>
+			<path class="st2" d="M173,376.5h146.3"/>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 391.5)" class="st5 st4">+s_iNbSorcerInstances: int</text>
+			<path class="st2" d="M173,391.5h155.7"/>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 406.5)" class="st5 st4">+s_iNbBarbarianInstances: int</text>
+			<path class="st2" d="M173,406.5h173.8"/>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 421.5)" class="st5 st4">+s_iNbTrollInstances: int</text>
+			<path class="st2" d="M173,421.5h142.2"/>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 436.5)" class="st5 st4">-m_bSearchDone: boolean</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 459.5)" class="st5 st4">+getEffectiveWeaponType(): String</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 474.5)" class="st5 st4">+attack(p_TargetCharacter: Character)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 173 489.5)" class="st5 st4">+isWeaponEfficient(p_Weapon: Weapon): boolean</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="487" y="527" class="st0" width="104" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="480" y="520" class="st1" width="104" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,520h104v57H480V520z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,545h104"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,555h104"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 519.603 539.5)" class="st3 st4">Troll</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="487" y="613" class="st0" width="112" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="480" y="606" class="st1" width="112" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,606h112v57H480V606z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,631h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,641h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 521.5496 625.5)" class="st3 st4">Thief</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="487" y="699" class="st0" width="112" height="44"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="480" y="692" class="st1" width="112" height="44"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,692h112v44H480V692z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,717h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,727h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 511.0759 711.5)" class="st3 st4">Sorcerer</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="487" y="785" class="st0" width="112" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="480" y="778" class="st1" width="112" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,778h112v57H480V778z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,803h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,813h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 514.3259 797.5)" class="st3 st4">Zombie</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="487" y="871" class="st0" width="112" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="480" y="864" class="st1" width="112" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,864h112v57H480V864z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,889h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,899h112"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 507.8164 883.5)" class="st3 st4">Barbarian</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="527" y="143" class="st0" width="251.2" height="130"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="520" y="136" class="st1" width="251.2" height="130"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M520,136h251.2v130H520V136z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M520,161h251.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M520,184h251.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 617.0552 155.5)" class="st3 st4">Character</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 525 178.5)" class="st5 st4">#m_iLifePoints: int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 525 201.5)" class="st5 st4">+attack(p_TargetCharacter: Character)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 525 216.5)" class="st5 st4">+getNbLifePoints(): int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 525 231.5)" class="st5 st4">+receiveDamages(p_iDamages: int)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 525 246.5)" class="st5 st4">+isalive(): boolean</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="559" y="311" class="st0" width="359.3" height="160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="552" y="304" class="st1" width="359.3" height="160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M552,304h359.3v160H552V304z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M552,329h359.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M552,352h359.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 717.5686 323.5)" class="st3 st4">Hero</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 346.5)" class="st5 st4">-m_iStrength: int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 369.5)" class="st5 st4">-selectWeaponFromArsenal(p_sWeaponClassName: String)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 384.5)" class="st5 st4">+attack(p_TargetCharacter: Character)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 399.5)" class="st5 st4">+discoverEnnemy(p_Monster: Monster)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 414.5)" class="st5 st4">+setStrength(p_iStrength: int)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 429.5)" class="st5 st4">+improveHealth(p_iValue: int)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 444.5)" class="st5 st4">+improveStrength(p_iValue: int)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 557 459.5)" class="st5 st4">+searchForPotions(p_Searchable: Searchable)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1135" y="495" class="st0" width="276" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1128" y="488" class="st1" width="276" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1128,488h276v85h-276V488z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1128,513h276"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1128,551h276"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1218.4155 507.5)" class="st3 st4">MonsterWeapon</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1133 530.5)" class="st5 st4">-m_iCriticalCountDown: int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1133 545.5)" class="st5 st4">-s_iMaxRoundBeforeCritical: int {readOnly}</text>
+			<path class="st2" d="M1133,545.5h247.8"/>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1133 568.5)" class="st5 st4">+inflictDamage(p_TargetCharacter: Character)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="871" y="751" class="st0" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="864" y="744" class="st1" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,744h128v57H864V744z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,769h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,779h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 909.5759 763.5)" class="st3 st4">Sword</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1263" y="759" class="st0" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1256" y="752" class="st1" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,752h160v57h-160V752z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,777h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,787h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1324.7996 771.5)" class="st3 st4">Axe</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1263" y="823" class="st0" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1256" y="816" class="st1" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,816h160v57h-160V816z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,841h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,851h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1309.616 835.5)" class="st3 st4">Lightning</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="871" y="607" class="st0" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="864" y="600" class="st1" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,600h128v57H864V600z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,625h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,635h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 911.0264 619.5)" class="st3 st4">Arrow</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="871" y="679" class="st0" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="864" y="672" class="st1" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,672h128v57H864V672z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,697h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,707h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 895.3762 691.5)" class="st3 st4">WaterFlask</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1263" y="631" class="st0" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1256" y="624" class="st1" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,624h160v57h-160V624z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,649h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,659h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1314.6814 643.5)" class="st3 st4">Dagger</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1263" y="887" class="st0" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1256" y="880" class="st1" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,880h160v57h-160V880z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,905h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,915h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1322.6318 899.5)" class="st3 st4">Club</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="871" y="823" class="st0" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="864" y="816" class="st1" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,816h128v57H864V816z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,841h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,851h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 910.655 835.5)" class="st3 st4">Spear</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="871" y="887" class="st0" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="864" y="880" class="st1" width="128" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,880h128v57H864V880z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,905h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,915h128"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 899.8323 899.5)" class="st3 st4">FireArrow</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1263" y="695" class="st0" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="1256" y="688" class="st1" width="160" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,688h160v57h-160V688z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,713h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,723h160"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 1324.7996 707.5)" class="st3 st4">Bite</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,892h-56V494"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M432.4,514.3L424,494l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M432.4,514.3L424,494l-8.4,20.3H432.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,806h-56V494"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M432.4,514.3L424,494l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M432.4,514.3L424,494l-8.4,20.3H432.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,714h-56V494"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M432.4,514.3L424,494l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M432.4,514.3L424,494l-8.4,20.3H432.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,620h-56V494"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M432.4,514.3L424,494l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M432.4,514.3L424,494l-8.4,20.3H432.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M480,556h-56v-62"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M432.4,514.3L424,494l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M432.4,514.3L424,494l-8.4,20.3H432.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M528,304v-38"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M536.4,286.3L528,266l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M536.4,286.3L528,266l-8.4,20.3H536.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M620,304v-38"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M628.4,286.3L620,266l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M628.4,286.3L620,266l-8.4,20.3H628.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,624h-48v-51"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M824.4,593.3L816,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M824.4,593.3L816,573l-8.4,20.3H824.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,704h-48V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M824.4,593.3L816,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M824.4,593.3L816,573l-8.4,20.3H824.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,648h-64v-75"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M1200.4,593.3L1192,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1200.4,593.3L1192,573l-8.4,20.3H1200.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,912h-64V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M1200.4,593.3L1192,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1200.4,593.3L1192,573l-8.4,20.3H1200.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,840h-48V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M824.4,593.3L816,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M824.4,593.3L816,573l-8.4,20.3H824.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,912h-48V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M824.4,593.3L816,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M824.4,593.3L816,573l-8.4,20.3H824.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,712h-64V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M1200.4,593.3L1192,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1200.4,593.3L1192,573l-8.4,20.3H1200.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M864,768h-48V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M824.4,593.3L816,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M824.4,593.3L816,573l-8.4,20.3H824.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,776h-64V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M1200.4,593.3L1192,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1200.4,593.3L1192,573l-8.4,20.3H1200.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1256,840h-64V573"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M1200.4,593.3L1192,573l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1200.4,593.3L1192,573l-8.4,20.3H1200.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M272,304v-57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path d="M276.2,257.2L272,247l-4.2,10.2L272,269"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M276.2,257.2L272,247l-4.2,10.2L272,269L276.2,257.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 280.1313 299.5)" class="st5 st4">-m_RoomMonster</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 259.5 300.5)" class="st5 st4">1</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M267,160v-57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path d="M271.2,113.2L267,103l-4.2,10.2L267,125"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M271.2,113.2L267,103l-4.2,10.2L267,125L271.2,113.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 272.1313 155.5)" class="st5 st4">-m_RoomsArray</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 246.5 155.5)" class="st5 st4">25</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M872,168H771"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path d="M781.2,163.8L771,168l10.2,4.2L793,168"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M781.2,163.8L771,168l10.2,4.2L793,168L781.2,163.8"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 785.6809 188.5)" class="st5 st4">#m_Weapon</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 846.5 161.5)" class="st5 st4">1</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M776,534h-40v-70"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path d="M740.2,474.2L736,464l-4.2,10.2L736,486"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M740.2,474.2L736,464l-4.2,10.2L736,486L740.2,474.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 697.1313 556.5)" class="st5 st4">-m_Arsenal</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 751.5 527.5)" class="st5 st4">*</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="783" y="495" class="st0" width="276" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="776" y="488" class="st1" width="276" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M776,488h276v85H776V488z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M776,513h276"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M776,536h276"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 872.5569 507.5)" class="st3 st4">HeroWeapons</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 781 530.5)" class="st5 st4">-m_iAttackBonus: int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 781 553.5)" class="st5 st4">+inflictDamage(p_TargetCharacter: Character)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 781 568.5)" class="st5 st4">+setAttackBonus(p_iBonus: int)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st0" d="M458.7,50.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5S476.5,62,470.2,62S458.7,56.9,458.7,50.5z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M451.7,43.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5S469.5,55,463.2,55S451.7,49.9,451.7,43.5z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M451.7,43.5c0-6.4,5.1-11.5,11.5-11.5s11.5,5.1,11.5,11.5S469.5,55,463.2,55S451.7,49.9,451.7,43.5z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 430.3027 74.5)" class="st3 st4">Searchable</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="879" y="151" class="st0" width="276" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="872" y="144" class="st1" width="276" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M872,144h276v85H872V144z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M872,169h276"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M872,192h276"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 985.8955 163.5)" class="st3 st4">Weapon</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 877 186.5)" class="st5 st4">#m_iAttackPoints: int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 877 209.5)" class="st5 st4">+inflictDamage(p_TargetCharacter: Character)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M816,488v-16h168V229"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M992.4,249.3L984,229l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M992.4,249.3L984,229l-8.4,20.3H992.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1200,488v-16H984V229"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M992.4,249.3L984,229l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M992.4,249.3L984,229l-8.4,20.3H992.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M417,232h46V55"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M463,304V55"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="79" y="599" class="st0" width="194.1" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="72" y="592" class="st1" width="194.1" height="85"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M72,592h194.1v85H72V592z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M72,617h194.1"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M72,640h194.1"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 156.4043 611.5)" class="st6 st4">Item</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 77 634.5)" class="st5 st4">#m_iEffectValue: int</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 77 657.5)" class="st7 st4">+applyEffect(p_Hero: Hero)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 77 672.5)" class="st5 st4">+setValue(p_iValue: int)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="23" y="807" class="st0" width="168.8" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="16" y="800" class="st1" width="168.8" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M16,800h168.8v57H16V800z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M16,825h168.8"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M16,835h168.8"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 63.1848 819.5)" class="st3 st4">HealthPotion</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 21 852.5)" class="st5 st4">+applyEffect(p_Hero: Hero)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="199" y="807" class="st0" width="168.8" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<rect x="192" y="800" class="st1" width="168.8" height="57"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M192,800h168.8v57H192V800z"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M192,825h168.8"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M192,835h168.8"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 233.4021 819.5)" class="st3 st4">StrengthPotion</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 197 852.5)" class="st5 st4">+applyEffect(p_Hero: Hero)</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M64,800v-56h104v-67"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M176.4,697.3L168,677l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M176.4,697.3L168,677l-8.4,20.3H176.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M276,800v-56H168v-67"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M176.4,697.3L168,677l-8.4,20.3"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M176.4,697.3L168,677l-8.4,20.3H176.4"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M120,592V328h48"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path d="M157.8,332.2L168,328l-10.2-4.2L146,328"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M157.8,332.2L168,328l-10.2-4.2L146,328L157.8,332.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 126.6809 556.5)" class="st5 st4">#m_Item</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 128.5 576.5)" class="st5 st4">1</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M88,592V184h80"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path d="M157.8,188.2L168,184l-10.2-4.2L146,184"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M157.8,188.2L168,184l-10.2-4.2L146,184L157.8,188.2"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 25.1313 562.5)" class="st5 st4">-m_Items</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 63.5 579.5)" class="st5 st4">*</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M352,944h765l10,10v84H352V944"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M352,944h765l10,10v84H352V944L352,944"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M1117,944v10h10L1117,944"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 357 969)" class="st5 st8">PETIT RAPPEL</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 357 991)" class="st5 st8">Un élément souligné veut dire qu&apos;il est static</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 357 1013)" class="st5 st8">Un élément précédé d&apos;un - est privé, d&apos;un + est public, d&apos;un # est protected</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st9" d="M1096,944V568h32"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st9" d="M384,944V494"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M224,528h122l10,10v39H224V528"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M224,528h122l10,10v39H224V528L224,528"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M346,528v10h10L346,528"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 229 546)" class="st5 st4">class abstraite car</text>
+			<text transform="matrix(1 0 0 1 229 559)" class="st5 st4">apply effect est</text>
+			<text transform="matrix(1 0 0 1 229 572)" class="st5 st4">abstrait</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st9" d="M251,579l-18,12"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st1" d="M512,16h237l10,10v41H512V16"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M512,16h237l10,10v41H512V16L512,16"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st2" d="M749,16v10h10L749,16"/>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 517 34)" class="st5 st4">Has onlye 1 function :</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 517 49)" class="st5 st4">search():Item</text>
+		</g>
+	</g>
+	<g transform="translate(-6,-6) scale(1,1)">
+		<path class="st9" d="M463,179L602,69"/>
+	</g>
+</g>
+</svg>

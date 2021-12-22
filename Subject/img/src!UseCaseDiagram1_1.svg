@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 555 460" style="enable-background:new 0 0 555 460;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st3{font-family:'Arial-BoldMT';}
+	.st4{font-size:13px;}
+</style>
+<g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<rect x="511" y="55" class="st0" width="295" height="440"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<rect x="504" y="48" class="st1" width="295" height="440"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M504,48h295v440H504V48z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 607.4155 67.5)" class="st3 st4">DungeonGame</text>
+		</g>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st0" d="M535,208c0-9.4,58.2-17,130-17s130,7.6,130,17s-58.2,17-130,17S535,217.4,535,208z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st1" d="M528,201c0-9.4,58.2-17,130-17s130,7.6,130,17s-58.2,17-130,17S528,210.4,528,201z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M528,201c0-9.4,58.2-17,130-17s130,7.6,130,17s-58.2,17-130,17S528,210.4,528,201z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 575.9851 208)" class="st3 st4">Room Fighting Management</text>
+		</g>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st0" d="M580,312c0-9.4,28.2-17,63-17s63,7.6,63,17s-28.2,17-63,17S580,321.4,580,312z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st1" d="M573,305c0-9.4,28.2-17,63-17s63,7.6,63,17s-28.2,17-63,17S573,314.4,573,305z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M573,305c0-9.4,28.2-17,63-17s63,7.6,63,17s-28.2,17-63,17S573,314.4,573,305z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 598.0664 312)" class="st3 st4">SearchRoom</text>
+		</g>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st0" d="M599,128c0-9.4,22.6-17,50.5-17s50.5,7.6,50.5,17s-22.6,17-50.5,17S599,137.4,599,128z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st1" d="M592,121c0-9.4,22.6-17,50.5-17s50.5,7.6,50.5,17s-22.6,17-50.5,17S592,130.4,592,121z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M592,121c0-9.4,22.6-17,50.5-17s50.5,7.6,50.5,17s-22.6,17-50.5,17S592,130.4,592,121z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 616.1287 128)" class="st3 st4">InitGame</text>
+		</g>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st1" d="M280.4,249.7c0-4.8,3.9-8.7,8.7-8.7s8.7,3.9,8.7,8.7c0,4.8-3.9,8.7-8.7,8.7S280.4,254.5,280.4,249.7z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M280.4,249.7c0-4.8,3.9-8.7,8.7-8.7s8.7,3.9,8.7,8.7c0,4.8-3.9,8.7-8.7,8.7S280.4,254.5,280.4,249.7z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M289.1,258.4v17.3"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M279.9,264.8h18.4"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M289.1,275.6L276.3,293"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M289.1,275.6l12.8,17.4"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 270.6646 313.5)" class="st3 st4">Player</text>
+		</g>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M315,267l287-128"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M315,273l258-54"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M315,281l257,19"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st0" d="M591,440c0-9.4,22.6-17,50.5-17s50.5,7.6,50.5,17s-22.6,17-50.5,17S591,449.4,591,440z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st1" d="M584,433c0-9.4,22.6-17,50.5-17s50.5,7.6,50.5,17s-22.6,17-50.5,17S584,442.4,584,433z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M584,433c0-9.4,22.6-17,50.5-17s50.5,7.6,50.5,17s-22.6,17-50.5,17S584,442.4,584,433z"/>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<g>
+			<path class="st2" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 606.675 440)" class="st3 st4">Endgame</text>
+		</g>
+	</g>
+	<g transform="translate(-254,-38) scale(1,1)">
+		<path class="st2" d="M315,291l279,124"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 714 614" style="enable-background:new 0 0 714 614;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:13px;}
+	.st4{font-family:'Arial-BoldMT';}
+	.st5{opacity:0.2;fill:#C0C0C0;enable-background:new    ;}
+	.st6{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3;}
+	.st7{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:10,3;}
+</style>
+<g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M5,5h694v594H5V5"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st1" d="M5,5v22h138.1l11-11V5H5"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M5,5v22h138.1l11-11V5H5L5,5"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 75.979 22.5)" class="st2 st3">End Game</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 10 22.5)" class="st4 st3">interaction</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="80" y="47" class="st5" width="136" height="39"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="73" y="40" class="st1" width="136" height="39"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M73,40h136v39H73V40z"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 86.791 59.5)" class="st4 st3">Lifeline1: Dungeon</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st6" d="M142.5,80v422"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="358" y="47" class="st5" width="109.3" height="39"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="351" y="40" class="st1" width="109.3" height="39"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M351,40h109.3v39H351V40z"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 363.7341 59.5)" class="st4 st3">Lifeline2: Hero</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st6" d="M406.5,80v422"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M142,120h30v20h-24"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path d="M158.2,135.8L148,140l10.2,4.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M158.2,135.8L148,140l10.2,4.2V135.8"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 96.5 135.5)" class="st2 st3">1 : greetHeros(p_Hero: Hero)</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="135" y="140" class="st1" width="13" height="332"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M135,140h13v332h-13V140z"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M148,192h251"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path d="M388.8,196.2L399,192l-10.2-4.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M388.8,196.2L399,192l-10.2-4.2V196.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 241.0981 188.5)" class="st2 st3">2 : isalive()</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="399" y="192" class="st1" width="13" height="28"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M399,192h13v28h-13V192z"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st6" d="M406,248H148"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M158.2,243.8L148,248l10.2,4.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 231.5 289.5)" class="st2 st3">3 : true or false</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M148,368h251"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path d="M388.8,372.2L399,368l-10.2-4.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M388.8,372.2L399,368l-10.2-4.2V372.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 241.0981 364.5)" class="st2 st3">4 : isalive()</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<rect x="399" y="368" class="st1" width="13" height="104"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M399,368h13v104h-13V368z"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st6" d="M399,432H148"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M158.2,427.8L148,432l10.2,4.2"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 228.5 448.5)" class="st2 st3">5 : true or false</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M56,152h463v177H56V152"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st1" d="M56,152v22h120.8l11-11v-11H56"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M56,152v22h120.8l11-11v-11H56L56,152"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 91.5781 169.5)" class="st2 st3">for each room</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 61 169.5)" class="st4 st3">loop</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st7" d="M56,240h463"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st7" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 75.5 267.5)" class="st2 st3">[if return false : Game over]</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M64,392h503v119H64V392"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st1" d="M64,392v22h176.4l11-11v-11H64"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<path class="st0" d="M64,392v22h176.4l11-11v-11H64L64,392"/>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path class="st0" d="M0,0"/>
+			<text transform="matrix(1 0 0 1 88.73 409.5)" class="st2 st3">if return true game is won</text>
+		</g>
+	</g>
+	<g transform="translate(5,5) scale(1,1)">
+		<g>
+			<path d="M0,0"/>
+			<text transform="matrix(1 0 0 1 69 409.5)" class="st4 st3">alt</text>
+		</g>
+	</g>
+</g>
+</svg>
