@@ -49,3 +49,4 @@ TemplateJEE | JEE | Exercice to learn J2E
 TpFarm | Python | Examen on python
 MSPR_Java | Java Spring | Examen on java
 scratch_linkedin | python x docker | Try to scraping my linkedin page
+ia_petale | python | past youtube video to learn ia
