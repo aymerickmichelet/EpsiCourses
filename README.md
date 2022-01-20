@@ -50,3 +50,6 @@ TpFarm | Python | Examen on python
 MSPR_Java | Java Spring | Examen on java
 scratch_linkedin | python x docker | Try to scraping my linkedin page
 ia_petale | python | past youtube video to learn ia
+DungeonEPSI | java | Epsi examen object
+TaVueCa | vuejs | First personnal exercice to learn vuejs
+spigot_project | java x spigot | Personnal exercice to learn java compilation with spigot lib
