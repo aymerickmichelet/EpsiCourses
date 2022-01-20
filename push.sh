@@ -1,20 +1,27 @@
-github=("NomDuProjetGithub" "NomDuProjetGithub2")
-projectname=("NomDeLaBranche" "NomDeLaBranche2")
+BLUE='\033[0;34m' # Blue
+GREEN='\033[0;32m' # Green
+RED='\033[0;31m' # Red
+DARK_GRAY='\033[1;30m' # DARK_GRAY
+NC='\033[0m' # No Color
 
-for i in 0
+for project in $@
 do
-    echo "[UPLOAD] > Cloning project ${github[$i]}"
-    git clone git@github.com:aymerickmichelet/${github[$i]}.git project
-    cd project
-    echo "[UPLOAD] > Projet clonner"
-    echo "[UPLOAD] > Création Nouvelle branche"
-    git checkout -b ${projectname[$i]}
-    git remote remove origin
-    git remote add origin git@github.com:aymerickmichelet/EpsiCoursesProjects.git
-    echo "[UPLOAD] > Push du projet sur github.com:aymerickmichelet/EpsiCoursesProjects.git"
-    git push --set-upstream origin ${projectname[$i]}
-    cd ..
-    echo "[UPLOAD] > Suppression du dossier"
-    sudo rm -r project
-    echo "[UPLOAD] > FIN"
+    echo "${BLUE}push.sh > start $project${DARK_GRAY}"
+    git clone git@github.com:aymerickmichelet/$project.git project
+    if [ -d "project" ]
+    then
+        echo "${GREEN}push.sh > cloned project $project${DARK_GRAY} "
+        cd project
+        git checkout -b $project
+        git remote remove origin
+        git remote add origin git@github.com:aymerickmichelet/EpsiCourses.git
+        git push --set-upstream origin $project
+        echo "${GREEN}push.sh > $project push on EpsiCourses${DARK_GRAY} "
+        cd ..
+        rm -rf project
+        echo "${BLUE}push.sh > $project local folder removed${DARK_GRAY} "
+    else
+        echo "${RED}push.sh > project $project hasn't been cloned${DARK_GRAY} "
+    fi
 done
+echo "${BLUE}push.sh > End${NC}"
