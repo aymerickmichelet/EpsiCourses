@@ -1,0 +1,24 @@
+.message_container {
+  margin: 0 0 1rem 0;
+}
+
+.message_title {
+  display: flex;
+}
+.message_title_element {
+  flex-grow: 1;
+}
+
+.profile_image {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: -50px;
+  margin: auto;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.message_text {
+  margin-left: calc(40px + 1rem);
+}
