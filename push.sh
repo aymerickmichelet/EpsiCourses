@@ -15,11 +15,19 @@ do
         git checkout -b $project
         git remote remove origin
         git remote add origin git@github.com:aymerickmichelet/EpsiCourses.git
-        git push --set-upstream origin $project
+        git push -u origin $project
         echo "${GREEN}push.sh > $project push on EpsiCourses${DARK_GRAY} "
+
         cd ..
         rm -rf project
         echo "${BLUE}push.sh > $project local folder removed${DARK_GRAY} "
+
+        git checkout main
+	    echo "$project | |" >> README.md
+	    git add README.md
+	    git commit -m "add $project in README.md"
+	    git push
+	    echo "${GREEN}push.sh > add $project in README.md${DARK_GRAY}"
     else
         echo "${RED}push.sh > project $project hasn't been cloned${DARK_GRAY} "
     fi
