@@ -53,6 +53,6 @@ ia_petale | python | past youtube video to learn ia
 DungeonEPSI | java | Epsi examen object
 TaVueCa | vuejs | First personnal exercice to learn vuejs
 spigot_project | java x spigot | Personnal exercice to learn java compilation with spigot lib
-BottleFlipApi | |
-AlainFiniApi | |
-AlainFiniFront | |
+BottleFlipApi | Python x Docker | Bottleflip is a website where there is joke sharing. We can ask or give a joke.
+AlainFiniApi | js | Pun API Technical Documentation
+AlainFiniFront | html x css x js | AlainFini front
