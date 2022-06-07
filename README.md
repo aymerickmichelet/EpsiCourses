@@ -56,3 +56,5 @@ spigot_project | java x spigot | Personnal exercice to learn java compilation wi
 BottleFlipApi | Python x Docker | Bottleflip is a website where there is joke sharing. We can ask or give a joke.
 AlainFiniApi | js | Pun API Technical Documentation
 AlainFiniFront | html x css x js | AlainFini front
+SetupMinecraftDocker | docker x bash | Setup minecraft server bungeecord x paper/spigot x docker
+bigdata-mongodb | docker x mongodb | setup mongods on docker
