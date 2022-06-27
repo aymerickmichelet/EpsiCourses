@@ -1,4 +1,16 @@
-github link: https://github.com/aymerickmichelet/SolutionEmbarqueeDM
+# Installation
+
+To install, please run this command:
+
+```bash
+git clone git@github.com:aymerickmichelet/EpsiCourses.git SolutionEmbarqueeDM
+cd SolutionEmbarqueeDM
+git checkout SolutionEmbarqueeDM
+```
+
+---
+
+github link: https://github.com/aymerickmichelet/EpsiCourses/tree/SolutionEmbarqueeDM
 
 Pseudo code:
 	# For each loop OK
