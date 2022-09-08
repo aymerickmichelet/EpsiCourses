@@ -59,4 +59,4 @@ AlainFiniFront | html x css x js | AlainFini front
 SetupMinecraftDocker | docker x bash | Setup minecraft server bungeecord x paper/spigot x docker
 bigdata-mongodb | docker x mongodb | setup mongods on docker
 SolutionEmbarqueeDM | |
-githubaction | |
+githubaction | vue/nuxt | setup github action with vue on github pages (static website)
