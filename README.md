@@ -60,4 +60,4 @@ SetupMinecraftDocker | docker x bash | Setup minecraft server bungeecord x paper
 bigdata-mongodb | docker x mongodb | setup mongods on docker
 SolutionEmbarqueeDM | |
 githubaction | vue/nuxt | setup github action with vue on github pages (static website)
-data_quality | |
+data_quality | python flask panda | 
